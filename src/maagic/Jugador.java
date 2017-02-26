@@ -11,4 +11,5 @@ package maagic;
  */
 public class Jugador {
     //Aki irian variables del jugador (mano,baraja,descarte,vida,mana,...)
+    //Tambien se instanciarian aqui mano, descarte, y baraja
 }
