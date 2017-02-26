@@ -11,5 +11,8 @@ package maagic;
  */
 public class Carta {
     //Aki iran las variables ataque,defensa,coste, y en caso de haberlos habilidades
-//especiales o asi    
+//especiales o asi
+private int vida;
+private int ataque;
+private int coste;
 }

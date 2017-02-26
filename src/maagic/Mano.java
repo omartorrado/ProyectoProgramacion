@@ -5,11 +5,17 @@
  */
 package maagic;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Orom
  */
 public class Mano {
+
     //Aki tiene que haber un arraylist con las cartas de la mano, y los metodos
     //para quitar, meter cartas en la mano
+    private ArrayList<Carta> mano;
+
+   
 }

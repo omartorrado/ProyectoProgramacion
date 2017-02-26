@@ -5,6 +5,8 @@
  */
 package maagic;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Orom
@@ -12,4 +14,5 @@ package maagic;
 public class Descarte {
     //Aki tiene que haber un arraylist con las cartas del descarte y los metodos
     //para quitar, meter cartas en el
+    private ArrayList <Carta> descarte;
 }
