@@ -17,5 +17,17 @@ public class Mano {
     //para quitar, meter cartas en la mano
     private ArrayList<Carta> mano;
 
+    public ArrayList<Carta> getMano() {
+        return mano;
+    }
+    
+    public Carta getCarta(int i){
+        return mano.get(i);
+    }
+
+    public void addCarta(Carta c){
+        mano.add(c);
+    }
+
    
 }

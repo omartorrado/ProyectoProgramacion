@@ -15,4 +15,18 @@ public class Carta {
 private int vida;
 private int ataque;
 private int coste;
+
+    public int getVida() {
+        return vida;
+    }
+
+    public int getAtaque() {
+        return ataque;
+    }
+
+    public int getCoste() {
+        return coste;
+    }
+
+    
 }

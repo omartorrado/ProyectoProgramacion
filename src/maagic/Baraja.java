@@ -6,6 +6,8 @@
 package maagic;
 
 import java.util.ArrayList;
+import java.util.Random;
+
 
 /**
  *
@@ -18,7 +20,19 @@ public class Baraja {
     private ArrayList <Carta> baraja;
     
     //devuelve la ultima carta del arraylist baraja
-    public Carta getBaraja(){
+    public Carta getCarta(){
         return baraja.get(baraja.size()-1);
+    }
+        
+    //barajar
+    public void barajar(){
+        ArrayList <Carta> barajaTemp=null;
+        Random rnd=new Random();
+        while(baraja.size()>0){
+            int pos=rnd.nextInt(baraja.size());
+            barajaTemp.add(baraja.get(pos));
+            baraja.remove(pos);
+            }
+        baraja=barajaTemp;
     }
 }
