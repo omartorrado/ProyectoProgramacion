@@ -12,9 +12,16 @@ package maagic;
 public class Carta {
     //Aki iran las variables ataque,defensa,coste, y en caso de haberlos habilidades
 //especiales o asi
-private int vida;
-private int ataque;
-private int coste;
+
+    private int vida;
+    private int ataque;
+    private int coste;
+
+    public Carta(int vida, int ataque, int coste) {
+        this.vida = vida;
+        this.ataque = ataque;
+        this.coste = coste;
+    }
 
     public int getVida() {
         return vida;
@@ -28,5 +35,9 @@ private int coste;
         return coste;
     }
 
-    
+    public void ataque(Carta c) {
+        c.vida -= this.ataque;
+        this.vida -= c.getAtaque();
+    }
+
 }

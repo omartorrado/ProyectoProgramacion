@@ -5,6 +5,8 @@
  */
 package maagic;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Orom
@@ -13,20 +15,18 @@ public class Jugador {
 
     //Aki irian variables del jugador (mano,baraja,descarte,vida,mana,...)
     //Tambien se instanciarian aqui mano, descarte, y baraja
-    private Mano mano;
-    private Baraja baraja;
-    private Descarte descarte;
+    private ArrayList<Carta> mano;
+    private ArrayList<Carta> baraja;
+    private ArrayList<Carta> descarte;
     private int vida = 20;
     private int mana = 0;
 
-    //Metodo repartir
-    public void repartirX3() {
-        mano.addCarta(baraja.getCarta());
-        mano.addCarta(baraja.getCarta());
-        mano.addCarta(baraja.getCarta());
+    public void getMano() {
+        mano.add(baraja.get(baraja.size() - 1));
+        mano.add(baraja.get(baraja.size() - 1));
+        mano.add(baraja.get(baraja.size() - 1));
     }
     
-    public Carta jugarCarta(int c){
-        return mano.getCarta(c);
-    }
+    
+
 }
