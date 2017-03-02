@@ -6,6 +6,7 @@
 package maagic;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -25,6 +26,10 @@ public class Jugador {
         mano.add(baraja.get(baraja.size() - 1));
         mano.add(baraja.get(baraja.size() - 1));
         mano.add(baraja.get(baraja.size() - 1));
+    }
+    
+    public void barajar(){
+        Collections.shuffle(baraja);
     }
     
     
