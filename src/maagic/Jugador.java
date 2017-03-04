@@ -84,5 +84,6 @@ public class Jugador {
 
     public void recibirAtaque(Carta c) {
 
+    
     }
 }

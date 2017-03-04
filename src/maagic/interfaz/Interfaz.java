@@ -5,6 +5,9 @@
  */
 package maagic.interfaz;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+
 /**
  *
  * @author Orom
@@ -16,6 +19,12 @@ public class Interfaz extends javax.swing.JFrame {
      */
     public Interfaz() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
+    }
+    public Image getIconImage(){
+    Image retValue=Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("C:\\Users\\Delio\\Desktop\\aaa.png"));
+        return retValue;
     }
 
     /**
@@ -27,18 +36,18 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Juego ");
+        setIconImage(getIconImage());
+        setUndecorated(true);
+        getContentPane().setLayout(null);
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(50, 30, 100, 100);
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(100, 80, 100, 100);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,5 +88,7 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
