@@ -74,17 +74,24 @@ public class Jugador {
         }
     }
 
-    public void moverCarta(int carta, ArrayList origen, ArrayList destino) {
-        
+    public void moverCartaDescarte(int carta, ArrayList<Carta> origen, ArrayList<Carta> destino) {
+        Carta o = origen.get(carta);
+        origen.remove(carta);
+        destino.add(o);
+    }
+    
+    public void moverCartaMesa(int cartaOrigen, int cartaDestino, ArrayList<Carta> origen, Carta[] destino) {
+        Carta o = origen.get(cartaOrigen);
+        origen.remove(cartaOrigen);
+        destino[cartaDestino]=o;
     }
 
     public void ganarMana(Carta c) {
-        mana+=Math.round((float)c.getCoste()/2f);
+        mana += Math.round((float) c.getCoste() / 2f);
     }
 
     public void recibirAtaque(Carta c) {
-        vida-=c.getAtaque();
+        vida -= c.getAtaque();
 
-    
     }
 }

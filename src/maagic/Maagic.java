@@ -16,6 +16,7 @@ public class Maagic {
      */
     public static void main(String[] args) {
         // Main. Aki instanciamos juego e interfaz
+        
     }
     
 }

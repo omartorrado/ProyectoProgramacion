@@ -12,7 +12,6 @@ package maagic;
 public class Carta {
     //Aki iran las variables ataque,defensa,coste, y en caso de haberlos habilidades
 //especiales o asi
-
     private int vida;
     private int ataque;
     private int coste;
@@ -38,7 +37,6 @@ public class Carta {
     public void ataque(Carta c) {
         c.vida -= this.ataque;
         this.vida -= c.getAtaque();
-        //definir que pasa cuando la vida llega a 0
-    }
+        }
 
 }
