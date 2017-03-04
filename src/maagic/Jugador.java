@@ -21,9 +21,11 @@ public class Jugador {
     private ArrayList<Carta> mano;
     private ArrayList<Carta> baraja;
     private ArrayList<Carta> descarte;
+    private Carta[] mesa = new Carta[3];
     private int vida = 20;
     private int mana = 0;
 
+    //Constructor
     public Jugador(File baraja) {
         try {
             Scanner scBaraja = new Scanner(baraja);
@@ -39,7 +41,17 @@ public class Jugador {
         }
 
     }
+    //Getters
 
+    public int getVida() {
+        return vida;
+    }
+
+    public int getMana() {
+        return mana;
+    }
+
+    //Metodos del jugador
     public void getMano() {
         mano.add(baraja.get(baraja.size() - 1));
         mano.add(baraja.get(baraja.size() - 1));
@@ -54,6 +66,7 @@ public class Jugador {
         mano.get(i);
     }
 
+    //Ver como se integra con el display, es posible que se cambie
     public void turno() {
         mana += 1;
         while (mano.size() > 0) {
@@ -61,4 +74,15 @@ public class Jugador {
         }
     }
 
+    public void moverCarta(ArrayList a, ArrayList b) {
+
+    }
+
+    public void ganarMana(Carta c) {
+
+    }
+
+    public void recibirAtaque(Carta c) {
+
+    }
 }

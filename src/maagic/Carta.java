@@ -38,6 +38,7 @@ public class Carta {
     public void ataque(Carta c) {
         c.vida -= this.ataque;
         this.vida -= c.getAtaque();
+        //definir que pasa cuando la vida llega a 0
     }
 
 }
