@@ -74,15 +74,16 @@ public class Jugador {
         }
     }
 
-    public void moverCarta(ArrayList a, ArrayList b) {
-
+    public void moverCarta(int carta, ArrayList origen, ArrayList destino) {
+        
     }
 
     public void ganarMana(Carta c) {
-
+        mana+=Math.round((float)c.getCoste()/2f);
     }
 
     public void recibirAtaque(Carta c) {
+        vida-=c.getAtaque();
 
     }
 }
