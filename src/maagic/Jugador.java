@@ -53,9 +53,14 @@ public class Jugador {
 
     //Metodos del jugador
     public void getMano() {
-        mano.add(baraja.get(baraja.size() - 1));
-        mano.add(baraja.get(baraja.size() - 1));
-        mano.add(baraja.get(baraja.size() - 1));
+        if (baraja.size() >= 3) {
+            mano.add(baraja.get(baraja.size() - 1));
+            mano.add(baraja.get(baraja.size() - 1));
+            mano.add(baraja.get(baraja.size() - 1));
+        } else {
+            Collections.shuffle(descarte);
+            baraja.addAll(baraja.size(), descarte);
+        }
     }
 
     public void barajar() {
@@ -74,16 +79,18 @@ public class Jugador {
         }
     }
 
+    //Estos metodos igual se cambian para tener uno especializado para cada tipo
+    //de movimiento mano->descarte mano->mesa mesa->descarte descarte->baraja
     public void moverCartaDescarte(int carta, ArrayList<Carta> origen, ArrayList<Carta> destino) {
         Carta o = origen.get(carta);
         origen.remove(carta);
         destino.add(o);
     }
-    
+
     public void moverCartaMesa(int cartaOrigen, int cartaDestino, ArrayList<Carta> origen, Carta[] destino) {
         Carta o = origen.get(cartaOrigen);
         origen.remove(cartaOrigen);
-        destino[cartaDestino]=o;
+        destino[cartaDestino] = o;
     }
 
     public void ganarMana(Carta c) {
