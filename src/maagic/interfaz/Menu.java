@@ -56,12 +56,12 @@ public class Menu extends javax.swing.JPanel {
         });
         add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 630, 410, 50));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Delio\\Desktop\\serien_grosses_logo_239-Recuperado.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/serien_grosses_logo_239-Recuperado.png"))); // NOI18N
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 1010, 330));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Delio\\Desktop\\Imágenes\\The-dragon-of-hell-liam-a-dragon-37509157-1920-1080.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/The-dragon-of-hell-liam-a-dragon-37509157-1920-1080.jpg"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
