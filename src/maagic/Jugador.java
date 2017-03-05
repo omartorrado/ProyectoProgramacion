@@ -6,6 +6,7 @@
 package maagic;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -33,17 +34,30 @@ public class Jugador {
     private int mana = 0;
 
     //Constructor
-    public Jugador(File baraja) {
+    public Jugador(String fileBaraja) {
+        Scanner scBaraja;
+        File miBaraja=new File(fileBaraja);
+        System.out.println("wtf");
         try {
-            Scanner scBaraja = new Scanner(baraja);
+            System.out.println("wtf2");
+            scBaraja = new Scanner(miBaraja);
+             System.out.println("wtf3");
             while (scBaraja.hasNextLine()) {
+                 System.out.println("wtf4");
                 int cvida = scBaraja.nextInt();
+                 System.out.println("wtf5");
                 int cataque = scBaraja.nextInt();
                 int ccoste = scBaraja.nextInt();
+                 System.out.println("wtf6");
+                 System.out.println(cvida+","+cataque+","+ccoste);
                 Carta c = new Carta(cvida, cataque, ccoste);
+                 System.out.println("wtf7");
                 this.baraja.add(c);
+                 System.out.println("wtf8");
             }
-        } catch (Exception e) {
+             System.out.println("wtf9");
+            scBaraja.close();
+                   } catch (FileNotFoundException e) {
             System.out.println("Error. Baraja no encontrada");
         }
 
@@ -59,7 +73,7 @@ public class Jugador {
     }
 
     //Metodos del jugador
-    public void getMano() {
+    public void cogerMano() {
         if (baraja.size() >= 3) {
             mano[0] = baraja.get(baraja.size() - 1);
             mano[1] = baraja.get(baraja.size() - 1);
@@ -71,10 +85,20 @@ public class Jugador {
             mano[1] = baraja.get(baraja.size() - 1);
             mano[2] = baraja.get(baraja.size() - 1);
         }
+        //Test
+        for(int i=0;i<3;i++){
+        System.out.println("Vida: "+mano[i].getVida()+" Ataque: "+mano[i].getAtaque()+" Coste: "+mano[i].getCoste());
+        }
+        //End test
     }
 
     public void barajar() {
         Collections.shuffle(baraja);
+        //Test
+        for (Carta c : baraja) {
+            System.out.println("Vida: "+c.getVida()+" Ataque: "+c.getAtaque()+" Coste: "+c.getCoste());
+        }
+        //End test
     }
 
     public void jugarCarta(int i) {
