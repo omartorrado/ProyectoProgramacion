@@ -27,8 +27,8 @@ public class Jugador {
     //cuando no hay nada
      */
     private Carta[] mano = new Carta[3];
-    private ArrayList<Carta> baraja;
-    private ArrayList<Carta> descarte;
+    private ArrayList<Carta> baraja=new ArrayList();
+    private ArrayList<Carta> descarte=new ArrayList();
     private Carta[] mesa = new Carta[3];
     private int vida = 20;
     private int mana = 0;
@@ -37,25 +37,16 @@ public class Jugador {
     public Jugador(String fileBaraja) {
         Scanner scBaraja;
         File miBaraja=new File(fileBaraja);
-        System.out.println("wtf");
         try {
-            System.out.println("wtf2");
             scBaraja = new Scanner(miBaraja);
-             System.out.println("wtf3");
             while (scBaraja.hasNextLine()) {
-                 System.out.println("wtf4");
                 int cvida = scBaraja.nextInt();
-                 System.out.println("wtf5");
                 int cataque = scBaraja.nextInt();
                 int ccoste = scBaraja.nextInt();
-                 System.out.println("wtf6");
                  System.out.println(cvida+","+cataque+","+ccoste);
                 Carta c = new Carta(cvida, cataque, ccoste);
-                 System.out.println("wtf7");
                 this.baraja.add(c);
-                 System.out.println("wtf8");
             }
-             System.out.println("wtf9");
             scBaraja.close();
                    } catch (FileNotFoundException e) {
             System.out.println("Error. Baraja no encontrada");
@@ -74,16 +65,23 @@ public class Jugador {
 
     //Metodos del jugador
     public void cogerMano() {
+        //coger estas dos lineas y meterlas en un metodo
         if (baraja.size() >= 3) {
             mano[0] = baraja.get(baraja.size() - 1);
+            baraja.remove(baraja.size()-1);
             mano[1] = baraja.get(baraja.size() - 1);
+            baraja.remove(baraja.size()-1);
             mano[2] = baraja.get(baraja.size() - 1);
+            baraja.remove(baraja.size()-1);
         } else {
             Collections.shuffle(descarte);
             baraja.addAll(baraja.size(), descarte);
             mano[0] = baraja.get(baraja.size() - 1);
+            baraja.remove(baraja.size()-1);
             mano[1] = baraja.get(baraja.size() - 1);
+            baraja.remove(baraja.size()-1);
             mano[2] = baraja.get(baraja.size() - 1);
+            baraja.remove(baraja.size()-1);
         }
         //Test
         for(int i=0;i<3;i++){

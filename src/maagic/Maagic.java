@@ -18,13 +18,13 @@ public class Maagic {
         // Main. Aki instanciamos juego e interfaz
         //Jugador j1=new Jugador("C:/Users/Orom/Documents/NetBeansProjects/Maagic/src/maagic/Cartas.txt");
         Jugador j1=new Jugador("./src/maagic/Cartas.txt");
-//        j1.barajar();
-//        System.out.println(" ");
-//        j1.cogerMano();
-//        System.out.println(" ");
-//        j1.cogerMano();
-//        System.out.println(" ");
-//        j1.cogerMano();
+        j1.barajar();
+        System.out.println(" ");
+        j1.cogerMano();
+        System.out.println(" ");
+        j1.cogerMano();
+        System.out.println(" ");
+        j1.cogerMano();
     }
     
 }
