@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -84,8 +85,8 @@ public class Jugador {
             baraja.remove(baraja.size()-1);
         }
         //Test
-        for(int i=0;i<3;i++){
-        System.out.println("Vida: "+mano[i].getVida()+" Ataque: "+mano[i].getAtaque()+" Coste: "+mano[i].getCoste());
+        for (Carta cartaActual : mano) {
+            System.out.println("Vida: " + cartaActual.getVida() + " Ataque: " + cartaActual.getAtaque() + " Coste: " + cartaActual.getCoste());
         }
         //End test
     }
@@ -100,7 +101,7 @@ public class Jugador {
     }
 
     public void jugarCarta(int i) {
-
+        
     }
 
     //Ver como se integra con el display, es posible que se cambie
@@ -164,4 +165,14 @@ public class Jugador {
         }
     }
     */
+    
+    //TEST METHODS
+    
+    public int elegirCartaOrigen(){
+        return Integer.parseInt(JOptionPane.showInputDialog("¿Que carta quieres jugar?"));
+        
+    }
+    public int elegirCartaDestino(){
+        return Integer.parseInt(JOptionPane.showInputDialog("¿En que posicion quieres jugarla?"));
+    }
 }

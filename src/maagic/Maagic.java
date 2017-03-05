@@ -16,15 +16,19 @@ public class Maagic {
      */
     public static void main(String[] args) {
         // Main. Aki instanciamos juego e interfaz
-        //Jugador j1=new Jugador("C:/Users/Orom/Documents/NetBeansProjects/Maagic/src/maagic/Cartas.txt");
+        //Creamos los 2 jugadores con sus barajas (en este caso la de prueba)
         Jugador j1=new Jugador("./src/maagic/Cartas.txt");
+        Jugador j2=new Jugador("./src/maagic/Cartas.txt");
+        //Se barajan ambos mazos
         j1.barajar();
-        System.out.println(" ");
+        j2.barajar();
+        //Inicia el turno del jugador 1
         j1.cogerMano();
-        System.out.println(" ");
-        j1.cogerMano();
-        System.out.println(" ");
-        j1.cogerMano();
+        //Elige que carta de jugar de su mano
+        j1.moverManoMesa(j1.elegirCartaOrigen(),j1.elegirCartaDestino());
+        j1.moverManoMesa(j1.elegirCartaOrigen(),j1.elegirCartaDestino());
+        j1.moverManoMesa(j1.elegirCartaOrigen(),j1.elegirCartaDestino());
+        
     }
     
 }
