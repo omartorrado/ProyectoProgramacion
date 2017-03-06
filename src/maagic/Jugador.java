@@ -28,8 +28,8 @@ public class Jugador {
     //cuando no hay nada
      */
     private Carta[] mano = new Carta[3];
-    private ArrayList<Carta> baraja=new ArrayList();
-    private ArrayList<Carta> descarte=new ArrayList();
+    private ArrayList<Carta> baraja = new ArrayList();
+    private ArrayList<Carta> descarte = new ArrayList();
     private Carta[] mesa = new Carta[3];
     private int vida = 20;
     private int mana = 0;
@@ -37,19 +37,19 @@ public class Jugador {
     //Constructor
     public Jugador(String fileBaraja) {
         Scanner scBaraja;
-        File miBaraja=new File(fileBaraja);
+        File miBaraja = new File(fileBaraja);
         try {
             scBaraja = new Scanner(miBaraja);
             while (scBaraja.hasNextLine()) {
                 int cvida = scBaraja.nextInt();
                 int cataque = scBaraja.nextInt();
                 int ccoste = scBaraja.nextInt();
-                 System.out.println(cvida+","+cataque+","+ccoste);
+                System.out.println(cvida + "," + cataque + "," + ccoste);
                 Carta c = new Carta(cvida, cataque, ccoste);
                 this.baraja.add(c);
             }
             scBaraja.close();
-                   } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             System.out.println("Error. Baraja no encontrada");
         }
 
@@ -64,30 +64,32 @@ public class Jugador {
         return mana;
     }
 
+    public Carta getMano(int i) {
+        return mano[i];
+    }
+
     //Metodos del jugador
+    public void cogerUltimas() {
+        //Coge las 3 ultimas cartas de la baraja y las guarda en mano
+        for (int i = 0; i < 3; i++) {
+            mano[i] = baraja.get(baraja.size() - 1);
+            baraja.remove(baraja.size() - 1);
+        }
+    }
+
     public void cogerMano() {
         //Lo primero el jugador gana 1 punto de maná
-        mana+=1;
+        mana += 1;
         //A continuacion coge 3 cartas, si no hay baraja el descarte y luego coje
-        //coger estas dos lineas y meterlas en un metodo
         if (baraja.size() >= 3) {
-            mano[0] = baraja.get(baraja.size() - 1);
-            baraja.remove(baraja.size()-1);
-            mano[1] = baraja.get(baraja.size() - 1);
-            baraja.remove(baraja.size()-1);
-            mano[2] = baraja.get(baraja.size() - 1);
-            baraja.remove(baraja.size()-1);
+            cogerUltimas();
         } else {
             Collections.shuffle(descarte);
             baraja.addAll(baraja.size(), descarte);
-            mano[0] = baraja.get(baraja.size() - 1);
-            baraja.remove(baraja.size()-1);
-            mano[1] = baraja.get(baraja.size() - 1);
-            baraja.remove(baraja.size()-1);
-            mano[2] = baraja.get(baraja.size() - 1);
-            baraja.remove(baraja.size()-1);
+            cogerUltimas();
         }
         //Test
+        System.out.println("Esta es tu mano:");
         for (Carta cartaActual : mano) {
             System.out.println("Vida: " + cartaActual.getVida() + " Ataque: " + cartaActual.getAtaque() + " Coste: " + cartaActual.getCoste());
         }
@@ -97,42 +99,21 @@ public class Jugador {
     public void barajar() {
         Collections.shuffle(baraja);
         //Test
+        System.out.println("Baraja:");
         for (Carta c : baraja) {
-            System.out.println("Vida: "+c.getVida()+" Ataque: "+c.getAtaque()+" Coste: "+c.getCoste());
+            System.out.println("Vida: " + c.getVida() + " Ataque: " + c.getAtaque() + " Coste: " + c.getCoste());
         }
         //End test
     }
 
     public void jugarCarta(int i) {
-        
-    }
-
-    //Ver como se integra con el display, es posible que se cambie
-    public void turno() {
-        mana += 1;
 
     }
 
-    //Estos metodos igual se cambian para tener uno especializado para cada tipo
-    //de movimiento mano->descarte mano->mesa mesa->descarte descarte->baraja.
-    //descarte->baraja ya lo hace el metodo getMano()
-    /*
-    public void moverCartaDescarte(int carta, ArrayList<Carta> origen, ArrayList<Carta> destino) {
-        Carta o = origen.get(carta);
-        origen.remove(carta);
-        destino.add(o);
-    }
-
-    public void moverCartaMesa(int cartaOrigen, int cartaDestino, ArrayList<Carta> origen, Carta[] destino) {
-        Carta o = origen.get(cartaOrigen);
-        origen.remove(cartaOrigen);
-        destino[cartaDestino] = o;
-    }
-     */
     public void moverManoMesa(int carta, int mesa) {
         if (this.mesa[mesa] == null) {
             this.mesa[mesa] = this.mano[carta];
-            this.mano[carta] = null;
+            this.mano[carta]= null;
         }
     }
 
@@ -146,36 +127,110 @@ public class Jugador {
         mesa[carta] = null;
     }
 
-    public void ganarMana(Carta c) {
-        mana += Math.round((float) c.getCoste() / 2f);
+    public void ganarMana(int pos) {
+        mana += Math.round((float) mano[pos].getCoste() / 2f);
+        if(mana<1){
+            mana+=1;
+        }
+        mano[pos] = null;
     }
 
     public void recibirAtaque(Carta c) {
-        vida-=c.getAtaque();
+        vida -= c.getAtaque();
     }
 
-    /*
-    public void vidacarta(Carta c, int CartaVolberBaraja) {
-        CartaVolberBaraja = c.getVida();
-        CartaVolberBaraja = c.getAtaque();
-        if (baraja.contains(CartaVolberBaraja)) {
-            baraja.remove(CartaVolberBaraja);
-        } else if (c.getVida() == 0) {
-            baraja.indexOf(CartaVolberBaraja);
-        } else {
-            vida -= c.getAtaque();
+    public void cartaMuere(int i) {
+        mesa[i] = null;
+    }
 
+    //El jugador j es el oponente
+    public void realizarAtaque(Jugador j) {
+        //Para los tres slots de la mesa, en caso de que haya una carta(mesa[i]!=null)
+        for (int i = 0; i < 3; i++) {
+            //Este if-else if diferencia entre que haya carta en ambos o solo en el 
+            //atacante. en caso de que el atacante no tenga carta no hace nada
+            if (mesa[i] != null && j.mesa[i] != null) {
+                mesa[i].ataque(j.mesa[i]);
+                //Estos dos if comprueban si la vida de la carta bajo de 1 y
+                //la destruyen en ese caso
+                if (mesa[i].getVida() < 1) {
+                    cartaMuere(i);
+                }
+                if (j.mesa[i].getVida() < 1) {
+                    cartaMuere(i);
+                }
+            } else if (mesa[i] != null && j.mesa[i] == null) {
+                //Este es el metodo para que el jugador pierda vida a causa del ataque
+                j.recibirAtaque(mesa[i]);
+            }
         }
     }
-    */
-    
+
     //TEST METHODS
-    
-    public int elegirCartaOrigen(){
+    public int elegirCartaOrigen() {
         return Integer.parseInt(JOptionPane.showInputDialog("¿Que carta quieres jugar?"));
-        
+
     }
-    public int elegirCartaDestino(){
+
+    public int elegirCartaDestino() {
         return Integer.parseInt(JOptionPane.showInputDialog("¿En que posicion quieres jugarla?"));
+    }
+
+    public int entrada(String mensaje) {
+        return Integer.parseInt(JOptionPane.showInputDialog(mensaje));
+    }
+
+    public void printMesa(Jugador j) {
+        System.out.println("Mesa:");
+        for (int i = 0; i < 3; i++) {
+            if (mesa[i] != null) {
+                System.out.println("J: slot0=" + mesa[i].getAtaque() + " " + mesa[i].getVida() + " " + mesa[i].getCoste());
+            } else {
+                System.out.println("Sin carta");
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+            if (j.mesa[i] != null) {
+                System.out.println("O: slot0=" + j.mesa[i].getAtaque() + " " + j.mesa[i].getVida() + " " + j.mesa[i].getCoste());
+            } else {
+                System.out.println("Sin carta");
+            }
+        }
+        System.out.println("Fin de jugada");
+    }
+
+    public void elegirCarta() {
+        int cartaElegida = -1;
+        System.out.println("Mana: "+mana);
+        do {
+            cartaElegida = elegirCartaOrigen();
+            if (mano[cartaElegida].getCoste() > mana) {
+                System.out.println("Puedes jugarla para obtener mana pulsando 1\nO cancelar con 0");
+                int select = entrada("Que elijes?");
+                if (select == 1) {
+                    ganarMana(cartaElegida);
+                }
+            } else {
+                System.out.println("Puedes jugarla para obtener mana pulsando 1\nPara atacar pulsando 2\nO cancelar con 0");
+                int select = entrada("Que elijes?");
+                if (select == 1) {
+                    ganarMana(cartaElegida);
+                    System.out.println("Ahora tu mana es de "+mana);
+                } else if (select == 2) {
+                    mana -= this.mano[cartaElegida].getCoste();
+                    moverManoMesa(cartaElegida, elegirCartaDestino());
+                }
+            }
+        } while (mano[cartaElegida] != null);
+        //Test
+        System.out.println("Esta es tu mano:");
+        for (Carta cartaActual : this.mano) {
+            if(cartaActual!=null){
+            System.out.println("Vida: " + cartaActual.getVida() + " Ataque: " + cartaActual.getAtaque() + " Coste: " + cartaActual.getCoste());
+            }else{
+                System.out.println("Carta ya jugada");
+            }
+        }
+        //End test
     }
 }
