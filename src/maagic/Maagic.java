@@ -28,7 +28,10 @@ public class Maagic {
         j1.moverManoMesa(j1.elegirCartaOrigen(),j1.elegirCartaDestino());
         j1.moverManoMesa(j1.elegirCartaOrigen(),j1.elegirCartaDestino());
         j1.moverManoMesa(j1.elegirCartaOrigen(),j1.elegirCartaDestino());
-        
+        //Se realizan los ataques
+        //(Escribir metodos para realizar el ataque, que ocurre si la carta pierde toda su vida,
+        //que el jugador reciba daño si no hay carta enfrente)
+        //Empieza el turno del jugador 2
     }
     
 }
