@@ -66,6 +66,9 @@ public class Jugador {
 
     //Metodos del jugador
     public void cogerMano() {
+        //Lo primero el jugador gana 1 punto de maná
+        mana+=1;
+        //A continuacion coge 3 cartas, si no hay baraja el descarte y luego coje
         //coger estas dos lineas y meterlas en un metodo
         if (baraja.size() >= 3) {
             mano[0] = baraja.get(baraja.size() - 1);
