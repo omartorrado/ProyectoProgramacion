@@ -29,8 +29,9 @@ public class Maagic {
         do{
         j1.elegirCarta();
         j1.printMesa(j2);
+        
         }
-        while(j1.getMano(0)!=null&&j1.getMano(1)!=null&&j1.getMano(2)!=null);
+        while((j1.hayCarta(0)||j1.hayCarta(1)||j1.hayCarta(2))==true);
         //Se realizan los ataques
         j1.realizarAtaque(j2);
         if(j2.getVida()<1){
@@ -43,7 +44,7 @@ public class Maagic {
         j2.elegirCarta();
         j2.printMesa(j1);
         }
-        while(j2.getMano(0)!=null&&j2.getMano(1)!=null&&j2.getMano(2)!=null);
+        while((j2.hayCarta(0)||j2.hayCarta(1)||j2.hayCarta(2))==true);
         //Se realizan los ataques
         j2.realizarAtaque(j1);
         }

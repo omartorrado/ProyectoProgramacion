@@ -16,8 +16,8 @@ public class Carta {
     private int ataque;
     private int coste;
 
-    public void setVida(int vida) {
-        this.vida = vida;
+    public void setVida(int cartaAtaque) {
+        this.vida -= cartaAtaque;
     }
 
     public Carta(int vida, int ataque, int coste) {

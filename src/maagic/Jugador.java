@@ -66,6 +66,16 @@ public class Jugador {
 
     public Carta getMano(int i) {
         return mano[i];
+            
+    }
+    
+    public boolean hayCarta(int i){
+        if(mano[i]==null){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     //Metodos del jugador
@@ -128,11 +138,17 @@ public class Jugador {
     }
 
     public void ganarMana(int pos) {
-        mana += Math.round((float) mano[pos].getCoste() / 2f);
-        if(mana<1){
+        int cartaMana = Math.round((float) mano[pos].getCoste() / 2f);
+        if(cartaMana<1){
             mana+=1;
         }
+        else{
+            mana+=cartaMana;
+        }
         mano[pos] = null;
+        //Test
+        System.out.println("Mana que da la carta: "+cartaMana);
+        //End Test
     }
 
     public void recibirAtaque(Carta c) {
