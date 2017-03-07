@@ -66,14 +66,13 @@ public class Jugador {
 
     public Carta getMano(int i) {
         return mano[i];
-            
+
     }
-    
-    public boolean hayCarta(int i){
-        if(mano[i]==null){
+
+    public boolean hayCarta(int i) {
+        if (mano[i] == null) {
             return false;
-        }
-        else{
+        } else {
             return true;
         }
     }
@@ -123,7 +122,7 @@ public class Jugador {
     public void moverManoMesa(int carta, int mesa) {
         if (this.mesa[mesa] == null) {
             this.mesa[mesa] = this.mano[carta];
-            this.mano[carta]= null;
+            this.mano[carta] = null;
         }
     }
 
@@ -139,15 +138,14 @@ public class Jugador {
 
     public void ganarMana(int pos) {
         int cartaMana = Math.round((float) mano[pos].getCoste() / 2f);
-        if(cartaMana<1){
-            mana+=1;
-        }
-        else{
-            mana+=cartaMana;
+        if (cartaMana < 1) {
+            mana += 1;
+        } else {
+            mana += cartaMana;
         }
         mano[pos] = null;
         //Test
-        System.out.println("Mana que da la carta: "+cartaMana);
+        System.out.println("Mana que da la carta: " + cartaMana + " Mana actual: " + mana);
         //End Test
     }
 
@@ -200,16 +198,16 @@ public class Jugador {
         System.out.println("Mesa:");
         for (int i = 0; i < 3; i++) {
             if (mesa[i] != null) {
-                System.out.println("J: slot0=" + mesa[i].getAtaque() + " " + mesa[i].getVida() + " " + mesa[i].getCoste());
+                System.out.println("J: slot" + i + "=" + mesa[i].getAtaque() + " " + mesa[i].getVida() + " " + mesa[i].getCoste());
             } else {
-                System.out.println("Sin carta");
+                System.out.println("Slot" + i + "Sin carta");
             }
         }
         for (int i = 0; i < 3; i++) {
             if (j.mesa[i] != null) {
-                System.out.println("O: slot0=" + j.mesa[i].getAtaque() + " " + j.mesa[i].getVida() + " " + j.mesa[i].getCoste());
+                System.out.println("O: slot" + i + "=" + j.mesa[i].getAtaque() + " " + j.mesa[i].getVida() + " " + j.mesa[i].getCoste());
             } else {
-                System.out.println("Sin carta");
+                System.out.println("Slot" + i + "Sin carta");
             }
         }
         System.out.println("Fin de jugada");
@@ -217,7 +215,19 @@ public class Jugador {
 
     public void elegirCarta() {
         int cartaElegida = -1;
-        System.out.println("Mana: "+mana);
+        //Test
+        System.out.println("Mana: " + mana);
+        System.out.println("Esta es tu mano:");
+        int count = 0;
+        for (Carta cartaActual : this.mano) {
+            if (cartaActual != null) {
+                System.out.println("Carta" + count + ": Vida: " + cartaActual.getVida() + " Ataque: " + cartaActual.getAtaque() + " Coste: " + cartaActual.getCoste());
+            } else {
+                System.out.println("Carta" + count + ": ya jugada");
+            }
+            count++;
+        }
+        //End test
         do {
             cartaElegida = elegirCartaOrigen();
             if (mano[cartaElegida].getCoste() > mana) {
@@ -231,22 +241,12 @@ public class Jugador {
                 int select = entrada("Que elijes?");
                 if (select == 1) {
                     ganarMana(cartaElegida);
-                    System.out.println("Ahora tu mana es de "+mana);
                 } else if (select == 2) {
                     mana -= this.mano[cartaElegida].getCoste();
                     moverManoMesa(cartaElegida, elegirCartaDestino());
                 }
             }
         } while (mano[cartaElegida] != null);
-        //Test
-        System.out.println("Esta es tu mano:");
-        for (Carta cartaActual : this.mano) {
-            if(cartaActual!=null){
-            System.out.println("Vida: " + cartaActual.getVida() + " Ataque: " + cartaActual.getAtaque() + " Coste: " + cartaActual.getCoste());
-            }else{
-                System.out.println("Carta ya jugada");
-            }
-        }
-        //End test
+
     }
 }
