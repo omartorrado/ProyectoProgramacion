@@ -7,16 +7,15 @@ package maagic.interfaz;
 
 /**
  *
- * @author Orom
+ * @author Delio
  */
-public class Menu extends javax.swing.JPanel {
+public class Menu extends javax.swing.JFrame {
 
     /**
-     * Creates new form Menu
+     * Creates new form Menu2
      */
     public Menu() {
         initComponents();
-        
     }
 
     /**
@@ -28,74 +27,115 @@ public class Menu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Botón1Jugar = new javax.swing.JButton();
-        Botón2Salir = new javax.swing.JButton();
-        Imajen1NombreLabel = new javax.swing.JLabel();
-        BotonBaraja = new javax.swing.JButton();
-        Imajen2FondoLabel = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        Boton1Jugar = new javax.swing.JButton();
+        Boton2Baraja = new javax.swing.JButton();
+        Boton3Salir = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Botón1Jugar.setFont(new java.awt.Font("Felix Titling", 0, 36)); // NOI18N
-        Botón1Jugar.setText("Jugar");
-        Botón1Jugar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Botón1Jugar.setBorderPainted(false);
-        Botón1Jugar.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Delio\\Documents\\NetBeansProjects\\ProyectoProgramacion\\src\\maagic\\interfaz\\serien_grosses_logo_239-Recuperado.png")); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, -1, 290));
+
+        Boton1Jugar.setBackground(new java.awt.Color(102, 140, 144));
+        Boton1Jugar.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
+        Boton1Jugar.setForeground(new java.awt.Color(102, 0, 102));
+        Boton1Jugar.setText("Jugar");
+        Boton1Jugar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Boton1Jugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Botón1JugarActionPerformed(evt);
+                Boton1JugarActionPerformed(evt);
             }
         });
-        add(Botón1Jugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 400, 640, 110));
+        getContentPane().add(Boton1Jugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(693, 360, 620, 60));
 
-        Botón2Salir.setFont(new java.awt.Font("Felix Titling", 0, 18)); // NOI18N
-        Botón2Salir.setText("Salir");
-        Botón2Salir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Botón2Salir.addActionListener(new java.awt.event.ActionListener() {
+        Boton2Baraja.setBackground(new java.awt.Color(102, 140, 144));
+        Boton2Baraja.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
+        Boton2Baraja.setForeground(new java.awt.Color(0, 102, 102));
+        Boton2Baraja.setText("Crear Baraja");
+        Boton2Baraja.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Boton2Baraja.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Botón2SalirActionPerformed(evt);
+                Boton2BarajaActionPerformed(evt);
             }
         });
-        add(Botón2Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 700, 410, 50));
+        getContentPane().add(Boton2Baraja, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 470, 440, 50));
 
-        Imajen1NombreLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/serien_grosses_logo_239-Recuperado.png"))); // NOI18N
-        add(Imajen1NombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 1010, 330));
-
-        BotonBaraja.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
-        BotonBaraja.setText("Crear Baraja  ");
-        BotonBaraja.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        BotonBaraja.setBorderPainted(false);
-        BotonBaraja.addActionListener(new java.awt.event.ActionListener() {
+        Boton3Salir.setBackground(new java.awt.Color(102, 140, 144));
+        Boton3Salir.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
+        Boton3Salir.setForeground(new java.awt.Color(153, 0, 0));
+        Boton3Salir.setText("Salir");
+        Boton3Salir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Boton3Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonBarajaActionPerformed(evt);
+                Boton3SalirActionPerformed(evt);
             }
         });
-        add(BotonBaraja, new org.netbeans.lib.awtextra.AbsoluteConstraints(713, 580, 520, 50));
+        getContentPane().add(Boton3Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 570, 200, 50));
 
-        Imajen2FondoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/The-dragon-of-hell-liam-a-dragon-37509157-1920-1080.jpg"))); // NOI18N
-        Imajen2FondoLabel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        add(Imajen2FondoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Delio\\Documents\\NetBeansProjects\\ProyectoProgramacion\\src\\maagic\\interfaz\\The-dragon-of-hell-liam-a-dragon-37509157-1920-1080.jpg")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Botón1JugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botón1JugarActionPerformed
-        Interfaz2 Jugar=new Interfaz2();
-        Jugar.setVisible(true);
-    }//GEN-LAST:event_Botón1JugarActionPerformed
-
-    private void Botón2SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botón2SalirActionPerformed
+    private void Boton3SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton3SalirActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_Botón2SalirActionPerformed
+    }//GEN-LAST:event_Boton3SalirActionPerformed
 
-    private void BotonBarajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBarajaActionPerformed
-        Baraja Baraja=new Baraja();
+    private void Boton1JugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton1JugarActionPerformed
+        Interfaz2 Jugar = new Interfaz2();
+        Jugar.setVisible(true);
+    }//GEN-LAST:event_Boton1JugarActionPerformed
+
+    private void Boton2BarajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton2BarajaActionPerformed
+        Baraja Baraja = new Baraja();
         Baraja.setVisible(true);
-    }//GEN-LAST:event_BotonBarajaActionPerformed
+    }//GEN-LAST:event_Boton2BarajaActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Menu().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonBaraja;
-    private javax.swing.JButton Botón1Jugar;
-    private javax.swing.JButton Botón2Salir;
-    private javax.swing.JLabel Imajen1NombreLabel;
-    private javax.swing.JLabel Imajen2FondoLabel;
+    private javax.swing.JButton Boton1Jugar;
+    private javax.swing.JButton Boton2Baraja;
+    private javax.swing.JButton Boton3Salir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
