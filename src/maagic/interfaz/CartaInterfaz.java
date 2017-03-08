@@ -64,6 +64,8 @@ public class CartaInterfaz extends javax.swing.JPanel {
         Coste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Coste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/mana.png"))); // NOI18N
         add(Coste, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 60));
+
+        ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(153, 102, 0)));
         add(ImagenesFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 310));
     }// </editor-fold>//GEN-END:initComponents
 
