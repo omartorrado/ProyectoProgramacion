@@ -13,6 +13,7 @@ import maagic.interfaz.CartaInterfad;
  * @author Orom
  */
 public class Carta extends JPanel {
+ 
     //Aki iran las variables ataque,defensa,coste, y en caso de haberlos habilidades
 //especiales o asi
     private int vida;
@@ -22,6 +23,7 @@ public class Carta extends JPanel {
 
     public void VisualizarInterfad() {
         Carta.setVisible(true);
+        
         
     }
     public void setVida(int cartaAtaque) {

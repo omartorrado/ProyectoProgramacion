@@ -40,22 +40,22 @@ public class CartaInterfad extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Variable1Vida.setText("GetVida");
-        add(Variable1Vida, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, -1, -1));
+        add(Variable1Vida, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, -1, -1));
 
         Variable2Ataque.setText("GetAtaque");
         add(Variable2Ataque, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
 
         Variable3Coste.setText("GetCoste");
-        add(Variable3Coste, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, -1));
+        add(Variable3Coste, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, -1, -1));
 
         Vida.setText("Vida");
-        add(Vida, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, -1));
+        add(Vida, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, -1, -1));
 
         Ataque.setText("Ataque");
         add(Ataque, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, -1, -1));
 
         Coste.setText("Coste");
-        add(Coste, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, -1, -1));
+        add(Coste, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, -1, -1));
 
         ImagenesFondo.setText("jLabel1");
         add(ImagenesFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 310));
