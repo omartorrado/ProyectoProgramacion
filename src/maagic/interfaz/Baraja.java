@@ -55,10 +55,22 @@ public class Baraja extends javax.swing.JPanel {
             .addGap(0, 208, Short.MAX_VALUE)
         );
 
+        PasoaCargarJugador2.setBackground(new java.awt.Color(0, 153, 153));
+        PasoaCargarJugador2.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
+        PasoaCargarJugador2.setForeground(new java.awt.Color(51, 0, 153));
         PasoaCargarJugador2.setText("Cargar Baraja");
+        PasoaCargarJugador2.setToolTipText("");
+        PasoaCargarJugador2.setBorder(null);
+        PasoaCargarJugador2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        PasoaCargarJugador2.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
 
+        RetornoMenu.setBackground(new java.awt.Color(0, 153, 153));
+        RetornoMenu.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
+        RetornoMenu.setForeground(new java.awt.Color(153, 0, 0));
         RetornoMenu.setText("Volver");
 
+        GuardarBaraja.setBackground(new java.awt.Color(0, 153, 153));
+        GuardarBaraja.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
         GuardarBaraja.setText("Guardar Baraja");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
