@@ -31,6 +31,7 @@ public class Menu extends javax.swing.JPanel {
         Botón1Jugar = new javax.swing.JButton();
         Botón2Salir = new javax.swing.JButton();
         Imajen1NombreLabel = new javax.swing.JLabel();
+        BotonBaraja = new javax.swing.JButton();
         Imajen2FondoLabel = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -54,10 +55,21 @@ public class Menu extends javax.swing.JPanel {
                 Botón2SalirActionPerformed(evt);
             }
         });
-        add(Botón2Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 630, 410, 50));
+        add(Botón2Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 700, 410, 50));
 
         Imajen1NombreLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/serien_grosses_logo_239-Recuperado.png"))); // NOI18N
         add(Imajen1NombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 1010, 330));
+
+        BotonBaraja.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
+        BotonBaraja.setText("Crear Baraja  ");
+        BotonBaraja.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BotonBaraja.setBorderPainted(false);
+        BotonBaraja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonBarajaActionPerformed(evt);
+            }
+        });
+        add(BotonBaraja, new org.netbeans.lib.awtextra.AbsoluteConstraints(713, 580, 520, 50));
 
         Imajen2FondoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/The-dragon-of-hell-liam-a-dragon-37509157-1920-1080.jpg"))); // NOI18N
         Imajen2FondoLabel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -65,15 +77,22 @@ public class Menu extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Botón1JugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botón1JugarActionPerformed
-        
+        Interfaz2 Jugar=new Interfaz2();
+        Jugar.setVisible(true);
     }//GEN-LAST:event_Botón1JugarActionPerformed
 
     private void Botón2SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botón2SalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_Botón2SalirActionPerformed
 
+    private void BotonBarajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBarajaActionPerformed
+        Baraja Baraja=new Baraja();
+        Baraja.setVisible(true);
+    }//GEN-LAST:event_BotonBarajaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonBaraja;
     private javax.swing.JButton Botón1Jugar;
     private javax.swing.JButton Botón2Salir;
     private javax.swing.JLabel Imajen1NombreLabel;
