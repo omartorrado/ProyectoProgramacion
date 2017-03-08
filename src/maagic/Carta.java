@@ -6,7 +6,7 @@
 package maagic;
 
 import javax.swing.JPanel;
-import maagic.interfaz.CartaInterfad;
+
 
 /**
  *
@@ -19,13 +19,8 @@ public class Carta extends JPanel {
     private int vida;
     private int ataque;
     private int coste;
-    private CartaInterfad Carta = new CartaInterfad();
+    
 
-    public void VisualizarInterfad() {
-        Carta.setVisible(true);
-        
-        
-    }
     public void setVida(int cartaAtaque) {
         this.vida -= cartaAtaque;
     }
