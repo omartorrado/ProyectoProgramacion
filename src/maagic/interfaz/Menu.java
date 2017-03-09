@@ -132,7 +132,7 @@ private Dimension dim;
     }//GEN-LAST:event_Boton2BarajaActionPerformed
 
     private void Boton3SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton3SalirActionPerformed
-       
+       System.exit(0);
     }//GEN-LAST:event_Boton3SalirActionPerformed
 
     /**
