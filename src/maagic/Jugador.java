@@ -100,7 +100,7 @@ public class Jugador {
         //Test
         System.out.println("Esta es tu mano:");
         for (Carta cartaActual : mano) {
-            System.out.println("Vida: " + cartaActual.getVida() + " Ataque: " + cartaActual.getAtaque() + " Coste: " + cartaActual.getCoste());
+            System.out.println("Has cogido -> Vida: " + cartaActual.getVida() + " Ataque: " + cartaActual.getAtaque() + " Coste: " + cartaActual.getCoste());
         }
         //End test
     }
