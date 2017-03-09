@@ -27,17 +27,14 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         Boton1Jugar = new javax.swing.JButton();
         Boton2Baraja = new javax.swing.JButton();
         Boton3Salir = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Delio\\Documents\\NetBeansProjects\\ProyectoProgramacion\\src\\maagic\\interfaz\\serien_grosses_logo_239-Recuperado.png")); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, -1, 290));
 
         Boton1Jugar.setBackground(new java.awt.Color(102, 140, 144));
         Boton1Jugar.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
@@ -75,15 +72,15 @@ public class Menu extends javax.swing.JFrame {
         });
         getContentPane().add(Boton3Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 570, 200, 50));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Delio\\Documents\\NetBeansProjects\\ProyectoProgramacion\\src\\maagic\\interfaz\\serien_grosses_logo_239-Recuperado.png")); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, -1, 290));
+
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Delio\\Documents\\NetBeansProjects\\ProyectoProgramacion\\src\\maagic\\interfaz\\The-dragon-of-hell-liam-a-dragon-37509157-1920-1080.jpg")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void Boton3SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton3SalirActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_Boton3SalirActionPerformed
 
     private void Boton1JugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton1JugarActionPerformed
         Interfaz2 Jugar = new Interfaz2();
@@ -94,6 +91,10 @@ public class Menu extends javax.swing.JFrame {
         Baraja Baraja = new Baraja();
         Baraja.setVisible(true);
     }//GEN-LAST:event_Boton2BarajaActionPerformed
+
+    private void Boton3SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton3SalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_Boton3SalirActionPerformed
 
     /**
      * @param args the command line arguments
