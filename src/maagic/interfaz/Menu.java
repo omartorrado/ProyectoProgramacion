@@ -13,14 +13,18 @@ import java.awt.Toolkit;
  * @author Delio
  */
 public class Menu extends javax.swing.JFrame {
-private Dimension dim;
     /**
      * Creates new form Menu2
      */
     public Menu() {
         initComponents();
-        Dimensionpantalla dimension =new Dimensionpantalla();
-        
+        DimensionPantalla.adaptarFrame(this);
+        DimensionPantalla.adaptarResolucion(jLabel1);
+        DimensionPantalla.adaptarResolucion(jLabel2);
+        DimensionPantalla.adaptarResolucion(jPanel1);
+        DimensionPantalla.adaptarResolucion(Boton1Jugar);
+        DimensionPantalla.adaptarResolucion(Boton2Baraja);
+        DimensionPantalla.adaptarResolucion(Boton3Salir);
        
       
     }
@@ -36,18 +40,17 @@ private Dimension dim;
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         Boton3Salir = new javax.swing.JButton();
         Boton2Baraja = new javax.swing.JButton();
         Boton1Jugar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Delio\\Documents\\NetBeansProjects\\ProyectoProgramacion\\src\\maagic\\interfaz\\serien_grosses_logo_239-Recuperado.png")); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, -1, 290));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1930, 1080));
 
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -113,9 +116,6 @@ private Dimension dim;
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 300, 630, 230));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Delio\\Documents\\NetBeansProjects\\ProyectoProgramacion\\src\\maagic\\interfaz\\The-dragon-of-hell-liam-a-dragon-37509157-1920-1080.jpg")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1930, 1080));
 
         pack();
         setLocationRelativeTo(null);

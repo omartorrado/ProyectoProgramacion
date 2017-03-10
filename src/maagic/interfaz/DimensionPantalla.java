@@ -9,20 +9,36 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Toolkit;
 import javax.swing.JComponent;
+import javax.swing.JFrame;
 
 /**
  *
  * @author Delio
  */
-public class Dimensionpantalla {
+public class DimensionPantalla {
+    
+    public static void adaptarFrame(JFrame f){
+        Toolkit tk=Toolkit.getDefaultToolkit();
+        Dimension tamaño=tk.getScreenSize();
+        System.out.println("Nuevo tamaño: "+tamaño.toString());
+        System.out.println("Antiguo tamaño: "+f.getSize());
+        f.setSize(tamaño);
+        System.out.println("Tamaño modificado: "+f.getSize());
+        f.repaint();
+    }
     
     //Metodo para ajustar el tamaño del componente a la pantalla, manteniendo
     //La proporcion de tamaño original
     public static void resizeComponente(JComponent j){
     Toolkit tk=Toolkit.getDefaultToolkit();
     Dimension tamaño=tk.getScreenSize();
-    Dimension tamañoNuevo=new Dimension(((int)((j.getWidth()/j.getRootPane().getWidth())*tamaño.getWidth())),((int)((j.getHeight()/j.getRootPane().getHeight())*tamaño.getHeight())));
+    float proporcionH=(float)tamaño.width/(float)j.getRootPane().getWidth();
+    float proporcionV=(float)tamaño.height/(float)j.getRootPane().getHeight();
+    Dimension tamañoNuevo=new Dimension((int)((float)j.getWidth()*proporcionH),(int)((float)j.getHeight()*proporcionV));
+    System.out.println("Componente"+j.toString());
+    System.out.println("Tamaño original: "+j.getWidth()+" "+j.getHeight());
     j.setSize(tamañoNuevo);
+    System.out.println("Nuevo tamaño: "+j.getWidth()+" "+j.getHeight());
     /*
     //Ancho del componente
     int jW=j.getWidth();
@@ -43,17 +59,26 @@ public class Dimensionpantalla {
     public static void recolocarComponente(JComponent j){
         Toolkit tk=Toolkit.getDefaultToolkit();
         Dimension tamaño=tk.getScreenSize();
-        float proporcionH=tamaño.width/j.getRootPane().getWidth();
-        float proporcionV=tamaño.height/j.getRootPane().getHeight();
+        float proporcionH=(float)tamaño.width/(float)j.getRootPane().getWidth();
+        float proporcionV=(float)tamaño.height/(float)j.getRootPane().getHeight();
         Point posicionNueva=new Point((int)(j.getLocation().x*proporcionH),(int)(j.getLocation().y*proporcionV));
+        //Test
+        System.out.println("location original:"+j.getLocation().x+" "+j.getLocation().y);
+        System.out.println("proporcion: "+proporcionH+" "+proporcionV);
+        //End Test
         j.setLocation(posicionNueva);
-                
+        //Test
+        System.out.println("Posicion nueva :"+j.getLocation());
+        //End Test        
     }
     
     //Meto ambos metodos en uno por comodidad. Los dejo escritos por separado por claridad
     public static void adaptarResolucion(JComponent j){
         resizeComponente(j);
         recolocarComponente(j);
+        
+        j.repaint();
+        
     }
     
 }
