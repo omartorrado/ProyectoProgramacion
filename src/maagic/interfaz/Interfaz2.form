@@ -509,6 +509,9 @@
       </Layout>
     </Container>
     <Container class="javax.swing.JPanel" name="jugador2Mano3">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jugador2Mano3FocusGained"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -539,6 +542,9 @@
       </Layout>
     </Container>
     <Container class="javax.swing.JPanel" name="jugador2Fila3Hueco2">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jugador2Fila3Hueco2KeyPressed"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">

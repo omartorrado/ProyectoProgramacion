@@ -18,6 +18,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 public class DimensionPantalla extends JPanel{
     
+    
+    
     public static void adaptarFrame(JFrame f){
         Toolkit tk=Toolkit.getDefaultToolkit();
         Dimension tamaño=tk.getScreenSize();
@@ -25,7 +27,8 @@ public class DimensionPantalla extends JPanel{
         System.out.println("Antiguo tamaño: "+f.getSize());
         f.setSize(tamaño);
         System.out.println("Tamaño modificado: "+f.getSize());
-        f.repaint();
+        
+        f.setLocationRelativeTo(null);
     }
     
     //Metodo para ajustar el tamaño del componente a la pantalla, manteniendo
@@ -38,8 +41,10 @@ public class DimensionPantalla extends JPanel{
     Dimension tamañoNuevo=new Dimension((int)((float)j.getWidth()*proporcionH),(int)((float)j.getHeight()*proporcionV));
     System.out.println("Componente"+j.toString());
     System.out.println("Tamaño original: "+j.getWidth()+" "+j.getHeight());
+        System.out.println("Tamaño del panel Root: "+j.getRootPane().getWidth());
     j.setSize(tamañoNuevo);
     System.out.println("Nuevo tamaño: "+j.getWidth()+" "+j.getHeight());
+    
     /*
     //Ancho del componente
     int jW=j.getWidth();
@@ -77,8 +82,7 @@ public class DimensionPantalla extends JPanel{
     public static void adaptarResolucion(JComponent j){
         resizeComponente(j);
         recolocarComponente(j);
-        
-        j.repaint();
+              
         
     }
     public static void  TransparentarJpanel (JPanel x){

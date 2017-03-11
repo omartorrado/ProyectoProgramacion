@@ -6,6 +6,8 @@
 package maagic.interfaz;
 
 import java.awt.BorderLayout;
+import java.util.HashSet;
+import java.util.Set;
 
 
 
@@ -20,18 +22,26 @@ public class Menu extends javax.swing.JFrame {
     
 
     public Menu() {
+        
+                   
        
         initComponents();
-//        DimensionPantalla.adaptarFrame(this);
-//        DimensionPantalla.adaptarResolucion(jLabel1);
-//        DimensionPantalla.adaptarResolucion(jLabel2);
-//        DimensionPantalla.adaptarResolucion(jPanel1);
-//        DimensionPantalla.adaptarResolucion(Boton1Jugar);
-//        DimensionPantalla.adaptarResolucion(Boton2Baraja);
-//        DimensionPantalla.adaptarResolucion(Boton3Salir);
-        DimensionPantalla.TransparentarJpanel(menu);
-        menu.setOpaque(true);
+        DimensionPantalla.adaptarFrame(this);
+        //panelprincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        DimensionPantalla.adaptarResolucion(panelprincipal);
+        panelprincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        DimensionPantalla.adaptarResolucion(menu);
+        DimensionPantalla.adaptarResolucion(Boton1Jugar);
+        DimensionPantalla.adaptarResolucion(Boton2Baraja);
+        DimensionPantalla.adaptarResolucion(Boton3Salir);
+        DimensionPantalla.adaptarResolucion(imagentitulo);
+        DimensionPantalla.adaptarResolucion(imagenfondo);
+        menu.setOpaque(false);
         barajamenu.setVisible(false);
+        
+        
+        
+                
 
     }
 
@@ -64,15 +74,19 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
+        setMinimumSize(new java.awt.Dimension(800, 600));
         setUndecorated(true);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1920, 1080));
+        getContentPane().setLayout(null);
 
         panelprincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         menu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         menu.setFocusCycleRoot(true);
         menu.setInheritsPopupMenu(true);
-        menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        menu.setLayout(null);
 
         Boton3Salir.setBackground(new java.awt.Color(102, 140, 144));
         Boton3Salir.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
@@ -84,7 +98,8 @@ public class Menu extends javax.swing.JFrame {
                 Boton3SalirActionPerformed(evt);
             }
         });
-        menu.add(Boton3Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 174, 212, 35));
+        menu.add(Boton3Salir);
+        Boton3Salir.setBounds(200, 174, 212, 35);
 
         Boton2Baraja.setBackground(new java.awt.Color(102, 140, 144));
         Boton2Baraja.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
@@ -96,7 +111,8 @@ public class Menu extends javax.swing.JFrame {
                 Boton2BarajaActionPerformed(evt);
             }
         });
-        menu.add(Boton2Baraja, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 501, 45));
+        menu.add(Boton2Baraja);
+        Boton2Baraja.setBounds(60, 100, 501, 45);
 
         Boton1Jugar.setBackground(new java.awt.Color(102, 140, 144));
         Boton1Jugar.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
@@ -108,7 +124,8 @@ public class Menu extends javax.swing.JFrame {
                 Boton1JugarActionPerformed(evt);
             }
         });
-        menu.add(Boton1Jugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 11, 575, 61));
+        menu.add(Boton1Jugar);
+        Boton1Jugar.setBounds(26, 11, 575, 61);
 
         panelprincipal.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 425, 620, 220));
 
@@ -129,7 +146,8 @@ public class Menu extends javax.swing.JFrame {
         imagenfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/ImagenFondo.jpg"))); // NOI18N
         panelprincipal.add(imagenfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1920, 1100));
 
-        getContentPane().add(panelprincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
+        getContentPane().add(panelprincipal);
+        panelprincipal.setBounds(0, 0, 1920, 1080);
 
         pack();
         setLocationRelativeTo(null);
@@ -194,15 +212,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton Boton1Jugar;
     private javax.swing.JButton Boton2Baraja;
     private javax.swing.JButton Boton3Salir;
-    private javax.swing.JPanel Jugar;
-    private javax.swing.JPanel Jugar1;
-    private javax.swing.JPanel Jugar2;
     private javax.swing.JPanel barajamenu;
     private javax.swing.JLabel imagenfondo;
     private javax.swing.JLabel imagentitulo;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel menu;
     private javax.swing.JPanel panelprincipal;
     // End of variables declaration//GEN-END:variables

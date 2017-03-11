@@ -112,6 +112,7 @@ public class Baraja extends javax.swing.JPanel {
                 .addComponent(RetornoMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(81, 81, 81))
         );
+         
     }// </editor-fold>//GEN-END:initComponents
 
 

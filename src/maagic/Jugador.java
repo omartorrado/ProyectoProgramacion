@@ -7,6 +7,7 @@ package maagic;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.nio.file.FileSystems;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -37,6 +38,7 @@ public class Jugador {
     //Constructor
     public Jugador(String fileBaraja) {
         Scanner scBaraja;
+        
         File miBaraja = new File(fileBaraja);
         try {
             scBaraja = new Scanner(miBaraja);
@@ -70,7 +72,7 @@ public class Jugador {
     }
 
     public boolean hayCarta(int i) {
-        if (mano[i] == null) {
+        if(mano[i] == null) {
             return false;
         } else {
             return true;
