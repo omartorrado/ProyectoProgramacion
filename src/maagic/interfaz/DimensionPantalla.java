@@ -15,7 +15,8 @@ import javax.swing.JFrame;
  *
  * @author Delio
  */
-public class DimensionPantalla {
+import javax.swing.JPanel;
+public class DimensionPantalla extends JPanel{
     
     public static void adaptarFrame(JFrame f){
         Toolkit tk=Toolkit.getDefaultToolkit();
@@ -80,5 +81,10 @@ public class DimensionPantalla {
         j.repaint();
         
     }
+    public static void  TransparentarJpanel (JPanel x){
+x.setOpaque(false);
+
+
+}
     
 }
