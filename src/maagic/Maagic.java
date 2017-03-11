@@ -17,8 +17,8 @@ public class Maagic {
     public static void main(String[] args) {
         // Main. Aki instanciamos juego e interfaz
         //Creamos los 2 jugadores con sus barajas (en este caso la de prueba)
-        Jugador j1=new Jugador("./src/maagic/Cartas.txt");
-        Jugador j2=new Jugador("./src/maagic/Cartas.txt");
+        Jugador j1=new Jugador("barajas/Cartas.txt");
+        Jugador j2=new Jugador("barajas/Cartas.txt");
         //Se barajan ambos mazos
         j1.barajar();
         j2.barajar();

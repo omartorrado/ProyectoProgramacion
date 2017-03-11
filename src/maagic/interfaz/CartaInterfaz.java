@@ -45,28 +45,28 @@ public class CartaInterfaz extends javax.swing.JPanel {
 
         jLabelVida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelVida.setText("Vida");
-        add(jLabelVida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 50, 50));
+        add(jLabelVida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 50, 50));
 
         jLabelAtaque.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelAtaque.setText("Ataque");
-        add(jLabelAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 50, 50));
+        add(jLabelAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 50, 50));
 
         jLabelCoste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelCoste.setText("Coste");
-        add(jLabelCoste, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 50));
+        add(jLabelCoste, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 50, 50));
 
         Ataque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/espada.png"))); // NOI18N
-        add(Ataque, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 244, 50, 50));
+        add(Ataque, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 50, 50));
 
         Vida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/corazon.png"))); // NOI18N
-        add(Vida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 244, 50, 50));
+        add(Vida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 50, 50));
 
         Coste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Coste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/mana.png"))); // NOI18N
-        add(Coste, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 60));
+        add(Coste, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 60));
 
         ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(153, 102, 0)));
-        add(ImagenesFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 310));
+        add(ImagenesFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 250));
     }// </editor-fold>//GEN-END:initComponents
 
 

@@ -5,6 +5,8 @@
  */
 package maagic.interfaz;
 
+import java.awt.event.KeyEvent;
+
 /**
  *
  * @author Orom
@@ -295,6 +297,12 @@ public class Interfaz2 extends javax.swing.JFrame {
             .addGap(0, 150, Short.MAX_VALUE)
         );
 
+        jugador2Mano3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jugador2Mano3FocusGained(evt);
+            }
+        });
+
         javax.swing.GroupLayout jugador2Mano3Layout = new javax.swing.GroupLayout(jugador2Mano3);
         jugador2Mano3.setLayout(jugador2Mano3Layout);
         jugador2Mano3Layout.setHorizontalGroup(
@@ -316,6 +324,12 @@ public class Interfaz2 extends javax.swing.JFrame {
             jugador2Fila3Hueco1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        jugador2Fila3Hueco2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jugador2Fila3Hueco2KeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jugador2Fila3Hueco2Layout = new javax.swing.GroupLayout(jugador2Fila3Hueco2);
         jugador2Fila3Hueco2.setLayout(jugador2Fila3Hueco2Layout);
@@ -580,6 +594,14 @@ public class Interfaz2 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jugador2Mano3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador2Mano3FocusGained
+        
+    }//GEN-LAST:event_jugador2Mano3FocusGained
+
+    private void jugador2Fila3Hueco2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador2Fila3Hueco2KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador2Fila3Hueco2KeyPressed
 
     /**
      * @param args the command line arguments
