@@ -9,7 +9,7 @@ package maagic.interfaz;
  *
  * @author Orom
  */
-public class Baraja extends javax.swing.JPanel {
+public class Baraja1 extends javax.swing.JPanel {
     
     //Varaibles
     private javax.swing.JButton cargarBaraja;
@@ -21,7 +21,7 @@ public class Baraja extends javax.swing.JPanel {
     
     
     
-    public Baraja(){
+    public Baraja1(){
         initComponents();
     }
     
