@@ -27,7 +27,6 @@ public class Menu extends javax.swing.JFrame {
        
         initComponents();
         DimensionPantalla.adaptarFrame(this);
-        //panelprincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         DimensionPantalla.adaptarResolucion(panelprincipal);
         panelprincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         DimensionPantalla.adaptarResolucion(menu);
@@ -36,7 +35,6 @@ public class Menu extends javax.swing.JFrame {
         DimensionPantalla.adaptarResolucion(Boton3Salir);
         DimensionPantalla.adaptarResolucion(imagentitulo);
         DimensionPantalla.adaptarResolucion(imagenfondo);
-        menu.setOpaque(false);
         barajamenu.setVisible(false);
         
         
@@ -86,6 +84,7 @@ public class Menu extends javax.swing.JFrame {
         menu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         menu.setFocusCycleRoot(true);
         menu.setInheritsPopupMenu(true);
+        menu.setOpaque(false);
         menu.setLayout(null);
 
         Boton3Salir.setBackground(new java.awt.Color(102, 140, 144));
@@ -129,6 +128,8 @@ public class Menu extends javax.swing.JFrame {
 
         panelprincipal.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 425, 620, 220));
 
+        barajamenu.setOpaque(false);
+
         javax.swing.GroupLayout barajamenuLayout = new javax.swing.GroupLayout(barajamenu);
         barajamenu.setLayout(barajamenuLayout);
         barajamenuLayout.setHorizontalGroup(
@@ -144,7 +145,7 @@ public class Menu extends javax.swing.JFrame {
         panelprincipal.add(imagentitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(965, 395, -1, 290));
 
         imagenfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/ImagenFondo.jpg"))); // NOI18N
-        panelprincipal.add(imagenfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1920, 1100));
+        panelprincipal.add(imagenfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
 
         getContentPane().add(panelprincipal);
         panelprincipal.setBounds(0, 0, 1920, 1080);
@@ -154,6 +155,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Boton1JugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton1JugarActionPerformed
+        barajamenu.setOpaque(true);
         barajamenu.setVisible(true);
         menu.setVisible(false);
        
@@ -162,12 +164,9 @@ public class Menu extends javax.swing.JFrame {
 
     private void Boton2BarajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton2BarajaActionPerformed
         menu.setVisible(false);
-        Baraja barajaMenu=new Baraja();
-        barajaMenu.setSize(1920,1080);
-        barajamenu.setVisible(true);
-        barajamenu.add(barajaMenu, BorderLayout.CENTER);
-        barajamenu.revalidate();
-        barajamenu.repaint();
+        ElegirBaraja barajaMenu=new ElegirBaraja();
+        panelprincipal.add(barajaMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080), 2);
+        
     }//GEN-LAST:event_Boton2BarajaActionPerformed
 
     private void Boton3SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton3SalirActionPerformed

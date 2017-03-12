@@ -30,18 +30,36 @@ public class DimensionPantalla extends JPanel{
         
         f.setLocationRelativeTo(null);
     }
+    public static void adaptarPanel(JPanel j){
+        Toolkit tk=Toolkit.getDefaultToolkit();
+        Dimension tamaño=tk.getScreenSize();
+        j.setSize(tamaño);
+        j.setLocation(0,0);
+    }
     
     //Metodo para ajustar el tamaño del componente a la pantalla, manteniendo
     //La proporcion de tamaño original
     public static void resizeComponente(JComponent j){
     Toolkit tk=Toolkit.getDefaultToolkit();
     Dimension tamaño=tk.getScreenSize();
-    float proporcionH=(float)tamaño.width/(float)j.getRootPane().getWidth();
-    float proporcionV=(float)tamaño.height/(float)j.getRootPane().getHeight();
-    Dimension tamañoNuevo=new Dimension((int)((float)j.getWidth()*proporcionH),(int)((float)j.getHeight()*proporcionV));
     System.out.println("Componente"+j.toString());
+    float proporcionH=1;
+    float proporcionV=1;
+        try{
+            proporcionH=(float)tamaño.width/(float)j.getRootPane().getWidth();
+            proporcionV=(float)tamaño.height/(float)j.getRootPane().getHeight();
+            System.out.println("Tamaño del panel Root: "+j.getRootPane().getWidth()+" "+j.getRootPane().getHeight());
+        }
+        catch(NullPointerException e){
+            proporcionH=(float)tamaño.width/(float)j.getParent().getWidth();
+            proporcionV=(float)tamaño.height/(float)j.getParent().getHeight();
+            System.out.println("Tamaño del panel padre: "+j.getParent().getWidth()+" "+j.getParent().getHeight());
+        }
+    Dimension tamañoNuevo=new Dimension((int)((float)j.getWidth()*proporcionH),(int)((float)j.getHeight()*proporcionV));
+    
     System.out.println("Tamaño original: "+j.getWidth()+" "+j.getHeight());
-        System.out.println("Tamaño del panel Root: "+j.getRootPane().getWidth());
+        //Esto falla cuando pilla j.getParent() en lugar del RootPane
+        //System.out.println("Tamaño del panel Root: "+j.getRootPane().getWidth());
     j.setSize(tamañoNuevo);
     System.out.println("Nuevo tamaño: "+j.getWidth()+" "+j.getHeight());
     
@@ -65,8 +83,16 @@ public class DimensionPantalla extends JPanel{
     public static void recolocarComponente(JComponent j){
         Toolkit tk=Toolkit.getDefaultToolkit();
         Dimension tamaño=tk.getScreenSize();
-        float proporcionH=(float)tamaño.width/(float)j.getRootPane().getWidth();
-        float proporcionV=(float)tamaño.height/(float)j.getRootPane().getHeight();
+        float proporcionH=1;
+        float proporcionV=1;
+        try{
+            proporcionH=(float)tamaño.width/(float)j.getRootPane().getWidth();
+            proporcionV=(float)tamaño.height/(float)j.getRootPane().getHeight();
+        }
+        catch(NullPointerException e){
+            proporcionH=(float)tamaño.width/(float)j.getParent().getWidth();
+            proporcionV=(float)tamaño.height/(float)j.getParent().getHeight();
+        }
         Point posicionNueva=new Point((int)(j.getLocation().x*proporcionH),(int)(j.getLocation().y*proporcionV));
         //Test
         System.out.println("location original:"+j.getLocation().x+" "+j.getLocation().y);
@@ -82,13 +108,12 @@ public class DimensionPantalla extends JPanel{
     public static void adaptarResolucion(JComponent j){
         resizeComponente(j);
         recolocarComponente(j);
-              
-        
+                
     }
-    public static void  TransparentarJpanel (JPanel x){
-x.setOpaque(false);
+    
+    public static void TransparentarJpanel(JPanel x) {
+        x.setOpaque(false);
 
-
-}
+    }
     
 }
