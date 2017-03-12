@@ -18,8 +18,8 @@ public class ElegirBaraja extends javax.swing.JPanel {
         initComponents();
         this.setSize(800,600);
         DimensionPantalla.adaptarResolucion(jButtonCargar);
-        DimensionPantalla.adaptarResolucion(jButtonGuardar);
         DimensionPantalla.adaptarResolucion(jButtonVolver);
+        DimensionPantalla.adaptarResolucion(jButtonGuardar);
         DimensionPantalla.adaptarResolucion(jLabelFondo);
         DimensionPantalla.adaptarResolucion(jScrollPaneCartas);
         DimensionPantalla.adaptarResolucion(jScrollPaneBaraja);
@@ -41,8 +41,8 @@ public class ElegirBaraja extends javax.swing.JPanel {
         jScrollPaneBaraja = new javax.swing.JScrollPane();
         jPanelViewportBaraja = new javax.swing.JPanel();
         jButtonCargar = new javax.swing.JButton();
-        jButtonGuardar = new javax.swing.JButton();
         jButtonVolver = new javax.swing.JButton();
+        jButtonGuardar = new javax.swing.JButton();
         jScrollPaneCartas = new javax.swing.JScrollPane();
         jPanelViewportCartas = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -83,18 +83,23 @@ public class ElegirBaraja extends javax.swing.JPanel {
         add(jButtonCargar);
         jButtonCargar.setBounds(100, 280, 150, 50);
 
-        jButtonGuardar.setText("Volver");
+        jButtonVolver.setText("Volver");
+        jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVolverActionPerformed(evt);
+            }
+        });
+        add(jButtonVolver);
+        jButtonVolver.setBounds(550, 280, 150, 50);
+
+        jButtonGuardar.setText("Guardar baraja");
         jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonGuardarActionPerformed(evt);
             }
         });
         add(jButtonGuardar);
-        jButtonGuardar.setBounds(550, 280, 150, 50);
-
-        jButtonVolver.setText("Guardar baraja");
-        add(jButtonVolver);
-        jButtonVolver.setBounds(300, 280, 150, 50);
+        jButtonGuardar.setBounds(300, 280, 150, 50);
 
         jScrollPaneCartas.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPaneCartas.setViewportBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, java.awt.Color.lightGray));
@@ -143,6 +148,11 @@ public class ElegirBaraja extends javax.swing.JPanel {
     private void jButtonCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonCargarActionPerformed
+
+    private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        this.setVisible(false);
+        this.getParent().getComponent(0).setVisible(true);
+    }//GEN-LAST:event_jButtonVolverActionPerformed
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
         // TODO add your handling code here:
