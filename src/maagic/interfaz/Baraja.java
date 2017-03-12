@@ -5,6 +5,8 @@
  */
 package maagic.interfaz;
 
+import java.awt.BorderLayout;
+
 /**
  *
  * @author Delio
@@ -32,6 +34,7 @@ public class Baraja extends javax.swing.JPanel {
         PasoaCargarJugador2 = new javax.swing.JButton();
         RetornoMenu = new javax.swing.JButton();
         GuardarBaraja = new javax.swing.JButton();
+        panelvolvermenu=new javax.swing.JPanel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -54,6 +57,15 @@ public class Baraja extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 208, Short.MAX_VALUE)
         );
+        javax.swing.GroupLayout jPanel3Layout=new javax.swing.GroupLayout(panelvolvermenu);
+        panelvolvermenu.setLayout(jPanel3Layout);
+         jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1374, Short.MAX_VALUE));
+         jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 208, Short.MAX_VALUE)
+        );
 
         PasoaCargarJugador2.setBackground(new java.awt.Color(0, 153, 153));
         PasoaCargarJugador2.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
@@ -68,6 +80,12 @@ public class Baraja extends javax.swing.JPanel {
         RetornoMenu.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
         RetornoMenu.setForeground(new java.awt.Color(153, 0, 0));
         RetornoMenu.setText("Volver");
+        RetornoMenu.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RetornoMenuActionPerformed(evt);
+            }
+        });
 
         GuardarBaraja.setBackground(new java.awt.Color(0, 153, 153));
         GuardarBaraja.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
@@ -114,7 +132,18 @@ public class Baraja extends javax.swing.JPanel {
         );
          
     }// </editor-fold>//GEN-END:initComponents
+private void RetornoMenuActionPerformed(java.awt.event.ActionEvent evt) {  
+Menu VolverMenu =new Menu();
+VolverMenu.setSize(1920, 1080);
+panelvolvermenu.setVisible(true);
+panelvolvermenu.add(VolverMenu, BorderLayout.CENTER);
+panelvolvermenu.revalidate();
+panelvolvermenu.repaint();
 
+
+
+
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton GuardarBaraja;
@@ -122,5 +151,6 @@ public class Baraja extends javax.swing.JPanel {
     private javax.swing.JButton RetornoMenu;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel panelvolvermenu;
     // End of variables declaration//GEN-END:variables
 }

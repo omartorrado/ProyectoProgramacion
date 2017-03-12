@@ -85,10 +85,9 @@ public class DimensionPantalla extends JPanel{
               
         
     }
-    public static void  TransparentarJpanel (JPanel x){
-x.setOpaque(false);
+    public static void TransparentarJpanel(JPanel x) {
+        x.setOpaque(false);
 
-
-}
+    }
     
 }
