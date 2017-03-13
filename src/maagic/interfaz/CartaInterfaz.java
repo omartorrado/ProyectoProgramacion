@@ -22,6 +22,9 @@ public class CartaInterfaz extends javax.swing.JPanel {
         jLabelAtaque.setText("" + c.getAtaque());
         jLabelVida.setText("" + c.getVida());
         jLabelCoste.setText("" + c.getCoste());
+        ImagenesFondo.setSize(180, 250);
+        //Muy lento este metodo
+        DimensionPantalla.resizeImagen("/maagic/img/wood_repeatable.jpg", ImagenesFondo);
     }
 
     /**
@@ -67,6 +70,7 @@ public class CartaInterfaz extends javax.swing.JPanel {
         Coste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/mana.png"))); // NOI18N
         add(Coste, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 60));
 
+        ImagenesFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/wood_repeatable.jpg"))); // NOI18N
         ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(153, 102, 0)));
         add(ImagenesFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 250));
     }// </editor-fold>//GEN-END:initComponents

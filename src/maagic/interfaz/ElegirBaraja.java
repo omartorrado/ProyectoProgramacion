@@ -5,8 +5,8 @@
  */
 package maagic.interfaz;
 
+import java.awt.Dimension;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 import maagic.Carta;
@@ -54,7 +54,6 @@ public class ElegirBaraja extends javax.swing.JPanel {
 
         jScrollPaneBaraja = new javax.swing.JScrollPane();
         jPanelViewportBaraja = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jButtonCargar = new javax.swing.JButton();
         jButtonVolver = new javax.swing.JButton();
         jButtonGuardar = new javax.swing.JButton();
@@ -73,15 +72,9 @@ public class ElegirBaraja extends javax.swing.JPanel {
         jScrollPaneBaraja.setOpaque(false);
 
         jPanelViewportBaraja.setBackground(new java.awt.Color(255, 153, 255));
-        jPanelViewportBaraja.setMinimumSize(new java.awt.Dimension(600, 180));
-        jPanelViewportBaraja.setPreferredSize(new java.awt.Dimension(600, 250));
-        jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, 1));
-
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/wood_repeatable.jpg"))); // NOI18N
-        jLabel3.setOpaque(true);
-        jPanelViewportBaraja.add(jLabel3);
-
+        jPanelViewportBaraja.setMinimumSize(new java.awt.Dimension(600, 250));
+        jPanelViewportBaraja.setPreferredSize(new java.awt.Dimension(5555, 250));
+        jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, 30));
         jScrollPaneBaraja.setViewportView(jPanelViewportBaraja);
 
         add(jScrollPaneBaraja);
@@ -165,11 +158,29 @@ public class ElegirBaraja extends javax.swing.JPanel {
         String opcionEscogida=path.getPath()+"/"+nombreArchivo;
         System.out.println(opcionEscogida);
         File archivo=new File(opcionEscogida);
-        
+        /*
+        //Establecemos el tamaño del viewport en base al numero de cartas
+        try{
+        scBaraja = new Scanner(archivo);
+        int numeroDeCartas=0;
+        while (scBaraja.hasNextLine()) {
+            numeroDeCartas++;
+        }
+        scBaraja.close();
+            System.out.println("cambiamos tamaño scrollview");
+        jPanelViewportBaraja.setSize(185*numeroDeCartas ,250);
+        jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, numeroDeCartas));
+        }catch(Exception e){
+            System.out.println("Error");
+        }
+            //Añadimos las cartas de dicha baraja al viewport
+        */
         try {
             scBaraja = new Scanner(archivo);
-            int posicion=0;
             jPanelViewportBaraja.removeAll();
+            int numeroDeCartas=22;
+            
+            
             while (scBaraja.hasNextLine()) {
                 int cvida = scBaraja.nextInt();
                 int cataque = scBaraja.nextInt();
@@ -179,19 +190,18 @@ public class ElegirBaraja extends javax.swing.JPanel {
                 displayCarta.setOpaque(false);
                 jPanelViewportBaraja.add(displayCarta);
                 displayCarta.setSize(180,250);
-                //displayCarta.setLocation(posicion, 5);
-                
-                posicion+=180;
                 System.out.println("Carta Creada");
+                
             }
+            jPanelViewportBaraja.setSize(new Dimension(5555,250));
+            jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, 30));
             scBaraja.close();
-            int numCartas=jPanelViewportBaraja.getComponentCount();
-            jPanelViewportBaraja.setSize(jPanelViewportBaraja.getComponent(0).getWidth()*numCartas ,250);
-            jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, numCartas));
             
-            System.out.println(jPanelViewportBaraja.getSize());
+            
+            
+            
         } catch (Exception e) {
-            System.out.println("Error");
+            System.out.println("Error Carta");
         }
     }//GEN-LAST:event_jButtonCargarActionPerformed
 
@@ -211,7 +221,6 @@ public class ElegirBaraja extends javax.swing.JPanel {
     private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JPanel jPanelViewportBaraja;
     private javax.swing.JPanel jPanelViewportCartas;
