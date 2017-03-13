@@ -206,7 +206,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
         
         try {
             scBaraja = new Scanner(archivo);
-            int posicion=5;
+            int posicion=0;
             jPanelViewportBaraja.removeAll();
             while (scBaraja.hasNextLine()) {
                 int cvida = scBaraja.nextInt();
@@ -214,16 +214,17 @@ public class ElegirBaraja extends javax.swing.JPanel {
                 int ccoste = scBaraja.nextInt();
                 Carta c = new Carta(cvida, cataque, ccoste);
                 CartaInterfaz displayCarta=new CartaInterfaz(c);
-                displayCarta.setSize(180,250);
-                jPanelViewportBaraja.setSize(posicion+185,250);
+                
                 jPanelViewportBaraja.add(displayCarta);
+                displayCarta.setSize(180,250);
                 //displayCarta.setLocation(posicion, 5);
                 
-                posicion+=185;
+                posicion+=180;
                 System.out.println("Carta Creada");
             }
             scBaraja.close();
-            jPanelViewportBaraja.setSize(posicion+185,250);
+            jPanelViewportBaraja.setSize(posicion,250);
+            System.out.println(jPanelViewportBaraja.getSize());
         } catch (Exception e) {
             System.out.println("Error");
         }
