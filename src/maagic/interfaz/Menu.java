@@ -40,15 +40,8 @@ public class Menu extends javax.swing.JFrame {
         DimensionPantalla.adaptarResolucion(imagentitulo);
         DimensionPantalla.adaptarResolucion(imagenfondo);
         //El siguiente codigo cambia el tamaño de la imagen de imagentitulo
-        try{
-        BufferedImage titulo=ImageIO.read(getClass().getResource("/maagic/interfaz/serien_grosses_logo_239-Recuperado.png"));
-        ImageIcon iconoResize=new ImageIcon(titulo.getScaledInstance(imagentitulo.getWidth(), imagentitulo.getHeight(), Image.SCALE_DEFAULT));
-        imagentitulo.setIcon(iconoResize);
-        }
-        catch(IOException e){
-            System.out.println("Error");
-        }
-        //Aki acaba lo k deberia ser un metodo
+        DimensionPantalla.resizeImagen("/maagic/interfaz/serien_grosses_logo_239-Recuperado.png",imagentitulo);
+        
         
         
         
