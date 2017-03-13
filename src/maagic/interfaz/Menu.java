@@ -5,9 +5,9 @@
  */
 package maagic.interfaz;
 
-import java.awt.BorderLayout;
-import java.util.HashSet;
-import java.util.Set;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 
 
@@ -37,10 +37,12 @@ public class Menu extends javax.swing.JFrame {
         DimensionPantalla.adaptarResolucion(Boton3Salir);
         DimensionPantalla.adaptarResolucion(imagentitulo);
         DimensionPantalla.adaptarResolucion(imagenfondo);
-        DimensionPantalla.adaptarResolucion(panelJugarTest);
-        panelJugarTest.setVisible(false);
-        
-        
+        try{
+        BufferedImage titulo=ImageIO.read(getClass().getResource("/maagic/interfaz/serien_grosses_logo_239-Recuperado.png"));
+        }
+        catch(IOException e){
+            
+        }
         
         
                 
@@ -70,7 +72,6 @@ public class Menu extends javax.swing.JFrame {
         Boton3Salir = new javax.swing.JButton();
         Boton2Baraja = new javax.swing.JButton();
         Boton1Jugar = new javax.swing.JButton();
-        panelJugarTest = new javax.swing.JPanel();
         imagentitulo = new javax.swing.JLabel();
         imagenfondo = new javax.swing.JLabel();
 
@@ -131,21 +132,8 @@ public class Menu extends javax.swing.JFrame {
 
         panelprincipal.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 425, 620, 220));
 
-        panelJugarTest.setOpaque(false);
-
-        javax.swing.GroupLayout panelJugarTestLayout = new javax.swing.GroupLayout(panelJugarTest);
-        panelJugarTest.setLayout(panelJugarTestLayout);
-        panelJugarTestLayout.setHorizontalGroup(
-            panelJugarTestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1920, Short.MAX_VALUE)
-        );
-        panelJugarTestLayout.setVerticalGroup(
-            panelJugarTestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1080, Short.MAX_VALUE)
-        );
-
-        panelprincipal.add(panelJugarTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
-        panelprincipal.add(imagentitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(965, 395, -1, 290));
+        imagentitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/serien_grosses_logo_239-Recuperado.png"))); // NOI18N
+        panelprincipal.add(imagentitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 1000, 280));
 
         imagenfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/ImagenFondo.jpg"))); // NOI18N
         panelprincipal.add(imagenfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
@@ -158,8 +146,9 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Boton1JugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton1JugarActionPerformed
-        panelJugarTest.setOpaque(true);
-        panelJugarTest.setVisible(true);
+        //panelJugarTest.setOpaque(true);
+        //panelJugarTest.setVisible(true);
+        //Aki va el menu de jugar la partida
         menu.setVisible(false);
        
        
@@ -168,7 +157,7 @@ public class Menu extends javax.swing.JFrame {
     private void Boton2BarajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton2BarajaActionPerformed
         menu.setVisible(false);
         ElegirBaraja barajaMenu=new ElegirBaraja();
-        panelprincipal.add(barajaMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080), 2);
+        panelprincipal.add(barajaMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080), 1);
         
     }//GEN-LAST:event_Boton2BarajaActionPerformed
 
@@ -217,7 +206,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel imagenfondo;
     private javax.swing.JLabel imagentitulo;
     private javax.swing.JPanel menu;
-    private javax.swing.JPanel panelJugarTest;
     private javax.swing.JPanel panelprincipal;
     // End of variables declaration//GEN-END:variables
 }
