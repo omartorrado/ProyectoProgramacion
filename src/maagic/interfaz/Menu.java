@@ -5,9 +5,11 @@
  */
 package maagic.interfaz;
 
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 
 
@@ -39,10 +41,13 @@ public class Menu extends javax.swing.JFrame {
         DimensionPantalla.adaptarResolucion(imagenfondo);
         try{
         BufferedImage titulo=ImageIO.read(getClass().getResource("/maagic/interfaz/serien_grosses_logo_239-Recuperado.png"));
+        ImageIcon iconoResize=new ImageIcon(titulo.getScaledInstance(imagentitulo.getWidth(), imagentitulo.getHeight(), Image.SCALE_DEFAULT));
+        imagentitulo.setIcon(iconoResize);
         }
         catch(IOException e){
-            
+            System.out.println("Error");
         }
+        
         
         
                 
