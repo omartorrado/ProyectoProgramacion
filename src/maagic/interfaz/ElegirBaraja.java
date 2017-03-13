@@ -41,11 +41,11 @@ public class ElegirBaraja extends javax.swing.JPanel {
                 CartaInterfaz c67=new CartaInterfaz(c6);
                 
                 jPanelViewportBaraja.add(c67);
-                c67.setLocation(5, 5);
+                //c67.setLocation(5, 5);
                 
                 Carta c7 = new Carta(2, 2, 2);
                 CartaInterfaz c77=new CartaInterfaz(c7);
-                c77.setLocation(200, 5);
+                //c77.setLocation(200, 5);
                 jPanelViewportBaraja.add(c77);
                 
                 
@@ -118,8 +118,9 @@ public class ElegirBaraja extends javax.swing.JPanel {
         jScrollPaneBaraja.setOpaque(false);
 
         jPanelViewportBaraja.setBackground(new java.awt.Color(255, 153, 255));
+        jPanelViewportBaraja.setOpaque(false);
         jPanelViewportBaraja.setPreferredSize(new java.awt.Dimension(2000, 250));
-        jPanelViewportBaraja.setLayout(null);
+        jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, 30, 5, 0));
         jScrollPaneBaraja.setViewportView(jPanelViewportBaraja);
 
         add(jScrollPaneBaraja);
@@ -159,18 +160,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
         jScrollPaneCartas.setOpaque(false);
 
         jPanelViewportCartas.setBackground(new java.awt.Color(0, 255, 255));
-
-        javax.swing.GroupLayout jPanelViewportCartasLayout = new javax.swing.GroupLayout(jPanelViewportCartas);
-        jPanelViewportCartas.setLayout(jPanelViewportCartasLayout);
-        jPanelViewportCartasLayout.setHorizontalGroup(
-            jPanelViewportCartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanelViewportCartasLayout.setVerticalGroup(
-            jPanelViewportCartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
+        jPanelViewportCartas.setLayout(null);
         jScrollPaneCartas.setViewportView(jPanelViewportCartas);
 
         add(jScrollPaneCartas);
@@ -224,7 +214,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
                 CartaInterfaz displayCarta=new CartaInterfaz(c);
                 
                 jPanelViewportBaraja.add(displayCarta);
-                displayCarta.setLocation(posicion, 5);
+                //displayCarta.setLocation(posicion, 5);
                 
                 posicion+=185;
                 System.out.println("Carta Creada");
