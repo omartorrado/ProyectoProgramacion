@@ -37,57 +37,8 @@ public class ElegirBaraja extends javax.swing.JPanel {
         DimensionPantalla.adaptarPanel(this);
         jScrollPaneBaraja.getViewport().setOpaque(false);
         //jScrollPaneBaraja.getViewport().setSize(2000, 200);
-        ////
         
-        
-        Carta c6 = new Carta(6, 6, 6);
-                CartaInterfaz c67=new CartaInterfaz(c6);
-                
-                jPanelViewportBaraja.add(c67);
-                //c67.setLocation(5, 5);
-                
-                Carta c7 = new Carta(2, 2, 2);
-                CartaInterfaz c77=new CartaInterfaz(c7);
-                //c77.setLocation(200, 5);
-                jPanelViewportBaraja.add(c77);
-                
-                
-                /*
-       File path=new File("barajas/");
-        String[] archivos=path.list();
-        Scanner scBaraja;
-        //Aki tiene k crear un panel donde escoger la baraja
-        //Por cada archivo añadir una opcion
-        for(String s : archivos){
-            
-        }
-        //Luego tiene que devolver la opcion escogida y leer dicho archivo
-        String opcionEscogida=path.getPath()+"/Cartas.txt";
-        System.out.println(opcionEscogida);
-        File archivo=new File(opcionEscogida);
-        
-        try {
-            scBaraja = new Scanner(archivo);
-            int posicion=5;
-            
-                int cvida = scBaraja.nextInt();
-                int cataque = scBaraja.nextInt();
-                int ccoste = scBaraja.nextInt();
-                Carta c = new Carta(cvida, cataque, ccoste);
-                CartaInterfaz displayCarta=new CartaInterfaz(c);
-                displayCarta.setLocation(200, 5);
-                jScrollPaneBaraja.getViewport().add(displayCarta,2);
-                
-                
-                posicion+=185;
-                System.out.println("Carta Creada");
-            
-            scBaraja.close();
-        } catch (Exception e) {
-            System.out.println("Error");
-        }         
-
-                */
+               
     }
 
     
@@ -217,7 +168,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
                 int ccoste = scBaraja.nextInt();
                 Carta c = new Carta(cvida, cataque, ccoste);
                 CartaInterfaz displayCarta=new CartaInterfaz(c);
-                
+                displayCarta.setOpaque(false);
                 jPanelViewportBaraja.add(displayCarta);
                 displayCarta.setSize(180,250);
                 //displayCarta.setLocation(posicion, 5);
