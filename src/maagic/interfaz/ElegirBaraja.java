@@ -8,6 +8,7 @@ package maagic.interfaz;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 import maagic.Carta;
 
 /**
@@ -121,7 +122,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
 
         jPanelViewportBaraja.setBackground(new java.awt.Color(255, 153, 255));
         jPanelViewportBaraja.setPreferredSize(new java.awt.Dimension(5555, 250));
-        jPanelViewportBaraja.setLayout(new java.awt.GridLayout());
+        jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, 1));
         jScrollPaneBaraja.setViewportView(jPanelViewportBaraja);
 
         add(jScrollPaneBaraja);
@@ -196,11 +197,13 @@ public class ElegirBaraja extends javax.swing.JPanel {
         Scanner scBaraja;
         //Aki tiene k crear un panel donde escoger la baraja
         //Por cada archivo añadir una opcion
+        String nombreArchivo=JOptionPane.showInputDialog(this,"Choose one", "Input",JOptionPane.INFORMATION_MESSAGE, null,archivos, archivos[0]).toString();
+        
         for(String s : archivos){
             
         }
         //Luego tiene que devolver la opcion escogida y leer dicho archivo
-        String opcionEscogida=path.getPath()+"/Cartas.txt";
+        String opcionEscogida=path.getPath()+"/"+nombreArchivo;
         System.out.println(opcionEscogida);
         File archivo=new File(opcionEscogida);
         
@@ -223,7 +226,10 @@ public class ElegirBaraja extends javax.swing.JPanel {
                 System.out.println("Carta Creada");
             }
             scBaraja.close();
-            jPanelViewportBaraja.setSize(posicion,250);
+            int numCartas=jPanelViewportBaraja.getComponentCount();
+            jPanelViewportBaraja.setSize(jPanelViewportBaraja.getComponent(0).getWidth()*numCartas ,250);
+            jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, numCartas));
+            
             System.out.println(jPanelViewportBaraja.getSize());
         } catch (Exception e) {
             System.out.println("Error");
