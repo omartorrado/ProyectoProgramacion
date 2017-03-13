@@ -6,10 +6,16 @@
 package maagic.interfaz;
 
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Point;
 import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 /**
  *
@@ -143,9 +149,15 @@ public class DimensionPantalla extends JPanel{
                 
     }
     
-    public static void TransparentarJpanel(JPanel x) {
-        x.setOpaque(false);
-
+    public static void resizeImagen(String ruta,JLabel container){
+        //Hay k pasarle la ruta de la imagen en plan "/maagic/img/nombreDeLaImagen.jpg"
+    try{
+        BufferedImage titulo=ImageIO.read(container.getClass().getResource(ruta));
+        ImageIcon iconoResize=new ImageIcon(titulo.getScaledInstance(container.getWidth(), container.getHeight(), Image.SCALE_DEFAULT));
+        container.setIcon(iconoResize);
+        }
+        catch(IOException e){
+            System.out.println("Error");
+        }
     }
-    
 }

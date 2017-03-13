@@ -42,6 +42,7 @@ public class CartaInterfaz extends javax.swing.JPanel {
         ImagenesFondo = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(180, 250));
+        setOpaque(false);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelVida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

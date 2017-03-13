@@ -54,6 +54,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
 
         jScrollPaneBaraja = new javax.swing.JScrollPane();
         jPanelViewportBaraja = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         jButtonCargar = new javax.swing.JButton();
         jButtonVolver = new javax.swing.JButton();
         jButtonGuardar = new javax.swing.JButton();
@@ -72,8 +73,15 @@ public class ElegirBaraja extends javax.swing.JPanel {
         jScrollPaneBaraja.setOpaque(false);
 
         jPanelViewportBaraja.setBackground(new java.awt.Color(255, 153, 255));
-        jPanelViewportBaraja.setPreferredSize(new java.awt.Dimension(5555, 250));
+        jPanelViewportBaraja.setMinimumSize(new java.awt.Dimension(600, 180));
+        jPanelViewportBaraja.setPreferredSize(new java.awt.Dimension(600, 250));
         jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, 1));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/wood_repeatable.jpg"))); // NOI18N
+        jLabel3.setOpaque(true);
+        jPanelViewportBaraja.add(jLabel3);
+
         jScrollPaneBaraja.setViewportView(jPanelViewportBaraja);
 
         add(jScrollPaneBaraja);
@@ -203,6 +211,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
     private javax.swing.JButton jButtonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JPanel jPanelViewportBaraja;
     private javax.swing.JPanel jPanelViewportCartas;
