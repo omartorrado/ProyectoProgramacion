@@ -5,6 +5,8 @@
  */
 package maagic;
 
+import maagic.interfaz.Menu;
+
 /**
  *
  * @author Orom
@@ -15,7 +17,34 @@ public class Maagic {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Main. Aki instanciamos juego e interfaz
+        //Instanciamos Menu
+        Menu menuPrincipal=new Menu();
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> {
+            new Menu().setVisible(true);
+        });
+        
+        
+        // Main. Aki instanciamos juego 
         //Creamos los 2 jugadores con sus barajas (en este caso la de prueba)
         Jugador j1=new Jugador("barajas/Cartas.txt");
         Jugador j2=new Jugador("barajas/Cartas.txt");
