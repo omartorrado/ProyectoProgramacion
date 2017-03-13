@@ -5,6 +5,11 @@
  */
 package maagic.interfaz;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import maagic.Carta;
+
 /**
  *
  * @author Orom
@@ -26,9 +31,63 @@ public class ElegirBaraja extends javax.swing.JPanel {
         DimensionPantalla.adaptarResolucion(jLabel1);
         DimensionPantalla.adaptarResolucion(jLabel2);
         DimensionPantalla.adaptarPanel(this);
+        jScrollPaneBaraja.getViewport().setOpaque(false);
+        //jScrollPaneBaraja.getViewport().setSize(2000, 200);
+        ////
         
+        
+        Carta c6 = new Carta(6, 6, 6);
+                CartaInterfaz c67=new CartaInterfaz(c6);
+                
+                jScrollPaneBaraja.getViewport().add(c67,1);
+                c67.setLocation(5, 5);
+                
+                Carta c7 = new Carta(2, 2, 2);
+                CartaInterfaz c77=new CartaInterfaz(c7);
+                c67.setLocation(200, 5);
+                jScrollPaneBaraja.getViewport().add(c77,1);
+                System.out.println(jScrollPaneBaraja.getViewport().getLayout().toString());
+                
+                /*
+       File path=new File("barajas/");
+        String[] archivos=path.list();
+        Scanner scBaraja;
+        //Aki tiene k crear un panel donde escoger la baraja
+        //Por cada archivo añadir una opcion
+        for(String s : archivos){
+            
+        }
+        //Luego tiene que devolver la opcion escogida y leer dicho archivo
+        String opcionEscogida=path.getPath()+"/Cartas.txt";
+        System.out.println(opcionEscogida);
+        File archivo=new File(opcionEscogida);
+        
+        try {
+            scBaraja = new Scanner(archivo);
+            int posicion=5;
+            
+                int cvida = scBaraja.nextInt();
+                int cataque = scBaraja.nextInt();
+                int ccoste = scBaraja.nextInt();
+                Carta c = new Carta(cvida, cataque, ccoste);
+                CartaInterfaz displayCarta=new CartaInterfaz(c);
+                displayCarta.setLocation(200, 5);
+                jScrollPaneBaraja.getViewport().add(displayCarta,2);
+                
+                
+                posicion+=185;
+                System.out.println("Carta Creada");
+            
+            scBaraja.close();
+        } catch (Exception e) {
+            System.out.println("Error");
+        }         
+
+                */
     }
 
+    
+                
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,7 +98,6 @@ public class ElegirBaraja extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPaneBaraja = new javax.swing.JScrollPane();
-        jPanelViewportBaraja = new javax.swing.JPanel();
         jButtonCargar = new javax.swing.JButton();
         jButtonVolver = new javax.swing.JButton();
         jButtonGuardar = new javax.swing.JButton();
@@ -55,22 +113,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
         jScrollPaneBaraja.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPaneBaraja.setViewportBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, java.awt.Color.lightGray));
         jScrollPaneBaraja.setAutoscrolls(true);
-        jScrollPaneBaraja.setHorizontalScrollBar(null);
         jScrollPaneBaraja.setOpaque(false);
-
-        javax.swing.GroupLayout jPanelViewportBarajaLayout = new javax.swing.GroupLayout(jPanelViewportBaraja);
-        jPanelViewportBaraja.setLayout(jPanelViewportBarajaLayout);
-        jPanelViewportBarajaLayout.setHorizontalGroup(
-            jPanelViewportBarajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanelViewportBarajaLayout.setVerticalGroup(
-            jPanelViewportBarajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jScrollPaneBaraja.setViewportView(jPanelViewportBaraja);
-
         add(jScrollPaneBaraja);
         jScrollPaneBaraja.setBounds(100, 340, 600, 250);
 
@@ -146,7 +189,40 @@ public class ElegirBaraja extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarActionPerformed
-        // TODO add your handling code here:
+        //Guarda en archivos todos larchivos en el directorio barajas
+        File path=new File("barajas/");
+        String[] archivos=path.list();
+        Scanner scBaraja;
+        //Aki tiene k crear un panel donde escoger la baraja
+        //Por cada archivo añadir una opcion
+        for(String s : archivos){
+            
+        }
+        //Luego tiene que devolver la opcion escogida y leer dicho archivo
+        String opcionEscogida=path.getPath()+"/Cartas.txt";
+        System.out.println(opcionEscogida);
+        File archivo=new File(opcionEscogida);
+        
+        try {
+            scBaraja = new Scanner(archivo);
+            int posicion=5;
+            while (scBaraja.hasNextLine()) {
+                int cvida = scBaraja.nextInt();
+                int cataque = scBaraja.nextInt();
+                int ccoste = scBaraja.nextInt();
+                Carta c = new Carta(cvida, cataque, ccoste);
+                CartaInterfaz displayCarta=new CartaInterfaz(c);
+                
+                jScrollPaneBaraja.getViewport().add(displayCarta);
+                displayCarta.setLocation(posicion, 5);
+                
+                posicion+=185;
+                System.out.println("Carta Creada");
+            }
+            scBaraja.close();
+        } catch (Exception e) {
+            System.out.println("Error");
+        }
     }//GEN-LAST:event_jButtonCargarActionPerformed
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
@@ -166,7 +242,6 @@ public class ElegirBaraja extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JPanel jPanelViewportBaraja;
     private javax.swing.JPanel jPanelViewportCartas;
     private javax.swing.JScrollPane jScrollPaneBaraja;
     private javax.swing.JScrollPane jScrollPaneCartas;
