@@ -27,7 +27,9 @@ public class ElegirBaraja extends javax.swing.JPanel {
         DimensionPantalla.adaptarResolucion(jButtonGuardar);
         DimensionPantalla.adaptarResolucion(jLabelFondo);
         DimensionPantalla.adaptarResolucion(jScrollPaneCartas);
+        jScrollPaneCartas.setSize(jScrollPaneCartas.getWidth(), 280);
         DimensionPantalla.adaptarResolucion(jScrollPaneBaraja);
+        jScrollPaneBaraja.setSize(jScrollPaneBaraja.getWidth(), 280);
         DimensionPantalla.adaptarResolucion(jLabel1);
         DimensionPantalla.adaptarResolucion(jLabel2);
         
@@ -118,9 +120,8 @@ public class ElegirBaraja extends javax.swing.JPanel {
         jScrollPaneBaraja.setOpaque(false);
 
         jPanelViewportBaraja.setBackground(new java.awt.Color(255, 153, 255));
-        jPanelViewportBaraja.setOpaque(false);
-        jPanelViewportBaraja.setPreferredSize(new java.awt.Dimension(2000, 250));
-        jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, 30, 5, 0));
+        jPanelViewportBaraja.setPreferredSize(new java.awt.Dimension(5555, 250));
+        jPanelViewportBaraja.setLayout(new java.awt.GridLayout());
         jScrollPaneBaraja.setViewportView(jPanelViewportBaraja);
 
         add(jScrollPaneBaraja);
@@ -206,13 +207,15 @@ public class ElegirBaraja extends javax.swing.JPanel {
         try {
             scBaraja = new Scanner(archivo);
             int posicion=5;
+            jPanelViewportBaraja.removeAll();
             while (scBaraja.hasNextLine()) {
                 int cvida = scBaraja.nextInt();
                 int cataque = scBaraja.nextInt();
                 int ccoste = scBaraja.nextInt();
                 Carta c = new Carta(cvida, cataque, ccoste);
                 CartaInterfaz displayCarta=new CartaInterfaz(c);
-                
+                displayCarta.setSize(180,250);
+                jPanelViewportBaraja.setSize(posicion+185,250);
                 jPanelViewportBaraja.add(displayCarta);
                 //displayCarta.setLocation(posicion, 5);
                 
@@ -220,6 +223,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
                 System.out.println("Carta Creada");
             }
             scBaraja.close();
+            jPanelViewportBaraja.setSize(posicion+185,250);
         } catch (Exception e) {
             System.out.println("Error");
         }
