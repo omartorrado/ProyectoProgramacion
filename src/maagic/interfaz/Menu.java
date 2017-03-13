@@ -26,6 +26,8 @@ public class Menu extends javax.swing.JFrame {
                    
        
         initComponents();
+        this.setSize(1920,1080);
+        this.getRootPane().setSize(1920, 1080);
         DimensionPantalla.adaptarFrame(this);
         DimensionPantalla.adaptarResolucion(panelprincipal);
         panelprincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -35,7 +37,8 @@ public class Menu extends javax.swing.JFrame {
         DimensionPantalla.adaptarResolucion(Boton3Salir);
         DimensionPantalla.adaptarResolucion(imagentitulo);
         DimensionPantalla.adaptarResolucion(imagenfondo);
-        barajamenu.setVisible(false);
+        DimensionPantalla.adaptarResolucion(panelJugarTest);
+        panelJugarTest.setVisible(false);
         
         
         
@@ -66,7 +69,7 @@ public class Menu extends javax.swing.JFrame {
         Boton3Salir = new javax.swing.JButton();
         Boton2Baraja = new javax.swing.JButton();
         Boton1Jugar = new javax.swing.JButton();
-        barajamenu = new javax.swing.JPanel();
+        panelJugarTest = new javax.swing.JPanel();
         imagentitulo = new javax.swing.JLabel();
         imagenfondo = new javax.swing.JLabel();
 
@@ -74,7 +77,6 @@ public class Menu extends javax.swing.JFrame {
         setIconImage(getIconImage());
         setMinimumSize(new java.awt.Dimension(800, 600));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1920, 1080));
         setResizable(false);
         setSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(null);
@@ -128,20 +130,20 @@ public class Menu extends javax.swing.JFrame {
 
         panelprincipal.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 425, 620, 220));
 
-        barajamenu.setOpaque(false);
+        panelJugarTest.setOpaque(false);
 
-        javax.swing.GroupLayout barajamenuLayout = new javax.swing.GroupLayout(barajamenu);
-        barajamenu.setLayout(barajamenuLayout);
-        barajamenuLayout.setHorizontalGroup(
-            barajamenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panelJugarTestLayout = new javax.swing.GroupLayout(panelJugarTest);
+        panelJugarTest.setLayout(panelJugarTestLayout);
+        panelJugarTestLayout.setHorizontalGroup(
+            panelJugarTestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1920, Short.MAX_VALUE)
         );
-        barajamenuLayout.setVerticalGroup(
-            barajamenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelJugarTestLayout.setVerticalGroup(
+            panelJugarTestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1080, Short.MAX_VALUE)
         );
 
-        panelprincipal.add(barajamenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
+        panelprincipal.add(panelJugarTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
         panelprincipal.add(imagentitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(965, 395, -1, 290));
 
         imagenfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/ImagenFondo.jpg"))); // NOI18N
@@ -155,8 +157,8 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Boton1JugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton1JugarActionPerformed
-        barajamenu.setOpaque(true);
-        barajamenu.setVisible(true);
+        panelJugarTest.setOpaque(true);
+        panelJugarTest.setVisible(true);
         menu.setVisible(false);
        
        
@@ -211,10 +213,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton Boton1Jugar;
     private javax.swing.JButton Boton2Baraja;
     private javax.swing.JButton Boton3Salir;
-    private javax.swing.JPanel barajamenu;
     private javax.swing.JLabel imagenfondo;
     private javax.swing.JLabel imagentitulo;
     private javax.swing.JPanel menu;
+    private javax.swing.JPanel panelJugarTest;
     private javax.swing.JPanel panelprincipal;
     // End of variables declaration//GEN-END:variables
 }

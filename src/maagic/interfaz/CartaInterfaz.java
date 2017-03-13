@@ -55,14 +55,14 @@ public class CartaInterfaz extends javax.swing.JPanel {
         jLabelCoste.setText("Coste");
         add(jLabelCoste, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 50, 50));
 
-        Ataque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/espada.png"))); // NOI18N
+        Ataque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/espada.png"))); // NOI18N
         add(Ataque, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 50, 50));
 
-        Vida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/corazon.png"))); // NOI18N
+        Vida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/corazon.png"))); // NOI18N
         add(Vida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 50, 50));
 
         Coste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Coste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/mana.png"))); // NOI18N
+        Coste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/mana.png"))); // NOI18N
         add(Coste, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 60));
 
         ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(153, 102, 0)));

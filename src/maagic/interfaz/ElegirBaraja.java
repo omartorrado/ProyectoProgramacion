@@ -30,6 +30,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
         DimensionPantalla.adaptarResolucion(jScrollPaneBaraja);
         DimensionPantalla.adaptarResolucion(jLabel1);
         DimensionPantalla.adaptarResolucion(jLabel2);
+        
         DimensionPantalla.adaptarPanel(this);
         jScrollPaneBaraja.getViewport().setOpaque(false);
         //jScrollPaneBaraja.getViewport().setSize(2000, 200);
@@ -39,14 +40,14 @@ public class ElegirBaraja extends javax.swing.JPanel {
         Carta c6 = new Carta(6, 6, 6);
                 CartaInterfaz c67=new CartaInterfaz(c6);
                 
-                jScrollPaneBaraja.getViewport().add(c67,1);
+                jPanelViewportBaraja.add(c67);
                 c67.setLocation(5, 5);
                 
                 Carta c7 = new Carta(2, 2, 2);
                 CartaInterfaz c77=new CartaInterfaz(c7);
-                c67.setLocation(200, 5);
-                jScrollPaneBaraja.getViewport().add(c77,1);
-                System.out.println(jScrollPaneBaraja.getViewport().getLayout().toString());
+                c77.setLocation(200, 5);
+                jPanelViewportBaraja.add(c77);
+                
                 
                 /*
        File path=new File("barajas/");
@@ -98,6 +99,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPaneBaraja = new javax.swing.JScrollPane();
+        jPanelViewportBaraja = new javax.swing.JPanel();
         jButtonCargar = new javax.swing.JButton();
         jButtonVolver = new javax.swing.JButton();
         jButtonGuardar = new javax.swing.JButton();
@@ -114,6 +116,12 @@ public class ElegirBaraja extends javax.swing.JPanel {
         jScrollPaneBaraja.setViewportBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, java.awt.Color.lightGray));
         jScrollPaneBaraja.setAutoscrolls(true);
         jScrollPaneBaraja.setOpaque(false);
+
+        jPanelViewportBaraja.setBackground(new java.awt.Color(255, 153, 255));
+        jPanelViewportBaraja.setPreferredSize(new java.awt.Dimension(2000, 250));
+        jPanelViewportBaraja.setLayout(null);
+        jScrollPaneBaraja.setViewportView(jPanelViewportBaraja);
+
         add(jScrollPaneBaraja);
         jScrollPaneBaraja.setBounds(100, 340, 600, 250);
 
@@ -149,6 +157,8 @@ public class ElegirBaraja extends javax.swing.JPanel {
         jScrollPaneCartas.setAutoscrolls(true);
         jScrollPaneCartas.setHorizontalScrollBar(null);
         jScrollPaneCartas.setOpaque(false);
+
+        jPanelViewportCartas.setBackground(new java.awt.Color(0, 255, 255));
 
         javax.swing.GroupLayout jPanelViewportCartasLayout = new javax.swing.GroupLayout(jPanelViewportCartas);
         jPanelViewportCartas.setLayout(jPanelViewportCartasLayout);
@@ -213,7 +223,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
                 Carta c = new Carta(cvida, cataque, ccoste);
                 CartaInterfaz displayCarta=new CartaInterfaz(c);
                 
-                jScrollPaneBaraja.getViewport().add(displayCarta);
+                jPanelViewportBaraja.add(displayCarta);
                 displayCarta.setLocation(posicion, 5);
                 
                 posicion+=185;
@@ -242,6 +252,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JPanel jPanelViewportBaraja;
     private javax.swing.JPanel jPanelViewportCartas;
     private javax.swing.JScrollPane jScrollPaneBaraja;
     private javax.swing.JScrollPane jScrollPaneCartas;

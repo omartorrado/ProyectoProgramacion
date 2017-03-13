@@ -54,7 +54,7 @@
     <Component class="javax.swing.JLabel" name="Ataque">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/img/espada.png"/>
+          <Image iconType="3" name="/maagic/img/espada.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -66,7 +66,7 @@
     <Component class="javax.swing.JLabel" name="Vida">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/img/corazon.png"/>
+          <Image iconType="3" name="/maagic/img/corazon.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -79,7 +79,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/img/mana.png"/>
+          <Image iconType="3" name="/maagic/img/mana.png"/>
         </Property>
       </Properties>
       <Constraints>

@@ -18,6 +18,37 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 public class DimensionPantalla extends JPanel{
     
+    /*
+    COMO USAR ESTOS METODOS:
+        - Para el Frame principal:
+        Tras el: initComponents(); hay k poner:
+        this.setSize(1920,1080);
+        this.getRootPane().setSize(1920, 1080);
+        DimensionPantalla.adaptarFrame(this);
+        DimensionPantalla.adaptarResolucion(panelprincipal);
+        panelprincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        DimensionPantalla.adaptarResolucion(menu);
+        DimensionPantalla.adaptarResolucion(Boton1Jugar);
+        DimensionPantalla.adaptarResolucion(Boton2Baraja);
+        DimensionPantalla.adaptarResolucion(Boton3Salir);
+        DimensionPantalla.adaptarResolucion(imagentitulo);
+        DimensionPantalla.adaptarResolucion(imagenfondo);
+        DimensionPantalla.adaptarResolucion(panelJugarTest);
+        panelJugarTest.setVisible(false);
+    
+        -Para los paneles de los menus:
+        initComponents();
+        this.setSize(800,600);
+        DimensionPantalla.adaptarResolucion(jButtonCargar);
+        DimensionPantalla.adaptarResolucion(jButtonVolver);
+        DimensionPantalla.adaptarResolucion(jButtonGuardar);
+        DimensionPantalla.adaptarResolucion(jLabelFondo);
+        DimensionPantalla.adaptarResolucion(jScrollPaneCartas);
+        DimensionPantalla.adaptarResolucion(jScrollPaneBaraja);
+        DimensionPantalla.adaptarResolucion(jLabel1);
+        DimensionPantalla.adaptarResolucion(jLabel2);
+        DimensionPantalla.adaptarPanel(this);
+    */
     
     
     public static void adaptarFrame(JFrame f){
@@ -43,6 +74,7 @@ public class DimensionPantalla extends JPanel{
     Toolkit tk=Toolkit.getDefaultToolkit();
     Dimension tamaño=tk.getScreenSize();
     System.out.println("Componente"+j.toString());
+        
     float proporcionH=1;
     float proporcionV=1;
         try{
