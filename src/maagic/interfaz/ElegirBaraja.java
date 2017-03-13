@@ -212,7 +212,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
 

@@ -5,11 +5,9 @@
  */
 package maagic.interfaz;
 
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
+import java.io.File;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 
 
@@ -42,8 +40,12 @@ public class Menu extends javax.swing.JFrame {
         //El siguiente codigo cambia el tamaño de la imagen de imagentitulo
         DimensionPantalla.resizeImagen("/maagic/interfaz/serien_grosses_logo_239-Recuperado.png",imagentitulo);
         
-        
-        
+        //Musica
+      /*  
+    Media menuSound = new Media(new File("sound/musicaMenu.mp3").toURI().toString());
+    MediaPlayer mediaPlayer = new MediaPlayer(menuSound);
+    mediaPlayer.play();
+        */
         
                 
 

@@ -46,19 +46,29 @@ public class CartaInterfaz extends javax.swing.JPanel {
 
         setMaximumSize(new java.awt.Dimension(180, 250));
         setOpaque(false);
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabelVida.setFont(new java.awt.Font("Monospaced", 3, 36)); // NOI18N
+        jLabelVida.setForeground(new java.awt.Color(240, 240, 240));
         jLabelVida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelVida.setText("Vida");
+        jLabelVida.setText("X");
         add(jLabelVida, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 50, 50));
 
+        jLabelAtaque.setFont(new java.awt.Font("Monospaced", 3, 36)); // NOI18N
+        jLabelAtaque.setForeground(new java.awt.Color(255, 51, 51));
         jLabelAtaque.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelAtaque.setText("Ataque");
+        jLabelAtaque.setText("X");
         add(jLabelAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 50, 50));
 
+        jLabelCoste.setFont(new java.awt.Font("Monospaced", 3, 36)); // NOI18N
         jLabelCoste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelCoste.setText("Coste");
-        add(jLabelCoste, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 50, 50));
+        jLabelCoste.setText("X");
+        add(jLabelCoste, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 50, 50));
 
         Ataque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/espada.png"))); // NOI18N
         add(Ataque, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 50, 50));
@@ -74,6 +84,10 @@ public class CartaInterfaz extends javax.swing.JPanel {
         ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(153, 102, 0)));
         add(ImagenesFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 250));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        
+    }//GEN-LAST:event_formMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
