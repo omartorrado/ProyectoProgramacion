@@ -49,7 +49,7 @@ public class Menu extends javax.swing.JFrame {
         Clip musicaMenu=null;
         try{
         musicaMenu=AudioSystem.getClip();
-        musicaMenu.open(AudioSystem.getAudioInputStream(new File("sound/musicaMenu.aiff")));
+        musicaMenu.open(AudioSystem.getAudioInputStream(new File("sound/testSound.aiff")));
         musicaMenu.loop(LOOP_CONTINUOUSLY);
             System.out.println("Si");
         }
