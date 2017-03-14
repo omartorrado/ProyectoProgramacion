@@ -76,6 +76,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
 
         jPanelViewportBaraja.setBackground(new java.awt.Color(255, 153, 255));
         jPanelViewportBaraja.setMinimumSize(new java.awt.Dimension(600, 250));
+        jPanelViewportBaraja.setOpaque(false);
         jPanelViewportBaraja.setPreferredSize(new java.awt.Dimension(5555, 250));
         jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, 30));
         jScrollPaneBaraja.setViewportView(jPanelViewportBaraja);
