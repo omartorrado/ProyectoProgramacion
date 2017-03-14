@@ -163,11 +163,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
         Scanner scBaraja;
         //Aki tiene k crear un panel donde escoger la baraja
         //Por cada archivo añadir una opcion
-        String nombreArchivo=JOptionPane.showInputDialog(this,"Choose one", "Input",JOptionPane.INFORMATION_MESSAGE, null,archivos, archivos[0]).toString();
-        
-        for(String s : archivos){
-            
-        }
+        String nombreArchivo=JOptionPane.showInputDialog(this,"Escoge una baraja", "Selector de baraja",JOptionPane.INFORMATION_MESSAGE, null,archivos, archivos[0]).toString();
         //Luego tiene que devolver la opcion escogida y leer dicho archivo
         String opcionEscogida=path.getPath()+"/"+nombreArchivo;
         System.out.println(opcionEscogida);
