@@ -6,6 +6,7 @@
 package maagic.interfaz;
 
 import java.io.File;
+import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import static javax.sound.sampled.Clip.LOOP_CONTINUOUSLY;
@@ -42,23 +43,26 @@ public class Menu extends javax.swing.JFrame {
         //El siguiente codigo cambia el tamaño de la imagen de imagentitulo
         DimensionPantalla.resizeImagen("/maagic/interfaz/serien_grosses_logo_239-Recuperado.png",imagentitulo);
         
-        /*
+        
         //Musica
         System.out.println("Suena la musica?");
         while(menu.isVisible()){
         try{
         Clip musicaMenu=AudioSystem.getClip();
-        musicaMenu.open(AudioSystem.getAudioInputStream(new File("sound/musicaMenu.wav")));
+        musicaMenu.open(AudioSystem.getAudioInputStream(new File("sound/musicaMenu.aiff")));
         musicaMenu.loop(LOOP_CONTINUOUSLY);
-            System.out.println("Todo ok");
+           
         }
         catch(Exception e){
             System.out.println(e.toString());
             System.out.println("Error Leyendo musica");
         }
         }
-        */        
-
+           
+        AudioFileFormat.Type[] formatos= AudioSystem.getAudioFileTypes();
+        for(AudioFileFormat.Type f : formatos){
+            System.out.println(f);
+        }
     }
 
 
