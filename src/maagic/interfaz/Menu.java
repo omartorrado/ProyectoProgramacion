@@ -46,23 +46,27 @@ public class Menu extends javax.swing.JFrame {
         
         //Musica
         System.out.println("Suena la musica?");
-        while(menu.isVisible()){
+        
         try{
         Clip musicaMenu=AudioSystem.getClip();
         musicaMenu.open(AudioSystem.getAudioInputStream(new File("sound/musicaMenu.aiff")));
         musicaMenu.loop(LOOP_CONTINUOUSLY);
-           
+        if(menu.isVisible()==false){
+            musicaMenu.close();
+        }
         }
         catch(Exception e){
             System.out.println(e.toString());
             System.out.println("Error Leyendo musica");
         }
-        }
+        
            
         AudioFileFormat.Type[] formatos= AudioSystem.getAudioFileTypes();
         for(AudioFileFormat.Type f : formatos){
             System.out.println(f);
         }
+        
+        //End Musica
     }
 
 
