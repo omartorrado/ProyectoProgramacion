@@ -23,7 +23,8 @@ public class Menu extends javax.swing.JFrame {
      * Creates new form Menu2
      */
     
-
+    Clip musicaMenu;
+    
     public Menu() {
         
                    
@@ -46,7 +47,7 @@ public class Menu extends javax.swing.JFrame {
         
         //Musica
         System.out.println("Suena la musica?");
-        Clip musicaMenu=null;
+        
         try{
         musicaMenu=AudioSystem.getClip();
         musicaMenu.open(AudioSystem.getAudioInputStream(new File("sound/testSound.aiff")));
@@ -172,7 +173,7 @@ public class Menu extends javax.swing.JFrame {
         //panelJugarTest.setVisible(true);
         //Aki va el menu de jugar la partida
         menu.setVisible(false);
-       
+        musicaMenu.stop();
        
     }//GEN-LAST:event_Boton1JugarActionPerformed
 

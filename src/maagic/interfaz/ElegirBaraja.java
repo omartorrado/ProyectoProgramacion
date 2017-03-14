@@ -34,10 +34,10 @@ public class ElegirBaraja extends javax.swing.JPanel {
         jScrollPaneBaraja.setSize(jScrollPaneBaraja.getWidth(), 280);
         DimensionPantalla.adaptarResolucion(jLabel1);
         DimensionPantalla.adaptarResolucion(jLabel2);
-        
         DimensionPantalla.adaptarPanel(this);
-        jScrollPaneBaraja.getViewport().setOpaque(false);
-        //jScrollPaneBaraja.getViewport().setSize(2000, 200);
+        //jScrollPaneBaraja.getViewport().setOpaque(false);
+        mostrarCartas();
+       
         
        
         
@@ -76,7 +76,6 @@ public class ElegirBaraja extends javax.swing.JPanel {
 
         jPanelViewportBaraja.setBackground(new java.awt.Color(255, 153, 255));
         jPanelViewportBaraja.setMinimumSize(new java.awt.Dimension(600, 250));
-        jPanelViewportBaraja.setOpaque(false);
         jPanelViewportBaraja.setPreferredSize(new java.awt.Dimension(5555, 250));
         jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, 30));
         jScrollPaneBaraja.setViewportView(jPanelViewportBaraja);
@@ -114,10 +113,13 @@ public class ElegirBaraja extends javax.swing.JPanel {
         jScrollPaneCartas.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPaneCartas.setViewportBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.darkGray, java.awt.Color.lightGray));
         jScrollPaneCartas.setAutoscrolls(true);
-        jScrollPaneCartas.setHorizontalScrollBar(null);
         jScrollPaneCartas.setOpaque(false);
 
         jPanelViewportCartas.setBackground(new java.awt.Color(0, 255, 255));
+        jPanelViewportCartas.setAutoscrolls(true);
+        jPanelViewportCartas.setMinimumSize(new java.awt.Dimension(11290, 250));
+        jPanelViewportCartas.setOpaque(false);
+        jPanelViewportCartas.setPreferredSize(new java.awt.Dimension(11290, 250));
         jPanelViewportCartas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanelViewportCartasMouseClicked(evt);
@@ -128,7 +130,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
                 jPanelViewportCartasKeyPressed(evt);
             }
         });
-        jPanelViewportCartas.setLayout(null);
+        jPanelViewportCartas.setLayout(new java.awt.GridLayout());
         jScrollPaneCartas.setViewportView(jPanelViewportCartas);
 
         add(jScrollPaneCartas);
@@ -188,9 +190,6 @@ public class ElegirBaraja extends javax.swing.JPanel {
         try {
             scBaraja = new Scanner(archivo);
             jPanelViewportBaraja.removeAll();
-            int numeroDeCartas=22;
-            
-            
             while (scBaraja.hasNextLine()) {
                 int cvida = scBaraja.nextInt();
                 int cataque = scBaraja.nextInt();
@@ -201,7 +200,6 @@ public class ElegirBaraja extends javax.swing.JPanel {
                 jPanelViewportBaraja.add(displayCarta);
                 displayCarta.setSize(180,250);
                 System.out.println("Carta Creada");
-                
             }
             jPanelViewportBaraja.setSize(new Dimension(5555,250));
             jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, 30));
@@ -240,6 +238,29 @@ public class ElegirBaraja extends javax.swing.JPanel {
         jPanelViewportCartas.requestFocusInWindow();
     }//GEN-LAST:event_jPanelViewportCartasMouseClicked
 
+    private void mostrarCartas(){
+        File cartas=new File("./src/maagic/interfaz/cartas.baraja");
+        Scanner scBaraja;
+        try {
+            scBaraja = new Scanner(cartas);
+            while (scBaraja.hasNextLine()) {
+                int cvida = scBaraja.nextInt();
+                int cataque = scBaraja.nextInt();
+                int ccoste = scBaraja.nextInt();
+                Carta c = new Carta(cvida, cataque, ccoste);
+                CartaInterfaz displayCarta=new CartaInterfaz(c);
+                displayCarta.setOpaque(false);
+                jPanelViewportCartas.add(displayCarta);
+                displayCarta.setSize(180,250);                
+            }
+            //jPanelViewporCartas.
+            jPanelViewportCartas.setLayout(new java.awt.GridLayout(1, 61));
+            scBaraja.close();
+        } catch (Exception e) {
+            System.out.println("Error Carta");
+        }
+    }               
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCargar;
