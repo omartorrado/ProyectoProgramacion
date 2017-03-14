@@ -5,6 +5,7 @@
  */
 package maagic.interfaz;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.io.File;
 import java.util.Scanner;
@@ -37,6 +38,8 @@ public class ElegirBaraja extends javax.swing.JPanel {
         DimensionPantalla.adaptarPanel(this);
         jScrollPaneBaraja.getViewport().setOpaque(false);
         //jScrollPaneBaraja.getViewport().setSize(2000, 200);
+        
+       
         
                
     }
@@ -115,6 +118,16 @@ public class ElegirBaraja extends javax.swing.JPanel {
         jScrollPaneCartas.setOpaque(false);
 
         jPanelViewportCartas.setBackground(new java.awt.Color(0, 255, 255));
+        jPanelViewportCartas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelViewportCartasMouseClicked(evt);
+            }
+        });
+        jPanelViewportCartas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPanelViewportCartasKeyPressed(evt);
+            }
+        });
         jPanelViewportCartas.setLayout(null);
         jScrollPaneCartas.setViewportView(jPanelViewportCartas);
 
@@ -214,6 +227,19 @@ public class ElegirBaraja extends javax.swing.JPanel {
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
         
     }//GEN-LAST:event_jButtonGuardarActionPerformed
+
+    private void jPanelViewportCartasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanelViewportCartasKeyPressed
+        //Aki le digo k si la tecla pulsada es w cambia el color
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_W){
+            jPanelViewportCartas.setBackground(Color.red);
+        }
+    }//GEN-LAST:event_jPanelViewportCartasKeyPressed
+
+    private void jPanelViewportCartasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelViewportCartasMouseClicked
+        //Aki le pongo el focus a la ventana al hace click
+        jPanelViewportCartas.grabFocus();
+        jPanelViewportCartas.requestFocusInWindow();
+    }//GEN-LAST:event_jPanelViewportCartasMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
