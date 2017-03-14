@@ -229,6 +229,9 @@ public class ElegirBaraja extends javax.swing.JPanel {
         if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_W){
             jPanelViewportCartas.setBackground(Color.red);
         }
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_S){
+            jPanelViewportCartas.setBackground(Color.green);
+        }
     }//GEN-LAST:event_jPanelViewportCartasKeyPressed
 
     private void jPanelViewportCartasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelViewportCartasMouseClicked
