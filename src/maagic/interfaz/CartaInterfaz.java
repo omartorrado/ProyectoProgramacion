@@ -101,7 +101,7 @@ public class CartaInterfaz extends javax.swing.JPanel {
         cartaElegida=new Carta(Integer.parseInt(this.jLabelVida.getText()),Integer.parseInt(this.jLabelAtaque.getText()),Integer.parseInt(this.jLabelCoste.getText()));
         anteriorCartaElegida=this.getParent().getComponentZOrder(this);
         System.out.println("Este es el componente nº: "+anteriorCartaElegida);
-        System.out.println("Su padre se llama"+this.getParent().toString());
+        System.out.println("Este es el componente elegido"+this.getParent().getComponent(anteriorCartaElegida));
     }//GEN-LAST:event_formMouseClicked
 
     private void formFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusLost

@@ -135,8 +135,9 @@ public class ElegirBaraja extends javax.swing.JPanel {
                 jPanelViewportCartasKeyPressed(evt);
             }
         });
-        jPanelViewportCartas.setLayout(new java.awt.GridLayout());
+        jPanelViewportCartas.setLayout(new java.awt.GridLayout(1, 0));
         jScrollPaneCartas.setViewportView(jPanelViewportCartas);
+        jPanelViewportCartas.getAccessibleContext().setAccessibleName("Cartas");
 
         add(jScrollPaneCartas);
         jScrollPaneCartas.setBounds(100, 20, 600, 250);
