@@ -5,6 +5,10 @@
  */
 package maagic.interfaz;
 
+import java.io.File;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Delio
@@ -24,6 +28,13 @@ public class AñadirJugadores extends javax.swing.JPanel {
         DimensionPantalla.adaptarResolucion(botonvolvermenu);
         DimensionPantalla.adaptarResolucion(scrolldeañadirjugadores);
         DimensionPantalla.adaptarResolucion(listajugadores);
+        
+        
+        
+        
+        
+        
+        
     }
 
     /**
@@ -35,13 +46,16 @@ public class AñadirJugadores extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelañadirjugadores = new javax.swing.JPanel();
         botonvolvermenu = new javax.swing.JButton();
         botonirajuego = new javax.swing.JButton();
         scrolldeañadirjugadores = new javax.swing.JScrollPane();
-        listajugadores = new javax.swing.JList<>();
+        listajugadores = new javax.swing.JList<String>();
         imagenfondo = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        panelañadirjugadores.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         botonvolvermenu.setBackground(new java.awt.Color(102, 140, 144));
         botonvolvermenu.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
@@ -53,7 +67,7 @@ public class AñadirJugadores extends javax.swing.JPanel {
                 botonvolvermenuActionPerformed(evt);
             }
         });
-        add(botonvolvermenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 600, 60, 20));
+        panelañadirjugadores.add(botonvolvermenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 600, 60, 20));
 
         botonirajuego.setBackground(new java.awt.Color(102, 140, 144));
         botonirajuego.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
@@ -65,22 +79,29 @@ public class AñadirJugadores extends javax.swing.JPanel {
                 botonirajuegoActionPerformed(evt);
             }
         });
-        add(botonirajuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 550, 170, 40));
+        panelañadirjugadores.add(botonirajuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 550, 170, 40));
 
         listajugadores.setBackground(new java.awt.Color(153, 204, 0));
-        listajugadores.setModel(new javax.swing.AbstractListModel<String>() {
+        listajugadores.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            public Object getElementAt(int i) { return strings[i]; }
         });
         listajugadores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        listajugadores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listajugadoresMouseClicked(evt);
+            }
+        });
         scrolldeañadirjugadores.setViewportView(listajugadores);
 
-        add(scrolldeañadirjugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 390, 590, 250));
+        panelañadirjugadores.add(scrolldeañadirjugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 390, 590, 250));
 
         imagenfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/ImagenFondo.jpg"))); // NOI18N
         imagenfondo.setText("jLabel1");
-        add(imagenfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, -1));
+        panelañadirjugadores.add(imagenfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, -1));
+
+        add(panelañadirjugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonvolvermenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonvolvermenuActionPerformed
@@ -89,12 +110,40 @@ public class AñadirJugadores extends javax.swing.JPanel {
         //Aki va el menu de jugar la partida
         this.setVisible(false);
         this.getParent().getComponent(0).setVisible(true);
-
+      
     }//GEN-LAST:event_botonvolvermenuActionPerformed
 
     private void botonirajuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonirajuegoActionPerformed
-        // TODO add your handling code here:
+
+        if(listajugadores.isSelectionEmpty()){
+            Interfaz2 IrJuego=new Interfaz2();
+        panelañadirjugadores.add(IrJuego,new org.netbeans.lib.awtextra.AbsoluteConstraints (0, 0, 1920, 1080), 1);
+        listajugadores.getSelectedIndex();
+            }
+        else{
+        JOptionPane.showInputDialog("No se a seleccionado jugador escoja uno");
+        
+        }
     }//GEN-LAST:event_botonirajuegoActionPerformed
+
+    private void listajugadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listajugadoresMouseClicked
+        Scanner sc = null;      
+        File cartas;
+        cartas= new File("");
+//        Mirar listajugadores para seleccionar un jugador
+        while(sc.hasNextLine()){
+//            int cvida=sc.hasNextInt();
+//            int cataque=sc.hasNextInt();
+            
+        
+        
+        
+        
+        
+       listajugadores.grabFocus();
+        listajugadores.requestFocusInWindow(); 
+        }
+    }//GEN-LAST:event_listajugadoresMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -102,6 +151,7 @@ public class AñadirJugadores extends javax.swing.JPanel {
     private javax.swing.JButton botonvolvermenu;
     private javax.swing.JLabel imagenfondo;
     private javax.swing.JList<String> listajugadores;
+    private javax.swing.JPanel panelañadirjugadores;
     private javax.swing.JScrollPane scrolldeañadirjugadores;
     // End of variables declaration//GEN-END:variables
 }

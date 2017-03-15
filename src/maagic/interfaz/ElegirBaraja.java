@@ -8,7 +8,10 @@ package maagic.interfaz;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import maagic.Carta;
 
@@ -160,57 +163,63 @@ public class ElegirBaraja extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarActionPerformed
-        //Guarda en archivos todos larchivos en el directorio barajas
-        File path=new File("barajas/");
-        String[] archivos=path.list();
-        Scanner scBaraja;
-        //Aki tiene k crear un panel donde escoger la baraja
-        //Por cada archivo añadir una opcion
-        String nombreArchivo=JOptionPane.showInputDialog(this,"Escoge una baraja", "Selector de baraja",JOptionPane.INFORMATION_MESSAGE, null,archivos, archivos[0]).toString();
-        //Luego tiene que devolver la opcion escogida y leer dicho archivo
-        String opcionEscogida=path.getPath()+"/"+nombreArchivo;
-        System.out.println(opcionEscogida);
-        File archivo=new File(opcionEscogida);
-        /*
-        //Establecemos el tamaño del viewport en base al numero de cartas
-        try{
-        scBaraja = new Scanner(archivo);
-        int numeroDeCartas=0;
-        while (scBaraja.hasNextLine()) {
-            numeroDeCartas++;
-        }
-        scBaraja.close();
-            System.out.println("cambiamos tamaño scrollview");
-        jPanelViewportBaraja.setSize(185*numeroDeCartas ,250);
-        jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, numeroDeCartas));
-        }catch(Exception e){
-            System.out.println("Error");
-        }
-            //Añadimos las cartas de dicha baraja al viewport
-        */
-        try {
+
+        try {                                              
+            //Guarda en archivos todos larchivos en el directorio barajas
+            File path=new File("barajas/");
+            String[] archivos=path.list();
+            Scanner scBaraja;
+            //Aki tiene k crear un panel donde escoger la baraja
+            //Por cada archivo añadir una opcion
+            String nombreArchivo=JOptionPane.showInputDialog(this,"Escoge una baraja", "Selector de baraja",JOptionPane.INFORMATION_MESSAGE, null,archivos, archivos[0]).toString();
+            //Luego tiene que devolver la opcion escogida y leer dicho archivo
+            String opcionEscogida=path.getPath()+"/"+nombreArchivo;
+            System.out.println(opcionEscogida);
+            File archivo=new File(opcionEscogida);
+            File.createTempFile("Jugador1", "temporal", archivo);
+            /*
+            //Establecemos el tamaño del viewport en base al numero de cartas
+            try{
             scBaraja = new Scanner(archivo);
-            jPanelViewportBaraja.removeAll();
+            int numeroDeCartas=0;
             while (scBaraja.hasNextLine()) {
-                int cvida = scBaraja.nextInt();
-                int cataque = scBaraja.nextInt();
-                int ccoste = scBaraja.nextInt();
-                Carta c = new Carta(cvida, cataque, ccoste);
-                CartaInterfaz displayCarta=new CartaInterfaz(c);
-                displayCarta.setOpaque(false);
-                jPanelViewportBaraja.add(displayCarta);
-                displayCarta.setSize(180,250);
-                System.out.println("Carta Creada");
+            numeroDeCartas++;
             }
-            jPanelViewportBaraja.setSize(new Dimension(5555,250));
-            jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, 30));
             scBaraja.close();
-            
-            
-            
-            
-        } catch (Exception e) {
-            System.out.println("Error Carta");
+            System.out.println("cambiamos tamaño scrollview");
+            jPanelViewportBaraja.setSize(185*numeroDeCartas ,250);
+            jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, numeroDeCartas));
+            }catch(Exception e){
+            System.out.println("Error");
+            }
+            //Añadimos las cartas de dicha baraja al viewport
+            */
+            try {
+                scBaraja = new Scanner(archivo);
+                jPanelViewportBaraja.removeAll();
+                while (scBaraja.hasNextLine()) {
+                    int cvida = scBaraja.nextInt();
+                    int cataque = scBaraja.nextInt();
+                    int ccoste = scBaraja.nextInt();
+                    Carta c = new Carta(cvida, cataque, ccoste);
+                    CartaInterfaz displayCarta=new CartaInterfaz(c);
+                    displayCarta.setOpaque(false);
+                    jPanelViewportBaraja.add(displayCarta);
+                    displayCarta.setSize(180,250);
+                    System.out.println("Carta Creada");
+                }
+                jPanelViewportBaraja.setSize(new Dimension(5555,250));
+                jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, 30));
+                scBaraja.close();
+                
+                
+                
+                
+            } catch (Exception e) {
+                System.out.println("Error Carta");
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(ElegirBaraja.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButtonCargarActionPerformed
 
@@ -220,7 +229,8 @@ public class ElegirBaraja extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-        
+        jButtonCargar.grabFocus();
+        jButtonCargar.requestFocusInWindow();
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
     private void jPanelViewportCartasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanelViewportCartasKeyPressed
