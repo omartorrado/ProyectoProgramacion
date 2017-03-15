@@ -5,6 +5,7 @@
  */
 package maagic.interfaz;
 
+import java.awt.Color;
 import maagic.Carta;
 
 /**
@@ -95,13 +96,11 @@ public class CartaInterfaz extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-        //if(this.getParent().hasFocus()){
         this.grabFocus();
         ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(15, 15, 15, 15, new java.awt.Color(0,255,0)));
         cartaElegida=new Carta(Integer.parseInt(this.jLabelVida.getText()),Integer.parseInt(this.jLabelAtaque.getText()),Integer.parseInt(this.jLabelCoste.getText()));
         anteriorCartaElegida=this.getParent().getComponentZOrder(this);
-        System.out.println("Este es el componente nº: "+anteriorCartaElegida);
-        //}
+        System.out.println("Este es el componente nº: "+anteriorCartaElegida); 
     }//GEN-LAST:event_formMouseClicked
 
     private void formFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusLost

@@ -10,6 +10,7 @@ import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import static javax.sound.sampled.Clip.LOOP_CONTINUOUSLY;
+import javax.sound.sampled.FloatControl;
 
 
 
@@ -48,32 +49,32 @@ public class Menu extends javax.swing.JFrame {
         //Musica
         System.out.println("Suena la musica?");
         
-        try{
-        musicaMenu=AudioSystem.getClip();
-        musicaMenu.open(AudioSystem.getAudioInputStream(new File("sound/testSound.aiff")));
-        musicaMenu.loop(LOOP_CONTINUOUSLY);
+        try {
+            musicaMenu = AudioSystem.getClip();
+            musicaMenu.open(AudioSystem.getAudioInputStream(new File("sound/testSound.aiff")));
+            musicaMenu.loop(LOOP_CONTINUOUSLY);
             System.out.println("Si");
-        }
-        catch(Exception e){
+            
+        } catch (Exception e) {
             System.out.println(e.toString());
             System.out.println("Error Leyendo musica");
         }
-        if(musicaMenu.isActive()){
+        if (musicaMenu.isActive()) {
             musicaMenu.start();
+//             FloatControl gainControl= (FloatControl) musicaMenu.getControl(FloatControl.Type.MASTER_GAIN);
+//            gainControl.setValue(10.0F);
         }
-        
+
         /*Esta parte muestra los formaos soportados por consola
         AudioFileFormat.Type[] formatos= AudioSystem.getAudioFileTypes();
         for(AudioFileFormat.Type f : formatos){
             System.out.println(f);
         }
-        */
-        
+         */
         //End Musica
     }
 
 
-    
     
 //    @Override
 //    public  Image getIconImage(){
@@ -174,6 +175,9 @@ public class Menu extends javax.swing.JFrame {
         //Aki va el menu de jugar la partida
         menu.setVisible(false);
         musicaMenu.stop();
+        AñadirJugadores seleccionJugadores=new AñadirJugadores();
+        panelprincipal.add(seleccionJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080), 1);
+        
        
     }//GEN-LAST:event_Boton1JugarActionPerformed
 

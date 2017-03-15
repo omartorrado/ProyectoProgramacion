@@ -22,6 +22,7 @@ import javax.swing.JLabel;
  * @author Delio
  */
 import javax.swing.JPanel;
+import javax.swing.text.View;
 public class DimensionPantalla extends JPanel{
     
     /*
@@ -160,4 +161,5 @@ public class DimensionPantalla extends JPanel{
             System.out.println("Error");
         }
     }
+
 }
