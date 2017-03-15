@@ -18,6 +18,7 @@ import maagic.Carta;
  */
 public class ElegirBaraja extends javax.swing.JPanel {
 
+    Carta[] barajaElegida=new Carta[30];
     /**
      * Creates new form ElegirBaraja
      */
@@ -191,6 +192,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
         try {
             scBaraja = new Scanner(archivo);
             jPanelViewportBaraja.removeAll();
+            int posicion=0;
             while (scBaraja.hasNextLine()) {
                 int cvida = scBaraja.nextInt();
                 int cataque = scBaraja.nextInt();
@@ -201,6 +203,8 @@ public class ElegirBaraja extends javax.swing.JPanel {
                 jPanelViewportBaraja.add(displayCarta);
                 displayCarta.setSize(180,250);
                 System.out.println("Carta Creada");
+                barajaElegida[0]=c;
+                posicion++;
             }
             jPanelViewportBaraja.setSize(new Dimension(5555,250));
             jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, 30));

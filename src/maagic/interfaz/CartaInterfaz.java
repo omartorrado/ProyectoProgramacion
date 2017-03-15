@@ -13,10 +13,14 @@ import maagic.Carta;
  */
 public class CartaInterfaz extends javax.swing.JPanel {
 
+    Carta cartaElegida;
+    int anteriorCartaElegida;
     /**
      * Creates new form Carta
      * @param c
      */
+    
+    
     public CartaInterfaz(Carta c) {
         initComponents();
         jLabelAtaque.setText("" + c.getAtaque());
@@ -46,6 +50,11 @@ public class CartaInterfaz extends javax.swing.JPanel {
 
         setMaximumSize(new java.awt.Dimension(180, 250));
         setOpaque(false);
+        addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                formFocusLost(evt);
+            }
+        });
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
@@ -86,8 +95,22 @@ public class CartaInterfaz extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        //if(this.getParent().hasFocus()){
         
+        ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(15, 15, 15, 15, new java.awt.Color(0,255,0)));
+        cartaElegida=new Carta(Integer.parseInt(this.jLabelVida.getText()),Integer.parseInt(this.jLabelAtaque.getText()),Integer.parseInt(this.jLabelCoste.getText()));
+        anteriorCartaElegida=this.getParent().getComponentZOrder(this);
+        //}
     }//GEN-LAST:event_formMouseClicked
+
+    private void formFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusLost
+        //if(this.getParent().getParent().getParent().getComponent(5).isFocusOwner()){
+        //ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(255, 0, 0)));
+//        }
+//        else{
+//            ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(153, 102, 0)));
+//        }
+    }//GEN-LAST:event_formFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
