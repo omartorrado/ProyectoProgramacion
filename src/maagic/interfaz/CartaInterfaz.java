@@ -96,15 +96,18 @@ public class CartaInterfaz extends javax.swing.JPanel {
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
         //if(this.getParent().hasFocus()){
-        
+        this.grabFocus();
         ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(15, 15, 15, 15, new java.awt.Color(0,255,0)));
         cartaElegida=new Carta(Integer.parseInt(this.jLabelVida.getText()),Integer.parseInt(this.jLabelAtaque.getText()),Integer.parseInt(this.jLabelCoste.getText()));
         anteriorCartaElegida=this.getParent().getComponentZOrder(this);
+        System.out.println("Este es el componente nº: "+anteriorCartaElegida);
         //}
     }//GEN-LAST:event_formMouseClicked
 
     private void formFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusLost
-        //if(this.getParent().getParent().getParent().getComponent(5).isFocusOwner()){
+        if(cartaElegida instanceof Carta){}
+        ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(153, 102, 0)));
+            //if(this.getParent().getParent().getParent().getComponent(5).isFocusOwner()){
         //ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(255, 0, 0)));
 //        }
 //        else{
