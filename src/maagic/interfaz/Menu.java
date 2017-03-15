@@ -54,15 +54,15 @@ public class Menu extends javax.swing.JFrame {
             musicaMenu.open(AudioSystem.getAudioInputStream(new File("sound/testSound.aiff")));
             musicaMenu.loop(LOOP_CONTINUOUSLY);
             System.out.println("Si");
+            
         } catch (Exception e) {
             System.out.println(e.toString());
             System.out.println("Error Leyendo musica");
         }
         if (musicaMenu.isActive()) {
-            FloatControl gainControl
-                    = (FloatControl) musicaMenu.getControl(FloatControl.Type.MASTER_GAIN);
-            gainControl.setValue(-10.0f);
             musicaMenu.start();
+//             FloatControl gainControl= (FloatControl) musicaMenu.getControl(FloatControl.Type.MASTER_GAIN);
+//            gainControl.setValue(10.0F);
         }
 
         /*Esta parte muestra los formaos soportados por consola
@@ -175,6 +175,9 @@ public class Menu extends javax.swing.JFrame {
         //Aki va el menu de jugar la partida
         menu.setVisible(false);
         musicaMenu.stop();
+        AñadirJugadores seleccionJugadores=new AñadirJugadores();
+        panelprincipal.add(seleccionJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080), 1);
+        
        
     }//GEN-LAST:event_Boton1JugarActionPerformed
 

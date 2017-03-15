@@ -19,8 +19,8 @@ public class AñadirJugadores extends javax.swing.JPanel {
 //        this.setSize(1920, 1080);
 //        this.getRootPane().setSize(1920, 1080);
 //        DimensionPantalla.adaptarFrame(this);
-        DimensionPantalla.adaptarResolucion(jLabel1);
-        DimensionPantalla.adaptarResolucion( botonseleccionar);
+        DimensionPantalla.adaptarResolucion(imagenfondo);
+        DimensionPantalla.adaptarResolucion(botonirajuego);
         DimensionPantalla.adaptarResolucion(botonvolvermenu);
         DimensionPantalla.adaptarResolucion(scrolldeañadirjugadores);
         DimensionPantalla.adaptarResolucion(listajugadores);
@@ -36,10 +36,10 @@ public class AñadirJugadores extends javax.swing.JPanel {
     private void initComponents() {
 
         botonvolvermenu = new javax.swing.JButton();
-        botonseleccionar = new javax.swing.JButton();
+        botonirajuego = new javax.swing.JButton();
         scrolldeañadirjugadores = new javax.swing.JScrollPane();
         listajugadores = new javax.swing.JList<>();
-        jLabel1 = new javax.swing.JLabel();
+        imagenfondo = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -55,17 +55,17 @@ public class AñadirJugadores extends javax.swing.JPanel {
         });
         add(botonvolvermenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 600, 60, 20));
 
-        botonseleccionar.setBackground(new java.awt.Color(102, 140, 144));
-        botonseleccionar.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
-        botonseleccionar.setForeground(new java.awt.Color(102, 0, 102));
-        botonseleccionar.setText("Selecione un Jugador");
-        botonseleccionar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        botonseleccionar.addActionListener(new java.awt.event.ActionListener() {
+        botonirajuego.setBackground(new java.awt.Color(102, 140, 144));
+        botonirajuego.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
+        botonirajuego.setForeground(new java.awt.Color(102, 0, 102));
+        botonirajuego.setText("Cargar Juego");
+        botonirajuego.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botonirajuego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonseleccionarActionPerformed(evt);
+                botonirajuegoActionPerformed(evt);
             }
         });
-        add(botonseleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 550, 170, 40));
+        add(botonirajuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 550, 170, 40));
 
         listajugadores.setBackground(new java.awt.Color(153, 204, 0));
         listajugadores.setModel(new javax.swing.AbstractListModel<String>() {
@@ -78,9 +78,9 @@ public class AñadirJugadores extends javax.swing.JPanel {
 
         add(scrolldeañadirjugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 390, 590, 250));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/ImagenFondo.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, -1));
+        imagenfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/ImagenFondo.jpg"))); // NOI18N
+        imagenfondo.setText("jLabel1");
+        add(imagenfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonvolvermenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonvolvermenuActionPerformed
@@ -92,15 +92,15 @@ public class AñadirJugadores extends javax.swing.JPanel {
 
     }//GEN-LAST:event_botonvolvermenuActionPerformed
 
-    private void botonseleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonseleccionarActionPerformed
+    private void botonirajuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonirajuegoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botonseleccionarActionPerformed
+    }//GEN-LAST:event_botonirajuegoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonseleccionar;
+    private javax.swing.JButton botonirajuego;
     private javax.swing.JButton botonvolvermenu;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel imagenfondo;
     private javax.swing.JList<String> listajugadores;
     private javax.swing.JScrollPane scrolldeañadirjugadores;
     // End of variables declaration//GEN-END:variables

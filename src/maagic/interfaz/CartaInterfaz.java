@@ -5,6 +5,7 @@
  */
 package maagic.interfaz;
 
+import java.awt.Color;
 import maagic.Carta;
 
 /**
@@ -86,6 +87,16 @@ public class CartaInterfaz extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        
+//        ElegirBaraja cartaBaraja=new ElegirBaraja();
+//        cartaBaraja.getjScrollPaneCartas();
+        
+//            ImagenesFondo.imageUpdate(img, SOMEBITS, WIDTH, WIDTH, WIDTH, WIDTH);
+        
+        
+        
+        
+        
         
     }//GEN-LAST:event_formMouseClicked
 
