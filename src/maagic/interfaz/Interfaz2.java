@@ -5,13 +5,11 @@
  */
 package maagic.interfaz;
 
-import java.awt.event.KeyEvent;
-
 /**
  *
- * @author Orom
+ * @author alvar
  */
-public class Interfaz2 extends javax.swing.JFrame {
+public class Interfaz2 extends javax.swing.JPanel {
 
     /**
      * Creates new form Interfaz
@@ -29,619 +27,412 @@ public class Interfaz2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jugador1Baraja = new javax.swing.JPanel();
-        jugador1Corazon = new javax.swing.JPanel();
-        jugador1Gema = new javax.swing.JPanel();
-        jugador1Mana = new javax.swing.JPanel();
-        jugador1Vida = new javax.swing.JPanel();
-        jugador2Baraja = new javax.swing.JPanel();
-        jugador2Corazon = new javax.swing.JPanel();
-        jugador2Gema = new javax.swing.JPanel();
-        jugador2Vida = new javax.swing.JPanel();
-        jugador2Mana = new javax.swing.JPanel();
+        jugador1CorazonCuadro = new javax.swing.JPanel();
+        jugador1Corazon = new javax.swing.JLabel();
+        jugador1GotaCuadro = new javax.swing.JPanel();
+        jugador1Gota = new javax.swing.JLabel();
+        jugador1Mano = new javax.swing.JPanel();
         jugador1Mano1 = new javax.swing.JPanel();
         jugador1Mano2 = new javax.swing.JPanel();
         jugador1Mano3 = new javax.swing.JPanel();
-        jugador1Fila2Hueco1 = new javax.swing.JPanel();
-        jugador1Fila1Hueco1 = new javax.swing.JPanel();
-        jugador1Fila1Hueco2 = new javax.swing.JPanel();
-        jugador1Fila1Hueco3 = new javax.swing.JPanel();
-        jugador2Fila1Hueco3 = new javax.swing.JPanel();
-        jugador2Fila1Hueco2 = new javax.swing.JPanel();
-        jugador2Fila1Hueco1 = new javax.swing.JPanel();
+        jugador2Mano = new javax.swing.JPanel();
         jugador2Mano1 = new javax.swing.JPanel();
-        jugador2Mano3 = new javax.swing.JPanel();
-        jugador2Fila3Hueco1 = new javax.swing.JPanel();
-        jugador2Fila3Hueco2 = new javax.swing.JPanel();
-        jugador2Fila3Hueco3 = new javax.swing.JPanel();
-        jugador1Fila3Hueco3 = new javax.swing.JPanel();
-        jugador1Fila3Hueco2 = new javax.swing.JPanel();
-        jugador1Fila2Hueco2 = new javax.swing.JPanel();
-        jugador1Fila2Hueco3 = new javax.swing.JPanel();
-        jugador2Fila2Hueco3 = new javax.swing.JPanel();
-        jugador2Fila2Hueco2 = new javax.swing.JPanel();
-        jugador2Fila2Hueco1 = new javax.swing.JPanel();
         jugador2Mano2 = new javax.swing.JPanel();
-        jugador1Fila3Hueco1 = new javax.swing.JPanel();
+        jugador2Mano3 = new javax.swing.JPanel();
+        jugador1ManaCuadro = new javax.swing.JPanel();
+        jugador1Mana = new javax.swing.JLabel();
+        jugador1VidaCuadro = new javax.swing.JPanel();
+        jugador1Vida = new javax.swing.JLabel();
+        jugador2VidaCuadro = new javax.swing.JPanel();
+        jugador2Vida = new javax.swing.JLabel();
+        jugador2ManaCuadro = new javax.swing.JPanel();
+        jugador2Mana = new javax.swing.JLabel();
+        jugador2CorazonCuadro = new javax.swing.JPanel();
+        jugador2Corazon = new javax.swing.JLabel();
+        jugador2GotaCuadro = new javax.swing.JPanel();
+        jugador2Gota = new javax.swing.JLabel();
+        jugador1TableroCuadro = new javax.swing.JPanel();
+        jugador1TableroCarta1 = new javax.swing.JPanel();
+        jugador1TableroCarta2 = new javax.swing.JPanel();
+        jugador1TableroCarta3 = new javax.swing.JPanel();
+        jugador2TableroCuadro = new javax.swing.JPanel();
+        jugador2TableroCarta1 = new javax.swing.JPanel();
+        jugador2TableroCarta2 = new javax.swing.JPanel();
+        jugador2TableroCarta3 = new javax.swing.JPanel();
+        jugador1Baraja = new javax.swing.JLabel();
+        jugador2Baraja = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1366, 768));
+        setLayout(null);
 
-        javax.swing.GroupLayout jugador1BarajaLayout = new javax.swing.GroupLayout(jugador1Baraja);
-        jugador1Baraja.setLayout(jugador1BarajaLayout);
-        jugador1BarajaLayout.setHorizontalGroup(
-            jugador1BarajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 102, Short.MAX_VALUE)
-        );
-        jugador1BarajaLayout.setVerticalGroup(
-            jugador1BarajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 95, Short.MAX_VALUE)
-        );
+        jugador1CorazonCuadro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jugador1CorazonCuadro.setPreferredSize(new java.awt.Dimension(50, 50));
 
-        javax.swing.GroupLayout jugador1CorazonLayout = new javax.swing.GroupLayout(jugador1Corazon);
-        jugador1Corazon.setLayout(jugador1CorazonLayout);
-        jugador1CorazonLayout.setHorizontalGroup(
-            jugador1CorazonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jugador1CorazonLayout.setVerticalGroup(
-            jugador1CorazonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
+        jugador1Corazon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/corazon.png"))); // NOI18N
 
-        javax.swing.GroupLayout jugador1GemaLayout = new javax.swing.GroupLayout(jugador1Gema);
-        jugador1Gema.setLayout(jugador1GemaLayout);
-        jugador1GemaLayout.setHorizontalGroup(
-            jugador1GemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 37, Short.MAX_VALUE)
+        javax.swing.GroupLayout jugador1CorazonCuadroLayout = new javax.swing.GroupLayout(jugador1CorazonCuadro);
+        jugador1CorazonCuadro.setLayout(jugador1CorazonCuadroLayout);
+        jugador1CorazonCuadroLayout.setHorizontalGroup(
+            jugador1CorazonCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jugador1CorazonCuadroLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jugador1Corazon, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jugador1GemaLayout.setVerticalGroup(
-            jugador1GemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jugador1ManaLayout = new javax.swing.GroupLayout(jugador1Mana);
-        jugador1Mana.setLayout(jugador1ManaLayout);
-        jugador1ManaLayout.setHorizontalGroup(
-            jugador1ManaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 117, Short.MAX_VALUE)
-        );
-        jugador1ManaLayout.setVerticalGroup(
-            jugador1ManaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jugador1CorazonCuadroLayout.setVerticalGroup(
+            jugador1CorazonCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jugador1Corazon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jugador1VidaLayout = new javax.swing.GroupLayout(jugador1Vida);
-        jugador1Vida.setLayout(jugador1VidaLayout);
-        jugador1VidaLayout.setHorizontalGroup(
-            jugador1VidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 117, Short.MAX_VALUE)
+        add(jugador1CorazonCuadro);
+        jugador1CorazonCuadro.setBounds(100, 10, 51, 50);
+
+        jugador1Gota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/mana.png"))); // NOI18N
+
+        javax.swing.GroupLayout jugador1GotaCuadroLayout = new javax.swing.GroupLayout(jugador1GotaCuadro);
+        jugador1GotaCuadro.setLayout(jugador1GotaCuadroLayout);
+        jugador1GotaCuadroLayout.setHorizontalGroup(
+            jugador1GotaCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jugador1Gota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jugador1VidaLayout.setVerticalGroup(
-            jugador1VidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jugador1GotaCuadroLayout.setVerticalGroup(
+            jugador1GotaCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jugador1Gota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jugador2BarajaLayout = new javax.swing.GroupLayout(jugador2Baraja);
-        jugador2Baraja.setLayout(jugador2BarajaLayout);
-        jugador2BarajaLayout.setHorizontalGroup(
-            jugador2BarajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 102, Short.MAX_VALUE)
-        );
-        jugador2BarajaLayout.setVerticalGroup(
-            jugador2BarajaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 95, Short.MAX_VALUE)
-        );
+        add(jugador1GotaCuadro);
+        jugador1GotaCuadro.setBounds(100, 70, 51, 50);
 
-        javax.swing.GroupLayout jugador2CorazonLayout = new javax.swing.GroupLayout(jugador2Corazon);
-        jugador2Corazon.setLayout(jugador2CorazonLayout);
-        jugador2CorazonLayout.setHorizontalGroup(
-            jugador2CorazonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 37, Short.MAX_VALUE)
-        );
-        jugador2CorazonLayout.setVerticalGroup(
-            jugador2CorazonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jugador2GemaLayout = new javax.swing.GroupLayout(jugador2Gema);
-        jugador2Gema.setLayout(jugador2GemaLayout);
-        jugador2GemaLayout.setHorizontalGroup(
-            jugador2GemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 37, Short.MAX_VALUE)
-        );
-        jugador2GemaLayout.setVerticalGroup(
-            jugador2GemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 39, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jugador2VidaLayout = new javax.swing.GroupLayout(jugador2Vida);
-        jugador2Vida.setLayout(jugador2VidaLayout);
-        jugador2VidaLayout.setHorizontalGroup(
-            jugador2VidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jugador2VidaLayout.setVerticalGroup(
-            jugador2VidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 39, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jugador2ManaLayout = new javax.swing.GroupLayout(jugador2Mana);
-        jugador2Mana.setLayout(jugador2ManaLayout);
-        jugador2ManaLayout.setHorizontalGroup(
-            jugador2ManaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 87, Short.MAX_VALUE)
-        );
-        jugador2ManaLayout.setVerticalGroup(
-            jugador2ManaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 48, Short.MAX_VALUE)
-        );
+        jugador1Mano.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jugador1ManoKeyPressed(evt);
+            }
+        });
+        jugador1Mano.setLayout(new java.awt.GridLayout(3, 0, 0, 20));
 
         javax.swing.GroupLayout jugador1Mano1Layout = new javax.swing.GroupLayout(jugador1Mano1);
         jugador1Mano1.setLayout(jugador1Mano1Layout);
         jugador1Mano1Layout.setHorizontalGroup(
             jugador1Mano1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 200, Short.MAX_VALUE)
         );
         jugador1Mano1Layout.setVerticalGroup(
             jugador1Mano1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 253, Short.MAX_VALUE)
         );
+
+        jugador1Mano.add(jugador1Mano1);
 
         javax.swing.GroupLayout jugador1Mano2Layout = new javax.swing.GroupLayout(jugador1Mano2);
         jugador1Mano2.setLayout(jugador1Mano2Layout);
         jugador1Mano2Layout.setHorizontalGroup(
             jugador1Mano2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 126, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jugador1Mano2Layout.setVerticalGroup(
             jugador1Mano2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 253, Short.MAX_VALUE)
         );
+
+        jugador1Mano.add(jugador1Mano2);
 
         javax.swing.GroupLayout jugador1Mano3Layout = new javax.swing.GroupLayout(jugador1Mano3);
         jugador1Mano3.setLayout(jugador1Mano3Layout);
         jugador1Mano3Layout.setHorizontalGroup(
             jugador1Mano3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jugador1Mano3Layout.setVerticalGroup(
             jugador1Mano3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 253, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jugador1Fila2Hueco1Layout = new javax.swing.GroupLayout(jugador1Fila2Hueco1);
-        jugador1Fila2Hueco1.setLayout(jugador1Fila2Hueco1Layout);
-        jugador1Fila2Hueco1Layout.setHorizontalGroup(
-            jugador1Fila2Hueco1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 102, Short.MAX_VALUE)
-        );
-        jugador1Fila2Hueco1Layout.setVerticalGroup(
-            jugador1Fila2Hueco1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        jugador1Mano.add(jugador1Mano3);
 
-        javax.swing.GroupLayout jugador1Fila1Hueco1Layout = new javax.swing.GroupLayout(jugador1Fila1Hueco1);
-        jugador1Fila1Hueco1.setLayout(jugador1Fila1Hueco1Layout);
-        jugador1Fila1Hueco1Layout.setHorizontalGroup(
-            jugador1Fila1Hueco1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jugador1Fila1Hueco1Layout.setVerticalGroup(
-            jugador1Fila1Hueco1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        add(jugador1Mano);
+        jugador1Mano.setBounds(10, 130, 200, 800);
 
-        javax.swing.GroupLayout jugador1Fila1Hueco2Layout = new javax.swing.GroupLayout(jugador1Fila1Hueco2);
-        jugador1Fila1Hueco2.setLayout(jugador1Fila1Hueco2Layout);
-        jugador1Fila1Hueco2Layout.setHorizontalGroup(
-            jugador1Fila1Hueco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jugador1Fila1Hueco2Layout.setVerticalGroup(
-            jugador1Fila1Hueco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        jugador2Mano.setPreferredSize(new java.awt.Dimension(180, 250));
+        jugador2Mano.setLayout(new java.awt.GridLayout(3, 0, 0, 20));
 
-        javax.swing.GroupLayout jugador1Fila1Hueco3Layout = new javax.swing.GroupLayout(jugador1Fila1Hueco3);
-        jugador1Fila1Hueco3.setLayout(jugador1Fila1Hueco3Layout);
-        jugador1Fila1Hueco3Layout.setHorizontalGroup(
-            jugador1Fila1Hueco3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jugador1Fila1Hueco3Layout.setVerticalGroup(
-            jugador1Fila1Hueco3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jugador2Fila1Hueco3Layout = new javax.swing.GroupLayout(jugador2Fila1Hueco3);
-        jugador2Fila1Hueco3.setLayout(jugador2Fila1Hueco3Layout);
-        jugador2Fila1Hueco3Layout.setHorizontalGroup(
-            jugador2Fila1Hueco3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jugador2Fila1Hueco3Layout.setVerticalGroup(
-            jugador2Fila1Hueco3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jugador2Fila1Hueco2Layout = new javax.swing.GroupLayout(jugador2Fila1Hueco2);
-        jugador2Fila1Hueco2.setLayout(jugador2Fila1Hueco2Layout);
-        jugador2Fila1Hueco2Layout.setHorizontalGroup(
-            jugador2Fila1Hueco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jugador2Fila1Hueco2Layout.setVerticalGroup(
-            jugador2Fila1Hueco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jugador2Fila1Hueco1Layout = new javax.swing.GroupLayout(jugador2Fila1Hueco1);
-        jugador2Fila1Hueco1.setLayout(jugador2Fila1Hueco1Layout);
-        jugador2Fila1Hueco1Layout.setHorizontalGroup(
-            jugador2Fila1Hueco1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jugador2Fila1Hueco1Layout.setVerticalGroup(
-            jugador2Fila1Hueco1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        jugador2Mano1.setPreferredSize(new java.awt.Dimension(180, 250));
 
         javax.swing.GroupLayout jugador2Mano1Layout = new javax.swing.GroupLayout(jugador2Mano1);
         jugador2Mano1.setLayout(jugador2Mano1Layout);
         jugador2Mano1Layout.setHorizontalGroup(
             jugador2Mano1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 200, Short.MAX_VALUE)
         );
         jugador2Mano1Layout.setVerticalGroup(
             jugador2Mano1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
+            .addGap(0, 253, Short.MAX_VALUE)
         );
 
-        jugador2Mano3.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jugador2Mano3FocusGained(evt);
-            }
-        });
+        jugador2Mano.add(jugador2Mano1);
 
-        javax.swing.GroupLayout jugador2Mano3Layout = new javax.swing.GroupLayout(jugador2Mano3);
-        jugador2Mano3.setLayout(jugador2Mano3Layout);
-        jugador2Mano3Layout.setHorizontalGroup(
-            jugador2Mano3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jugador2Mano3Layout.setVerticalGroup(
-            jugador2Mano3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jugador2Fila3Hueco1Layout = new javax.swing.GroupLayout(jugador2Fila3Hueco1);
-        jugador2Fila3Hueco1.setLayout(jugador2Fila3Hueco1Layout);
-        jugador2Fila3Hueco1Layout.setHorizontalGroup(
-            jugador2Fila3Hueco1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 110, Short.MAX_VALUE)
-        );
-        jugador2Fila3Hueco1Layout.setVerticalGroup(
-            jugador2Fila3Hueco1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jugador2Fila3Hueco2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jugador2Fila3Hueco2KeyPressed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jugador2Fila3Hueco2Layout = new javax.swing.GroupLayout(jugador2Fila3Hueco2);
-        jugador2Fila3Hueco2.setLayout(jugador2Fila3Hueco2Layout);
-        jugador2Fila3Hueco2Layout.setHorizontalGroup(
-            jugador2Fila3Hueco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jugador2Fila3Hueco2Layout.setVerticalGroup(
-            jugador2Fila3Hueco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jugador2Fila3Hueco3Layout = new javax.swing.GroupLayout(jugador2Fila3Hueco3);
-        jugador2Fila3Hueco3.setLayout(jugador2Fila3Hueco3Layout);
-        jugador2Fila3Hueco3Layout.setHorizontalGroup(
-            jugador2Fila3Hueco3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jugador2Fila3Hueco3Layout.setVerticalGroup(
-            jugador2Fila3Hueco3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jugador1Fila3Hueco3Layout = new javax.swing.GroupLayout(jugador1Fila3Hueco3);
-        jugador1Fila3Hueco3.setLayout(jugador1Fila3Hueco3Layout);
-        jugador1Fila3Hueco3Layout.setHorizontalGroup(
-            jugador1Fila3Hueco3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jugador1Fila3Hueco3Layout.setVerticalGroup(
-            jugador1Fila3Hueco3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jugador1Fila3Hueco2Layout = new javax.swing.GroupLayout(jugador1Fila3Hueco2);
-        jugador1Fila3Hueco2.setLayout(jugador1Fila3Hueco2Layout);
-        jugador1Fila3Hueco2Layout.setHorizontalGroup(
-            jugador1Fila3Hueco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jugador1Fila3Hueco2Layout.setVerticalGroup(
-            jugador1Fila3Hueco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jugador1Fila2Hueco2Layout = new javax.swing.GroupLayout(jugador1Fila2Hueco2);
-        jugador1Fila2Hueco2.setLayout(jugador1Fila2Hueco2Layout);
-        jugador1Fila2Hueco2Layout.setHorizontalGroup(
-            jugador1Fila2Hueco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jugador1Fila2Hueco2Layout.setVerticalGroup(
-            jugador1Fila2Hueco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jugador1Fila2Hueco3Layout = new javax.swing.GroupLayout(jugador1Fila2Hueco3);
-        jugador1Fila2Hueco3.setLayout(jugador1Fila2Hueco3Layout);
-        jugador1Fila2Hueco3Layout.setHorizontalGroup(
-            jugador1Fila2Hueco3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 98, Short.MAX_VALUE)
-        );
-        jugador1Fila2Hueco3Layout.setVerticalGroup(
-            jugador1Fila2Hueco3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jugador2Fila2Hueco3Layout = new javax.swing.GroupLayout(jugador2Fila2Hueco3);
-        jugador2Fila2Hueco3.setLayout(jugador2Fila2Hueco3Layout);
-        jugador2Fila2Hueco3Layout.setHorizontalGroup(
-            jugador2Fila2Hueco3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jugador2Fila2Hueco3Layout.setVerticalGroup(
-            jugador2Fila2Hueco3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jugador2Fila2Hueco2Layout = new javax.swing.GroupLayout(jugador2Fila2Hueco2);
-        jugador2Fila2Hueco2.setLayout(jugador2Fila2Hueco2Layout);
-        jugador2Fila2Hueco2Layout.setHorizontalGroup(
-            jugador2Fila2Hueco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jugador2Fila2Hueco2Layout.setVerticalGroup(
-            jugador2Fila2Hueco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jugador2Fila2Hueco1Layout = new javax.swing.GroupLayout(jugador2Fila2Hueco1);
-        jugador2Fila2Hueco1.setLayout(jugador2Fila2Hueco1Layout);
-        jugador2Fila2Hueco1Layout.setHorizontalGroup(
-            jugador2Fila2Hueco1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jugador2Fila2Hueco1Layout.setVerticalGroup(
-            jugador2Fila2Hueco1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
-        );
+        jugador2Mano2.setPreferredSize(new java.awt.Dimension(180, 250));
 
         javax.swing.GroupLayout jugador2Mano2Layout = new javax.swing.GroupLayout(jugador2Mano2);
         jugador2Mano2.setLayout(jugador2Mano2Layout);
         jugador2Mano2Layout.setHorizontalGroup(
             jugador2Mano2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 90, Short.MAX_VALUE)
+            .addGap(0, 200, Short.MAX_VALUE)
         );
         jugador2Mano2Layout.setVerticalGroup(
             jugador2Mano2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 253, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jugador1Fila3Hueco1Layout = new javax.swing.GroupLayout(jugador1Fila3Hueco1);
-        jugador1Fila3Hueco1.setLayout(jugador1Fila3Hueco1Layout);
-        jugador1Fila3Hueco1Layout.setHorizontalGroup(
-            jugador1Fila3Hueco1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        jugador2Mano.add(jugador2Mano2);
+
+        jugador2Mano3.setPreferredSize(new java.awt.Dimension(180, 250));
+
+        javax.swing.GroupLayout jugador2Mano3Layout = new javax.swing.GroupLayout(jugador2Mano3);
+        jugador2Mano3.setLayout(jugador2Mano3Layout);
+        jugador2Mano3Layout.setHorizontalGroup(
+            jugador2Mano3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
         );
-        jugador1Fila3Hueco1Layout.setVerticalGroup(
-            jugador1Fila3Hueco1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jugador2Mano3Layout.setVerticalGroup(
+            jugador2Mano3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 253, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jugador2Mano.add(jugador2Mano3);
+
+        add(jugador2Mano);
+        jugador2Mano.setBounds(1380, 130, 200, 800);
+
+        javax.swing.GroupLayout jugador1ManaCuadroLayout = new javax.swing.GroupLayout(jugador1ManaCuadro);
+        jugador1ManaCuadro.setLayout(jugador1ManaCuadroLayout);
+        jugador1ManaCuadroLayout.setHorizontalGroup(
+            jugador1ManaCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jugador1Mana, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jugador1ManaCuadroLayout.setVerticalGroup(
+            jugador1ManaCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jugador1Mana, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        add(jugador1ManaCuadro);
+        jugador1ManaCuadro.setBounds(150, 70, 100, 50);
+
+        javax.swing.GroupLayout jugador1VidaCuadroLayout = new javax.swing.GroupLayout(jugador1VidaCuadro);
+        jugador1VidaCuadro.setLayout(jugador1VidaCuadroLayout);
+        jugador1VidaCuadroLayout.setHorizontalGroup(
+            jugador1VidaCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jugador1Vida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jugador1VidaCuadroLayout.setVerticalGroup(
+            jugador1VidaCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jugador1Vida, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        add(jugador1VidaCuadro);
+        jugador1VidaCuadro.setBounds(150, 10, 100, 50);
+
+        javax.swing.GroupLayout jugador2VidaCuadroLayout = new javax.swing.GroupLayout(jugador2VidaCuadro);
+        jugador2VidaCuadro.setLayout(jugador2VidaCuadroLayout);
+        jugador2VidaCuadroLayout.setHorizontalGroup(
+            jugador2VidaCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jugador2VidaCuadroLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jugador1Baraja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jugador1Gema, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jugador1Corazon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jugador1Mana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jugador1Vida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(397, 397, 397)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jugador2Vida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jugador2Corazon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jugador2Mana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jugador2Gema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jugador2Baraja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jugador1Mano3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jugador1Mano1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jugador1Mano2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jugador1Fila1Hueco1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jugador1Fila1Hueco2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jugador1Fila1Hueco3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jugador1Fila2Hueco1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jugador1Fila2Hueco2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jugador1Fila2Hueco3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(27, 27, 27)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jugador2Fila1Hueco3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jugador2Fila1Hueco2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jugador2Fila1Hueco1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jugador2Fila2Hueco3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jugador2Fila2Hueco2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jugador2Fila2Hueco1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jugador1Fila3Hueco1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jugador1Fila3Hueco2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jugador1Fila3Hueco3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24)
-                                .addComponent(jugador2Fila3Hueco3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jugador2Fila3Hueco2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jugador2Fila3Hueco1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jugador2Mano2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jugador2Mano1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jugador2Mano3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addComponent(jugador2Vida, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jugador1Corazon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jugador1Vida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jugador1Gema, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jugador1Mana, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jugador2Baraja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jugador2Corazon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jugador2Vida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jugador2Gema, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jugador2Mana, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jugador1Baraja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jugador2Mano1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador2Fila1Hueco1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador2Fila1Hueco2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador2Fila1Hueco3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador1Fila1Hueco3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador1Fila1Hueco2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador1Mano1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador1Fila1Hueco1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jugador2Fila2Hueco1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador2Fila2Hueco2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador2Fila2Hueco3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador1Fila2Hueco3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador1Fila2Hueco2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador1Fila2Hueco1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador1Mano2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador2Mano2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jugador1Fila3Hueco2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador1Fila3Hueco3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador2Fila3Hueco3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador2Fila3Hueco2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador2Fila3Hueco1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador2Mano3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador1Mano3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jugador1Fila3Hueco1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(140, 140, 140))
+        jugador2VidaCuadroLayout.setVerticalGroup(
+            jugador2VidaCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jugador2Vida, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        pack();
+        add(jugador2VidaCuadro);
+        jugador2VidaCuadro.setBounds(1320, 10, 120, 50);
+
+        javax.swing.GroupLayout jugador2ManaCuadroLayout = new javax.swing.GroupLayout(jugador2ManaCuadro);
+        jugador2ManaCuadro.setLayout(jugador2ManaCuadroLayout);
+        jugador2ManaCuadroLayout.setHorizontalGroup(
+            jugador2ManaCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jugador2ManaCuadroLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jugador2Mana, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jugador2ManaCuadroLayout.setVerticalGroup(
+            jugador2ManaCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jugador2Mana, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        add(jugador2ManaCuadro);
+        jugador2ManaCuadro.setBounds(1330, 70, 110, 50);
+
+        jugador2Corazon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/corazon.png"))); // NOI18N
+
+        javax.swing.GroupLayout jugador2CorazonCuadroLayout = new javax.swing.GroupLayout(jugador2CorazonCuadro);
+        jugador2CorazonCuadro.setLayout(jugador2CorazonCuadroLayout);
+        jugador2CorazonCuadroLayout.setHorizontalGroup(
+            jugador2CorazonCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jugador2Corazon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+        );
+        jugador2CorazonCuadroLayout.setVerticalGroup(
+            jugador2CorazonCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jugador2Corazon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        add(jugador2CorazonCuadro);
+        jugador2CorazonCuadro.setBounds(1450, 10, 51, 50);
+
+        jugador2Gota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/mana.png"))); // NOI18N
+
+        javax.swing.GroupLayout jugador2GotaCuadroLayout = new javax.swing.GroupLayout(jugador2GotaCuadro);
+        jugador2GotaCuadro.setLayout(jugador2GotaCuadroLayout);
+        jugador2GotaCuadroLayout.setHorizontalGroup(
+            jugador2GotaCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jugador2Gota, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+        );
+        jugador2GotaCuadroLayout.setVerticalGroup(
+            jugador2GotaCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jugador2Gota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        add(jugador2GotaCuadro);
+        jugador2GotaCuadro.setBounds(1450, 70, 51, 50);
+
+        jugador1TableroCuadro.setLayout(new java.awt.GridLayout(3, 0, 0, 20));
+
+        javax.swing.GroupLayout jugador1TableroCarta1Layout = new javax.swing.GroupLayout(jugador1TableroCarta1);
+        jugador1TableroCarta1.setLayout(jugador1TableroCarta1Layout);
+        jugador1TableroCarta1Layout.setHorizontalGroup(
+            jugador1TableroCarta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jugador1TableroCarta1Layout.setVerticalGroup(
+            jugador1TableroCarta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 253, Short.MAX_VALUE)
+        );
+
+        jugador1TableroCuadro.add(jugador1TableroCarta1);
+
+        javax.swing.GroupLayout jugador1TableroCarta2Layout = new javax.swing.GroupLayout(jugador1TableroCarta2);
+        jugador1TableroCarta2.setLayout(jugador1TableroCarta2Layout);
+        jugador1TableroCarta2Layout.setHorizontalGroup(
+            jugador1TableroCarta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+        jugador1TableroCarta2Layout.setVerticalGroup(
+            jugador1TableroCarta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 253, Short.MAX_VALUE)
+        );
+
+        jugador1TableroCuadro.add(jugador1TableroCarta2);
+
+        javax.swing.GroupLayout jugador1TableroCarta3Layout = new javax.swing.GroupLayout(jugador1TableroCarta3);
+        jugador1TableroCarta3.setLayout(jugador1TableroCarta3Layout);
+        jugador1TableroCarta3Layout.setHorizontalGroup(
+            jugador1TableroCarta3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jugador1TableroCarta3Layout.setVerticalGroup(
+            jugador1TableroCarta3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 253, Short.MAX_VALUE)
+        );
+
+        jugador1TableroCuadro.add(jugador1TableroCarta3);
+
+        add(jugador1TableroCuadro);
+        jugador1TableroCuadro.setBounds(580, 130, 200, 800);
+
+        jugador2TableroCuadro.setLayout(new java.awt.GridLayout(3, 0, 0, 20));
+
+        javax.swing.GroupLayout jugador2TableroCarta1Layout = new javax.swing.GroupLayout(jugador2TableroCarta1);
+        jugador2TableroCarta1.setLayout(jugador2TableroCarta1Layout);
+        jugador2TableroCarta1Layout.setHorizontalGroup(
+            jugador2TableroCarta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jugador2TableroCarta1Layout.setVerticalGroup(
+            jugador2TableroCarta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 253, Short.MAX_VALUE)
+        );
+
+        jugador2TableroCuadro.add(jugador2TableroCarta1);
+
+        javax.swing.GroupLayout jugador2TableroCarta2Layout = new javax.swing.GroupLayout(jugador2TableroCarta2);
+        jugador2TableroCarta2.setLayout(jugador2TableroCarta2Layout);
+        jugador2TableroCarta2Layout.setHorizontalGroup(
+            jugador2TableroCarta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+        jugador2TableroCarta2Layout.setVerticalGroup(
+            jugador2TableroCarta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 253, Short.MAX_VALUE)
+        );
+
+        jugador2TableroCuadro.add(jugador2TableroCarta2);
+
+        javax.swing.GroupLayout jugador2TableroCarta3Layout = new javax.swing.GroupLayout(jugador2TableroCarta3);
+        jugador2TableroCarta3.setLayout(jugador2TableroCarta3Layout);
+        jugador2TableroCarta3Layout.setHorizontalGroup(
+            jugador2TableroCarta3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jugador2TableroCarta3Layout.setVerticalGroup(
+            jugador2TableroCarta3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 253, Short.MAX_VALUE)
+        );
+
+        jugador2TableroCuadro.add(jugador2TableroCarta3);
+
+        add(jugador2TableroCuadro);
+        jugador2TableroCuadro.setBounds(820, 130, 200, 800);
+
+        jugador1Baraja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
+        add(jugador1Baraja);
+        jugador1Baraja.setBounds(10, 10, 76, 108);
+
+        jugador2Baraja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
+        add(jugador2Baraja);
+        jugador2Baraja.setBounds(1510, 10, 76, 108);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jugador2Mano3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador2Mano3FocusGained
-        
-    }//GEN-LAST:event_jugador2Mano3FocusGained
+    private void jugador1ManoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1ManoKeyPressed
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_S){
+            jugador1Mano2.grabFocus();
+        }
+    }//GEN-LAST:event_jugador1ManoKeyPressed
 
-    private void jugador2Fila3Hueco2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador2Fila3Hueco2KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador2Fila3Hueco2KeyPressed
-
-    /**
-     * @param args the command line arguments
-     */
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jugador1Baraja;
-    private javax.swing.JPanel jugador1Corazon;
-    private javax.swing.JPanel jugador1Fila1Hueco1;
-    private javax.swing.JPanel jugador1Fila1Hueco2;
-    private javax.swing.JPanel jugador1Fila1Hueco3;
-    private javax.swing.JPanel jugador1Fila2Hueco1;
-    private javax.swing.JPanel jugador1Fila2Hueco2;
-    private javax.swing.JPanel jugador1Fila2Hueco3;
-    private javax.swing.JPanel jugador1Fila3Hueco1;
-    private javax.swing.JPanel jugador1Fila3Hueco2;
-    private javax.swing.JPanel jugador1Fila3Hueco3;
-    private javax.swing.JPanel jugador1Gema;
-    private javax.swing.JPanel jugador1Mana;
+    private javax.swing.JLabel jugador1Baraja;
+    private javax.swing.JLabel jugador1Corazon;
+    private javax.swing.JPanel jugador1CorazonCuadro;
+    private javax.swing.JLabel jugador1Gota;
+    private javax.swing.JPanel jugador1GotaCuadro;
+    private javax.swing.JLabel jugador1Mana;
+    private javax.swing.JPanel jugador1ManaCuadro;
+    private javax.swing.JPanel jugador1Mano;
     private javax.swing.JPanel jugador1Mano1;
     private javax.swing.JPanel jugador1Mano2;
     private javax.swing.JPanel jugador1Mano3;
-    private javax.swing.JPanel jugador1Vida;
-    private javax.swing.JPanel jugador2Baraja;
-    private javax.swing.JPanel jugador2Corazon;
-    private javax.swing.JPanel jugador2Fila1Hueco1;
-    private javax.swing.JPanel jugador2Fila1Hueco2;
-    private javax.swing.JPanel jugador2Fila1Hueco3;
-    private javax.swing.JPanel jugador2Fila2Hueco1;
-    private javax.swing.JPanel jugador2Fila2Hueco2;
-    private javax.swing.JPanel jugador2Fila2Hueco3;
-    private javax.swing.JPanel jugador2Fila3Hueco1;
-    private javax.swing.JPanel jugador2Fila3Hueco2;
-    private javax.swing.JPanel jugador2Fila3Hueco3;
-    private javax.swing.JPanel jugador2Gema;
-    private javax.swing.JPanel jugador2Mana;
+    private javax.swing.JPanel jugador1TableroCarta1;
+    private javax.swing.JPanel jugador1TableroCarta2;
+    private javax.swing.JPanel jugador1TableroCarta3;
+    private javax.swing.JPanel jugador1TableroCuadro;
+    private javax.swing.JLabel jugador1Vida;
+    private javax.swing.JPanel jugador1VidaCuadro;
+    private javax.swing.JLabel jugador2Baraja;
+    private javax.swing.JLabel jugador2Corazon;
+    private javax.swing.JPanel jugador2CorazonCuadro;
+    private javax.swing.JLabel jugador2Gota;
+    private javax.swing.JPanel jugador2GotaCuadro;
+    private javax.swing.JLabel jugador2Mana;
+    private javax.swing.JPanel jugador2ManaCuadro;
+    private javax.swing.JPanel jugador2Mano;
     private javax.swing.JPanel jugador2Mano1;
     private javax.swing.JPanel jugador2Mano2;
     private javax.swing.JPanel jugador2Mano3;
-    private javax.swing.JPanel jugador2Vida;
+    private javax.swing.JPanel jugador2TableroCarta1;
+    private javax.swing.JPanel jugador2TableroCarta2;
+    private javax.swing.JPanel jugador2TableroCarta3;
+    private javax.swing.JPanel jugador2TableroCuadro;
+    private javax.swing.JLabel jugador2Vida;
+    private javax.swing.JPanel jugador2VidaCuadro;
     // End of variables declaration//GEN-END:variables
 }

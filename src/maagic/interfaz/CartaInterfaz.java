@@ -100,7 +100,8 @@ public class CartaInterfaz extends javax.swing.JPanel {
         ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(15, 15, 15, 15, new java.awt.Color(0,255,0)));
         cartaElegida=new Carta(Integer.parseInt(this.jLabelVida.getText()),Integer.parseInt(this.jLabelAtaque.getText()),Integer.parseInt(this.jLabelCoste.getText()));
         anteriorCartaElegida=this.getParent().getComponentZOrder(this);
-        System.out.println("Este es el componente nº: "+anteriorCartaElegida); 
+        System.out.println("Este es el componente nº: "+anteriorCartaElegida);
+        System.out.println("Su padre se llama"+this.getParent().toString());
     }//GEN-LAST:event_formMouseClicked
 
     private void formFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusLost
