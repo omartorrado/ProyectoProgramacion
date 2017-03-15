@@ -33,12 +33,18 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador1Gota = new javax.swing.JLabel();
         jugador1Mano = new javax.swing.JPanel();
         jugador1Mano1 = new javax.swing.JPanel();
+        jugador1Mano1Fondo = new javax.swing.JLabel();
         jugador1Mano2 = new javax.swing.JPanel();
+        jugador1Mano2Fondo = new javax.swing.JLabel();
         jugador1Mano3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jugador2Mano = new javax.swing.JPanel();
         jugador2Mano1 = new javax.swing.JPanel();
+        jugador2Mano1Fondo = new javax.swing.JLabel();
         jugador2Mano2 = new javax.swing.JPanel();
+        jugador2Mano2Fondo = new javax.swing.JLabel();
         jugador2Mano3 = new javax.swing.JPanel();
+        jugador2Mano3Fondo = new javax.swing.JLabel();
         jugador1ManaCuadro = new javax.swing.JPanel();
         jugador1Mana = new javax.swing.JLabel();
         jugador1VidaCuadro = new javax.swing.JPanel();
@@ -53,12 +59,18 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador2Gota = new javax.swing.JLabel();
         jugador1TableroCuadro = new javax.swing.JPanel();
         jugador1TableroCarta1 = new javax.swing.JPanel();
+        jugador1TableroCarta1Fondo = new javax.swing.JLabel();
         jugador1TableroCarta2 = new javax.swing.JPanel();
+        jugador1TableroCarta2Fondo = new javax.swing.JLabel();
         jugador1TableroCarta3 = new javax.swing.JPanel();
+        jugador1TableroCarta3Fondo = new javax.swing.JLabel();
         jugador2TableroCuadro = new javax.swing.JPanel();
         jugador2TableroCarta1 = new javax.swing.JPanel();
+        jugador2TableroCarta1Fondo = new javax.swing.JLabel();
         jugador2TableroCarta2 = new javax.swing.JPanel();
+        jugador2TableroCarta2Fondo = new javax.swing.JLabel();
         jugador2TableroCarta3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jugador1Baraja = new javax.swing.JLabel();
         jugador2Baraja = new javax.swing.JLabel();
 
@@ -111,45 +123,61 @@ public class Interfaz2 extends javax.swing.JPanel {
 
         jugador1Mano1.setBackground(new java.awt.Color(153, 153, 153));
 
+        jugador1Mano1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
+
         javax.swing.GroupLayout jugador1Mano1Layout = new javax.swing.GroupLayout(jugador1Mano1);
         jugador1Mano1.setLayout(jugador1Mano1Layout);
         jugador1Mano1Layout.setHorizontalGroup(
             jugador1Mano1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(jugador1Mano1Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jugador1Mano1Layout.setVerticalGroup(
             jugador1Mano1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
+            .addGroup(jugador1Mano1Layout.createSequentialGroup()
+                .addComponent(jugador1Mano1Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jugador1Mano.add(jugador1Mano1);
 
         jugador1Mano2.setBackground(new java.awt.Color(153, 153, 153));
 
+        jugador1Mano2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
+        jugador1Mano2Fondo.setText("jLabel1");
+
         javax.swing.GroupLayout jugador1Mano2Layout = new javax.swing.GroupLayout(jugador1Mano2);
         jugador1Mano2.setLayout(jugador1Mano2Layout);
         jugador1Mano2Layout.setHorizontalGroup(
             jugador1Mano2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jugador1Mano2Layout.createSequentialGroup()
+                .addComponent(jugador1Mano2Fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jugador1Mano2Layout.setVerticalGroup(
             jugador1Mano2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
+            .addGroup(jugador1Mano2Layout.createSequentialGroup()
+                .addComponent(jugador1Mano2Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jugador1Mano.add(jugador1Mano2);
 
         jugador1Mano3.setBackground(new java.awt.Color(153, 153, 153));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+
         javax.swing.GroupLayout jugador1Mano3Layout = new javax.swing.GroupLayout(jugador1Mano3);
         jugador1Mano3.setLayout(jugador1Mano3Layout);
         jugador1Mano3Layout.setHorizontalGroup(
             jugador1Mano3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jugador1Mano3Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jugador1Mano3Layout.setVerticalGroup(
             jugador1Mano3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
         );
 
         jugador1Mano.add(jugador1Mano3);
@@ -163,15 +191,21 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador2Mano1.setBackground(new java.awt.Color(153, 153, 153));
         jugador2Mano1.setPreferredSize(new java.awt.Dimension(180, 250));
 
+        jugador2Mano1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
+
         javax.swing.GroupLayout jugador2Mano1Layout = new javax.swing.GroupLayout(jugador2Mano1);
         jugador2Mano1.setLayout(jugador2Mano1Layout);
         jugador2Mano1Layout.setHorizontalGroup(
             jugador2Mano1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addGroup(jugador2Mano1Layout.createSequentialGroup()
+                .addComponent(jugador2Mano1Fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jugador2Mano1Layout.setVerticalGroup(
             jugador2Mano1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jugador2Mano1Layout.createSequentialGroup()
+                .addComponent(jugador2Mano1Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jugador2Mano.add(jugador2Mano1);
@@ -179,15 +213,19 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador2Mano2.setBackground(new java.awt.Color(153, 153, 153));
         jugador2Mano2.setPreferredSize(new java.awt.Dimension(180, 250));
 
+        jugador2Mano2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
+
         javax.swing.GroupLayout jugador2Mano2Layout = new javax.swing.GroupLayout(jugador2Mano2);
         jugador2Mano2.setLayout(jugador2Mano2Layout);
         jugador2Mano2Layout.setHorizontalGroup(
             jugador2Mano2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(jugador2Mano2Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jugador2Mano2Layout.setVerticalGroup(
             jugador2Mano2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
+            .addGroup(jugador2Mano2Layout.createSequentialGroup()
+                .addComponent(jugador2Mano2Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jugador2Mano.add(jugador2Mano2);
@@ -199,11 +237,13 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador2Mano3.setLayout(jugador2Mano3Layout);
         jugador2Mano3Layout.setHorizontalGroup(
             jugador2Mano3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(jugador2Mano3Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         jugador2Mano3Layout.setVerticalGroup(
             jugador2Mano3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
+            .addGroup(jugador2Mano3Layout.createSequentialGroup()
+                .addComponent(jugador2Mano3Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jugador2Mano.add(jugador2Mano3);
@@ -308,45 +348,57 @@ public class Interfaz2 extends javax.swing.JPanel {
 
         jugador1TableroCarta1.setBackground(new java.awt.Color(153, 153, 153));
 
+        jugador1TableroCarta1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
+
         javax.swing.GroupLayout jugador1TableroCarta1Layout = new javax.swing.GroupLayout(jugador1TableroCarta1);
         jugador1TableroCarta1.setLayout(jugador1TableroCarta1Layout);
         jugador1TableroCarta1Layout.setHorizontalGroup(
             jugador1TableroCarta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jugador1TableroCarta1Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jugador1TableroCarta1Layout.setVerticalGroup(
             jugador1TableroCarta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
+            .addGroup(jugador1TableroCarta1Layout.createSequentialGroup()
+                .addComponent(jugador1TableroCarta1Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jugador1TableroCuadro.add(jugador1TableroCarta1);
 
         jugador1TableroCarta2.setBackground(new java.awt.Color(153, 153, 153));
 
+        jugador1TableroCarta2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
+
         javax.swing.GroupLayout jugador1TableroCarta2Layout = new javax.swing.GroupLayout(jugador1TableroCarta2);
         jugador1TableroCarta2.setLayout(jugador1TableroCarta2Layout);
         jugador1TableroCarta2Layout.setHorizontalGroup(
             jugador1TableroCarta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(jugador1TableroCarta2Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jugador1TableroCarta2Layout.setVerticalGroup(
             jugador1TableroCarta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
+            .addGroup(jugador1TableroCarta2Layout.createSequentialGroup()
+                .addComponent(jugador1TableroCarta2Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jugador1TableroCuadro.add(jugador1TableroCarta2);
 
         jugador1TableroCarta3.setBackground(new java.awt.Color(153, 153, 153));
 
+        jugador1TableroCarta3Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
+
         javax.swing.GroupLayout jugador1TableroCarta3Layout = new javax.swing.GroupLayout(jugador1TableroCarta3);
         jugador1TableroCarta3.setLayout(jugador1TableroCarta3Layout);
         jugador1TableroCarta3Layout.setHorizontalGroup(
             jugador1TableroCarta3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jugador1TableroCarta3Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jugador1TableroCarta3Layout.setVerticalGroup(
             jugador1TableroCarta3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
+            .addGroup(jugador1TableroCarta3Layout.createSequentialGroup()
+                .addComponent(jugador1TableroCarta3Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jugador1TableroCuadro.add(jugador1TableroCarta3);
@@ -358,45 +410,57 @@ public class Interfaz2 extends javax.swing.JPanel {
 
         jugador2TableroCarta1.setBackground(new java.awt.Color(153, 153, 153));
 
+        jugador2TableroCarta1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
+
         javax.swing.GroupLayout jugador2TableroCarta1Layout = new javax.swing.GroupLayout(jugador2TableroCarta1);
         jugador2TableroCarta1.setLayout(jugador2TableroCarta1Layout);
         jugador2TableroCarta1Layout.setHorizontalGroup(
             jugador2TableroCarta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jugador2TableroCarta1Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jugador2TableroCarta1Layout.setVerticalGroup(
             jugador2TableroCarta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
+            .addGroup(jugador2TableroCarta1Layout.createSequentialGroup()
+                .addComponent(jugador2TableroCarta1Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jugador2TableroCuadro.add(jugador2TableroCarta1);
 
         jugador2TableroCarta2.setBackground(new java.awt.Color(153, 153, 153));
 
+        jugador2TableroCarta2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
+
         javax.swing.GroupLayout jugador2TableroCarta2Layout = new javax.swing.GroupLayout(jugador2TableroCarta2);
         jugador2TableroCarta2.setLayout(jugador2TableroCarta2Layout);
         jugador2TableroCarta2Layout.setHorizontalGroup(
             jugador2TableroCarta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(jugador2TableroCarta2Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jugador2TableroCarta2Layout.setVerticalGroup(
             jugador2TableroCarta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
+            .addGroup(jugador2TableroCarta2Layout.createSequentialGroup()
+                .addComponent(jugador2TableroCarta2Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jugador2TableroCuadro.add(jugador2TableroCarta2);
 
         jugador2TableroCarta3.setBackground(new java.awt.Color(153, 153, 153));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
+
         javax.swing.GroupLayout jugador2TableroCarta3Layout = new javax.swing.GroupLayout(jugador2TableroCarta3);
         jugador2TableroCarta3.setLayout(jugador2TableroCarta3Layout);
         jugador2TableroCarta3Layout.setHorizontalGroup(
             jugador2TableroCarta3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jugador2TableroCarta3Layout.setVerticalGroup(
             jugador2TableroCarta3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
+            .addGroup(jugador2TableroCarta3Layout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jugador2TableroCuadro.add(jugador2TableroCarta3);
@@ -421,6 +485,8 @@ public class Interfaz2 extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jugador1Baraja;
     private javax.swing.JLabel jugador1Corazon;
     private javax.swing.JPanel jugador1CorazonCuadro;
@@ -430,11 +496,16 @@ public class Interfaz2 extends javax.swing.JPanel {
     private javax.swing.JPanel jugador1ManaCuadro;
     private javax.swing.JPanel jugador1Mano;
     private javax.swing.JPanel jugador1Mano1;
+    private javax.swing.JLabel jugador1Mano1Fondo;
     private javax.swing.JPanel jugador1Mano2;
+    private javax.swing.JLabel jugador1Mano2Fondo;
     private javax.swing.JPanel jugador1Mano3;
     private javax.swing.JPanel jugador1TableroCarta1;
+    private javax.swing.JLabel jugador1TableroCarta1Fondo;
     private javax.swing.JPanel jugador1TableroCarta2;
+    private javax.swing.JLabel jugador1TableroCarta2Fondo;
     private javax.swing.JPanel jugador1TableroCarta3;
+    private javax.swing.JLabel jugador1TableroCarta3Fondo;
     private javax.swing.JPanel jugador1TableroCuadro;
     private javax.swing.JLabel jugador1Vida;
     private javax.swing.JPanel jugador1VidaCuadro;
@@ -447,10 +518,15 @@ public class Interfaz2 extends javax.swing.JPanel {
     private javax.swing.JPanel jugador2ManaCuadro;
     private javax.swing.JPanel jugador2Mano;
     private javax.swing.JPanel jugador2Mano1;
+    private javax.swing.JLabel jugador2Mano1Fondo;
     private javax.swing.JPanel jugador2Mano2;
+    private javax.swing.JLabel jugador2Mano2Fondo;
     private javax.swing.JPanel jugador2Mano3;
+    private javax.swing.JLabel jugador2Mano3Fondo;
     private javax.swing.JPanel jugador2TableroCarta1;
+    private javax.swing.JLabel jugador2TableroCarta1Fondo;
     private javax.swing.JPanel jugador2TableroCarta2;
+    private javax.swing.JLabel jugador2TableroCarta2Fondo;
     private javax.swing.JPanel jugador2TableroCarta3;
     private javax.swing.JPanel jugador2TableroCuadro;
     private javax.swing.JLabel jugador2Vida;
