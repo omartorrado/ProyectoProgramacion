@@ -6,7 +6,6 @@
 package maagic.interfaz;
 
 import java.io.File;
-import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import static javax.sound.sampled.Clip.LOOP_CONTINUOUSLY;
@@ -61,8 +60,8 @@ public class Menu extends javax.swing.JFrame {
         }
         if (musicaMenu.isActive()) {
             musicaMenu.start();
-//             FloatControl gainControl= (FloatControl) musicaMenu.getControl(FloatControl.Type.MASTER_GAIN);
-//            gainControl.setValue(10.0F);
+             FloatControl gainControl= (FloatControl) musicaMenu.getControl(FloatControl.Type.MASTER_GAIN);
+            gainControl.setValue(-10.0f);
         }
 
         /*Esta parte muestra los formaos soportados por consola
@@ -179,7 +178,6 @@ public class Menu extends javax.swing.JFrame {
         //panelprincipal.add(seleccionJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080), 1);
         Interfaz2 panelJuego=new Interfaz2();
         panelprincipal.add(panelJuego,new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1600, 900), 1);
-       
     }//GEN-LAST:event_Boton1JugarActionPerformed
 
     private void Boton2BarajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton2BarajaActionPerformed

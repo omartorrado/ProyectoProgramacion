@@ -6,7 +6,6 @@
 package maagic.interfaz;
 
 import java.awt.Component;
-import javax.swing.JPanel;
 import maagic.Jugador;
 
 /**
@@ -98,7 +97,9 @@ public class Interfaz2 extends javax.swing.JPanel {
         //jugador1Mano3.getComponent(0).setVisible(true);
         jugador2Mano3.getComponent(0).setLocation(0, 0);
         jugador2Mano3.getComponent(0).setSize(180, 250);
+      
         //////////////
+       
     }
 
     /**

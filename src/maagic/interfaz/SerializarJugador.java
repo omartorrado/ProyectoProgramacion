@@ -18,34 +18,43 @@ import maagic.Jugador;
  * @author dfernandezrivas
  */
 public class SerializarJugador {
-    public void leerjugadores() throws FileNotFoundException, IOException, ClassNotFoundException{
-        FileInputStream leer=new FileInputStream("Jugadores/jugador1");
-        ObjectInputStream jugador=new ObjectInputStream(leer);
-        int i= jugador.readInt();
-        Integer Vida = (Integer) jugador.readObject();
+    public static void leerjugadores() throws FileNotFoundException, IOException, ClassNotFoundException{
+        FileInputStream leer=new FileInputStream("Jugadores/Jugador");
+        try (ObjectInputStream jugador = new ObjectInputStream(leer)) {
+            int i= jugador.readInt();
+            Integer Vida = (Integer) jugador.readObject();
+            Integer Mana = (Integer) jugador.readObject();
 //      Date date = (Date) jugador.readObject();
 //      jugador.close();
 
+        }
+        catch(IOException e){
+            System.out.printf("Los objetos se fueron de paseo", e.getMessage());
+        
+        }
 
 
 
 }
     
     
-    public void escribirjugadores() throws FileNotFoundException, IOException{
+    public static void escribirjugadores() throws FileNotFoundException, IOException{
             Jugador jugador;
         jugador = new Jugador("barajas/");
         try{
-        FileOutputStream escribir=new FileOutputStream("Jugadores/Jugador1");
+        FileOutputStream escribir=new FileOutputStream("Jugadores/Jugador");
             ObjectOutputStream ju1 = new ObjectOutputStream(escribir);
             ju1.writeObject(jugador.getVida());
             ju1.writeObject(jugador.getMana());
+            ju1.putFields();
+            ju1.reset();
+            
             
 
         }
-        catch(Exception e){
+        catch(IOException e){
         
-        System.out.println("El archivo se fue de paseo");
+        System.out.printf("El archivo se fue de paseo", e.getMessage());
         
         }
            
