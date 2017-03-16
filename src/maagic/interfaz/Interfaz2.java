@@ -35,11 +35,19 @@ public class Interfaz2 extends javax.swing.JPanel {
             CartaInterfaz carta0=new CartaInterfaz(j1.getMano(0));
             CartaInterfaz carta1=new CartaInterfaz(j1.getMano(1));
             CartaInterfaz carta2=new CartaInterfaz(j1.getMano(2));
-            jugador1Mano1.add(carta0,1);
-            System.out.println("Carta 0 añadida");
+            
+            jugador1Mano1.add(carta0,0);
+            jugador1Mano1.revalidate();
             jugador1Mano1.repaint();
-            jugador1Mano1.add(carta1,1);
-            jugador1Mano1.add(carta2,1);
+            System.out.println("Carta 0 añadida");
+            System.out.println(jugador1Mano1.getComponent(0).getClass());
+            jugador1Mano1.getComponent(0).setVisible(true);
+            jugador1Mano1.getComponent(0).setLocation(0,0);
+            jugador1Mano2.add(carta1,0);
+            jugador1Mano3.add(carta2,0);
+            jugador1Mano.repaint();
+            jugador1Mano1.repaint();
+            this.repaint();
         //}
     }
 
@@ -58,7 +66,6 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador1Gota = new javax.swing.JLabel();
         jugador1Mano = new javax.swing.JPanel();
         jugador1Mano1 = new javax.swing.JPanel();
-        jugador1Mano1Fondo = new javax.swing.JLabel();
         jugador1Mano2 = new javax.swing.JPanel();
         jugador1Mano2Fondo = new javax.swing.JLabel();
         jugador1Mano3 = new javax.swing.JPanel();
@@ -147,23 +154,7 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador1Mano.setLayout(new java.awt.GridLayout(3, 0));
 
         jugador1Mano1.setBackground(new java.awt.Color(153, 153, 153));
-        jugador1Mano1.setOpaque(false);
-
-        jugador1Mano1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout jugador1Mano1Layout = new javax.swing.GroupLayout(jugador1Mano1);
-        jugador1Mano1.setLayout(jugador1Mano1Layout);
-        jugador1Mano1Layout.setHorizontalGroup(
-            jugador1Mano1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jugador1Mano1Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jugador1Mano1Layout.setVerticalGroup(
-            jugador1Mano1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jugador1Mano1Layout.createSequentialGroup()
-                .addComponent(jugador1Mano1Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
+        jugador1Mano1.setLayout(null);
         jugador1Mano.add(jugador1Mano1);
 
         jugador1Mano2.setBackground(new java.awt.Color(153, 153, 153));
@@ -533,7 +524,6 @@ public class Interfaz2 extends javax.swing.JPanel {
     private javax.swing.JPanel jugador1ManaCuadro;
     private javax.swing.JPanel jugador1Mano;
     private javax.swing.JPanel jugador1Mano1;
-    private javax.swing.JLabel jugador1Mano1Fondo;
     private javax.swing.JPanel jugador1Mano2;
     private javax.swing.JLabel jugador1Mano2Fondo;
     private javax.swing.JPanel jugador1Mano3;
