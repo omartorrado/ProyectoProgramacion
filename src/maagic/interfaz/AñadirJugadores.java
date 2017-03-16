@@ -6,6 +6,7 @@
 package maagic.interfaz;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -17,8 +18,9 @@ public class AñadirJugadores extends javax.swing.JPanel {
 
     /**
      * Creates new form AñadirJugadores
+     * @throws java.io.IOException
      */
-    public AñadirJugadores() {
+    public AñadirJugadores() throws IOException {
         initComponents();
 //        this.setSize(1920, 1080);
 //        this.getRootPane().setSize(1920, 1080);
@@ -28,8 +30,6 @@ public class AñadirJugadores extends javax.swing.JPanel {
         DimensionPantalla.adaptarResolucion(botonvolvermenu);
         DimensionPantalla.adaptarResolucion(scrolldeañadirjugadores);
         DimensionPantalla.adaptarResolucion(listajugadores);
-        
-        
         
         
         
@@ -49,8 +49,14 @@ public class AñadirJugadores extends javax.swing.JPanel {
         panelañadirjugadores = new javax.swing.JPanel();
         botonvolvermenu = new javax.swing.JButton();
         botonirajuego = new javax.swing.JButton();
-        scrolldeañadirjugadores = new javax.swing.JScrollPane();
-        listajugadores = new javax.swing.JList<String>();
+        try {
+            scrolldeañadirjugadores =(javax.swing.JScrollPane)java.beans.Beans.instantiate(getClass().getClassLoader(), "maagic/interfaz.AñadirJugadores_scrolldeañadirjugadores");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (java.io.IOException e) {
+            e.printStackTrace();
+        }
+        listajugadores = new javax.swing.JList<>();
         imagenfondo = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -82,10 +88,10 @@ public class AñadirJugadores extends javax.swing.JPanel {
         panelañadirjugadores.add(botonirajuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 550, 170, 40));
 
         listajugadores.setBackground(new java.awt.Color(153, 204, 0));
-        listajugadores.setModel(new javax.swing.AbstractListModel() {
+        listajugadores.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+            public String getElementAt(int i) { return strings[i]; }
         });
         listajugadores.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         listajugadores.addMouseListener(new java.awt.event.MouseAdapter() {

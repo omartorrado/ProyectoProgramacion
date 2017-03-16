@@ -6,7 +6,6 @@
 package maagic.interfaz;
 
 import java.awt.Component;
-import javax.swing.JPanel;
 import maagic.Jugador;
 
 /**
@@ -97,9 +96,9 @@ public class Interfaz2 extends javax.swing.JPanel {
         //jugador1Mano3.getComponent(0).setVisible(true);
         jugador2Mano3.getComponent(0).setLocation(0, 0);
         jugador2Mano3.getComponent(0).setSize(180, 250);
+      
         //////////////
-        
-        
+       
     }
 
     /**
@@ -121,7 +120,7 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador1Mano2 = new javax.swing.JPanel();
         jugador1Mano2Fondo = new javax.swing.JLabel();
         jugador1Mano3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jugador1Mano3Fondo = new javax.swing.JLabel();
         jugador2Mano = new javax.swing.JPanel();
         jugador2Mano1 = new javax.swing.JPanel();
         jugador2Mano1Fondo = new javax.swing.JLabel();
@@ -157,6 +156,7 @@ public class Interfaz2 extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jugador1Baraja = new javax.swing.JLabel();
         jugador2Baraja = new javax.swing.JLabel();
+        fondoPartida = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1366, 768));
         setLayout(null);
@@ -223,7 +223,7 @@ public class Interfaz2 extends javax.swing.JPanel {
         });
         jugador1Mano1.setLayout(null);
 
-        jugador1Mano1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
+        jugador1Mano1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
         jugador1Mano1Fondo.setText("jLabel1");
         jugador1Mano1.add(jugador1Mano1Fondo);
         jugador1Mano1Fondo.setBounds(0, 0, 200, 255);
@@ -240,8 +240,7 @@ public class Interfaz2 extends javax.swing.JPanel {
         });
         jugador1Mano2.setLayout(null);
 
-        jugador1Mano2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
-        jugador1Mano2Fondo.setText("jLabel1");
+        jugador1Mano2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
         jugador1Mano2.add(jugador1Mano2Fondo);
         jugador1Mano2Fondo.setBounds(0, 0, 200, 255);
 
@@ -257,10 +256,20 @@ public class Interfaz2 extends javax.swing.JPanel {
         });
         jugador1Mano3.setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jugador1Mano3.add(jLabel1);
-        jLabel1.setBounds(0, 0, 200, 266);
+        jugador1Mano3Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
+
+        javax.swing.GroupLayout jugador1Mano3Layout = new javax.swing.GroupLayout(jugador1Mano3);
+        jugador1Mano3.setLayout(jugador1Mano3Layout);
+        jugador1Mano3Layout.setHorizontalGroup(
+            jugador1Mano3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jugador1Mano3Layout.createSequentialGroup()
+                .addComponent(jugador1Mano3Fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jugador1Mano3Layout.setVerticalGroup(
+            jugador1Mano3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jugador1Mano3Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+        );
 
         jugador1Mano.add(jugador1Mano3);
         jugador1Mano3.getAccessibleContext().setAccessibleName("mano");
@@ -275,9 +284,9 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador2Mano1.setPreferredSize(new java.awt.Dimension(180, 250));
         jugador2Mano1.setLayout(null);
 
-        jugador2Mano1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
+        jugador2Mano1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
         jugador2Mano1.add(jugador2Mano1Fondo);
-        jugador2Mano1Fondo.setBounds(0, 0, 0, 0);
+        jugador2Mano1Fondo.setBounds(0, 0, 200, 250);
 
         jugador2Mano.add(jugador2Mano1);
 
@@ -285,9 +294,9 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador2Mano2.setPreferredSize(new java.awt.Dimension(180, 250));
         jugador2Mano2.setLayout(null);
 
-        jugador2Mano2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
+        jugador2Mano2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
         jugador2Mano2.add(jugador2Mano2Fondo);
-        jugador2Mano2Fondo.setBounds(0, 0, 0, 0);
+        jugador2Mano2Fondo.setBounds(0, 0, 200, 250);
 
         jugador2Mano.add(jugador2Mano2);
 
@@ -295,9 +304,9 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador2Mano3.setPreferredSize(new java.awt.Dimension(180, 250));
         jugador2Mano3.setLayout(null);
 
-        jugador2Mano3Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
+        jugador2Mano3Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
         jugador2Mano3.add(jugador2Mano3Fondo);
-        jugador2Mano3Fondo.setBounds(0, 0, 0, 0);
+        jugador2Mano3Fondo.setBounds(0, 0, 200, 250);
 
         jugador2Mano.add(jugador2Mano3);
 
@@ -401,7 +410,7 @@ public class Interfaz2 extends javax.swing.JPanel {
 
         jugador1TableroCarta1.setBackground(new java.awt.Color(153, 153, 153));
 
-        jugador1TableroCarta1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
+        jugador1TableroCarta1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
 
         javax.swing.GroupLayout jugador1TableroCarta1Layout = new javax.swing.GroupLayout(jugador1TableroCarta1);
         jugador1TableroCarta1.setLayout(jugador1TableroCarta1Layout);
@@ -420,7 +429,7 @@ public class Interfaz2 extends javax.swing.JPanel {
 
         jugador1TableroCarta2.setBackground(new java.awt.Color(153, 153, 153));
 
-        jugador1TableroCarta2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
+        jugador1TableroCarta2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
 
         javax.swing.GroupLayout jugador1TableroCarta2Layout = new javax.swing.GroupLayout(jugador1TableroCarta2);
         jugador1TableroCarta2.setLayout(jugador1TableroCarta2Layout);
@@ -439,7 +448,7 @@ public class Interfaz2 extends javax.swing.JPanel {
 
         jugador1TableroCarta3.setBackground(new java.awt.Color(153, 153, 153));
 
-        jugador1TableroCarta3Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
+        jugador1TableroCarta3Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
 
         javax.swing.GroupLayout jugador1TableroCarta3Layout = new javax.swing.GroupLayout(jugador1TableroCarta3);
         jugador1TableroCarta3.setLayout(jugador1TableroCarta3Layout);
@@ -463,7 +472,7 @@ public class Interfaz2 extends javax.swing.JPanel {
 
         jugador2TableroCarta1.setBackground(new java.awt.Color(153, 153, 153));
 
-        jugador2TableroCarta1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
+        jugador2TableroCarta1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
 
         javax.swing.GroupLayout jugador2TableroCarta1Layout = new javax.swing.GroupLayout(jugador2TableroCarta1);
         jugador2TableroCarta1.setLayout(jugador2TableroCarta1Layout);
@@ -482,7 +491,7 @@ public class Interfaz2 extends javax.swing.JPanel {
 
         jugador2TableroCarta2.setBackground(new java.awt.Color(153, 153, 153));
 
-        jugador2TableroCarta2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
+        jugador2TableroCarta2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
 
         javax.swing.GroupLayout jugador2TableroCarta2Layout = new javax.swing.GroupLayout(jugador2TableroCarta2);
         jugador2TableroCarta2.setLayout(jugador2TableroCarta2Layout);
@@ -501,7 +510,7 @@ public class Interfaz2 extends javax.swing.JPanel {
 
         jugador2TableroCarta3.setBackground(new java.awt.Color(153, 153, 153));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
 
         javax.swing.GroupLayout jugador2TableroCarta3Layout = new javax.swing.GroupLayout(jugador2TableroCarta3);
         jugador2TableroCarta3.setLayout(jugador2TableroCarta3Layout);
@@ -528,6 +537,10 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador2Baraja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
         add(jugador2Baraja);
         jugador2Baraja.setBounds(1240, 10, 76, 108);
+
+        fondoPartida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/pantallazo.png"))); // NOI18N
+        add(fondoPartida);
+        fondoPartida.setBounds(0, 0, 1600, 900);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jugador1Mano1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1Mano1KeyPressed
@@ -599,7 +612,7 @@ public class Interfaz2 extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel fondoPartida;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jugador1Baraja;
     private javax.swing.JLabel jugador1Corazon;
@@ -614,6 +627,7 @@ public class Interfaz2 extends javax.swing.JPanel {
     private javax.swing.JPanel jugador1Mano2;
     private javax.swing.JLabel jugador1Mano2Fondo;
     private javax.swing.JPanel jugador1Mano3;
+    private javax.swing.JLabel jugador1Mano3Fondo;
     private javax.swing.JPanel jugador1TableroCarta1;
     private javax.swing.JLabel jugador1TableroCarta1Fondo;
     private javax.swing.JPanel jugador1TableroCarta2;

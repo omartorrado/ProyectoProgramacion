@@ -135,7 +135,7 @@
             <Component class="javax.swing.JLabel" name="jugador1Mano1Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
+                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
@@ -168,9 +168,8 @@
             <Component class="javax.swing.JLabel" name="jugador1Mano2Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
+                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -194,22 +193,28 @@
             <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jugador1Mano3KeyPressed"/>
           </Events>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-            <Property name="useNullLayout" type="boolean" value="true"/>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jugador1Mano3Fondo" min="-2" pref="200" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jugador1Mano3Fondo" alignment="0" pref="266" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JLabel" name="jugador1Mano3Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
+                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="0" y="0" width="200" height="266"/>
-                </Constraint>
-              </Constraints>
             </Component>
           </SubComponents>
         </Container>
@@ -249,12 +254,12 @@
             <Component class="javax.swing.JLabel" name="jugador2Mano1Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
+                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
                 </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="0" y="0" width="0" height="0"/>
+                  <AbsoluteConstraints x="0" y="0" width="200" height="250"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -277,12 +282,12 @@
             <Component class="javax.swing.JLabel" name="jugador2Mano2Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
+                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
                 </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="0" y="0" width="0" height="0"/>
+                  <AbsoluteConstraints x="0" y="0" width="200" height="250"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -305,12 +310,12 @@
             <Component class="javax.swing.JLabel" name="jugador2Mano3Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
+                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
                 </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="0" y="0" width="0" height="0"/>
+                  <AbsoluteConstraints x="0" y="0" width="200" height="250"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -517,7 +522,7 @@
             <Component class="javax.swing.JLabel" name="jugador1TableroCarta1Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
+                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -549,7 +554,7 @@
             <Component class="javax.swing.JLabel" name="jugador1TableroCarta2Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
+                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -581,7 +586,7 @@
             <Component class="javax.swing.JLabel" name="jugador1TableroCarta3Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
+                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -627,7 +632,7 @@
             <Component class="javax.swing.JLabel" name="jugador2TableroCarta1Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
+                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -659,7 +664,7 @@
             <Component class="javax.swing.JLabel" name="jugador2TableroCarta2Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
+                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -691,7 +696,7 @@
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
+                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -720,6 +725,18 @@
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="1240" y="10" width="-1" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="fondoPartida">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/maagic/img/pantallazo.png"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="0" y="0" width="1600" height="900"/>
         </Constraint>
       </Constraints>
     </Component>

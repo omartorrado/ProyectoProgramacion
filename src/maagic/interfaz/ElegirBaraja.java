@@ -8,10 +8,7 @@ package maagic.interfaz;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import maagic.Carta;
 
@@ -40,12 +37,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
         DimensionPantalla.adaptarResolucion(jLabel2);
         DimensionPantalla.adaptarPanel(this);
         //jScrollPaneBaraja.getViewport().setOpaque(false);
-        mostrarCartas();
-       
-        
-       
-        
-               
+        mostrarCartas();       
     }
 
     
