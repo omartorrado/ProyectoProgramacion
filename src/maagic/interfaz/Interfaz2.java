@@ -39,13 +39,10 @@ public class Interfaz2 extends javax.swing.JPanel {
         /*
             Aki es donde el usuario escoge que carta jugar
          */
- /*
-            seleccionMano1=0;
-            do{          
-                
-            }
-            while((j1.hayCarta(0)||j1.hayCarta(1)||j1.hayCarta(2))==true);
-         */
+        
+        System.out.println("Focus?"+this.isFocusOwner());
+        
+        ///////////////            
         j2.cogerMano();
         interfazGetManoJ2(j2);
         //}
@@ -73,7 +70,9 @@ public class Interfaz2 extends javax.swing.JPanel {
         //jugador1Mano3.getComponent(0).setVisible(true);
         jugador1Mano3.getComponent(0).setLocation(0, 0);
         jugador1Mano3.getComponent(0).setSize(180, 250);
-        //////////////
+        //le pasamos el focus a la primera carta
+        
+        
     }
 
     public void interfazGetManoJ2(Jugador j2) {
@@ -99,6 +98,8 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador2Mano3.getComponent(0).setLocation(0, 0);
         jugador2Mano3.getComponent(0).setSize(180, 250);
         //////////////
+        
+        
     }
 
     /**
@@ -197,15 +198,29 @@ public class Interfaz2 extends javax.swing.JPanel {
         add(jugador1GotaCuadro);
         jugador1GotaCuadro.setBounds(350, 80, 51, 50);
 
-        jugador1Mano.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jugador1ManoKeyPressed(evt);
-            }
-        });
         jugador1Mano.setLayout(new java.awt.GridLayout(3, 0));
 
         jugador1Mano1.setBackground(new java.awt.Color(153, 153, 153));
+        jugador1Mano1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(255, 0, 0)));
         jugador1Mano1.setOpaque(false);
+        jugador1Mano1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jugador1Mano1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jugador1Mano1FocusLost(evt);
+            }
+        });
+        jugador1Mano1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jugador1Mano1MouseClicked(evt);
+            }
+        });
+        jugador1Mano1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jugador1Mano1KeyPressed(evt);
+            }
+        });
         jugador1Mano1.setLayout(null);
 
         jugador1Mano1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
@@ -214,9 +229,15 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador1Mano1Fondo.setBounds(0, 0, 200, 255);
 
         jugador1Mano.add(jugador1Mano1);
+        jugador1Mano1.getAccessibleContext().setAccessibleName("mano");
 
         jugador1Mano2.setBackground(new java.awt.Color(153, 153, 153));
         jugador1Mano2.setOpaque(false);
+        jugador1Mano2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jugador1Mano2KeyPressed(evt);
+            }
+        });
         jugador1Mano2.setLayout(null);
 
         jugador1Mano2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
@@ -225,9 +246,15 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador1Mano2Fondo.setBounds(0, 0, 200, 255);
 
         jugador1Mano.add(jugador1Mano2);
+        jugador1Mano2.getAccessibleContext().setAccessibleName("mano");
 
         jugador1Mano3.setBackground(new java.awt.Color(153, 153, 153));
         jugador1Mano3.setOpaque(false);
+        jugador1Mano3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jugador1Mano3KeyPressed(evt);
+            }
+        });
         jugador1Mano3.setLayout(null);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_barajamagic.jpg"))); // NOI18N
@@ -236,6 +263,7 @@ public class Interfaz2 extends javax.swing.JPanel {
         jLabel1.setBounds(0, 0, 200, 266);
 
         jugador1Mano.add(jugador1Mano3);
+        jugador1Mano3.getAccessibleContext().setAccessibleName("mano");
 
         add(jugador1Mano);
         jugador1Mano.setBounds(10, 70, 200, 800);
@@ -502,18 +530,72 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador2Baraja.setBounds(1240, 10, 76, 108);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jugador1ManoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1ManoKeyPressed
-
-        Component[] cartasMano = jugador1Mano.getComponents();
-        for (Component n : cartasMano) {
-            if (n.hasFocus()) {
-
+    private void jugador1Mano1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1Mano1KeyPressed
+       
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_S){
+            if(jugador1Mano2.getComponent(0).getAccessibleContext().getAccessibleName().equals("panelCarta")){
+            jugador1Mano2.getComponent(0).requestFocusInWindow();
+                System.out.println("Estoy intentando pillar focus");
+            }else if(jugador1Mano3.getComponent(0).getAccessibleContext().getAccessibleName().equals("panelCarta")){
+                jugador1Mano3.getComponent(0).requestFocusInWindow();
             }
         }
-        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_S) {
-            jugador1Mano2.grabFocus();
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_A){
+            
         }
-    }//GEN-LAST:event_jugador1ManoKeyPressed
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_W){
+            jugador1Mano3.getComponent(0).requestFocusInWindow();
+        }
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_D){
+            
+        }
+      
+        
+       
+    }//GEN-LAST:event_jugador1Mano1KeyPressed
+
+    private void jugador1Mano2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1Mano2KeyPressed
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_S){
+            jugador1Mano3.getComponent(0).requestFocusInWindow();
+        }
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_A){
+            
+        }
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_W){
+            jugador1Mano1.getComponent(0).requestFocusInWindow();
+        }
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_D){
+            
+        }
+    }//GEN-LAST:event_jugador1Mano2KeyPressed
+
+    private void jugador1Mano3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1Mano3KeyPressed
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_S){
+            jugador1Mano1.getComponent(0).requestFocusInWindow();
+        }
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_A){
+            
+        }
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_W){
+            jugador1Mano2.getComponent(0).requestFocusInWindow();
+        }
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_D){
+            
+        }
+    }//GEN-LAST:event_jugador1Mano3KeyPressed
+
+    private void jugador1Mano1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador1Mano1FocusGained
+        
+    }//GEN-LAST:event_jugador1Mano1FocusGained
+
+    private void jugador1Mano1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador1Mano1FocusLost
+        
+    }//GEN-LAST:event_jugador1Mano1FocusLost
+
+    private void jugador1Mano1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador1Mano1MouseClicked
+        
+        
+    }//GEN-LAST:event_jugador1Mano1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -5,7 +5,8 @@
  */
 package maagic.interfaz;
 
-import java.awt.Color;
+import static java.lang.Thread.sleep;
+import javax.swing.JOptionPane;
 import maagic.Carta;
 
 /**
@@ -47,11 +48,15 @@ public class CartaInterfaz extends javax.swing.JPanel {
         Ataque = new javax.swing.JLabel();
         Vida = new javax.swing.JLabel();
         Coste = new javax.swing.JLabel();
+        jLabelganarMana = new javax.swing.JLabel();
         ImagenesFondo = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(180, 250));
         setOpaque(false);
         addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                formFocusGained(evt);
+            }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 formFocusLost(evt);
             }
@@ -90,24 +95,33 @@ public class CartaInterfaz extends javax.swing.JPanel {
         Coste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/mana.png"))); // NOI18N
         add(Coste, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 60));
 
+        jLabelganarMana.setText("jLabel1");
+        add(jLabelganarMana, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 50, 50));
+
         ImagenesFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/wood_repeatable.jpg"))); // NOI18N
         ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(153, 102, 0)));
         add(ImagenesFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 250));
 
-        getAccessibleContext().setAccessibleName("Panel de la Carta");
+        getAccessibleContext().setAccessibleName("panelCarta");
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-        this.grabFocus();
+        System.out.println("Parent accesibleName: "+this.getParent().getAccessibleContext().getAccessibleName());
+        this.requestFocusInWindow();
+        System.out.println("Focus?"+this.isFocusOwner());
+        if(this.getParent().getAccessibleContext().getAccessibleName().equals("panelBaraja")){
         ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(15, 15, 15, 15, new java.awt.Color(0,255,0)));
         cartaElegida=new Carta(Integer.parseInt(this.jLabelVida.getText()),Integer.parseInt(this.jLabelAtaque.getText()),Integer.parseInt(this.jLabelCoste.getText()));
         anteriorCartaElegida=this.getParent().getComponentZOrder(this);
+        }
+        else if(this.getParent().getAccessibleContext().getAccessibleName().equals("panelCartas")){
+            
+        }
         System.out.println("Este es el componente nº: "+anteriorCartaElegida);
         System.out.println("Este es el componente elegido"+this.getParent().getComponent(anteriorCartaElegida));
     }//GEN-LAST:event_formMouseClicked
 
     private void formFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusLost
-        if(cartaElegida instanceof Carta){}
         ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(153, 102, 0)));
             //if(this.getParent().getParent().getParent().getComponent(5).isFocusOwner()){
         //ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(255, 0, 0)));
@@ -116,6 +130,17 @@ public class CartaInterfaz extends javax.swing.JPanel {
 //            ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(153, 102, 0)));
 //        }
     }//GEN-LAST:event_formFocusLost
+
+    private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
+        ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(15, 15, 15, 15, new java.awt.Color(0,255,0)));
+        String[] manaOAtaque={"Ganar Mana","Atacar","Cancelar"};
+        this.getParent().requestFocusInWindow();
+        String opcion=JOptionPane.showInputDialog(this.getRootPane(),"Escoge una Opcion", "",JOptionPane.INFORMATION_MESSAGE, null,manaOAtaque, manaOAtaque[0]).toString();
+        int posicion=this.getParent().getParent().getComponentZOrder(this.getParent());
+        System.out.println("Opcion: "+opcion+" posicion: "+posicion);
+        System.out.println("focus sigue en carta?"+this.isFocusOwner());
+        
+    }//GEN-LAST:event_formFocusGained
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -126,5 +151,6 @@ public class CartaInterfaz extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelAtaque;
     private javax.swing.JLabel jLabelCoste;
     private javax.swing.JLabel jLabelVida;
+    private javax.swing.JLabel jLabelganarMana;
     // End of variables declaration//GEN-END:variables
 }

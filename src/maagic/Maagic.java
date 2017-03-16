@@ -17,7 +17,8 @@ public class Maagic {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //Instanciamos Menu
+    /*   
+    //Instanciamos Menu
         Menu menuPrincipal=new Menu();
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -39,11 +40,12 @@ public class Maagic {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
+    /*    
+    java.awt.EventQueue.invokeLater(() -> {
             new Menu().setVisible(true);
         });
         
-        
+      */
         // Main. Aki instanciamos juego 
         //Creamos los 2 jugadores con sus barajas (en este caso la de prueba)
         Jugador j1=new Jugador("barajas/Cartas.txt");

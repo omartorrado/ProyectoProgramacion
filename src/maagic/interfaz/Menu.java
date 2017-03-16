@@ -48,7 +48,9 @@ public class Menu extends javax.swing.JFrame {
         
         //Musica
         System.out.println("Suena la musica?");
+        System.out.println(this.hasFocus());
         
+        System.out.println("Focus?"+this.hasFocus());
         try {
             musicaMenu = AudioSystem.getClip();
             musicaMenu.open(AudioSystem.getAudioInputStream(new File("sound/testSound.aiff")));

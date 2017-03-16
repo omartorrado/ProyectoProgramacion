@@ -58,6 +58,9 @@
               <Dimension value="[5555, 250]"/>
             </Property>
           </Properties>
+          <AccessibilityProperties>
+            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="panelBaraja"/>
+          </AccessibilityProperties>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
             <Property name="columns" type="int" value="30"/>
@@ -142,7 +145,7 @@
             </Property>
           </Properties>
           <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Cartas"/>
+            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="panelCartas"/>
           </AccessibilityProperties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelViewportCartasMouseClicked"/>
