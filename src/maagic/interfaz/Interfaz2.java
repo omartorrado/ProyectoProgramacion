@@ -14,89 +14,90 @@ import maagic.Jugador;
  * @author alvar
  */
 public class Interfaz2 extends javax.swing.JPanel {
-    Boolean tieneFocus=false;
+
+    Boolean tieneFocus = false;
     int seleccionMano1;
     int seleccionMesa1;
-          
+
     /**
      * Creates new form Interfaz
      */
     public Interfaz2() {
         initComponents();
         //Crea los jugadores TEMPORAL luego los pillara de tu metodo Delio
-        Jugador j1=new Jugador("barajas/Cartas.txt");
-        Jugador j2=new Jugador("barajas/Cartas.txt");
+        Jugador j1 = new Jugador("barajas/Cartas.txt");
+        Jugador j2 = new Jugador("barajas/Cartas.txt");
         //Baraja ambos mazos
         j1.barajar();
         j2.barajar();
         //Inicia bucle de partida
         //while(j1.getVida()>0&&j2.getVida()>0){
-            j1.cogerMano();
-            //Este metodo muestra la mano del jugador en el interfaz
-            interfazGetManoJ1(j1);
-            
-            j2.cogerMano();
-                    interfazGetManoJ2(j2);
-            /*
+        j1.cogerMano();
+        //Este metodo muestra la mano del jugador en el interfaz
+        interfazGetManoJ1(j1);
+
+        /*
             Aki es donde el usuario escoge que carta jugar
-            */
-            /*
+         */
+ /*
             seleccionMano1=0;
             do{          
                 
             }
             while((j1.hayCarta(0)||j1.hayCarta(1)||j1.hayCarta(2))==true);
-            */
+         */
+        j2.cogerMano();
+        interfazGetManoJ2(j2);
         //}
     }
 
     public void interfazGetManoJ1(Jugador j1) {
         /*
         Se muestran las cartas en el interfaz, posible metodo
-        */
+         */
         //Creamos 3 objetos cartaInterfaz a partir de las cartas de la mano
-        CartaInterfaz carta0=new CartaInterfaz(j1.getMano(0));
-        CartaInterfaz carta1=new CartaInterfaz(j1.getMano(1));
-        CartaInterfaz carta2=new CartaInterfaz(j1.getMano(2));
+        CartaInterfaz carta0 = new CartaInterfaz(j1.getMano(0));
+        CartaInterfaz carta1 = new CartaInterfaz(j1.getMano(1));
+        CartaInterfaz carta2 = new CartaInterfaz(j1.getMano(2));
         //Las añadimos a cada uno de los huecos del display mano
-        jugador1Mano1.add(carta0,0);
-        jugador1Mano2.add(carta1,0);
-        jugador1Mano3.add(carta2,0);
+        jugador1Mano1.add(carta0, 0);
+        jugador1Mano2.add(carta1, 0);
+        jugador1Mano3.add(carta2, 0);
         //Establecemos el tamaño y posicion de las cartaInterfaz
         //jugador1Mano1.getComponent(0).setVisible(true);
-        jugador1Mano1.getComponent(0).setLocation(0,0);
-        jugador1Mano1.getComponent(0).setSize(180,250);
+        jugador1Mano1.getComponent(0).setLocation(0, 0);
+        jugador1Mano1.getComponent(0).setSize(180, 250);
         //jugador1Mano2.getComponent(0).setVisible(true);
-        jugador1Mano2.getComponent(0).setLocation(0,0);
-        jugador1Mano2.getComponent(0).setSize(180,250);
+        jugador1Mano2.getComponent(0).setLocation(0, 0);
+        jugador1Mano2.getComponent(0).setSize(180, 250);
         //jugador1Mano3.getComponent(0).setVisible(true);
-        jugador1Mano3.getComponent(0).setLocation(0,0);
-        jugador1Mano3.getComponent(0).setSize(180,250);
+        jugador1Mano3.getComponent(0).setLocation(0, 0);
+        jugador1Mano3.getComponent(0).setSize(180, 250);
         //////////////
     }
-    
+
     public void interfazGetManoJ2(Jugador j2) {
         /*
         Se muestran las cartas en el interfaz, posible metodo
-        */
+         */
         //Creamos 3 objetos cartaInterfaz a partir de las cartas de la mano
-        CartaInterfaz carta0=new CartaInterfaz(j2.getMano(0));
-        CartaInterfaz carta1=new CartaInterfaz(j2.getMano(1));
-        CartaInterfaz carta2=new CartaInterfaz(j2.getMano(2));
+        CartaInterfaz carta0 = new CartaInterfaz(j2.getMano(0));
+        CartaInterfaz carta1 = new CartaInterfaz(j2.getMano(1));
+        CartaInterfaz carta2 = new CartaInterfaz(j2.getMano(2));
         //Las añadimos a cada uno de los huecos del display mano
-        jugador2Mano1.add(carta0,0);
-        jugador2Mano2.add(carta1,0);
-        jugador2Mano3.add(carta2,0);
+        jugador2Mano1.add(carta0, 0);
+        jugador2Mano2.add(carta1, 0);
+        jugador2Mano3.add(carta2, 0);
         //Establecemos el tamaño y posicion de las cartaInterfaz
         //jugador1Mano1.getComponent(0).setVisible(true);
-        jugador2Mano1.getComponent(0).setLocation(0,0);
-        jugador2Mano1.getComponent(0).setSize(180,250);
+        jugador2Mano1.getComponent(0).setLocation(0, 0);
+        jugador2Mano1.getComponent(0).setSize(180, 250);
         //jugador1Mano2.getComponent(0).setVisible(true);
-        jugador2Mano2.getComponent(0).setLocation(0,0);
-        jugador2Mano2.getComponent(0).setSize(180,250);
+        jugador2Mano2.getComponent(0).setLocation(0, 0);
+        jugador2Mano2.getComponent(0).setSize(180, 250);
         //jugador1Mano3.getComponent(0).setVisible(true);
-        jugador2Mano3.getComponent(0).setLocation(0,0);
-        jugador2Mano3.getComponent(0).setSize(180,250);
+        jugador2Mano3.getComponent(0).setLocation(0, 0);
+        jugador2Mano3.getComponent(0).setSize(180, 250);
         //////////////
     }
 
@@ -502,14 +503,14 @@ public class Interfaz2 extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jugador1ManoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1ManoKeyPressed
-        
-        Component[] cartasMano=jugador1Mano.getComponents();
-        for(Component n:cartasMano){
-            if(n.hasFocus()){
-                
+
+        Component[] cartasMano = jugador1Mano.getComponents();
+        for (Component n : cartasMano) {
+            if (n.hasFocus()) {
+
             }
         }
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_S){
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_S) {
             jugador1Mano2.grabFocus();
         }
     }//GEN-LAST:event_jugador1ManoKeyPressed
