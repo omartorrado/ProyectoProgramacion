@@ -112,6 +112,7 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
 
           <Layout>
@@ -133,7 +134,7 @@
             <Component class="javax.swing.JLabel" name="jugador1Mano1Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
+                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
                 </Property>
               </Properties>
             </Component>
@@ -144,6 +145,7 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
 
           <Layout>
@@ -168,7 +170,7 @@
             <Component class="javax.swing.JLabel" name="jugador1Mano2Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
+                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
@@ -180,6 +182,7 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
 
           <Layout>
@@ -201,7 +204,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
+                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
@@ -259,7 +262,7 @@
             <Component class="javax.swing.JLabel" name="jugador2Mano1Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
+                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
                 </Property>
               </Properties>
             </Component>
@@ -294,7 +297,7 @@
             <Component class="javax.swing.JLabel" name="jugador2Mano2Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
+                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
                 </Property>
               </Properties>
             </Component>
@@ -327,6 +330,11 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jugador2Mano3Fondo">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -531,7 +539,7 @@
             <Component class="javax.swing.JLabel" name="jugador1TableroCarta1Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
+                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
                 </Property>
               </Properties>
             </Component>
@@ -563,7 +571,7 @@
             <Component class="javax.swing.JLabel" name="jugador1TableroCarta2Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
+                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
                 </Property>
               </Properties>
             </Component>
@@ -595,7 +603,7 @@
             <Component class="javax.swing.JLabel" name="jugador1TableroCarta3Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
+                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
                 </Property>
               </Properties>
             </Component>
@@ -641,7 +649,7 @@
             <Component class="javax.swing.JLabel" name="jugador2TableroCarta1Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
+                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
                 </Property>
               </Properties>
             </Component>
@@ -673,7 +681,7 @@
             <Component class="javax.swing.JLabel" name="jugador2TableroCarta2Fondo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
+                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
                 </Property>
               </Properties>
             </Component>
@@ -705,7 +713,7 @@
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"/>
+                  <Image iconType="3" name="/maagic/img/rsz_barajamagic.jpg"/>
                 </Property>
               </Properties>
             </Component>

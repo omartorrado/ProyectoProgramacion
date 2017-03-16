@@ -7,7 +7,7 @@ package maagic;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.nio.file.FileSystems;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -66,6 +66,7 @@ public class Jugador {
         return mana;
     }
 
+    
     public Carta getMano(int i) {
         return mano[i];
 

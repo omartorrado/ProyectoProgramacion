@@ -175,9 +175,10 @@ public class Menu extends javax.swing.JFrame {
         //Aki va el menu de jugar la partida
         menu.setVisible(false);
         musicaMenu.stop();
-        AñadirJugadores seleccionJugadores=new AñadirJugadores();
-        panelprincipal.add(seleccionJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080), 1);
-        
+        //AñadirJugadores seleccionJugadores=new AñadirJugadores();
+        //panelprincipal.add(seleccionJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080), 1);
+        Interfaz2 panelJuego=new Interfaz2();
+        panelprincipal.add(panelJuego,new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1600, 900), 1);
        
     }//GEN-LAST:event_Boton1JugarActionPerformed
 
