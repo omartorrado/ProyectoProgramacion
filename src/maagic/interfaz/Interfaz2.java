@@ -5,7 +5,7 @@
  */
 package maagic.interfaz;
 
-import java.awt.Component;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import maagic.Jugador;
 
@@ -601,59 +601,26 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador1TableroCuadro.setLayout(new java.awt.GridLayout(3, 0));
 
         jugador1TableroCarta1.setBackground(new java.awt.Color(153, 153, 153));
+        jugador1TableroCarta1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jugador1TableroCarta1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
-
-        javax.swing.GroupLayout jugador1TableroCarta1Layout = new javax.swing.GroupLayout(jugador1TableroCarta1);
-        jugador1TableroCarta1.setLayout(jugador1TableroCarta1Layout);
-        jugador1TableroCarta1Layout.setHorizontalGroup(
-            jugador1TableroCarta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jugador1TableroCarta1Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jugador1TableroCarta1Layout.setVerticalGroup(
-            jugador1TableroCarta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jugador1TableroCarta1Layout.createSequentialGroup()
-                .addComponent(jugador1TableroCarta1Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jugador1TableroCarta1.add(jugador1TableroCarta1Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 255));
 
         jugador1TableroCuadro.add(jugador1TableroCarta1);
 
         jugador1TableroCarta2.setBackground(new java.awt.Color(153, 153, 153));
+        jugador1TableroCarta2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jugador1TableroCarta2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
-
-        javax.swing.GroupLayout jugador1TableroCarta2Layout = new javax.swing.GroupLayout(jugador1TableroCarta2);
-        jugador1TableroCarta2.setLayout(jugador1TableroCarta2Layout);
-        jugador1TableroCarta2Layout.setHorizontalGroup(
-            jugador1TableroCarta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jugador1TableroCarta2Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jugador1TableroCarta2Layout.setVerticalGroup(
-            jugador1TableroCarta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jugador1TableroCarta2Layout.createSequentialGroup()
-                .addComponent(jugador1TableroCarta2Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jugador1TableroCarta2.add(jugador1TableroCarta2Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 255));
 
         jugador1TableroCuadro.add(jugador1TableroCarta2);
 
         jugador1TableroCarta3.setBackground(new java.awt.Color(153, 153, 153));
+        jugador1TableroCarta3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jugador1TableroCarta3Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
-
-        javax.swing.GroupLayout jugador1TableroCarta3Layout = new javax.swing.GroupLayout(jugador1TableroCarta3);
-        jugador1TableroCarta3.setLayout(jugador1TableroCarta3Layout);
-        jugador1TableroCarta3Layout.setHorizontalGroup(
-            jugador1TableroCarta3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jugador1TableroCarta3Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jugador1TableroCarta3Layout.setVerticalGroup(
-            jugador1TableroCarta3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jugador1TableroCarta3Layout.createSequentialGroup()
-                .addComponent(jugador1TableroCarta3Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jugador1TableroCarta3.add(jugador1TableroCarta3Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 255));
 
         jugador1TableroCuadro.add(jugador1TableroCarta3);
 
@@ -663,59 +630,26 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador2TableroCuadro.setLayout(new java.awt.GridLayout(3, 0));
 
         jugador2TableroCarta1.setBackground(new java.awt.Color(153, 153, 153));
+        jugador2TableroCarta1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jugador2TableroCarta1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
-
-        javax.swing.GroupLayout jugador2TableroCarta1Layout = new javax.swing.GroupLayout(jugador2TableroCarta1);
-        jugador2TableroCarta1.setLayout(jugador2TableroCarta1Layout);
-        jugador2TableroCarta1Layout.setHorizontalGroup(
-            jugador2TableroCarta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jugador2TableroCarta1Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jugador2TableroCarta1Layout.setVerticalGroup(
-            jugador2TableroCarta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jugador2TableroCarta1Layout.createSequentialGroup()
-                .addComponent(jugador2TableroCarta1Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jugador2TableroCarta1.add(jugador2TableroCarta1Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 255));
 
         jugador2TableroCuadro.add(jugador2TableroCarta1);
 
         jugador2TableroCarta2.setBackground(new java.awt.Color(153, 153, 153));
+        jugador2TableroCarta2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jugador2TableroCarta2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
-
-        javax.swing.GroupLayout jugador2TableroCarta2Layout = new javax.swing.GroupLayout(jugador2TableroCarta2);
-        jugador2TableroCarta2.setLayout(jugador2TableroCarta2Layout);
-        jugador2TableroCarta2Layout.setHorizontalGroup(
-            jugador2TableroCarta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jugador2TableroCarta2Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jugador2TableroCarta2Layout.setVerticalGroup(
-            jugador2TableroCarta2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jugador2TableroCarta2Layout.createSequentialGroup()
-                .addComponent(jugador2TableroCarta2Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jugador2TableroCarta2.add(jugador2TableroCarta2Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 255));
 
         jugador2TableroCuadro.add(jugador2TableroCarta2);
 
         jugador2TableroCarta3.setBackground(new java.awt.Color(153, 153, 153));
+        jugador2TableroCarta3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
-
-        javax.swing.GroupLayout jugador2TableroCarta3Layout = new javax.swing.GroupLayout(jugador2TableroCarta3);
-        jugador2TableroCarta3.setLayout(jugador2TableroCarta3Layout);
-        jugador2TableroCarta3Layout.setHorizontalGroup(
-            jugador2TableroCarta3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jugador2TableroCarta3Layout.setVerticalGroup(
-            jugador2TableroCarta3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jugador2TableroCarta3Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jugador2TableroCarta3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 255));
 
         jugador2TableroCuadro.add(jugador2TableroCarta3);
 
@@ -844,7 +778,7 @@ public class Interfaz2 extends javax.swing.JPanel {
     }//GEN-LAST:event_jugador1Mano2clickFocusLost
 
     private void jugador1Mano2clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador1Mano2clickMouseClicked
-        System.out.println("mi polla en tu boca 2");
+
         if (jugador1Mano2.getComponent(1) instanceof CartaInterfaz) {
             jugador1Mano2.getComponent(1).requestFocusInWindow();
             String opcion;
@@ -855,13 +789,63 @@ public class Interfaz2 extends javax.swing.JPanel {
                 String[] manaOAtaque = {"Mana", "Cancelar"};
                 opcion = JOptionPane.showInputDialog(this.getRootPane(), "Escoge una Opcion", "", JOptionPane.INFORMATION_MESSAGE, null, manaOAtaque, manaOAtaque[0]).toString();
             }
+            //si elegimos mana
             if (opcion.equals("Mana")) {
                 j1.ganarMana(1);
                 jugador1Mana.setText("" + j1.getMana());
                 jugador1Mano2.remove(1);
                 jugador1Mano2.repaint();
+                //si elegimos atacar
             } else if (opcion.equals("Atacar")) {
                 seleccionMano1 = 1;
+                ArrayList<String> opciones = new ArrayList();
+                opciones.add("0");
+                opciones.add("1");
+                opciones.add("2");
+                //Comprueba si en la mesa hay carta o no
+                if (jugador1TableroCarta1.getComponent(0) instanceof CartaInterfaz) {
+                    opciones.remove(0);
+                }
+                if (jugador1TableroCarta2.getComponent(0) instanceof CartaInterfaz) {
+                    opciones.remove(1);
+                }
+                if (jugador1TableroCarta3.getComponent(0) instanceof CartaInterfaz) {
+                    opciones.remove(2);
+                }
+                if (opciones.size() < 1) {
+                    opciones.add("No puedes jugar la carta");
+                }
+                //Option pane que indica las opciones disponibles
+                int posicionTablero = Integer.parseInt(JOptionPane.showInputDialog(this.getRootPane(), "Escoge una Opcion", "", JOptionPane.INFORMATION_MESSAGE, null, opciones.toArray(), opciones.get(0)).toString());
+                System.out.println("posicion tablero" + posicionTablero);
+                
+                //probamos a mover la carta la mesa
+                j1.moverManoMesa(1, posicionTablero);
+                jugador1Mano2.remove(1);
+                jugador1Mano2.repaint();
+                //Las añadimos a cada uno de los huecos del display mano
+                try {
+                    CartaInterfaz carta0 = new CartaInterfaz(j1.getMesa(0));
+                    jugador1TableroCarta1.add(carta0, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250), 0);
+                    jugador1TableroCarta1.repaint();
+                    System.out.println("Carta en la mesa presa");
+                } catch (NullPointerException e) {
+                }
+                try {
+                    CartaInterfaz carta1 = new CartaInterfaz(j1.getMesa(1));
+                    jugador1TableroCarta2.add(carta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250), 0);
+                    jugador1TableroCarta2.repaint();
+                    System.out.println("Carta en la mesa presa");
+                } catch (NullPointerException e) {
+                }
+                try {
+                    CartaInterfaz carta2 = new CartaInterfaz(j1.getMesa(2));
+                    jugador1TableroCarta3.add(carta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250), 0);
+                    jugador1TableroCarta3.repaint();
+                    System.out.println("Carta en la mesa presa");
+                } catch (NullPointerException e) {
+                }
+
             }
         }
     }//GEN-LAST:event_jugador1Mano2clickMouseClicked

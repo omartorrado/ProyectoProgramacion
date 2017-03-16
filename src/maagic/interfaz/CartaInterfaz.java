@@ -55,7 +55,6 @@ public class CartaInterfaz extends javax.swing.JPanel {
         Ataque = new javax.swing.JLabel();
         Vida = new javax.swing.JLabel();
         Coste = new javax.swing.JLabel();
-        jLabelganarMana = new javax.swing.JLabel();
         ImagenesFondo = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(180, 250));
@@ -101,9 +100,6 @@ public class CartaInterfaz extends javax.swing.JPanel {
         Coste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Coste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/mana.png"))); // NOI18N
         add(Coste, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 60));
-
-        jLabelganarMana.setText("jLabel1");
-        add(jLabelganarMana, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 50, 50));
 
         ImagenesFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/wood_repeatable.jpg"))); // NOI18N
         ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(153, 102, 0)));
@@ -161,6 +157,5 @@ public class CartaInterfaz extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelAtaque;
     private javax.swing.JLabel jLabelCoste;
     private javax.swing.JLabel jLabelVida;
-    private javax.swing.JLabel jLabelganarMana;
     // End of variables declaration//GEN-END:variables
 }
