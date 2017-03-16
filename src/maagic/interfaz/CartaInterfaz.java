@@ -32,6 +32,13 @@ public class CartaInterfaz extends javax.swing.JPanel {
         //Muy lento este metodo
         DimensionPantalla.resizeImagen("/maagic/img/wood_repeatable.jpg", ImagenesFondo);
     }
+    
+    public void actualizar(Carta c){
+        jLabelAtaque.setText("" + c.getAtaque());
+        jLabelVida.setText("" + c.getVida());
+        jLabelCoste.setText("" + c.getCoste());
+        this.getParent().requestFocusInWindow();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -133,13 +140,16 @@ public class CartaInterfaz extends javax.swing.JPanel {
 
     private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
         ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(15, 15, 15, 15, new java.awt.Color(0,255,0)));
+        /*
+        if(this.getParent().getAccessibleContext().getAccessibleName().equals("mano")){
         String[] manaOAtaque={"Ganar Mana","Atacar","Cancelar"};
         this.getParent().requestFocusInWindow();
         String opcion=JOptionPane.showInputDialog(this.getRootPane(),"Escoge una Opcion", "",JOptionPane.INFORMATION_MESSAGE, null,manaOAtaque, manaOAtaque[0]).toString();
         int posicion=this.getParent().getParent().getComponentZOrder(this.getParent());
         System.out.println("Opcion: "+opcion+" posicion: "+posicion);
         System.out.println("focus sigue en carta?"+this.isFocusOwner());
-        
+        }
+        */
     }//GEN-LAST:event_formFocusGained
 
 
