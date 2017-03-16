@@ -536,7 +536,7 @@ public class Interfaz2 extends javax.swing.JPanel {
     }//GEN-LAST:event_jugador1ManoKeyPressed
     private void jugador1Mano1KeyPressed(java.awt.event.KeyEvent evt) {                                        
         if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_S){
-            jugador1Mano2.grabFocus();
+            jugador1Mano2.grabFocus();           
         }
         if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_A){
             jugador1Mano1.grabFocus();
