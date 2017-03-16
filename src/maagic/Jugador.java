@@ -33,7 +33,7 @@ public class Jugador {
     private ArrayList<Carta> descarte = new ArrayList();
     private Carta[] mesa = new Carta[3];
     private int vida = 20;
-    private int mana = 0;
+    private int mana = 10;
 
     //Constructor
     public Jugador(String fileBaraja) {
@@ -70,6 +70,10 @@ public class Jugador {
     public Carta getMano(int i) {
         return mano[i];
 
+    }
+    
+    public Carta getMesa(int i){
+        return mesa[i];
     }
 
     public boolean hayCarta(int i) {
