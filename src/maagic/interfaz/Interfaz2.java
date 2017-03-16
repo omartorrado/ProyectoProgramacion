@@ -844,7 +844,26 @@ public class Interfaz2 extends javax.swing.JPanel {
     }//GEN-LAST:event_jugador1Mano2clickFocusLost
 
     private void jugador1Mano2clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador1Mano2clickMouseClicked
-        // TODO add your handling code here:
+        System.out.println("mi polla en tu boca 2");
+        if (jugador1Mano2.getComponent(1) instanceof CartaInterfaz) {
+            jugador1Mano2.getComponent(1).requestFocusInWindow();
+            String opcion;
+            if (j1.getMana() >= j1.getMano(1).getCoste()) {
+                String[] manaOAtaque = {"Mana", "Cancelar", "Atacar"};
+                opcion = JOptionPane.showInputDialog(this.getRootPane(), "Escoge una Opcion", "", JOptionPane.INFORMATION_MESSAGE, null, manaOAtaque, manaOAtaque[0]).toString();
+            } else {
+                String[] manaOAtaque = {"Mana", "Cancelar"};
+                opcion = JOptionPane.showInputDialog(this.getRootPane(), "Escoge una Opcion", "", JOptionPane.INFORMATION_MESSAGE, null, manaOAtaque, manaOAtaque[0]).toString();
+            }
+            if (opcion.equals("Mana")) {
+                j1.ganarMana(1);
+                jugador1Mana.setText("" + j1.getMana());
+                jugador1Mano2.remove(1);
+                jugador1Mano2.repaint();
+            } else if (opcion.equals("Atacar")) {
+                seleccionMano1 = 1;
+            }
+        }
     }//GEN-LAST:event_jugador1Mano2clickMouseClicked
 
     private void jugador1Mano2clickKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1Mano2clickKeyPressed
