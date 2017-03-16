@@ -76,6 +76,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
         jPanelViewportBaraja.setPreferredSize(new java.awt.Dimension(5555, 250));
         jPanelViewportBaraja.setLayout(new java.awt.GridLayout(1, 30));
         jScrollPaneBaraja.setViewportView(jPanelViewportBaraja);
+        jPanelViewportBaraja.getAccessibleContext().setAccessibleName("panelBaraja");
 
         add(jScrollPaneBaraja);
         jScrollPaneBaraja.setBounds(100, 340, 600, 250);
@@ -129,7 +130,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
         });
         jPanelViewportCartas.setLayout(new java.awt.GridLayout(1, 0));
         jScrollPaneCartas.setViewportView(jPanelViewportCartas);
-        jPanelViewportCartas.getAccessibleContext().setAccessibleName("Cartas");
+        jPanelViewportCartas.getAccessibleContext().setAccessibleName("panelCartas");
 
         add(jScrollPaneCartas);
         jScrollPaneCartas.setBounds(100, 20, 600, 250);
@@ -235,7 +236,7 @@ public class ElegirBaraja extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-        jButtonCargar.grabFocus();
+        //jButtonCargar.grabFocus();
         jButtonCargar.requestFocusInWindow();
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 

@@ -6,6 +6,7 @@
 package maagic.interfaz;
 
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import maagic.Jugador;
 
 /**
@@ -17,6 +18,8 @@ public class Interfaz2 extends javax.swing.JPanel {
     Boolean tieneFocus = false;
     int seleccionMano1;
     int seleccionMesa1;
+    int step = 0;
+    Jugador j1, j2;
 
     /**
      * Creates new form Interfaz
@@ -24,27 +27,28 @@ public class Interfaz2 extends javax.swing.JPanel {
     public Interfaz2() {
         initComponents();
         //Crea los jugadores TEMPORAL luego los pillara de tu metodo Delio
-        Jugador j1 = new Jugador("barajas/Cartas.txt");
-        Jugador j2 = new Jugador("barajas/Cartas.txt");
+        j1 = new Jugador("barajas/Cartas.txt");
+        j2 = new Jugador("barajas/Cartas.txt");
         //Baraja ambos mazos
         j1.barajar();
         j2.barajar();
         //Inicia bucle de partida
         //while(j1.getVida()>0&&j2.getVida()>0){
         j1.cogerMano();
+        //Asignamos valores iniciales a mana y vida de cada jugador en el display
+        jugador1Mana.setText("" + j1.getMana());
+        jugador1Vida.setText("" + j1.getVida());
+        jugador2Mana.setText("" + j2.getMana());
+        jugador2Vida.setText("" + j2.getVida());
         //Este metodo muestra la mano del jugador en el interfaz
         interfazGetManoJ1(j1);
 
         /*
             Aki es donde el usuario escoge que carta jugar
          */
- /*
-            seleccionMano1=0;
-            do{          
-                
-            }
-            while((j1.hayCarta(0)||j1.hayCarta(1)||j1.hayCarta(2))==true);
-         */
+        System.out.println("Focus?" + this.isFocusOwner());
+
+        ///////////////            
         j2.cogerMano();
         interfazGetManoJ2(j2);
         //}
@@ -59,20 +63,11 @@ public class Interfaz2 extends javax.swing.JPanel {
         CartaInterfaz carta1 = new CartaInterfaz(j1.getMano(1));
         CartaInterfaz carta2 = new CartaInterfaz(j1.getMano(2));
         //Las añadimos a cada uno de los huecos del display mano
-        jugador1Mano1.add(carta0, 0);
-        jugador1Mano2.add(carta1, 0);
-        jugador1Mano3.add(carta2, 0);
-        //Establecemos el tamaño y posicion de las cartaInterfaz
-        //jugador1Mano1.getComponent(0).setVisible(true);
-        jugador1Mano1.getComponent(0).setLocation(0, 0);
-        jugador1Mano1.getComponent(0).setSize(180, 250);
-        //jugador1Mano2.getComponent(0).setVisible(true);
-        jugador1Mano2.getComponent(0).setLocation(0, 0);
-        jugador1Mano2.getComponent(0).setSize(180, 250);
-        //jugador1Mano3.getComponent(0).setVisible(true);
-        jugador1Mano3.getComponent(0).setLocation(0, 0);
-        jugador1Mano3.getComponent(0).setSize(180, 250);
-        //////////////
+        jugador1Mano1.add(carta0, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250), 1);
+        jugador1Mano2.add(carta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250), 1);
+        jugador1Mano3.add(carta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250), 1);
+        //le pasamos el focus a la primera carta
+
     }
 
     public void interfazGetManoJ2(Jugador j2) {
@@ -84,22 +79,11 @@ public class Interfaz2 extends javax.swing.JPanel {
         CartaInterfaz carta1 = new CartaInterfaz(j2.getMano(1));
         CartaInterfaz carta2 = new CartaInterfaz(j2.getMano(2));
         //Las añadimos a cada uno de los huecos del display mano
-        jugador2Mano1.add(carta0, 0);
-        jugador2Mano2.add(carta1, 0);
-        jugador2Mano3.add(carta2, 0);
-        //Establecemos el tamaño y posicion de las cartaInterfaz
-        //jugador1Mano1.getComponent(0).setVisible(true);
-        jugador2Mano1.getComponent(0).setLocation(0, 0);
-        jugador2Mano1.getComponent(0).setSize(180, 250);
-        //jugador1Mano2.getComponent(0).setVisible(true);
-        jugador2Mano2.getComponent(0).setLocation(0, 0);
-        jugador2Mano2.getComponent(0).setSize(180, 250);
-        //jugador1Mano3.getComponent(0).setVisible(true);
-        jugador2Mano3.getComponent(0).setLocation(0, 0);
-        jugador2Mano3.getComponent(0).setSize(180, 250);
-      
+        jugador2Mano1.add(carta0, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250), 1);
+        jugador2Mano2.add(carta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250), 1);
+        jugador2Mano3.add(carta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250), 1);
+
         //////////////
-       
     }
 
     /**
@@ -117,17 +101,23 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador1Gota = new javax.swing.JLabel();
         jugador1Mano = new javax.swing.JPanel();
         jugador1Mano1 = new javax.swing.JPanel();
+        jugador1Mano1click = new javax.swing.JPanel();
         jugador1Mano1Fondo = new javax.swing.JLabel();
         jugador1Mano2 = new javax.swing.JPanel();
+        jugador1Mano2click = new javax.swing.JPanel();
         jugador1Mano2Fondo = new javax.swing.JLabel();
         jugador1Mano3 = new javax.swing.JPanel();
+        jugador1Mano3click = new javax.swing.JPanel();
         jugador1Mano3Fondo = new javax.swing.JLabel();
         jugador2Mano = new javax.swing.JPanel();
         jugador2Mano1 = new javax.swing.JPanel();
+        jugador2Mano1click = new javax.swing.JPanel();
         jugador2Mano1Fondo = new javax.swing.JLabel();
         jugador2Mano2 = new javax.swing.JPanel();
+        jugador2Mano2click = new javax.swing.JPanel();
         jugador2Mano2Fondo = new javax.swing.JLabel();
         jugador2Mano3 = new javax.swing.JPanel();
+        jugador2Mano3click = new javax.swing.JPanel();
         jugador2Mano3Fondo = new javax.swing.JLabel();
         jugador1ManaCuadro = new javax.swing.JPanel();
         jugador1Mana = new javax.swing.JLabel();
@@ -189,7 +179,7 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador1GotaCuadro.setLayout(jugador1GotaCuadroLayout);
         jugador1GotaCuadroLayout.setHorizontalGroup(
             jugador1GotaCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jugador1Gota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jugador1Gota, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
         );
         jugador1GotaCuadroLayout.setVerticalGroup(
             jugador1GotaCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,53 +189,177 @@ public class Interfaz2 extends javax.swing.JPanel {
         add(jugador1GotaCuadro);
         jugador1GotaCuadro.setBounds(350, 80, 51, 50);
 
-        jugador1Mano.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jugador1ManoKeyPressed(evt);
-            }
-        });
         jugador1Mano.setLayout(new java.awt.GridLayout(3, 0));
 
         jugador1Mano1.setBackground(new java.awt.Color(153, 153, 153));
+        jugador1Mano1.setMinimumSize(new java.awt.Dimension(200, 250));
         jugador1Mano1.setOpaque(false);
-        jugador1Mano1.setLayout(null);
+        jugador1Mano1.setPreferredSize(new java.awt.Dimension(180, 250));
+        jugador1Mano1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jugador1Mano1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jugador1Mano1FocusLost(evt);
+            }
+        });
+        jugador1Mano1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jugador1Mano1MouseClicked(evt);
+            }
+        });
+        jugador1Mano1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jugador1Mano1KeyPressed(evt);
+            }
+        });
+        jugador1Mano1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jugador1Mano1click.setBackground(new java.awt.Color(153, 153, 153));
+        jugador1Mano1click.setOpaque(false);
+        jugador1Mano1click.setPreferredSize(new java.awt.Dimension(180, 250));
+        jugador1Mano1click.setVerifyInputWhenFocusTarget(false);
+        jugador1Mano1click.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jugador1Mano1clickFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jugador1Mano1clickFocusLost(evt);
+            }
+        });
+        jugador1Mano1click.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jugador1Mano1clickMouseClicked(evt);
+            }
+        });
+        jugador1Mano1click.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jugador1Mano1clickKeyPressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jugador1Mano1clickLayout = new javax.swing.GroupLayout(jugador1Mano1click);
+        jugador1Mano1click.setLayout(jugador1Mano1clickLayout);
+        jugador1Mano1clickLayout.setHorizontalGroup(
+            jugador1Mano1clickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+        jugador1Mano1clickLayout.setVerticalGroup(
+            jugador1Mano1clickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 250, Short.MAX_VALUE)
+        );
+
+        jugador1Mano1.add(jugador1Mano1click, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250));
 
         jugador1Mano1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
         jugador1Mano1Fondo.setText("jLabel1");
-        jugador1Mano1.add(jugador1Mano1Fondo);
-        jugador1Mano1Fondo.setBounds(0, 0, 200, 255);
+        jugador1Mano1Fondo.setPreferredSize(new java.awt.Dimension(180, 250));
+        jugador1Mano1.add(jugador1Mano1Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 255));
 
         jugador1Mano.add(jugador1Mano1);
+        jugador1Mano1.getAccessibleContext().setAccessibleName("mano");
 
         jugador1Mano2.setBackground(new java.awt.Color(153, 153, 153));
         jugador1Mano2.setOpaque(false);
-        jugador1Mano2.setLayout(null);
+        jugador1Mano2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jugador1Mano2KeyPressed(evt);
+            }
+        });
+        jugador1Mano2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jugador1Mano2click.setBackground(new java.awt.Color(153, 153, 153));
+        jugador1Mano2click.setOpaque(false);
+        jugador1Mano2click.setPreferredSize(new java.awt.Dimension(180, 250));
+        jugador1Mano2click.setVerifyInputWhenFocusTarget(false);
+        jugador1Mano2click.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jugador1Mano2clickFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jugador1Mano2clickFocusLost(evt);
+            }
+        });
+        jugador1Mano2click.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jugador1Mano2clickMouseClicked(evt);
+            }
+        });
+        jugador1Mano2click.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jugador1Mano2clickKeyPressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jugador1Mano2clickLayout = new javax.swing.GroupLayout(jugador1Mano2click);
+        jugador1Mano2click.setLayout(jugador1Mano2clickLayout);
+        jugador1Mano2clickLayout.setHorizontalGroup(
+            jugador1Mano2clickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+        jugador1Mano2clickLayout.setVerticalGroup(
+            jugador1Mano2clickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 250, Short.MAX_VALUE)
+        );
+
+        jugador1Mano2.add(jugador1Mano2click, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250));
 
         jugador1Mano2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
-        jugador1Mano2.add(jugador1Mano2Fondo);
-        jugador1Mano2Fondo.setBounds(0, 0, 200, 255);
+        jugador1Mano2.add(jugador1Mano2Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 255));
 
         jugador1Mano.add(jugador1Mano2);
+        jugador1Mano2.getAccessibleContext().setAccessibleName("mano");
 
         jugador1Mano3.setBackground(new java.awt.Color(153, 153, 153));
         jugador1Mano3.setOpaque(false);
+        jugador1Mano3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jugador1Mano3KeyPressed(evt);
+            }
+        });
+        jugador1Mano3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jugador1Mano3click.setBackground(new java.awt.Color(153, 153, 153));
+        jugador1Mano3click.setOpaque(false);
+        jugador1Mano3click.setPreferredSize(new java.awt.Dimension(180, 250));
+        jugador1Mano3click.setVerifyInputWhenFocusTarget(false);
+        jugador1Mano3click.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jugador1Mano3clickFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jugador1Mano3clickFocusLost(evt);
+            }
+        });
+        jugador1Mano3click.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jugador1Mano3clickMouseClicked(evt);
+            }
+        });
+        jugador1Mano3click.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jugador1Mano3clickKeyPressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jugador1Mano3clickLayout = new javax.swing.GroupLayout(jugador1Mano3click);
+        jugador1Mano3click.setLayout(jugador1Mano3clickLayout);
+        jugador1Mano3clickLayout.setHorizontalGroup(
+            jugador1Mano3clickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+        jugador1Mano3clickLayout.setVerticalGroup(
+            jugador1Mano3clickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 250, Short.MAX_VALUE)
+        );
+
+        jugador1Mano3.add(jugador1Mano3click, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250));
 
         jugador1Mano3Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
-
-        javax.swing.GroupLayout jugador1Mano3Layout = new javax.swing.GroupLayout(jugador1Mano3);
-        jugador1Mano3.setLayout(jugador1Mano3Layout);
-        jugador1Mano3Layout.setHorizontalGroup(
-            jugador1Mano3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jugador1Mano3Layout.createSequentialGroup()
-                .addComponent(jugador1Mano3Fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jugador1Mano3Layout.setVerticalGroup(
-            jugador1Mano3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jugador1Mano3Fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
-        );
+        jugador1Mano3.add(jugador1Mano3Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 266));
 
         jugador1Mano.add(jugador1Mano3);
+        jugador1Mano3.getAccessibleContext().setAccessibleName("mano");
 
         add(jugador1Mano);
         jugador1Mano.setBounds(10, 70, 200, 800);
@@ -255,31 +369,136 @@ public class Interfaz2 extends javax.swing.JPanel {
 
         jugador2Mano1.setBackground(new java.awt.Color(153, 153, 153));
         jugador2Mano1.setPreferredSize(new java.awt.Dimension(180, 250));
-        jugador2Mano1.setLayout(null);
+        jugador2Mano1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jugador2Mano1click.setBackground(new java.awt.Color(153, 153, 153));
+        jugador2Mano1click.setOpaque(false);
+        jugador2Mano1click.setPreferredSize(new java.awt.Dimension(180, 250));
+        jugador2Mano1click.setVerifyInputWhenFocusTarget(false);
+        jugador2Mano1click.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jugador2Mano1clickFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jugador2Mano1clickFocusLost(evt);
+            }
+        });
+        jugador2Mano1click.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jugador2Mano1clickMouseClicked(evt);
+            }
+        });
+        jugador2Mano1click.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jugador2Mano1clickKeyPressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jugador2Mano1clickLayout = new javax.swing.GroupLayout(jugador2Mano1click);
+        jugador2Mano1click.setLayout(jugador2Mano1clickLayout);
+        jugador2Mano1clickLayout.setHorizontalGroup(
+            jugador2Mano1clickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+        jugador2Mano1clickLayout.setVerticalGroup(
+            jugador2Mano1clickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 250, Short.MAX_VALUE)
+        );
+
+        jugador2Mano1.add(jugador2Mano1click, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250));
 
         jugador2Mano1Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
-        jugador2Mano1.add(jugador2Mano1Fondo);
-        jugador2Mano1Fondo.setBounds(0, 0, 200, 250);
+        jugador2Mano1.add(jugador2Mano1Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jugador2Mano.add(jugador2Mano1);
 
         jugador2Mano2.setBackground(new java.awt.Color(153, 153, 153));
         jugador2Mano2.setPreferredSize(new java.awt.Dimension(180, 250));
-        jugador2Mano2.setLayout(null);
+        jugador2Mano2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jugador2Mano2click.setBackground(new java.awt.Color(153, 153, 153));
+        jugador2Mano2click.setOpaque(false);
+        jugador2Mano2click.setPreferredSize(new java.awt.Dimension(180, 250));
+        jugador2Mano2click.setVerifyInputWhenFocusTarget(false);
+        jugador2Mano2click.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jugador2Mano2clickFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jugador2Mano2clickFocusLost(evt);
+            }
+        });
+        jugador2Mano2click.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jugador2Mano2clickMouseClicked(evt);
+            }
+        });
+        jugador2Mano2click.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jugador2Mano2clickKeyPressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jugador2Mano2clickLayout = new javax.swing.GroupLayout(jugador2Mano2click);
+        jugador2Mano2click.setLayout(jugador2Mano2clickLayout);
+        jugador2Mano2clickLayout.setHorizontalGroup(
+            jugador2Mano2clickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+        jugador2Mano2clickLayout.setVerticalGroup(
+            jugador2Mano2clickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 250, Short.MAX_VALUE)
+        );
+
+        jugador2Mano2.add(jugador2Mano2click, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250));
 
         jugador2Mano2Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
-        jugador2Mano2.add(jugador2Mano2Fondo);
-        jugador2Mano2Fondo.setBounds(0, 0, 200, 250);
+        jugador2Mano2.add(jugador2Mano2Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jugador2Mano.add(jugador2Mano2);
 
         jugador2Mano3.setBackground(new java.awt.Color(153, 153, 153));
         jugador2Mano3.setPreferredSize(new java.awt.Dimension(180, 250));
-        jugador2Mano3.setLayout(null);
+        jugador2Mano3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jugador2Mano3click.setBackground(new java.awt.Color(153, 153, 153));
+        jugador2Mano3click.setOpaque(false);
+        jugador2Mano3click.setPreferredSize(new java.awt.Dimension(180, 250));
+        jugador2Mano3click.setVerifyInputWhenFocusTarget(false);
+        jugador2Mano3click.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jugador2Mano3clickFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jugador2Mano3clickFocusLost(evt);
+            }
+        });
+        jugador2Mano3click.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jugador2Mano3clickMouseClicked(evt);
+            }
+        });
+        jugador2Mano3click.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jugador2Mano3clickKeyPressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jugador2Mano3clickLayout = new javax.swing.GroupLayout(jugador2Mano3click);
+        jugador2Mano3click.setLayout(jugador2Mano3clickLayout);
+        jugador2Mano3clickLayout.setHorizontalGroup(
+            jugador2Mano3clickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+        jugador2Mano3clickLayout.setVerticalGroup(
+            jugador2Mano3clickLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 250, Short.MAX_VALUE)
+        );
+
+        jugador2Mano3.add(jugador2Mano3click, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250));
 
         jugador2Mano3Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/img/rsz_tarot_rangers_template_card_by_onirikway.png"))); // NOI18N
-        jugador2Mano3.add(jugador2Mano3Fondo);
-        jugador2Mano3Fondo.setBounds(0, 0, 200, 250);
+        jugador2Mano3.add(jugador2Mano3Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jugador2Mano.add(jugador2Mano3);
 
@@ -304,7 +523,7 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador1VidaCuadro.setLayout(jugador1VidaCuadroLayout);
         jugador1VidaCuadroLayout.setHorizontalGroup(
             jugador1VidaCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jugador1Vida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jugador1Vida, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         jugador1VidaCuadroLayout.setVerticalGroup(
             jugador1VidaCuadroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -516,88 +735,205 @@ public class Interfaz2 extends javax.swing.JPanel {
         fondoPartida.setBounds(0, 0, 1600, 900);
     }// </editor-fold>//GEN-END:initComponents
 
-    //Aquí van los métodos de KeyPressed de la mano del Jugador 1 para ir seleccionando las cartas
-    //y las acciones que se llevan a cabo con ellas.
-    
-    private void jugador1ManoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1ManoKeyPressed
+    private void jugador1Mano1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1Mano1KeyPressed
 
-        Component[] cartasMano = jugador1Mano.getComponents();
-        for (Component n : cartasMano) {
-            if (n.hasFocus()) {
-
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_S) {
+            if (jugador1Mano2.getComponent(0).getAccessibleContext().getAccessibleName().equals("panelCarta")) {
+                jugador1Mano2.getComponent(0).requestFocusInWindow();
+                System.out.println("Estoy intentando pillar focus");
+            } else if (jugador1Mano3.getComponent(0).getAccessibleContext().getAccessibleName().equals("panelCarta")) {
+                jugador1Mano3.getComponent(0).requestFocusInWindow();
             }
         }
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_A) {
+
+        }
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_W) {
+            jugador1Mano3.getComponent(0).requestFocusInWindow();
+        }
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_D) {
+
+        }
+
+
+    }//GEN-LAST:event_jugador1Mano1KeyPressed
+
+    private void jugador1Mano2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1Mano2KeyPressed
         if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_S) {
-            jugador1Mano2.grabFocus();
+            jugador1Mano3.getComponent(0).requestFocusInWindow();
         }
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_W){
-            jugador1Mano2.grabFocus();
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_A) {
+
         }
-    }//GEN-LAST:event_jugador1ManoKeyPressed
-    private void jugador1Mano1KeyPressed(java.awt.event.KeyEvent evt) {                                        
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_S){
-            jugador1Mano2.grabFocus();           
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_W) {
+            jugador1Mano1.getComponent(0).requestFocusInWindow();
         }
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_A){
-            jugador1Mano1.grabFocus();
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_D) {
+
         }
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_W){
-            jugador1Mano3.grabFocus();
+    }//GEN-LAST:event_jugador1Mano2KeyPressed
+
+    private void jugador1Mano3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1Mano3KeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_S) {
+            jugador1Mano1.getComponent(0).requestFocusInWindow();
         }
-    }        
-    private void jugador1Mano2KeyPressed(java.awt.event.KeyEvent evt) {                                        
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_S){
-            jugador1Mano3.grabFocus();
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_A) {
+
         }
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_W){
-            jugador1Mano1.grabFocus();
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_W) {
+            jugador1Mano2.getComponent(0).requestFocusInWindow();
         }
-    }
-    private void jugador1Mano3KeyPressed(java.awt.event.KeyEvent evt) {                                        
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_S){
-            jugador1Mano1.grabFocus();
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_D) {
+
         }
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_W){
-            jugador1Mano2.grabFocus();
+    }//GEN-LAST:event_jugador1Mano3KeyPressed
+
+    private void jugador1Mano1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador1Mano1FocusGained
+
+    }//GEN-LAST:event_jugador1Mano1FocusGained
+
+    private void jugador1Mano1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador1Mano1FocusLost
+
+    }//GEN-LAST:event_jugador1Mano1FocusLost
+
+    private void jugador1Mano1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador1Mano1MouseClicked
+
+    }//GEN-LAST:event_jugador1Mano1MouseClicked
+
+    private void jugador1Mano1clickFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador1Mano1clickFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador1Mano1clickFocusGained
+
+    private void jugador1Mano1clickFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador1Mano1clickFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador1Mano1clickFocusLost
+
+    private void jugador1Mano1clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador1Mano1clickMouseClicked
+        System.out.println("mi polla en tu boca");
+        if (jugador1Mano1.getComponent(1) instanceof CartaInterfaz) {
+            jugador1Mano1.getComponent(1).requestFocusInWindow();
+            String opcion;
+            if (j1.getMana() >= j1.getMano(0).getCoste()) {
+                String[] manaOAtaque = {"Mana", "Cancelar", "Atacar"};
+                opcion = JOptionPane.showInputDialog(this.getRootPane(), "Escoge una Opcion", "", JOptionPane.INFORMATION_MESSAGE, null, manaOAtaque, manaOAtaque[0]).toString();
+            } else {
+                String[] manaOAtaque = {"Mana", "Cancelar"};
+                opcion = JOptionPane.showInputDialog(this.getRootPane(), "Escoge una Opcion", "", JOptionPane.INFORMATION_MESSAGE, null, manaOAtaque, manaOAtaque[0]).toString();
+            }
+            if (opcion.equals("Mana")) {
+                j1.ganarMana(0);
+                jugador1Mana.setText("" + j1.getMana());
+                jugador1Mano1.remove(1);
+                jugador1Mano1.repaint();
+            } else if (opcion.equals("Atacar")) {
+                seleccionMano1 = 0;
+            }
         }
-    }
-    
-    //A partir de aquí van los KeyPressed del Jugador 2.
-    
-    private void jugador2ManoKeyPressed(java.awt.event.KeyEvent evt) {                                        
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_S){
-            jugador2Mano2.grabFocus();
+    }//GEN-LAST:event_jugador1Mano1clickMouseClicked
+
+    private void jugador1Mano1clickKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1Mano1clickKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador1Mano1clickKeyPressed
+
+    private void jugador1Mano2clickFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador1Mano2clickFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador1Mano2clickFocusGained
+
+    private void jugador1Mano2clickFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador1Mano2clickFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador1Mano2clickFocusLost
+
+    private void jugador1Mano2clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador1Mano2clickMouseClicked
+        System.out.println("mi polla en tu boca 2");
+        if (jugador1Mano2.getComponent(1) instanceof CartaInterfaz) {
+            jugador1Mano2.getComponent(1).requestFocusInWindow();
+            String opcion;
+            if (j1.getMana() >= j1.getMano(1).getCoste()) {
+                String[] manaOAtaque = {"Mana", "Cancelar", "Atacar"};
+                opcion = JOptionPane.showInputDialog(this.getRootPane(), "Escoge una Opcion", "", JOptionPane.INFORMATION_MESSAGE, null, manaOAtaque, manaOAtaque[0]).toString();
+            } else {
+                String[] manaOAtaque = {"Mana", "Cancelar"};
+                opcion = JOptionPane.showInputDialog(this.getRootPane(), "Escoge una Opcion", "", JOptionPane.INFORMATION_MESSAGE, null, manaOAtaque, manaOAtaque[0]).toString();
+            }
+            if (opcion.equals("Mana")) {
+                j1.ganarMana(1);
+                jugador1Mana.setText("" + j1.getMana());
+                jugador1Mano2.remove(1);
+                jugador1Mano2.repaint();
+            } else if (opcion.equals("Atacar")) {
+                seleccionMano1 = 1;
+            }
         }
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_W){
-            jugador2Mano2.grabFocus();
-        }
-    }
-    private void jugador2Mano1KeyPressed(java.awt.event.KeyEvent evt) {                                        
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_S){
-            jugador2Mano2.grabFocus();
-        }
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_W){
-            jugador2Mano1.grabFocus();
-        }
-    }
-    private void jugador2Mano2KeyPressed(java.awt.event.KeyEvent evt) {                                        
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_S){
-            jugador2Mano3.grabFocus();
-        }
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_W){
-            jugador2Mano1.grabFocus();
-        }
-    }
-    private void jugador2Mano3KeyPressed(java.awt.event.KeyEvent evt) {                                        
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_S){
-            jugador2Mano1.grabFocus();
-        }
-        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_W){
-            jugador2Mano2.grabFocus();
-        }
-    }
-    
-    
+    }//GEN-LAST:event_jugador1Mano2clickMouseClicked
+
+    private void jugador1Mano2clickKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1Mano2clickKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador1Mano2clickKeyPressed
+
+    private void jugador1Mano3clickFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador1Mano3clickFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador1Mano3clickFocusGained
+
+    private void jugador1Mano3clickFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador1Mano3clickFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador1Mano3clickFocusLost
+
+    private void jugador1Mano3clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador1Mano3clickMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador1Mano3clickMouseClicked
+
+    private void jugador1Mano3clickKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1Mano3clickKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador1Mano3clickKeyPressed
+
+    private void jugador2Mano1clickFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador2Mano1clickFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador2Mano1clickFocusGained
+
+    private void jugador2Mano1clickFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador2Mano1clickFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador2Mano1clickFocusLost
+
+    private void jugador2Mano1clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador2Mano1clickMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador2Mano1clickMouseClicked
+
+    private void jugador2Mano1clickKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador2Mano1clickKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador2Mano1clickKeyPressed
+
+    private void jugador2Mano2clickFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador2Mano2clickFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador2Mano2clickFocusGained
+
+    private void jugador2Mano2clickFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador2Mano2clickFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador2Mano2clickFocusLost
+
+    private void jugador2Mano2clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador2Mano2clickMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador2Mano2clickMouseClicked
+
+    private void jugador2Mano2clickKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador2Mano2clickKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador2Mano2clickKeyPressed
+
+    private void jugador2Mano3clickFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador2Mano3clickFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador2Mano3clickFocusGained
+
+    private void jugador2Mano3clickFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador2Mano3clickFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador2Mano3clickFocusLost
+
+    private void jugador2Mano3clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador2Mano3clickMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador2Mano3clickMouseClicked
+
+    private void jugador2Mano3clickKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador2Mano3clickKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jugador2Mano3clickKeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel fondoPartida;
@@ -612,10 +948,13 @@ public class Interfaz2 extends javax.swing.JPanel {
     private javax.swing.JPanel jugador1Mano;
     private javax.swing.JPanel jugador1Mano1;
     private javax.swing.JLabel jugador1Mano1Fondo;
+    private javax.swing.JPanel jugador1Mano1click;
     private javax.swing.JPanel jugador1Mano2;
     private javax.swing.JLabel jugador1Mano2Fondo;
+    private javax.swing.JPanel jugador1Mano2click;
     private javax.swing.JPanel jugador1Mano3;
     private javax.swing.JLabel jugador1Mano3Fondo;
+    private javax.swing.JPanel jugador1Mano3click;
     private javax.swing.JPanel jugador1TableroCarta1;
     private javax.swing.JLabel jugador1TableroCarta1Fondo;
     private javax.swing.JPanel jugador1TableroCarta2;
@@ -635,10 +974,13 @@ public class Interfaz2 extends javax.swing.JPanel {
     private javax.swing.JPanel jugador2Mano;
     private javax.swing.JPanel jugador2Mano1;
     private javax.swing.JLabel jugador2Mano1Fondo;
+    private javax.swing.JPanel jugador2Mano1click;
     private javax.swing.JPanel jugador2Mano2;
     private javax.swing.JLabel jugador2Mano2Fondo;
+    private javax.swing.JPanel jugador2Mano2click;
     private javax.swing.JPanel jugador2Mano3;
     private javax.swing.JLabel jugador2Mano3Fondo;
+    private javax.swing.JPanel jugador2Mano3click;
     private javax.swing.JPanel jugador2TableroCarta1;
     private javax.swing.JLabel jugador2TableroCarta1Fondo;
     private javax.swing.JPanel jugador2TableroCarta2;
