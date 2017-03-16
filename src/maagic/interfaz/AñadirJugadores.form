@@ -85,6 +85,8 @@
         </Component>
         <Container class="javax.swing.JScrollPane" name="scrolldea&#xf1;adirjugadores">
           <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CodeGeneration" type="java.lang.Integer" value="1"/>
+            <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="A&#xf1;adirJugadores_scrolldea&#xf1;adirjugadores"/>
             <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
           </AuxValues>
           <Constraints>
