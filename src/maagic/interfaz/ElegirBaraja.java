@@ -25,17 +25,17 @@ public class ElegirBaraja extends javax.swing.JPanel {
     public ElegirBaraja() {
         initComponents();
         this.setSize(800,600);
-        DimensionPantalla.adaptarResolucion(jButtonCargar);
-        DimensionPantalla.adaptarResolucion(jButtonVolver);
-        DimensionPantalla.adaptarResolucion(jButtonGuardar);
-        DimensionPantalla.adaptarResolucion(jLabelFondo);
-        DimensionPantalla.adaptarResolucion(jScrollPaneCartas);
+        miLibreria.DimensionPantalla.adaptarResolucion(jButtonCargar);
+        miLibreria.DimensionPantalla.adaptarResolucion(jButtonVolver);
+        miLibreria.DimensionPantalla.adaptarResolucion(jButtonGuardar);
+        miLibreria.DimensionPantalla.adaptarResolucion(jLabelFondo);
+        miLibreria.DimensionPantalla.adaptarResolucion(jScrollPaneCartas);
         jScrollPaneCartas.setSize(jScrollPaneCartas.getWidth(), 280);
-        DimensionPantalla.adaptarResolucion(jScrollPaneBaraja);
+        miLibreria.DimensionPantalla.adaptarResolucion(jScrollPaneBaraja);
         jScrollPaneBaraja.setSize(jScrollPaneBaraja.getWidth(), 280);
-        DimensionPantalla.adaptarResolucion(jLabel1);
-        DimensionPantalla.adaptarResolucion(jLabel2);
-        DimensionPantalla.adaptarPanel(this);
+        miLibreria.DimensionPantalla.adaptarResolucion(jLabel1);
+        miLibreria.DimensionPantalla.adaptarResolucion(jLabel2);
+        miLibreria.DimensionPantalla.adaptarPanel(this);
         //jScrollPaneBaraja.getViewport().setOpaque(false);
         mostrarCartas();       
     }

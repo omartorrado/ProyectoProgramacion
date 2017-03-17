@@ -25,11 +25,11 @@ public class AñadirJugadores extends javax.swing.JPanel {
 //        this.setSize(1920, 1080);
 //        this.getRootPane().setSize(1920, 1080);
 //        DimensionPantalla.adaptarFrame(this);
-        DimensionPantalla.adaptarResolucion(imagenfondo);
-        DimensionPantalla.adaptarResolucion(botonirajuego);
-        DimensionPantalla.adaptarResolucion(botonvolvermenu);
-        DimensionPantalla.adaptarResolucion(scrolldeañadirjugadores);
-        DimensionPantalla.adaptarResolucion(listajugadores);
+        miLibreria.DimensionPantalla.adaptarResolucion(imagenfondo);
+        miLibreria.DimensionPantalla.adaptarResolucion(botonirajuego);
+        miLibreria.DimensionPantalla.adaptarResolucion(botonvolvermenu);
+        miLibreria.DimensionPantalla.adaptarResolucion(scrolldeañadirjugadores);
+        miLibreria.DimensionPantalla.adaptarResolucion(listajugadores);
         
         
         

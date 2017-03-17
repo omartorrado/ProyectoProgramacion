@@ -30,7 +30,7 @@ public class CartaInterfaz extends javax.swing.JPanel {
         jLabelCoste.setText("" + c.getCoste());
         ImagenesFondo.setSize(180, 250);
         //Muy lento este metodo
-        DimensionPantalla.resizeImagen("/maagic/img/wood_repeatable.jpg", ImagenesFondo);
+        miLibreria.DimensionPantalla.resizeImagen("/maagic/img/wood_repeatable.jpg", ImagenesFondo);
     }
     
     public static void actualizar(CartaInterfaz car,Carta c){

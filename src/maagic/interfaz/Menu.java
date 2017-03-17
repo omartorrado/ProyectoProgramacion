@@ -14,6 +14,7 @@ import javax.sound.sampled.FloatControl;
 
 
 
+
 /**
  *
  * @author Delio
@@ -32,17 +33,17 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
         this.setSize(1920,1080);
         this.getRootPane().setSize(1920, 1080);
-        DimensionPantalla.adaptarFrame(this);
-        DimensionPantalla.adaptarResolucion(panelprincipal);
+        miLibreria.DimensionPantalla.adaptarFrame(this);
+        miLibreria.DimensionPantalla.adaptarResolucion(panelprincipal);
         panelprincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        DimensionPantalla.adaptarResolucion(menu);
-        DimensionPantalla.adaptarResolucion(Boton1Jugar);
-        DimensionPantalla.adaptarResolucion(Boton2Baraja);
-        DimensionPantalla.adaptarResolucion(Boton3Salir);
-        DimensionPantalla.adaptarResolucion(imagentitulo);
-        DimensionPantalla.adaptarResolucion(imagenfondo);
+        miLibreria.DimensionPantalla.adaptarResolucion(menu);
+        miLibreria.DimensionPantalla.adaptarResolucion(Boton1Jugar);
+        miLibreria.DimensionPantalla.adaptarResolucion(Boton2Baraja);
+        miLibreria.DimensionPantalla.adaptarResolucion(Boton3Salir);
+        miLibreria.DimensionPantalla.adaptarResolucion(imagentitulo);
+        miLibreria.DimensionPantalla.adaptarResolucion(imagenfondo);
         //El siguiente codigo cambia el tamaño de la imagen de imagentitulo
-        DimensionPantalla.resizeImagen("/maagic/interfaz/serien_grosses_logo_239-Recuperado.png",imagentitulo);
+        miLibreria.DimensionPantalla.resizeImagen("/maagic/interfaz/serien_grosses_logo_239-Recuperado.png",imagentitulo);
         
         
         //Musica
@@ -62,8 +63,8 @@ public class Menu extends javax.swing.JFrame {
         }
         if (musicaMenu.isActive()) {
             musicaMenu.start();
-             FloatControl gainControl= (FloatControl) musicaMenu.getControl(FloatControl.Type.MASTER_GAIN);
-            gainControl.setValue(-10.0f);
+             //FloatControl gainControl= (FloatControl) musicaMenu.getControl(FloatControl.Type.MASTER_GAIN);
+            //gainControl.setValue(-10.0f);
         }
 
         /*Esta parte muestra los formaos soportados por consola
