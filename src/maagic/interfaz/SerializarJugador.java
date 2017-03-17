@@ -32,8 +32,12 @@ public class SerializarJugador {
             System.out.printf("Los objetos se fueron de paseo", e.getMessage());
         
         }
-}
 
+
+
+}
+    
+    
     public static void escribirjugadores() throws FileNotFoundException, IOException{
             Jugador jugador;
         jugador = new Jugador("barajas/");
@@ -44,6 +48,9 @@ public class SerializarJugador {
             ju1.writeObject(jugador.getMana());
             ju1.putFields();
             ju1.reset();
+            
+            
+
         }
         catch(IOException e){
         
