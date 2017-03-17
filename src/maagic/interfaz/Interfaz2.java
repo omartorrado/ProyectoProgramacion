@@ -5,8 +5,11 @@
  */
 package maagic.interfaz;
 
+import java.awt.HeadlessException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.YES_OPTION;
+import javax.swing.JPanel;
 import maagic.Jugador;
 
 /**
@@ -18,6 +21,7 @@ public class Interfaz2 extends javax.swing.JPanel {
     Boolean tieneFocus = false;
     int seleccionMano1;
     int seleccionMesa1;
+    //step 0: turno del jugador 1 step 1: es el turno del jugador 2
     int step = 0;
     Jugador j1, j2;
 
@@ -46,11 +50,7 @@ public class Interfaz2 extends javax.swing.JPanel {
         /*
             Aki es donde el usuario escoge que carta jugar
          */
-        System.out.println("Focus?" + this.isFocusOwner());
-
         ///////////////            
-        j2.cogerMano();
-        interfazGetManoJ2(j2);
         //}
     }
 
@@ -219,22 +219,9 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador1Mano1click.setOpaque(false);
         jugador1Mano1click.setPreferredSize(new java.awt.Dimension(180, 250));
         jugador1Mano1click.setVerifyInputWhenFocusTarget(false);
-        jugador1Mano1click.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jugador1Mano1clickFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jugador1Mano1clickFocusLost(evt);
-            }
-        });
         jugador1Mano1click.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jugador1Mano1clickMouseClicked(evt);
-            }
-        });
-        jugador1Mano1click.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jugador1Mano1clickKeyPressed(evt);
             }
         });
 
@@ -272,22 +259,9 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador1Mano2click.setOpaque(false);
         jugador1Mano2click.setPreferredSize(new java.awt.Dimension(180, 250));
         jugador1Mano2click.setVerifyInputWhenFocusTarget(false);
-        jugador1Mano2click.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jugador1Mano2clickFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jugador1Mano2clickFocusLost(evt);
-            }
-        });
         jugador1Mano2click.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jugador1Mano2clickMouseClicked(evt);
-            }
-        });
-        jugador1Mano2click.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jugador1Mano2clickKeyPressed(evt);
             }
         });
 
@@ -323,22 +297,9 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador1Mano3click.setOpaque(false);
         jugador1Mano3click.setPreferredSize(new java.awt.Dimension(180, 250));
         jugador1Mano3click.setVerifyInputWhenFocusTarget(false);
-        jugador1Mano3click.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jugador1Mano3clickFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jugador1Mano3clickFocusLost(evt);
-            }
-        });
         jugador1Mano3click.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jugador1Mano3clickMouseClicked(evt);
-            }
-        });
-        jugador1Mano3click.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jugador1Mano3clickKeyPressed(evt);
             }
         });
 
@@ -375,22 +336,9 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador2Mano1click.setOpaque(false);
         jugador2Mano1click.setPreferredSize(new java.awt.Dimension(180, 250));
         jugador2Mano1click.setVerifyInputWhenFocusTarget(false);
-        jugador2Mano1click.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jugador2Mano1clickFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jugador2Mano1clickFocusLost(evt);
-            }
-        });
         jugador2Mano1click.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jugador2Mano1clickMouseClicked(evt);
-            }
-        });
-        jugador2Mano1click.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jugador2Mano1clickKeyPressed(evt);
             }
         });
 
@@ -420,22 +368,9 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador2Mano2click.setOpaque(false);
         jugador2Mano2click.setPreferredSize(new java.awt.Dimension(180, 250));
         jugador2Mano2click.setVerifyInputWhenFocusTarget(false);
-        jugador2Mano2click.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jugador2Mano2clickFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jugador2Mano2clickFocusLost(evt);
-            }
-        });
         jugador2Mano2click.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jugador2Mano2clickMouseClicked(evt);
-            }
-        });
-        jugador2Mano2click.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jugador2Mano2clickKeyPressed(evt);
             }
         });
 
@@ -465,22 +400,9 @@ public class Interfaz2 extends javax.swing.JPanel {
         jugador2Mano3click.setOpaque(false);
         jugador2Mano3click.setPreferredSize(new java.awt.Dimension(180, 250));
         jugador2Mano3click.setVerifyInputWhenFocusTarget(false);
-        jugador2Mano3click.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jugador2Mano3clickFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jugador2Mano3clickFocusLost(evt);
-            }
-        });
         jugador2Mano3click.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jugador2Mano3clickMouseClicked(evt);
-            }
-        });
-        jugador2Mano3click.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jugador2Mano3clickKeyPressed(evt);
             }
         });
 
@@ -734,55 +656,47 @@ public class Interfaz2 extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jugador1Mano1MouseClicked
 
-    private void jugador1Mano1clickFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador1Mano1clickFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador1Mano1clickFocusGained
-
-    private void jugador1Mano1clickFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador1Mano1clickFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador1Mano1clickFocusLost
-
     private void jugador1Mano1clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador1Mano1clickMouseClicked
-        System.out.println("mi polla en tu boca");
-        if (jugador1Mano1.getComponent(1) instanceof CartaInterfaz) {
-            jugador1Mano1.getComponent(1).requestFocusInWindow();
-            String opcion;
-            if (j1.getMana() >= j1.getMano(0).getCoste()) {
-                String[] manaOAtaque = {"Mana", "Cancelar", "Atacar"};
-                opcion = JOptionPane.showInputDialog(this.getRootPane(), "Escoge una Opcion", "", JOptionPane.INFORMATION_MESSAGE, null, manaOAtaque, manaOAtaque[0]).toString();
-            } else {
-                String[] manaOAtaque = {"Mana", "Cancelar"};
-                opcion = JOptionPane.showInputDialog(this.getRootPane(), "Escoge una Opcion", "", JOptionPane.INFORMATION_MESSAGE, null, manaOAtaque, manaOAtaque[0]).toString();
-            }
-            if (opcion.equals("Mana")) {
-                j1.ganarMana(0);
-                jugador1Mana.setText("" + j1.getMana());
-                jugador1Mano1.remove(1);
-                jugador1Mano1.repaint();
-            } else if (opcion.equals("Atacar")) {
-                seleccionMano1 = 0;
-            }
+        if (step == 0) {
+            jugarEstaCartaJ1(jugador1Mano1, 0);
         }
     }//GEN-LAST:event_jugador1Mano1clickMouseClicked
 
-    private void jugador1Mano1clickKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1Mano1clickKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador1Mano1clickKeyPressed
-
-    private void jugador1Mano2clickFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador1Mano2clickFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador1Mano2clickFocusGained
-
-    private void jugador1Mano2clickFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador1Mano2clickFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador1Mano2clickFocusLost
-
     private void jugador1Mano2clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador1Mano2clickMouseClicked
+        if (step == 0) {
+            jugarEstaCartaJ1(jugador1Mano2, 1);
+        }
+    }//GEN-LAST:event_jugador1Mano2clickMouseClicked
 
-        if (jugador1Mano2.getComponent(1) instanceof CartaInterfaz) {
-            jugador1Mano2.getComponent(1).requestFocusInWindow();
+    private void jugador1Mano3clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador1Mano3clickMouseClicked
+        if (step == 0) {
+            jugarEstaCartaJ1(jugador1Mano3, 2);
+        }
+    }//GEN-LAST:event_jugador1Mano3clickMouseClicked
+
+    private void jugador2Mano1clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador2Mano1clickMouseClicked
+        if (step == 1) {
+            jugarEstaCartaJ2(jugador2Mano1, 0);
+        }
+    }//GEN-LAST:event_jugador2Mano1clickMouseClicked
+
+    private void jugador2Mano2clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador2Mano2clickMouseClicked
+        if (step == 1) {
+            jugarEstaCartaJ2(jugador2Mano2, 1);
+        }
+    }//GEN-LAST:event_jugador2Mano2clickMouseClicked
+
+    private void jugador2Mano3clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador2Mano3clickMouseClicked
+        if (step == 1) {
+            jugarEstaCartaJ2(jugador2Mano3, 2);
+        }
+    }//GEN-LAST:event_jugador2Mano3clickMouseClicked
+
+    public void jugarEstaCartaJ1(JPanel panelCartaJugada, int posicionMano) throws HeadlessException, NumberFormatException {
+        if (panelCartaJugada.getComponent(1) instanceof CartaInterfaz) {
+            panelCartaJugada.getComponent(1).requestFocusInWindow();
             String opcion;
-            if (j1.getMana() >= j1.getMano(1).getCoste()) {
+            if (j1.getMana() >= j1.getMano(posicionMano).getCoste()) {
                 String[] manaOAtaque = {"Mana", "Cancelar", "Atacar"};
                 opcion = JOptionPane.showInputDialog(this.getRootPane(), "Escoge una Opcion", "", JOptionPane.INFORMATION_MESSAGE, null, manaOAtaque, manaOAtaque[0]).toString();
             } else {
@@ -791,38 +705,42 @@ public class Interfaz2 extends javax.swing.JPanel {
             }
             //si elegimos mana
             if (opcion.equals("Mana")) {
-                j1.ganarMana(1);
+                j1.ganarMana(posicionMano);
                 jugador1Mana.setText("" + j1.getMana());
-                jugador1Mano2.remove(1);
-                jugador1Mano2.repaint();
+                panelCartaJugada.remove(1);
+                panelCartaJugada.repaint();
                 //si elegimos atacar
             } else if (opcion.equals("Atacar")) {
-                seleccionMano1 = 1;
                 ArrayList<String> opciones = new ArrayList();
-                opciones.add("0");
-                opciones.add("1");
                 opciones.add("2");
+                opciones.add("1");
+                opciones.add("0");
                 //Comprueba si en la mesa hay carta o no
                 if (jugador1TableroCarta1.getComponent(0) instanceof CartaInterfaz) {
-                    opciones.remove(0);
+                    opciones.remove(2);
                 }
                 if (jugador1TableroCarta2.getComponent(0) instanceof CartaInterfaz) {
                     opciones.remove(1);
                 }
                 if (jugador1TableroCarta3.getComponent(0) instanceof CartaInterfaz) {
-                    opciones.remove(2);
+                    opciones.remove(0);
+                }
+                if (opciones.size() > 0) {
+
+                    //Option pane que indica las opciones disponibles
+                    int posicionTablero = Integer.parseInt(JOptionPane.showInputDialog(this.getRootPane(), "Escoge una Opcion", "", JOptionPane.INFORMATION_MESSAGE, null, opciones.toArray(), opciones.get(0)).toString());
+                    System.out.println("posicion tablero" + posicionTablero);
+
+                    //probamos a mover la carta la mesa
+                    j1.costeMana(posicionMano);
+                    j1.moverManoMesa(posicionMano, posicionTablero);
+                    jugador1Mana.setText("" + j1.getMana());
+                    panelCartaJugada.remove(1);
                 }
                 if (opciones.size() < 1) {
-                    opciones.add("No puedes jugar la carta");
+                    JOptionPane.showConfirmDialog(this, "No puedes jugar cartas para atacar si no hay hueco libre", "Judaga no realizable", YES_OPTION);
                 }
-                //Option pane que indica las opciones disponibles
-                int posicionTablero = Integer.parseInt(JOptionPane.showInputDialog(this.getRootPane(), "Escoge una Opcion", "", JOptionPane.INFORMATION_MESSAGE, null, opciones.toArray(), opciones.get(0)).toString());
-                System.out.println("posicion tablero" + posicionTablero);
-                
-                //probamos a mover la carta la mesa
-                j1.moverManoMesa(1, posicionTablero);
-                jugador1Mano2.remove(1);
-                jugador1Mano2.repaint();
+                panelCartaJugada.repaint();
                 //Las añadimos a cada uno de los huecos del display mano
                 try {
                     CartaInterfaz carta0 = new CartaInterfaz(j1.getMesa(0));
@@ -848,76 +766,110 @@ public class Interfaz2 extends javax.swing.JPanel {
 
             }
         }
-    }//GEN-LAST:event_jugador1Mano2clickMouseClicked
+        if (j1.hayCarta(0) == false && j1.hayCarta(1) == false && j1.hayCarta(2) == false) {
+            j1.realizarAtaque(j2);
+            jugador1Vida.setText(""+j1.getVida());
+            this.repaint();
+            step = 1;
+            if (j1.getVida() < 1) {
+                JOptionPane.showConfirmDialog(this, "Jugador 1 Has perdido", "DERROTA", YES_OPTION);
+            }
+            if (j2.getVida() < 1) {
+                JOptionPane.showConfirmDialog(this, "Jugador 2 Has perdido", "DERROTA", YES_OPTION);
+            }
+            j2.cogerMano();
+            interfazGetManoJ2(j2);
+        }
+    }
 
-    private void jugador1Mano2clickKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1Mano2clickKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador1Mano2clickKeyPressed
+    public void jugarEstaCartaJ2(JPanel panelCartaJugada, int posicionMano) throws HeadlessException, NumberFormatException {
+        if (panelCartaJugada.getComponent(1) instanceof CartaInterfaz) {
+            panelCartaJugada.getComponent(1).requestFocusInWindow();
+            String opcion;
+            if (j2.getMana() >= j2.getMano(posicionMano).getCoste()) {
+                String[] manaOAtaque = {"Mana", "Cancelar", "Atacar"};
+                opcion = JOptionPane.showInputDialog(this.getRootPane(), "Escoge una Opcion", "", JOptionPane.INFORMATION_MESSAGE, null, manaOAtaque, manaOAtaque[0]).toString();
+            } else {
+                String[] manaOAtaque = {"Mana", "Cancelar"};
+                opcion = JOptionPane.showInputDialog(this.getRootPane(), "Escoge una Opcion", "", JOptionPane.INFORMATION_MESSAGE, null, manaOAtaque, manaOAtaque[0]).toString();
+            }
+            //si elegimos mana
+            if (opcion.equals("Mana")) {
+                j2.ganarMana(posicionMano);
+                jugador2Mana.setText("" + j2.getMana());
+                panelCartaJugada.remove(1);
+                panelCartaJugada.repaint();
+                //si elegimos atacar
+            } else if (opcion.equals("Atacar")) {
+                ArrayList<String> opciones = new ArrayList();
+                opciones.add("2");
+                opciones.add("1");
+                opciones.add("0");
+                //Comprueba si en la mesa hay carta o no
+                if (jugador2TableroCarta1.getComponent(0) instanceof CartaInterfaz) {
+                    opciones.remove(2);
+                }
+                if (jugador2TableroCarta2.getComponent(0) instanceof CartaInterfaz) {
+                    opciones.remove(1);
+                }
+                if (jugador2TableroCarta3.getComponent(0) instanceof CartaInterfaz) {
+                    opciones.remove(0);
+                }
+                if (opciones.size() > 0) {
+                    //Option pane que indica las opciones disponibles
+                    int posicionTablero = Integer.parseInt(JOptionPane.showInputDialog(this.getRootPane(), "Escoge una Opcion", "", JOptionPane.INFORMATION_MESSAGE, null, opciones.toArray(), opciones.get(0)).toString());
+                    System.out.println("posicion tablero" + posicionTablero);
 
-    private void jugador1Mano3clickFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador1Mano3clickFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador1Mano3clickFocusGained
+                    //probamos a mover la carta la mesa
+                    j2.costeMana(posicionMano);
+                    j2.moverManoMesa(posicionMano, posicionTablero);
+                    jugador2Mana.setText("" + j2.getMana());
+                    panelCartaJugada.remove(1);
+                }
+                if (opciones.size() < 1) {
+                    JOptionPane.showConfirmDialog(this, "No puedes jugar cartas para atacar si no hay hueco libre", "Judaga no realizable", YES_OPTION);
+                }
+                panelCartaJugada.repaint();
+                //Las añadimos a cada uno de los huecos del display mano
+                try {
+                    CartaInterfaz carta0 = new CartaInterfaz(j2.getMesa(0));
+                    jugador2TableroCarta1.add(carta0, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250), 0);
+                    jugador2TableroCarta1.repaint();
+                    System.out.println("Carta en la mesa presa");
+                } catch (NullPointerException e) {
+                }
+                try {
+                    CartaInterfaz carta1 = new CartaInterfaz(j2.getMesa(1));
+                    jugador2TableroCarta2.add(carta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250), 0);
+                    jugador2TableroCarta2.repaint();
+                    System.out.println("Carta en la mesa presa");
+                } catch (NullPointerException e) {
+                }
+                try {
+                    CartaInterfaz carta2 = new CartaInterfaz(j2.getMesa(2));
+                    jugador2TableroCarta3.add(carta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 250), 0);
+                    jugador2TableroCarta3.repaint();
+                    System.out.println("Carta en la mesa presa");
+                } catch (NullPointerException e) {
+                }
 
-    private void jugador1Mano3clickFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador1Mano3clickFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador1Mano3clickFocusLost
-
-    private void jugador1Mano3clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador1Mano3clickMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador1Mano3clickMouseClicked
-
-    private void jugador1Mano3clickKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador1Mano3clickKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador1Mano3clickKeyPressed
-
-    private void jugador2Mano1clickFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador2Mano1clickFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador2Mano1clickFocusGained
-
-    private void jugador2Mano1clickFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador2Mano1clickFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador2Mano1clickFocusLost
-
-    private void jugador2Mano1clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador2Mano1clickMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador2Mano1clickMouseClicked
-
-    private void jugador2Mano1clickKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador2Mano1clickKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador2Mano1clickKeyPressed
-
-    private void jugador2Mano2clickFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador2Mano2clickFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador2Mano2clickFocusGained
-
-    private void jugador2Mano2clickFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador2Mano2clickFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador2Mano2clickFocusLost
-
-    private void jugador2Mano2clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador2Mano2clickMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador2Mano2clickMouseClicked
-
-    private void jugador2Mano2clickKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador2Mano2clickKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador2Mano2clickKeyPressed
-
-    private void jugador2Mano3clickFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador2Mano3clickFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador2Mano3clickFocusGained
-
-    private void jugador2Mano3clickFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jugador2Mano3clickFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador2Mano3clickFocusLost
-
-    private void jugador2Mano3clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jugador2Mano3clickMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador2Mano3clickMouseClicked
-
-    private void jugador2Mano3clickKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jugador2Mano3clickKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jugador2Mano3clickKeyPressed
-
+            }
+        }
+        if (j2.hayCarta(0) == false && j2.hayCarta(1) == false && j2.hayCarta(2) == false) {
+            j2.realizarAtaque(j1);
+            jugador2Vida.setText(""+j2.getVida());
+            this.repaint();
+            if (j1.getVida() < 1) {
+                JOptionPane.showConfirmDialog(this, "Jugador 1 Has perdido", "DERROTA", YES_OPTION);
+            }
+            if (j2.getVida() < 1) {
+                JOptionPane.showConfirmDialog(this, "Jugador 2 Has perdido", "DERROTA", YES_OPTION);
+            }
+            step = 0;
+            j1.cogerMano();
+            interfazGetManoJ1(j1);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel fondoPartida;

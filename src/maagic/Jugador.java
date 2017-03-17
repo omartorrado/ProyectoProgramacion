@@ -172,17 +172,21 @@ public class Jugador {
             //atacante. en caso de que el atacante no tenga carta no hace nada
             if (mesa[i] != null && j.mesa[i] != null) {
                 mesa[i].ataque(j.mesa[i]);
+                System.out.println("Se realiza un ataque. Vida:"+mesa[i].getVida()+" Vida Carta Oponente:"+j.mesa[i].getVida());
                 //Estos dos if comprueban si la vida de la carta bajo de 1 y
                 //la destruyen en ese caso
                 if (mesa[i].getVida() < 1) {
                     cartaMuere(i);
+                    System.out.println("Carta muere");
                 }
                 if (j.mesa[i].getVida() < 1) {
                     cartaMuere(i);
+                    System.out.println("Carta oponente muere");
                 }
             } else if (mesa[i] != null && j.mesa[i] == null) {
                 //Este es el metodo para que el jugador pierda vida a causa del ataque
                 j.recibirAtaque(mesa[i]);
+                System.out.println("El oponente recibe "+mesa[i].getAtaque());
             }
         }
     }
@@ -249,11 +253,15 @@ public class Jugador {
                 if (select == 1) {
                     ganarMana(cartaElegida);
                 } else if (select == 2) {
-                    mana -= this.mano[cartaElegida].getCoste();
+                    costeMana(cartaElegida);
                     moverManoMesa(cartaElegida, elegirCartaDestino());
                 }
             }
         } while (mano[cartaElegida] != null);
 
+    }
+
+    public void costeMana(int cartaElegida) {
+        mana -= this.mano[cartaElegida].getCoste();
     }
 }

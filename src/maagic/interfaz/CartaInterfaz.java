@@ -33,11 +33,11 @@ public class CartaInterfaz extends javax.swing.JPanel {
         DimensionPantalla.resizeImagen("/maagic/img/wood_repeatable.jpg", ImagenesFondo);
     }
     
-    public void actualizar(Carta c){
-        jLabelAtaque.setText("" + c.getAtaque());
-        jLabelVida.setText("" + c.getVida());
-        jLabelCoste.setText("" + c.getCoste());
-        this.getParent().requestFocusInWindow();
+    public static void actualizar(CartaInterfaz car,Carta c){
+        car.jLabelAtaque.setText("" + c.getAtaque());
+        car.jLabelVida.setText("" + c.getVida());
+        car.jLabelCoste.setText("" + c.getCoste());
+        //this.getParent().requestFocusInWindow();
     }
 
     /**
@@ -109,8 +109,9 @@ public class CartaInterfaz extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-        System.out.println("Parent accesibleName: "+this.getParent().getAccessibleContext().getAccessibleName());
+        //System.out.println("Parent accesibleName: "+this.getParent().getAccessibleContext().getAccessibleName());
         this.requestFocusInWindow();
+        /*
         System.out.println("Focus?"+this.isFocusOwner());
         if(this.getParent().getAccessibleContext().getAccessibleName().equals("panelBaraja")){
         ImagenesFondo.setBorder(javax.swing.BorderFactory.createMatteBorder(15, 15, 15, 15, new java.awt.Color(0,255,0)));
@@ -122,6 +123,7 @@ public class CartaInterfaz extends javax.swing.JPanel {
         }
         System.out.println("Este es el componente nº: "+anteriorCartaElegida);
         System.out.println("Este es el componente elegido"+this.getParent().getComponent(anteriorCartaElegida));
+        */
     }//GEN-LAST:event_formMouseClicked
 
     private void formFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusLost
