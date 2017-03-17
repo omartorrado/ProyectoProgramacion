@@ -30,6 +30,12 @@ public class Interfaz2 extends javax.swing.JPanel {
      */
     public Interfaz2() {
         initComponents();
+        this.setSize(1600,900);
+        miLibreria.DimensionPantalla.recolocarComponente(jugador1Mano);
+        miLibreria.DimensionPantalla.recolocarComponente(jugador2Mano);
+        miLibreria.DimensionPantalla.recolocarComponente(jugador1TableroCuadro);
+        miLibreria.DimensionPantalla.recolocarComponente(jugador2TableroCuadro);
+        miLibreria.DimensionPantalla.adaptarPanel(this);
         //Crea los jugadores TEMPORAL luego los pillara de tu metodo Delio
         j1 = new Jugador("barajas/Cartas.txt");
         j2 = new Jugador("barajas/Cartas.txt");
@@ -769,6 +775,7 @@ public class Interfaz2 extends javax.swing.JPanel {
         if (j1.hayCarta(0) == false && j1.hayCarta(1) == false && j1.hayCarta(2) == false) {
             j1.realizarAtaque(j2);
             jugador1Vida.setText(""+j1.getVida());
+            jugador2Vida.setText(""+j2.getVida());
             this.repaint();
             step = 1;
             if (j1.getVida() < 1) {
@@ -858,6 +865,7 @@ public class Interfaz2 extends javax.swing.JPanel {
         if (j2.hayCarta(0) == false && j2.hayCarta(1) == false && j2.hayCarta(2) == false) {
             j2.realizarAtaque(j1);
             jugador2Vida.setText(""+j2.getVida());
+            jugador1Vida.setText(""+j1.getVida());
             this.repaint();
             if (j1.getVida() < 1) {
                 JOptionPane.showConfirmDialog(this, "Jugador 1 Has perdido", "DERROTA", YES_OPTION);
