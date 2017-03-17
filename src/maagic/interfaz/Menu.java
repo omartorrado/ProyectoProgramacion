@@ -158,7 +158,7 @@ public class Menu extends javax.swing.JFrame {
         panelprincipal.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 425, 620, 220));
 
         imagentitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/serien_grosses_logo_239-Recuperado.png"))); // NOI18N
-        panelprincipal.add(imagentitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 1000, 280));
+        panelprincipal.add(imagentitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, 680, 280));
 
         imagenfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/ImagenFondo.jpg"))); // NOI18N
         panelprincipal.add(imagenfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
