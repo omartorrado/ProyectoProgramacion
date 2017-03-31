@@ -45,6 +45,15 @@ public void ventanaComponentes(){
     b1.setBackground(Color.red);
     b2.setBackground(Color.green);
     b3.setBackground(Color.yellow);
+    //activamos/desactivamos el boton 2
+    b2.setEnabled(true);
+    //lo hacemos transparente
+    b2.setOpaque(false);
+    //Le quitamos el texto    
+    b2.setText(null);
+    /*
+    Podriamos poner debajo de el contenido y que el boton manejase las acciones
+    */
     //Le ponemos un borde a la etiqueta
     l1.setBorder(BorderFactory.createLineBorder(Color.green));
     //Añadimos los componentes al frame

@@ -782,6 +782,7 @@ public class Interfaz2 extends javax.swing.JPanel {
             step = 1;
             if (j1.getVida() < 1) {
                 JOptionPane.showConfirmDialog(this, "Jugador 1 Has perdido", "DERROTA", YES_OPTION);
+                
             }
             if (j2.getVida() < 1) {
                 JOptionPane.showConfirmDialog(this, "Jugador 2 Has perdido", "DERROTA", YES_OPTION);
