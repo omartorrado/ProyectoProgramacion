@@ -57,6 +57,7 @@ public class CartaInterfaz extends javax.swing.JPanel {
         Coste = new javax.swing.JLabel();
         ImagenesFondo = new javax.swing.JLabel();
 
+        setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         setMaximumSize(new java.awt.Dimension(180, 250));
         setOpaque(false);
         addFocusListener(new java.awt.event.FocusAdapter() {

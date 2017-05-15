@@ -5,6 +5,7 @@
  */
 package maagic.interfaz;
 
+import java.awt.Color;
 import java.awt.HeadlessException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -38,6 +39,7 @@ public class Interfaz2 extends javax.swing.JPanel {
         miLibreria.DimensionPantalla.recolocarComponente(jugador2VidaCuadro);
         miLibreria.DimensionPantalla.recolocarComponente(jugador2ManaCuadro);
         miLibreria.DimensionPantalla.adaptarPanel(this);
+        jugador1Mano3Fondo.setBackground(new Color(0,0,0,0));
         //Crea los jugadores TEMPORAL luego los pillara de tu metodo Delio
         j1 = new Jugador("barajas/Cartas.txt");
         j2 = new Jugador("barajas/Cartas.txt");
