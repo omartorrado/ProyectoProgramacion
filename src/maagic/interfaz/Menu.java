@@ -5,14 +5,17 @@
  */
 package maagic.interfaz;
 
+import GUI.DimensionPantalla;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.OverlayLayout;
-import miLibreria.DimensionPantalla;
+
 
 /**
  *
@@ -26,7 +29,7 @@ public class Menu extends JPanel{
     public JButton nuevaPartida;
     public JButton modificarBaraja;
     public JButton salir;
-    
+     
     public void initComponents(){
         
         //Tengo k buscar un layout que coloque bien las cosas encima unas de otras
@@ -54,8 +57,17 @@ public class Menu extends JPanel{
         
         logo.setAlignmentX(0.5f);
         nuevaPartida.setAlignmentX(0.5f);
+        nuevaPartida.addActionListener((java.awt.event.ActionEvent evt) -> {
+            nuevaPartidaActionPerformed(evt);
+        });
         modificarBaraja.setAlignmentX(0.5f);
+        modificarBaraja.addActionListener((java.awt.event.ActionEvent evt) -> {
+            modificarBarajaActionPerformed(evt);
+        });
         salir.setAlignmentX(0.5f);
+        salir.addActionListener((java.awt.event.ActionEvent evt) -> {
+            SalirActionPerformed(evt);
+        });
         nuevaPartida.setPreferredSize(new Dimension(100,100));
         
         //panelMenu.add(Box.createHorizontalStrut(MainInterfaz.marco.getWidth()/2));
@@ -72,6 +84,23 @@ public class Menu extends JPanel{
         panelMenu.setAlignmentX(0.5f);
         this.add(panelMenu);
         this.add(fondo);
+     
 
+    }
+
+    private void nuevaPartidaActionPerformed(ActionEvent evt) {
+     Juego juego = new Juego();
+     this.repaint();
+     this.add(juego);
+    }
+
+    private void modificarBarajaActionPerformed(ActionEvent evt) {
+        EditarBarajas Barajas=new EditarBarajas();
+        this.repaint();
+        this.add(Barajas);
+    }
+
+    private void SalirActionPerformed(ActionEvent evt) {
+        System.exit(0);
     }
 }
