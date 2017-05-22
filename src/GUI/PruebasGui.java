@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import maagic.interfaz.MainInterfaz;
+
 /**
  *
  * @author otorradomiguez
@@ -21,8 +23,10 @@ public class PruebasGui {
         JFrame2 f=new JFrame2();
         f.iniciar();
         */
-        VentanaComponentes vc=new VentanaComponentes();
-        vc.ventanaComponentes();
+        //VentanaComponentes vc=new VentanaComponentes();
+        //vc.ventanaComponentes();
+        MainInterfaz mI=new MainInterfaz();
+        mI.initMain();
     }
     
 }

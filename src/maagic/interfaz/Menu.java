@@ -5,236 +5,73 @@
  */
 package maagic.interfaz;
 
-import java.io.File;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import static javax.sound.sampled.Clip.LOOP_CONTINUOUSLY;
-import javax.sound.sampled.FloatControl;
-
-
-
-
+import java.awt.Dimension;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.OverlayLayout;
+import miLibreria.DimensionPantalla;
 
 /**
  *
- * @author Delio
+ * @author otorradomiguez
  */
-public class Menu extends javax.swing.JFrame {
-    /**
-     * Creates new form Menu2
-     */
+public class Menu extends JPanel{
     
-    Clip musicaMenu;
+    public JLabel fondo;
+    public JLabel logo;
+    public JPanel panelMenu;
+    public JButton nuevaPartida;
+    public JButton modificarBaraja;
+    public JButton salir;
     
-    public Menu() {
+    public void initComponents(){
         
-                   
-       
-        initComponents();
-        this.setSize(1920,1080);
-        this.getRootPane().setSize(1920, 1080);
-        miLibreria.DimensionPantalla.adaptarFrame(this);
-        miLibreria.DimensionPantalla.adaptarResolucion(panelprincipal);
-        panelprincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        miLibreria.DimensionPantalla.adaptarResolucion(menu);
-        miLibreria.DimensionPantalla.adaptarResolucion(Boton1Jugar);
-        miLibreria.DimensionPantalla.adaptarResolucion(Boton2Baraja);
-        miLibreria.DimensionPantalla.adaptarResolucion(Boton3Salir);
-        miLibreria.DimensionPantalla.adaptarResolucion(imagentitulo);
-        miLibreria.DimensionPantalla.adaptarResolucion(imagenfondo);
-        //El siguiente codigo cambia el tamaño de la imagen de imagentitulo
-        miLibreria.DimensionPantalla.resizeImagen("/maagic/interfaz/serien_grosses_logo_239-Recuperado.png",imagentitulo);
+        //Tengo k buscar un layout que coloque bien las cosas encima unas de otras
+        //kiza usar layered pane?
+        this.setLayout(new OverlayLayout(this));
+        
+        fondo=new JLabel();
+        fondo.setSize(MainInterfaz.marco.getSize());
+        fondo.setAlignmentX(0.5f);
+        DimensionPantalla.resizeImagen("/maagic/img/ImagenFondo.jpg", fondo);
         
         
-        //Musica
-        System.out.println("Suena la musica?");
-        System.out.println(this.hasFocus());
-        
-        System.out.println("Focus?"+this.hasFocus());
-        try {
-            musicaMenu = AudioSystem.getClip();
-            musicaMenu.open(AudioSystem.getAudioInputStream(new File("sound/testSound.aiff")));
-            musicaMenu.loop(LOOP_CONTINUOUSLY);
-            System.out.println("Si");
-            
-        } catch (Exception e) {
-            System.out.println(e.toString());
-            System.out.println("Error Leyendo musica");
-        }
-        if (musicaMenu.isActive()) {
-            musicaMenu.start();
-             //FloatControl gainControl= (FloatControl) musicaMenu.getControl(FloatControl.Type.MASTER_GAIN);
-            //gainControl.setValue(-10.0f);
-        }
 
-        /*Esta parte muestra los formaos soportados por consola
-        AudioFileFormat.Type[] formatos= AudioSystem.getAudioFileTypes();
-        for(AudioFileFormat.Type f : formatos){
-            System.out.println(f);
-        }
-         */
-        //End Musica
+        panelMenu=new JPanel();
+        panelMenu.setLayout(new BoxLayout(panelMenu,BoxLayout.Y_AXIS));
+        panelMenu.setOpaque(false);
+        panelMenu.setSize(MainInterfaz.marco.getSize());
+        
+        logo= new JLabel();
+        logo.setSize(MainInterfaz.marco.getWidth()/3,MainInterfaz.marco.getHeight()/4);
+        DimensionPantalla.resizeImagen("/maagic/img/logo.png",logo);
+        nuevaPartida=new JButton("Nueva partida");
+        modificarBaraja=new JButton("Editar barajas");
+        salir=new JButton("Salir al escritorio");
+        
+        logo.setAlignmentX(0.5f);
+        nuevaPartida.setAlignmentX(0.5f);
+        modificarBaraja.setAlignmentX(0.5f);
+        salir.setAlignmentX(0.5f);
+        nuevaPartida.setPreferredSize(new Dimension(100,100));
+        
+        //panelMenu.add(Box.createHorizontalStrut(MainInterfaz.marco.getWidth()/2));
+        panelMenu.add(Box.createVerticalStrut(30));
+        panelMenu.add(logo);
+        panelMenu.add(Box.createVerticalStrut(MainInterfaz.marco.getHeight()/8));
+        panelMenu.add(nuevaPartida);
+        panelMenu.add(Box.createVerticalStrut(20));
+        panelMenu.add(modificarBaraja);
+        panelMenu.add(Box.createVerticalStrut(20));
+        panelMenu.add(salir);
+        //panelMenu.add(Box.createVerticalStrut(30));
+        
+        panelMenu.setAlignmentX(0.5f);
+        this.add(panelMenu);
+        this.add(fondo);
+
     }
-
-
-    
-//    @Override
-//    public  Image getIconImage(){
-//    Image Imagen = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/Runes-of-Magic-1-icon.png"));
-//    return Imagen;
-//    }   
-   
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
-
-        panelprincipal = new javax.swing.JPanel();
-        menu = new javax.swing.JPanel();
-        Boton3Salir = new javax.swing.JButton();
-        Boton2Baraja = new javax.swing.JButton();
-        Boton1Jugar = new javax.swing.JButton();
-        imagentitulo = new javax.swing.JLabel();
-        imagenfondo = new javax.swing.JLabel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setIconImage(getIconImage());
-        setMinimumSize(new java.awt.Dimension(800, 600));
-        setUndecorated(true);
-        setResizable(false);
-        setSize(new java.awt.Dimension(1920, 1080));
-        getContentPane().setLayout(null);
-
-        panelprincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        menu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        menu.setFocusCycleRoot(true);
-        menu.setInheritsPopupMenu(true);
-        menu.setOpaque(false);
-        menu.setLayout(null);
-
-        Boton3Salir.setBackground(new java.awt.Color(102, 140, 144));
-        Boton3Salir.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
-        Boton3Salir.setForeground(new java.awt.Color(153, 0, 0));
-        Boton3Salir.setText("Salir");
-        Boton3Salir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Boton3Salir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Boton3SalirActionPerformed(evt);
-            }
-        });
-        menu.add(Boton3Salir);
-        Boton3Salir.setBounds(200, 174, 212, 35);
-
-        Boton2Baraja.setBackground(new java.awt.Color(102, 140, 144));
-        Boton2Baraja.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
-        Boton2Baraja.setForeground(new java.awt.Color(0, 102, 102));
-        Boton2Baraja.setText("Crear Baraja");
-        Boton2Baraja.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Boton2Baraja.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Boton2BarajaActionPerformed(evt);
-            }
-        });
-        menu.add(Boton2Baraja);
-        Boton2Baraja.setBounds(60, 100, 501, 45);
-
-        Boton1Jugar.setBackground(new java.awt.Color(102, 140, 144));
-        Boton1Jugar.setFont(new java.awt.Font("Felix Titling", 0, 11)); // NOI18N
-        Boton1Jugar.setForeground(new java.awt.Color(102, 0, 102));
-        Boton1Jugar.setText("Jugar");
-        Boton1Jugar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Boton1Jugar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Boton1JugarActionPerformed(evt);
-            }
-        });
-        menu.add(Boton1Jugar);
-        Boton1Jugar.setBounds(26, 11, 575, 61);
-
-        panelprincipal.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 425, 620, 220));
-
-        imagentitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/serien_grosses_logo_239-Recuperado.png"))); // NOI18N
-        panelprincipal.add(imagentitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, 680, 280));
-
-        imagenfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maagic/interfaz/ImagenFondo.jpg"))); // NOI18N
-        panelprincipal.add(imagenfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
-
-        getContentPane().add(panelprincipal);
-        panelprincipal.setBounds(0, 0, 1920, 1080);
-
-        pack();
-        setLocationRelativeTo(null);
-    }// </editor-fold>//GEN-END:initComponents
-
-    private void Boton1JugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton1JugarActionPerformed
-        //panelJugarTest.setOpaque(true);
-        //panelJugarTest.setVisible(true);
-        //Aki va el menu de jugar la partida
-        menu.setVisible(false);
-        musicaMenu.stop();
-        //AñadirJugadores seleccionJugadores=new AñadirJugadores();
-        //panelprincipal.add(seleccionJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080), 1);
-        Interfaz2 panelJuego=new Interfaz2();
-        panelprincipal.add(panelJuego,new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1600, 900), 1);
-    }//GEN-LAST:event_Boton1JugarActionPerformed
-
-    private void Boton2BarajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton2BarajaActionPerformed
-        menu.setVisible(false);
-        ElegirBaraja barajaMenu=new ElegirBaraja();
-        panelprincipal.add(barajaMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080), 1);
-        
-    }//GEN-LAST:event_Boton2BarajaActionPerformed
-
-    private void Boton3SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton3SalirActionPerformed
-       System.exit(0);
-    }//GEN-LAST:event_Boton3SalirActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new Menu().setVisible(true);
-        });
-    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Boton1Jugar;
-    private javax.swing.JButton Boton2Baraja;
-    private javax.swing.JButton Boton3Salir;
-    private javax.swing.JLabel imagenfondo;
-    private javax.swing.JLabel imagentitulo;
-    private javax.swing.JPanel menu;
-    private javax.swing.JPanel panelprincipal;
-    // End of variables declaration//GEN-END:variables
 }

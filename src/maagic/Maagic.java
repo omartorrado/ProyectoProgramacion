@@ -5,8 +5,6 @@
  */
 package maagic;
 
-import maagic.interfaz.Menu;
-
 /**
  *
  * @author Orom
