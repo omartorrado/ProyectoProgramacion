@@ -42,27 +42,14 @@ public class MainInterfaz {
         menu.addComponentListener(new ComponentAdapter(){
             @Override
             public void componentResized(ComponentEvent e) {
+                if(menu.isShowing()){
                 menu.fondo.setSize(marco.getSize());
                 DimensionPantalla.resizeImagen("/maagic/img/ImagenFondo.jpg", menu.fondo);
-                //menu.fondo.repaint();
-                //menu.fondo.revalidate();
-                //menu.setVisible(true);
-            
+                menu.logo.setSize(marco.getWidth()/3,marco.getHeight()/4);
+                DimensionPantalla.resizeImagen("/maagic/img/logo.png",menu.logo);
+                }
             }
         });
-        marco.addMouseListener(new MouseAdapter(){
-            @Override
-            public void mouseReleased(MouseEvent e) {
-                resizeControl=true;
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                resizeControl=false;
-            }
-            
-        });
-        
         marco.setVisible(true);
         
                 
