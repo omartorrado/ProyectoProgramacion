@@ -29,7 +29,11 @@ public class Menu extends JPanel{
     public JButton nuevaPartida;
     public JButton modificarBaraja;
     public JButton salir;
-     
+    
+    public Menu(){
+        initComponents();
+    }
+    
     public void initComponents(){
         
         //Tengo k buscar un layout que coloque bien las cosas encima unas de otras

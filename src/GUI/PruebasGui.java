@@ -26,7 +26,6 @@ public class PruebasGui {
         //VentanaComponentes vc=new VentanaComponentes();
         //vc.ventanaComponentes();
         MainInterfaz mI=new MainInterfaz();
-        mI.initMain();
-    }
+        }
     
 }
