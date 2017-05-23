@@ -90,9 +90,9 @@ public class Menu extends JPanel {
     }
 
     private void nuevaPartidaActionPerformed(ActionEvent evt) {
-        Juego juego = new Juego();
+        MainInterfaz.juego = new Juego();
         MainInterfaz.marco.getContentPane().removeAll();
-        MainInterfaz.marco.add(juego);
+        MainInterfaz.marco.add(MainInterfaz.juego);
         //Hay que poner el repaint() revalidate() para que redibuje todo tras quitar/poner panels
         MainInterfaz.marco.repaint();
         MainInterfaz.marco.revalidate();
