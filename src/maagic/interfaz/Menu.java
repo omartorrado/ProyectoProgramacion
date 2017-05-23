@@ -71,13 +71,13 @@ public class Menu extends JPanel{
         nuevaPartida.setPreferredSize(new Dimension(100,100));
         
         //panelMenu.add(Box.createHorizontalStrut(MainInterfaz.marco.getWidth()/2));
-        panelMenu.add(Box.createVerticalStrut(30));
+        panelMenu.add(Box.createVerticalStrut(MainInterfaz.marco.getHeight()/30));
         panelMenu.add(logo);
         panelMenu.add(Box.createVerticalStrut(MainInterfaz.marco.getHeight()/8));
         panelMenu.add(nuevaPartida);
-        panelMenu.add(Box.createVerticalStrut(20));
+        panelMenu.add(Box.createVerticalStrut(MainInterfaz.marco.getHeight()/30));
         panelMenu.add(modificarBaraja);
-        panelMenu.add(Box.createVerticalStrut(20));
+        panelMenu.add(Box.createVerticalStrut(MainInterfaz.marco.getHeight()/30));
         panelMenu.add(salir);
         //panelMenu.add(Box.createVerticalStrut(30));
         
@@ -90,8 +90,10 @@ public class Menu extends JPanel{
 
     private void nuevaPartidaActionPerformed(ActionEvent evt) {
      Juego juego = new Juego();
-     this.repaint();
-     this.add(juego);
+     MainInterfaz.marco.remove(MainInterfaz.marco.getContentPane().getComponent(0));
+     MainInterfaz.marco.add(juego);
+     //MainInterfaz.marco.repaint();
+     //MainInterfaz.marco.revalidate();
     }
 
     private void modificarBarajaActionPerformed(ActionEvent evt) {

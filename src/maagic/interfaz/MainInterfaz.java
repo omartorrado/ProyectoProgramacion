@@ -22,7 +22,7 @@ public class MainInterfaz {
     public void initMain(){
         //Creamos el frame
         marco.setLocationRelativeTo(null);
-//        marco.setUndecorated(true);
+        //marco.setUndecorated(true);
         marco.setSize(Toolkit.getDefaultToolkit().getScreenSize());
         marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //añadimos el menu
