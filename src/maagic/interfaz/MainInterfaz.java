@@ -30,18 +30,18 @@ public class MainInterfaz {
             @Override
             public void componentResized(ComponentEvent e) {
                 
-                if(menu.isShowing()){
+                if(e.getSource()==marco){
                 menu.fondo.setSize(marco.getSize());
                 DimensionPantalla.resizeImagen("/maagic/img/ImagenFondo.jpg", menu.fondo);
                 menu.logo.setSize(marco.getWidth()/3,marco.getHeight()/4);
                 DimensionPantalla.resizeImagen("/maagic/img/logo.png",menu.logo);
-                    System.out.println("menu is showing"+menu.isShowing()+e.paramString());
+                    System.out.println("menu is showing"+menu.fondo.isShowing()+e.paramString());
                     System.out.println(e.getID());
                 }
-                else if(juego.isShowing()){
+                else if(e.getSource()==marco){
                     juego.fondo.setSize(marco.getSize());
                     DimensionPantalla.resizeImagen("/maagic/img/pantallazo.png", juego.fondo);
-                    System.out.println("Juego is showing"+juego.isShowing()+e.paramString());
+                    System.out.println("Juego is showing"+juego.fondo.isShowing()+e.paramString());
                     System.out.println();
                 }
             }

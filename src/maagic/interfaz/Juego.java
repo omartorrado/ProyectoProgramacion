@@ -7,6 +7,7 @@ package maagic.interfaz;
 
 import GUI.DimensionPantalla;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import javax.swing.BoxLayout;
@@ -48,38 +49,53 @@ public class Juego extends JPanel {
         fondo.setAlignmentX(0.5f);
         DimensionPantalla.resizeImagen("/maagic/img/pantallazo.png", fondo);
         fondo.addComponentListener(MainInterfaz.ajustarImagen);
-        //Definimos propiedades de panelGridBag
+        //Definimos propiedades de panelGridBagthis.getSize().height/4
         panelGridBag.setPreferredSize(this.getSize());
        
         panelGridBag.setOpaque(false);
         //Definimos las propiedades de los paneles de cada jugador
-        panelManoJ1.setSize(this.getSize().width/4,this.getSize().height);
-        panelManoJ1.setBackground(Color.red);        
+        //panelManoJ1.setSize(this.getSize().width/4,this.getSize().height);
+        //panelManoJ1.setBackground(Color.red);        
         panelMesaJ1.setBackground(Color.blue);
         panelManoJ2.setBackground(Color.yellow);
         panelMesaJ2.setBackground(Color.GREEN);
-        System.out.println(panelGridBag.getSize());
-        
+                
         //Defino las constraints iniciales
         GridBagConstraints c = new GridBagConstraints();
         c.gridx=0;
-        c.gridy=1;
-        c.fill=GridBagConstraints.BOTH;
-        c.weightx=this.getSize().width/4;
-        c.weighty=this.getSize().height;
+        c.gridy=0;
+        //c.fill=GridBagConstraints.HORIZONTAL;
+        c.weightx=1;
+        c.weighty=0;
+        
         //pruebas
-        JButton b1=new JButton("K cojones?¿");
-        panelManoJ1.add(b1);
+        Carta c1j1=new Carta();
+        Carta c2j1=new Carta();
+        Carta c3j1=new Carta();
+        panelManoJ1.add(c1j1);
+        panelManoJ1.add(c2j1);
+        panelManoJ1.add(c3j1);
         JButton b5=new JButton("K cojones?¿");
+        b5.setAlignmentX(1);
         panelMesaJ1.add(b5);
         JButton b3=new JButton("K cojones?¿");
         panelMesaJ2.add(b3);
         JButton b4=new JButton("K cojones?¿");
+        b4.setAlignmentX(1);
         panelManoJ2.add(b4);
         JButton b2=new JButton("es esta jodida mierda");
-        panelGridBag.add(b2);
+        panelGridBag.add(b2,c);
+        JButton b6=new JButton("es esta jodida mierda");
+        c.gridx=3;
+        panelGridBag.add(b6,c);
         
-        //Añadimos los componentes, 
+        //Añadimos los componentes,
+        c.gridx=0;
+        c.gridy=1;
+        c.fill=GridBagConstraints.BOTH;
+        c.gridheight=3;
+        c.weightx=1;
+        c.weighty=1;
         panelGridBag.add(panelManoJ1,c);
         c.gridx=1;
         c.gridy=1;
