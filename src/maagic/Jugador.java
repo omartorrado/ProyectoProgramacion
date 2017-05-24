@@ -35,27 +35,28 @@ public class Jugador {
     private int vida = 20;
     private int mana = 10;
 
-    //Constructor
-    public Jugador(String fileBaraja) {
-        Scanner scBaraja;
-        
-        File miBaraja = new File(fileBaraja);
-        try {
-            scBaraja = new Scanner(miBaraja);
-            while (scBaraja.hasNextLine()) {
-                int cvida = scBaraja.nextInt();
-                int cataque = scBaraja.nextInt();
-                int ccoste = scBaraja.nextInt();
-                System.out.println(cvida + "," + cataque + "," + ccoste);
-                Carta c = new Carta(cvida, cataque, ccoste);
-                this.baraja.add(c);
-            }
-            scBaraja.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Error. Baraja no encontrada");
-        }
-
-    }
+    //Constructor 
+    //esta comentado para subirlo lo corrijo esta tarde
+//    public Jugador(String fileBaraja) {
+//        Scanner scBaraja;
+//        
+//        File miBaraja = new File(fileBaraja);
+//        try {
+//            scBaraja = new Scanner(miBaraja);
+//            while (scBaraja.hasNextLine()) {
+//                int cvida = scBaraja.nextInt();
+//                int cataque = scBaraja.nextInt();
+//                int ccoste = scBaraja.nextInt();
+//                System.out.println(cvida + "," + cataque + "," + ccoste);
+//                Carta c = new Carta(cvida, cataque, ccoste);
+//                this.baraja.add(c);
+//            }
+//            scBaraja.close();
+//        } catch (FileNotFoundException e) {
+//            System.out.println("Error. Baraja no encontrada");
+//        }
+//
+//    }
 
     //Getters
     public int getVida() {
