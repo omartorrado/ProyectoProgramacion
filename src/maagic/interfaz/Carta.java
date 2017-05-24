@@ -5,13 +5,13 @@
  */
 package maagic.interfaz;
 
+import GUI.DimensionPantalla;
+import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.GridLayout;
-import javax.swing.Box;
-import javax.swing.ImageIcon;
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.OverlayLayout;
+import javax.swing.border.Border;
 
 /**
  *
@@ -29,30 +29,24 @@ public class Carta extends JPanel {
         fondo=new JLabel();
         panelGrid= new JPanel();
                 
-        this.setLayout(new OverlayLayout(this));
+        //this.setLayout(new OverlayLayout(this));
         this.setOpaque(false);
         this.setSize(80,120);
+        fondo.setSize(160,200);
+        this.setBorder(BorderFactory.createLineBorder(Color.yellow));
+        //fondo.setIcon(new ImageIcon("/maagic/img/fondoCarta.png"));
+        DimensionPantalla.resizeImagen("/maagic/img/fondoCarta.png", fondo);
         
-        fondo.setIcon(new ImageIcon("/maagic/img/fondoCarta.png"));
-        
-        panelGrid.setLayout(new GridLayout(3, 4));
         panelGrid.setOpaque(false);
         panelGrid.setSize(new Dimension(80,120));
         
-        panelGrid.add(Box.createGlue());
-        panelGrid.add(Box.createGlue());
         panelGrid.add(coste);
-        panelGrid.add(Box.createGlue());
-        panelGrid.add(Box.createGlue());
-        panelGrid.add(Box.createGlue());
-        panelGrid.add(Box.createGlue());
-        panelGrid.add(Box.createGlue());
-        panelGrid.add(Box.createGlue());
+        
         panelGrid.add(ataque);
-        panelGrid.add(Box.createGlue());
+        
         panelGrid.add(vida);
                 
-        this.add(panelGrid);
+        //this.add(panelGrid);
         this.add(fondo);
         
         

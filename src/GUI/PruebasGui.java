@@ -26,6 +26,12 @@ public class PruebasGui {
         //VentanaComponentes vc=new VentanaComponentes();
         //vc.ventanaComponentes();
         MainInterfaz mI=new MainInterfaz();
-        }
+        /*
+        JFrame f=new JFrame();
+        f.setSize(80,120);
+        f.add(new Carta());
+        f.setVisible(true);
+        */
+    }
     
 }
