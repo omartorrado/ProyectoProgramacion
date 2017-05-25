@@ -163,9 +163,9 @@ public class MetodosBaseDatos {
         try (Connection conn = this.conectar();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            // set the corresponding param
+            // le pasamos el parametro correspondiente
             pstmt.setInt(1, id);
-            // execute the delete statement
+            // ejecutamos 
             pstmt.executeUpdate();
 
         } catch (SQLException e) {
