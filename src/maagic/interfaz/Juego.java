@@ -72,10 +72,16 @@ public class Juego extends JPanel {
         Carta c1j1=new Carta();
         Carta c2j1=new Carta();
         Carta c3j1=new Carta();
+        Carta c4j2=new Carta();
+        Carta c5j2=new Carta();
+        Carta c6j2=new Carta();
         
         c1j1.setAlignmentX(0);
         c2j1.setAlignmentX(0);
         c3j1.setAlignmentX(0);
+        c4j2.setAlignmentX(0);
+        c5j2.setAlignmentX(0);
+        c6j2.setAlignmentX(0);
         
         panelManoJ1.add(c1j1);
         panelManoJ1.add(c2j1);
@@ -88,6 +94,9 @@ public class Juego extends JPanel {
         JButton b4=new JButton("K cojones?¿");
         b4.setAlignmentX(1);
         panelManoJ2.add(b4);
+        panelManoJ1.add(c4j2);
+        panelManoJ2.add(c5j2);
+        panelManoJ2.add(c6j2);
         JButton b2=new JButton("es esta jodida mierda");
         panelGridBag.add(b2,c);
         JButton b6=new JButton("es esta jodida mierda");

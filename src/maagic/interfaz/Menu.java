@@ -37,12 +37,11 @@ public class Menu extends JPanel {
         //Tengo k buscar un layout que coloque bien las cosas encima unas de otras
         //kiza usar layered pane?
         this.setLayout(new OverlayLayout(this));
-
+        
         fondo = new JLabel();
         fondo.setSize(MainInterfaz.marco.getSize());
         fondo.setAlignmentX(0.5f);
         DimensionPantalla.resizeImagen("/maagic/img/ImagenFondo.jpg", fondo);
-
         panelMenu = new JPanel();
         panelMenu.setLayout(new BoxLayout(panelMenu, BoxLayout.Y_AXIS));
         panelMenu.setOpaque(false);

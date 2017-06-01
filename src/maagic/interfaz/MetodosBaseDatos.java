@@ -24,12 +24,12 @@ import java.util.logging.Logger;
 //directamente, o podriamos cojerlos de aqui realizando algunos retoques 
 //Todos los metodos tienen explicacion
 public class MetodosBaseDatos {
-    Connection conexion;
+   Connection conexion;
 
     public static Connection conectar() {
         // Conectamos con la base de datos ya creada 
-        String url = "jdbc:sqlite:CartasBase";
-        Connection conn 
+        String url = "jdbc:sqlite:CartasBase.db";
+        Connection conn
                 = null;
         try {
             conn = DriverManager.getConnection(url);
@@ -39,7 +39,7 @@ public class MetodosBaseDatos {
         return conn;
     }
 
-    public void IniciarTabla() throws ClassNotFoundException {
+    public void IniciarBase() throws ClassNotFoundException {
         try {
             //Cojemos la tabla con la url
             String url = "jdbc:sqlite:CartasBase.db";
@@ -64,13 +64,14 @@ public class MetodosBaseDatos {
     public void Creartabla() {
         //Donde va a crear la tabla
         String url = "jdbc:sqlite:CartasBase.db";
-        //Le pasamos los datos para crear la tabla 
-        String sql = "CREATE TABLE IF NOT EXISTS Alumnos (\n"
-                + "	id integer PRIMARY KEY,\n"
-                + "	nombre text NOT NULL,\n"
-                + "	apellidos real\n"
-                + "	Curso real\n"
-                + ");";
+        //Le pasamos los datos para crea;r la tabla 
+        String sql = "CREATE TABLE "
+                + "Cartas"
+                + "(id INT PRIMARY KEY NOT NULL, "
+                + "nombre text NOT NULL, "
+                + "vida INTEGER, "
+                + "ataque INTEGER, "
+                + "coste INTEGER)";
         //Realizamos un try catch en donde optenemos la conexion y la igualamos a DriverManager.getConnection(url);
         //para que lo iguale a la url
         try (Connection conexion = DriverManager.getConnection(url);
@@ -104,7 +105,7 @@ public class MetodosBaseDatos {
 
     public void Seleccionar() {
         //Seleccionamos lo que queremos 
-        String sql = "SELECT id, nombre, apellidos FROM Cartas";
+        String sql = "SELECT id, nombre, vida, ataque, coste FROM Cartas";
 
         try (Connection conn = this.conectar();
                 Statement stmt = conn.createStatement();
@@ -112,23 +113,29 @@ public class MetodosBaseDatos {
 
             // Imprimimos los resultados por pantalla con un while 
             while (rs.next()) {
-                System.out.println(rs.getInt("id") + "\t"
+                System.out.println(rs.getString("id") + "\t"
                         + rs.getString("nombre") + "\t"
-                        + rs.getDouble("apellidos"));
+                        + rs.getInt("vida") + "\t"
+                        + rs.getInt("ataque") + "\t"
+                        + rs.getInt("coste"));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public void insertar(String nombre, String apellidos) {
+    public void insertar(maagic.Carta carta) {
         //Insertamos los datos 
-        String sql = "INSERT INTO alumnos(nombre,apellidos,curso) VALUES(?,?)";
+        String sql = "INSERT INTO Cartas(id,nombre,vida,ataque,coste) VALUES(?,?,?,?,?)";
         try (Connection conn = this.conectar();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
             //le pasamos los parametros que insertamos 
-            pstmt.setString(1, nombre);
-            pstmt.setString(2, apellidos);
+            pstmt.setInt(1, carta.getId());
+            pstmt.setString(2, carta.getNombre());
+            pstmt.setInt(3, carta.getVida());
+            pstmt.setInt(4, carta.getAtaque());
+            pstmt.setInt(5, carta.getCoste());
             //y insertamos
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -136,19 +143,23 @@ public class MetodosBaseDatos {
         }
     }
 
-    public void actualizar(int id, String nombre, String apellidos) {
+    public void actualizar(int id, maagic.Carta carta) {
         //Pasamos el String para actualizar 
         String sql = "UPDATE Cartas SET nombre = ? , "
-                + "apellidos = ? "
+                + "vida = ? "
+                + "ataque = ? "
+                + "coste = ? "
                 + "WHERE id = ?";
 
         try (Connection conn = this.conectar();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             // le pasamos el parametro correspondiente que queremos actualizar 
-            pstmt.setString(1, nombre);
-            pstmt.setString(2, apellidos);
-            pstmt.setInt(3, id);
+            pstmt.setInt(1, carta.getId());
+            pstmt.setString(2, carta.getNombre());
+            pstmt.setInt(3, carta.getVida());
+            pstmt.setInt(4, carta.getAtaque());
+            pstmt.setInt(5, carta.getCoste());
             // y actualizamos 
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -156,15 +167,25 @@ public class MetodosBaseDatos {
         }
     }
 
-    public void borrar(int id) {
+    public void cerrar() {
+        try {
+            conexion.close();
+            System.out.println("Cerrado exitoso");
+        } catch (SQLException ex) {
+            Logger.getLogger(MetodosBaseDatos.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage() + "Error al cerrar la base de datos");
+        }
+    }
+
+    public void borrar(String id) {
         //borramos de la tabla
-        String sql = "DELETE FROM alumnos WHERE id = ?";
+        String sql = "DELETE FROM Cartas WHERE id = ?";
 //le pasamos el id i borra toda la fila seleccionada
         try (Connection conn = this.conectar();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             // le pasamos el parametro correspondiente
-            pstmt.setInt(1, id);
+            pstmt.setString(1, id);
             // ejecutamos 
             pstmt.executeUpdate();
 

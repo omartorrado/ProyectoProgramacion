@@ -24,12 +24,13 @@ public class MainInterfaz {
     
     public MainInterfaz(){
         initMain();
+        
     }
     
     public static ComponentAdapter ajustarImagen=new ComponentAdapter(){
             @Override
             public void componentResized(ComponentEvent e) {
-                
+                marco.setTitle("Juego");
                 if(e.getSource()==marco){
                 menu.fondo.setSize(marco.getSize());
                 DimensionPantalla.resizeImagen("/maagic/img/ImagenFondo.jpg", menu.fondo);
@@ -48,6 +49,7 @@ public class MainInterfaz {
         };
     
     public void initMain(){
+        
         //Creamos el frame
         //marco.setUndecorated(true);
         marco.setSize(Toolkit.getDefaultToolkit().getScreenSize());

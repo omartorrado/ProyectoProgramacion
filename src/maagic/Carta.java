@@ -26,13 +26,30 @@ public class  Carta extends JPanel  {
         this.vida -= cartaAtaque;
     }
 
-    public Carta(int vida, int ataque, int coste,int id,String nombre) {
+    public Carta(int id,String nombre,int vida, int ataque, int coste) {
         this.vida = vida;
         this.ataque = ataque;
         this.coste = coste;
         this.id=id;
         this.nombre=nombre;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
     public String getnombre(){
     return nombre;
     }
