@@ -61,28 +61,31 @@ public class MetodosBaseDatos {
         System.out.println("Se inicio la base correctamente");
     }
 
-    public void Creartabla() {
-        //Donde va a crear la tabla
-        String url = "jdbc:sqlite:CartasBase.db";
-        //Le pasamos los datos para crea;r la tabla 
-        String sql = "CREATE TABLE "
-                + "Cartas"
-                + "(id INT PRIMARY KEY NOT NULL, "
-                + "nombre text NOT NULL, "
-                + "vida INTEGER, "
-                + "ataque INTEGER, "
-                + "coste INTEGER)";
-        //Realizamos un try catch en donde optenemos la conexion y la igualamos a DriverManager.getConnection(url);
-        //para que lo iguale a la url
-        try (Connection conexion = DriverManager.getConnection(url);
-                Statement stmt = conexion.createStatement()) {
-            // Creamos una nueva tabla
-            stmt.execute(sql);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
+    public boolean Creartabla(String Nombretabla, String... campo) throws SQLException {
+        try {
+            String consulta = "CREATE TABLE " + Nombretabla;
+            for (int i = 0; i < campo.length; i++) {
+                if (i == (campo.length - 1)) {
+                    consulta = consulta + campo[i];
+                } else {
+                    consulta = consulta + campo[i] + ", ";
+                }
+            }
 
+            Connection conn = MetodosBaseDatos.conectar();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(consulta);
+            while (rs.next()) {
+                System.out.println(rs.getInt(1) + " , " + rs.getString(2) + " , " + rs.getInt(3));
+            }
+            return true;
+        } catch (SQLException e) {
+            return false;
+
+        }
     }
+
+        
 
     public void crearBase(String nombredelarchivo) {
         //Le pasamos la url para poder añadirsela en el main
