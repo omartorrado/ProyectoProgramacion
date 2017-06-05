@@ -69,12 +69,20 @@ public class Juego extends JPanel {
         c.weighty=0;
         
         //pruebas
-        Carta c1j1=new Carta();
-        Carta c2j1=new Carta();
-        Carta c3j1=new Carta();
-        Carta c4j2=new Carta();
-        Carta c5j2=new Carta();
-        Carta c6j2=new Carta();
+        CartaGui c1j1=new CartaGui();
+        CartaGui c2j1=new CartaGui();
+        CartaGui c3j1=new CartaGui();
+        CartaGui c4j1=new CartaGui();
+        CartaGui c5j1=new CartaGui();
+        CartaGui c6j1=new CartaGui();
+        
+        CartaGui c1j2=new CartaGui();
+        CartaGui c2j2=new CartaGui();
+        CartaGui c3j2=new CartaGui();
+        CartaGui c4j2=new CartaGui();
+        CartaGui c5j2=new CartaGui();
+        CartaGui c6j2=new CartaGui();
+
         
         c1j1.setAlignmentX(0);
         c2j1.setAlignmentX(0);
@@ -94,7 +102,7 @@ public class Juego extends JPanel {
         JButton b4=new JButton("K cojones?¿");
         b4.setAlignmentX(1);
         panelManoJ2.add(b4);
-        panelManoJ1.add(c4j2);
+        panelManoJ2.add(c4j2);
         panelManoJ2.add(c5j2);
         panelManoJ2.add(c6j2);
         JButton b2=new JButton("es esta jodida mierda");
@@ -106,7 +114,7 @@ public class Juego extends JPanel {
         //Añadimos los componentes,
         c.gridx=0;
         c.gridy=1;
-        c.fill=GridBagConstraints.BOTH;
+        c.fill=GridBagConstraints.VERTICAL;
         c.gridheight=3;
         c.weightx=1;
         c.weighty=1;

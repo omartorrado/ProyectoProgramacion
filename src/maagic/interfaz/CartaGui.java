@@ -11,18 +11,17 @@ import java.awt.Dimension;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
 
 /**
  *
  * @author otorradomiguez
  */
-public class Carta extends JPanel {
+public class CartaGui extends JPanel {
 
     public JLabel vida, ataque, coste,fondo;
     public JPanel panelGrid;
 
-    public Carta() {
+    public CartaGui() {
         vida=new JLabel();
         ataque=new JLabel();
         coste=new JLabel();
