@@ -106,7 +106,7 @@ public class MetodosBaseDatos {
         }
     }
 
-    public void Seleccionar(String nombretabla, String... campo) {
+    public boolean Seleccionar(String nombretabla, String... campo) {
        try {
             String consulta = "SELECT";
             for (int i = 0; i < campo.length; i++) {
@@ -149,7 +149,7 @@ public class MetodosBaseDatos {
         //}
     }
 
-    public void insertar(String tabla, String... values) {
+    public boolean insertar(String tabla, String... values) {
        String consulta = "insert into" + tabla + "values(";
         try {
             String insertar = "insert into " + tabla + " values(";
@@ -186,7 +186,7 @@ public class MetodosBaseDatos {
         //}
     }
 
-    public void actualizar(String nombretabla, String campoid, String id, String... campos) {
+    public boolean actualizar(String nombretabla, String campoid, String id, String... campos) {
         try {
             //Le paso el String de la consulta actualizar 
             String actualizar = "update" + nombretabla + "set";
