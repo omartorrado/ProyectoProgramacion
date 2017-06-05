@@ -106,68 +106,128 @@ public class MetodosBaseDatos {
         }
     }
 
-    public void Seleccionar() {
-        //Seleccionamos lo que queremos 
-        String sql = "SELECT id, nombre, vida, ataque, coste FROM Cartas";
+    public void Seleccionar(String nombretabla, String... campo) {
+       try {
+            String consulta = "SELECT";
+            for (int i = 0; i < campo.length; i++) {
+                if (i == (campo.length - 1)) {
+                    consulta = consulta + campo[i] + " from " + nombretabla;
+                } else {
+                    consulta = consulta + campo[i] + ", ";
+                }
 
-        try (Connection conn = this.conectar();
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(sql)) {
+            }
+            Connection conn = MetodosBaseDatos.conectar();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(consulta);
+            while (rs.next()) {
+                System.out.println(rs.getString(1) + " , " + rs.getString(2) + " , " + rs.getInt(3));
+            }
+            return true;
+
+        } catch (SQLException e) {
+            return false;
+        }
+       //Esta es parte antigua que funciona
+        //Seleccionamos lo que queremos 
+        //String sql = "SELECT id, nombre, vida, ataque, coste FROM Cartas";
+
+        //try (Connection conn = this.conectar();
+                //Statement stmt = conn.createStatement();
+                //ResultSet rs = stmt.executeQuery(sql)) {
 
             // Imprimimos los resultados por pantalla con un while 
-            while (rs.next()) {
-                System.out.println(rs.getString("id") + "\t"
-                        + rs.getString("nombre") + "\t"
-                        + rs.getInt("vida") + "\t"
-                        + rs.getInt("ataque") + "\t"
-                        + rs.getInt("coste"));
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
+            //while (rs.next()) {
+                //System.out.println(rs.getString("id") + "\t"
+                        //+ rs.getString("nombre") + "\t"
+                        //+ rs.getInt("vida") + "\t"
+                        //+ rs.getInt("ataque") + "\t"
+                        //+ rs.getInt("coste"));
+           // }
+        //} catch (SQLException e) {
+            //System.out.println(e.getMessage());
+        //}
     }
 
-    public void insertar(maagic.Carta carta) {
+    public void insertar(String tabla, String... values) {
+       String consulta = "insert into" + tabla + "values(";
+        try {
+            String insertar = "insert into " + tabla + " values(";
+            for (int i = 0; i < values.length; i++) {
+                if (i == (values.length - 1)) {
+                    insertar = insertar + "'" + values[i] + "')";
+                } else {
+                    insertar = insertar + "'" + values[i] + "', ";
+                }
+            }
+            Connection conn = MetodosBaseDatos.conectar();
+            Statement st = conn.createStatement();
+            st.executeUpdate(insertar);
+            return true;
+        } catch (SQLException e) {
+            return false;
+        }
+       //Codigo que funciona de insertar 
         //Insertamos los datos 
-        String sql = "INSERT INTO Cartas(id,nombre,vida,ataque,coste) VALUES(?,?,?,?,?)";
-        try (Connection conn = this.conectar();
-                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        //String sql = "INSERT INTO Cartas(id,nombre,vida,ataque,coste) VALUES(?,?,?,?,?)";
+        //try (Connection conn = this.conectar();
+                //PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             //le pasamos los parametros que insertamos 
-            pstmt.setInt(1, carta.getId());
-            pstmt.setString(2, carta.getNombre());
-            pstmt.setInt(3, carta.getVida());
-            pstmt.setInt(4, carta.getAtaque());
-            pstmt.setInt(5, carta.getCoste());
+            //pstmt.setInt(1, carta.getId());
+            //pstmt.setString(2, carta.getNombre());
+            //pstmt.setInt(3, carta.getVida());
+            //pstmt.setInt(4, carta.getAtaque());
+            //pstmt.setInt(5, carta.getCoste());
             //y insertamos
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
+            //pstmt.executeUpdate();
+        //} catch (SQLException e) {
+           // System.out.println(e.getMessage());
+        //}
     }
 
-    public void actualizar(int id, maagic.Carta carta) {
+    public void actualizar(String nombretabla, String campoid, String id, String... campos) {
+        try {
+            //Le paso el String de la consulta actualizar 
+            String actualizar = "update" + nombretabla + "set";
+            //Creamos un for con el que podemos pasar los datos de cualquier tabla pasandole sus campos
+            //cogemos el 
+            for (int i = 0; i < campos.length; i++) {
+                if (i == (campos.length - 1)) {
+                    actualizar = actualizar + "'" + campos[i] + "where id=" + campoid + "=" + id + ";";
+                } else {
+                    actualizar = actualizar + "'" + campos[i] + "where id=" + campoid + "=" + id + ";";
+                }
+            }
+            Connection conn = MetodosBaseDatos.conectar();
+            Statement st = conn.createStatement();
+            st.executeUpdate(actualizar);
+            return true;
+        } catch (SQLException e) {
+            return false;
+        }
+       //Codigo que funciona de actualizar 
         //Pasamos el String para actualizar 
-        String sql = "UPDATE Cartas SET nombre = ? , "
-                + "vida = ? "
-                + "ataque = ? "
-                + "coste = ? "
-                + "WHERE id = ?";
+        //String sql = "UPDATE Cartas SET nombre = ? , "
+              //  + "vida = ? "
+                //+ "ataque = ? "
+                //+ "coste = ? "
+                //+ "WHERE id = ?";
 
-        try (Connection conn = this.conectar();
-                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        //try (Connection conn = this.conectar();
+                //PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             // le pasamos el parametro correspondiente que queremos actualizar 
-            pstmt.setInt(1, carta.getId());
-            pstmt.setString(2, carta.getNombre());
-            pstmt.setInt(3, carta.getVida());
-            pstmt.setInt(4, carta.getAtaque());
-            pstmt.setInt(5, carta.getCoste());
+            //pstmt.setInt(1, carta.getId());
+            //pstmt.setString(2, carta.getNombre());
+            //pstmt.setInt(3, carta.getVida());
+            //pstmt.setInt(4, carta.getAtaque());
+            //pstmt.setInt(5, carta.getCoste());
             // y actualizamos 
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
+            //pstmt.executeUpdate();
+        //} catch (SQLException e) {
+            //System.out.println(e.getMessage());
+        //}
     }
 
     public void cerrar() {
