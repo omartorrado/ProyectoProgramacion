@@ -34,6 +34,7 @@ public class Jugador {
     public Carta[] mesa = new Carta[3];
     public int vida = 20;
     public int mana = 3;
+    
 
 //    Constructor 
 //    esta comentado para subirlo lo corrijo esta tarde

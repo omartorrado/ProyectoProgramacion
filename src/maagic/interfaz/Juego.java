@@ -28,7 +28,10 @@ public class Juego extends JPanel {
     public JPanel panelMesaJ1 = new JPanel();
     public JPanel panelMesaJ2 = new JPanel();
 
-    JLabel fondo = new JLabel();
+    public JLabel fondo = new JLabel();
+    
+    public int cartaSeleccionada=-1;
+    public boolean turnoJ1=true;
 
     public Juego() {
         initJuego();
