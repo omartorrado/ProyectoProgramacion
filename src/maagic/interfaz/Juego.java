@@ -177,6 +177,30 @@ public class Juego extends JPanel {
                 panelManoJ2.remove(i);
                 panelManoJ2.add(cV, i);
             }
+            if(j.hayCartaEnMesa(i)){
+                CartaGui cartaTemp = new CartaGui();
+                cartaTemp.ataque.setText("" + j.getMesa(i).getAtaque());
+                cartaTemp.coste.setText("" + j.getMesa(i).getCoste());
+                cartaTemp.vida.setText("" + j.getMesa(i).getVida());
+                panelMesaJ1.remove(i);
+                panelMesaJ1.add(cartaTemp, i);
+            }else{
+                CartaVacia cV=new CartaVacia();
+                panelMesaJ1.remove(i);
+                panelMesaJ1.add(cV, i);
+            }
+            if(k.hayCartaEnMesa(i)){
+                CartaGui cartaTemp = new CartaGui();
+                cartaTemp.ataque.setText("" + k.getMesa(i).getAtaque());
+                cartaTemp.coste.setText("" + k.getMesa(i).getCoste());
+                cartaTemp.vida.setText("" + k.getMesa(i).getVida());
+                panelMesaJ2.remove(i);
+                panelMesaJ2.add(cartaTemp, i);
+            }else{
+                CartaVacia cV=new CartaVacia();
+                panelMesaJ2.remove(i);
+                panelMesaJ2.add(cV, i);
+            }
         }
         /*
         panelManoJ1.repaint();

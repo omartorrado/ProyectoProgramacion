@@ -18,6 +18,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import static javax.swing.SwingConstants.CENTER;
 import static javax.swing.SwingConstants.LEFT;
+import maagic.Main;
 
 /**
  *
@@ -43,8 +44,20 @@ public class CartaVacia extends JPanel {
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                Juego tempJuego=(Juego)fondoVacio.getParent().getParent().getParent().getParent();
                 
+                if(tempJuego.cartaSeleccionada!=-1 && tempJuego.turnoJ1){
+                    /*
+                    Aki en lugar de cambiar el interfaz tengo k cambiar el estado de la partida y luego llamar a Main.repintar()
+                    */
+                    System.out.println(tempJuego.cartaSeleccionada+", "+fondoVacio.getParent().getParent().getComponentZOrder(fondoVacio.getParent()));
+                    Main.j1.moverManoMesa(tempJuego.cartaSeleccionada, fondoVacio.getParent().getParent().getComponentZOrder(fondoVacio.getParent()));
+                    Main.repintar();
+                    tempJuego.cartaSeleccionada=-1;
+                    tempJuego.requestFocusInWindow();
+                }else{
                 fondoVacio.requestFocusInWindow();
+                }
             }
         
         });

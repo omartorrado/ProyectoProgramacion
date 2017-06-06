@@ -87,6 +87,14 @@ public class Jugador {
             return true;
         }
     }
+    
+    public boolean hayCartaEnMesa(int i) {
+        if(mesa[i] == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
     //Metodos del jugador
     public void cogerUltimas() {

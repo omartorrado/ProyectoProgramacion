@@ -13,6 +13,8 @@ import maagic.interfaz.MainInterfaz;
  */
 public class Main {
 
+    public static Jugador j1;
+    public static Jugador j2;
     
     /**
      * @param args the command line arguments
@@ -26,8 +28,8 @@ public class Main {
     
     public static void initGame(){
         //Instancio los jugadores. Hay que modificarlo para que cojan la baraja de la BD
-        Jugador j1=new Jugador("barajas/Cartas.txt");
-        Jugador j2=new Jugador("barajas/Cartas.txt");
+        j1=new Jugador("barajas/Cartas.txt");
+        j2=new Jugador("barajas/Cartas.txt");
         //Se barajan ambos mazos
         j1.barajar();
         j2.barajar();
@@ -36,4 +38,7 @@ public class Main {
         MainInterfaz.juego.updateCartas(j1,j2);
     }
     
+    public static void repintar(){
+        MainInterfaz.juego.updateCartas(j1,j2);
+    }
 }
