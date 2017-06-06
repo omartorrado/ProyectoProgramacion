@@ -28,12 +28,12 @@ public class Jugador {
     //posicion devuelve null, lo que nos evita tener la "carta vacia" para rellenar
     //cuando no hay nada
      */
-    private Carta[] mano = new Carta[3];
+    public Carta[] mano = new Carta[3];
     private ArrayList<Carta> baraja = new ArrayList();
     private ArrayList<Carta> descarte = new ArrayList();
-    private Carta[] mesa = new Carta[3];
-    private int vida = 20;
-    private int mana = 10;
+    public Carta[] mesa = new Carta[3];
+    public int vida = 20;
+    public int mana = 3;
 
 //    Constructor 
 //    esta comentado para subirlo lo corrijo esta tarde
@@ -49,7 +49,7 @@ public class Jugador {
                 int cvida = scBaraja.nextInt();
                 int cataque = scBaraja.nextInt();
                 int ccoste = scBaraja.nextInt();
-                System.out.println(cId + "," +cnombre+"," +cvida + "," + cataque + "," + ccoste);
+                //System.out.println(cId + "," +cnombre+"," +cvida + "," + cataque + "," + ccoste);
                 Carta c = new Carta(cId,cnombre,cvida, cataque, ccoste);
                 this.baraja.add(c);
             }

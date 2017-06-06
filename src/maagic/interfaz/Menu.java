@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.OverlayLayout;
+import maagic.Main;
 
 /**
  *
@@ -89,7 +90,9 @@ public class Menu extends JPanel {
     }
 
     private void nuevaPartidaActionPerformed(ActionEvent evt) {
+        
         MainInterfaz.juego = new Juego();
+        Main.initGame();
         MainInterfaz.marco.getContentPane().removeAll();
         MainInterfaz.marco.add(MainInterfaz.juego);
         //Hay que poner el repaint() revalidate() para que redibuje todo tras quitar/poner panels

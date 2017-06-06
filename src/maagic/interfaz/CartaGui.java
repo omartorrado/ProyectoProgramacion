@@ -8,6 +8,7 @@ package maagic.interfaz;
 import GUI.DimensionPantalla;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 
 import java.awt.GridLayout;
 import javax.swing.BorderFactory;
@@ -15,6 +16,7 @@ import javax.swing.Box;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.OverlayLayout;
+import static javax.swing.SwingConstants.CENTER;
 
 /**
  *
@@ -32,7 +34,7 @@ public class CartaGui extends JPanel {
         fondo=new JLabel();
         panelGrid= new JPanel();
                 
-        this.setBorder(BorderFactory.createLineBorder(Color.yellow));
+        //this.setBorder(BorderFactory.createLineBorder(Color.yellow));
         
         this.setLayout(new OverlayLayout(this));
         
@@ -47,7 +49,18 @@ public class CartaGui extends JPanel {
         ataque.setSize(40,40);
         coste.setSize(40,40);
         
+        Font fuente=new Font("Courier New", Font.BOLD, 16);
         
+        vida.setFont(fuente);
+        ataque.setFont(fuente);
+        coste.setFont(fuente);
+        
+        
+        vida.setHorizontalTextPosition(CENTER);
+        ataque.setHorizontalTextPosition(CENTER);
+        ataque.setForeground(Color.RED);
+        coste.setHorizontalTextPosition(CENTER);
+        coste.setForeground(Color.RED);
         
         panelGrid.add(coste);
         

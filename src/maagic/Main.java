@@ -17,15 +17,21 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+                
+        //Instancio el interfaz grafico
+        MainInterfaz mI=new MainInterfaz();
         
+    }
+    
+    public static void initGame(){
         //Instancio los jugadores. Hay que modificarlo para que cojan la baraja de la BD
         Jugador j1=new Jugador("barajas/Cartas.txt");
         Jugador j2=new Jugador("barajas/Cartas.txt");
         //Se barajan ambos mazos
         j1.barajar();
         j2.barajar();
-        //Instancio el interfaz grafico
-        MainInterfaz mI=new MainInterfaz();
+        j1.cogerMano();
+        MainInterfaz.juego.updateCartas(j1,j2);
     }
     
 }
