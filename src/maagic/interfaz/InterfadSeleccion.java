@@ -6,15 +6,19 @@
 package maagic.interfaz;
 
 import GUI.DimensionPantalla;
+import java.awt.Button;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Locale;
 import javax.swing.ComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -27,7 +31,7 @@ import maagic.Main;
  * @author Delio
  */
 
-public final class InterfadSeleccion extends JPanel {
+public  class InterfadSeleccion extends JFrame {
     public  JPanel jugador1;
     public  JButton botonSelectj1;
     public  JButton botonBorrarJugador;
@@ -44,18 +48,44 @@ public final class InterfadSeleccion extends JPanel {
     public  JTextField   baraja;
     public  JButton crearJugadorPanelCrear;
     public  JButton cancelarCreacion;
+    public  JTextField  id;
     public InterfadSeleccion() {
         initComponents();
-    }
-    public void initComponents(){
-         this.setLayout(new OverlayLayout(this));
         
-        JLabel fondo = new JLabel();
-        fondo.setSize(MainInterfaz.marco.getSize());
-        fondo.setAlignmentX(0.5f);
-        DimensionPantalla.resizeImagen("/maagic/img/ImagenFondo.jpg", fondo);
-    //
+    }
+    public final void initComponents(){
+        this.setVisible(true);
+        jugador1 = new JPanel();
+        this.add(jugador1);
+        jugador1.setSize(500, 500);
+        jugador1.setVisible(true);
+        this.setSize(500, 500);
+        this.setLocationRelativeTo(null);
+        
+
+//         this.setLayout(new OverlayLayout(this));
+//        
+//        JLabel fondo = new JLabel();
+//        fondo.setSize(MainInterfaz.marco.getSize());
+//        fondo.setAlignmentX(0.5f);
+//        DimensionPantalla.resizeImagen("/maagic/img/ImagenFondo.jpg", fondo);
+//    //
     
+    //
+    botonSelectj1=new JButton();
+    botonCancelarj1=new JButton();
+    cajaJugadoresj1= new JComboBox();
+    botonBorrarJugador=new JButton();
+    botonCrearj=new JButton();
+    cajaJugadoresj2=new JComboBox();
+    botonSelectj2=new JButton();
+    botonCancelar2=new JButton();
+    botonJugar=new JButton();
+    volverMenu=new JButton();
+    crearJugadorPanelCrear=new JButton();
+    cancelarCreacion=new JButton();
+    nombre=new JTextField();
+    baraja=new JTextField();
     //
     jugador1.add(botonSelectj1);
     jugador1.add(botonCancelarj1);
@@ -72,6 +102,7 @@ public final class InterfadSeleccion extends JPanel {
     crearJugador.add(baraja);
     crearJugador.add(crearJugadorPanelCrear);
     crearJugador.add(cancelarCreacion);
+    crearJugador.add(id);
     //
     botonSelectj1.setPreferredSize(new Dimension(100, 40));
     botonCancelarj1.setPreferredSize(new Dimension(100, 40));
@@ -95,12 +126,12 @@ public final class InterfadSeleccion extends JPanel {
     baraja.setText("baraja");
     crearJugadorPanelCrear.setText("Crear Jugador");
     cancelarCreacion.setText("Cancelar");
-    //
+    
 //    ArrayList<String> nombreArrayList = new ArrayList<String>();
 //    nombreArrayList.
 //    cajaJugadoresj1.setModel(new javax.swing.DefaultComboBoxModel<>(nombreArrayList.));
 //    cajaJugadoresj1.getSelectedItem();
-    //
+    
     botonSelectj1.setAlignmentX(0.5f);
         botonSelectj1.addActionListener((java.awt.event.ActionEvent evt) -> {
             botonSelectj1ActionPerformed(evt);
@@ -142,6 +173,7 @@ public final class InterfadSeleccion extends JPanel {
         cancelarCreacion.addActionListener((java.awt.event.ActionEvent evt) -> {
             cancelarCreacionActionPerformed(evt);
         });
+       
         
     
     
@@ -214,7 +246,7 @@ public final class InterfadSeleccion extends JPanel {
 
     private void crearJugadorPanelCrearActionPerformed(ActionEvent evt) {
       MetodosBaseDatos metodos= new MetodosBaseDatos();
-//      metodos.
+      metodos.insertarjugadores(Integer.parseInt(id.getText()), nombre.getText(),Integer.parseInt(baraja.getText()));
     }
 
     private void cancelarCreacionActionPerformed(ActionEvent evt) {
@@ -223,6 +255,7 @@ public final class InterfadSeleccion extends JPanel {
         this.repaint();
         this.revalidate();
     }
+
 
     
 }

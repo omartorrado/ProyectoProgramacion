@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import maagic.interfaz.InterfadSeleccion;
 import maagic.interfaz.MainInterfaz;
 
 /**
@@ -32,6 +33,8 @@ public class PruebasGui {
         f.add(new Carta());
         f.setVisible(true);
         */
+        InterfadSeleccion seleccionar=new InterfadSeleccion();
+        
     }
     
 }

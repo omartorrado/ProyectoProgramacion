@@ -285,23 +285,21 @@ public class MetodosBaseDatos {
     
     }
     
-    public void insertarjugadores(){
-   String sql="INSERT INTO jugadores(id,nombre,vida,ataque,coste) VALUES(?,?,?,?,?)";
-//    try (Connection conn = this.conectar();
-//                PreparedStatement pstmt = conn.prepareStatement(sql)) {
-//
+    public void insertarjugadores(int id,String nombre,int idbarajas){
+   String sql="INSERT INTO jugadores(id,    nombre, idbarajas) VALUES(?,?,?)";
+    try (Connection conn = this.conectar();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
 //            le pasamos los parametros que insertamos 
-//           pstmt.setInt(1, carta.getId());
-//            pstmt.setString(2, carta.getNombre());
-//            pstmt.setInt(3, carta.getVida());
-//            pstmt.setInt(4, carta.getAtaque());
-//            pstmt.setInt(5, carta.getCoste());
+           pstmt.setInt(1, id);
+            pstmt.setString(2, nombre);
+            pstmt.setInt(3, idbarajas);
 //            y insertamos
-//            pstmt.executeUpdate();
-//        } catch (SQLException e) {
-//            System.out.println(e.getMessage());
-//        }
-//    
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    
     }
     
     
