@@ -244,7 +244,7 @@ public class MetodosBaseDatos {
         //borramos de la tabla
         String sql = "DELETE FROM Cartas WHERE id = ?";
 //le pasamos el id i borra toda la fila seleccionada
-        try (Connection conn = this.conectar();
+        try (Connection conn = MetodosBaseDatos.conectar();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             // le pasamos el parametro correspondiente
@@ -261,7 +261,7 @@ public class MetodosBaseDatos {
     
     public void borrarjugadores(String id){
     String sql="DELETE FROM jugadores WHERE idjugadores  =?";
-    try (Connection conn = this.conectar();
+    try (Connection conn = MetodosBaseDatos.conectar();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
     pstmt.setString(1, id);
     
@@ -273,7 +273,7 @@ public class MetodosBaseDatos {
     }
     public void seleccionarjugadores(String nombre){
     String sql="SELECT  nombre   FROM   jugadores";
-    try (Connection conn = this.conectar();
+    try (Connection conn = MetodosBaseDatos.conectar();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
     pstmt.setString(1, nombre);
     
@@ -287,7 +287,7 @@ public class MetodosBaseDatos {
     
     public void insertarjugadores(int id,String nombre,int idbarajas){
    String sql="INSERT INTO jugadores(id,    nombre, idbarajas) VALUES(?,?,?)";
-    try (Connection conn = this.conectar();
+    try (Connection conn = MetodosBaseDatos.conectar();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
 //            le pasamos los parametros que insertamos 
@@ -299,6 +299,29 @@ public class MetodosBaseDatos {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    
+    }
+    
+    public void insertarcartas(int id,  String nombre,  int vida,   int ataque, int coste){
+    String sql="INSERT  INTO    cartas(id,  nombre, vida,   ataque, coste)  VALUES(?,?,?,?,?)";
+     try (Connection conn = MetodosBaseDatos.conectar();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+//            le pasamos los parametros que insertamos 
+            pstmt.setInt(1, id);
+            pstmt.setString(2, nombre);
+            pstmt.setInt(3, vida);
+            pstmt.setInt(4, ataque);
+            pstmt.setInt(5, coste);
+//            y insertamos
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    
+    
+    
+    
     
     }
     
