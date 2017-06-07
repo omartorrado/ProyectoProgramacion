@@ -46,7 +46,7 @@ public class CartaVacia extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 Juego tempJuego=(Juego)fondoVacio.getParent().getParent().getParent().getParent();
                 
-                if(tempJuego.cartaSeleccionada!=-1 && tempJuego.turnoJ1){
+                if(tempJuego.cartaSeleccionada!=-1 && tempJuego.turnoJ1 ){
                     /*
                     Aki en lugar de cambiar el interfaz tengo k cambiar el estado de la partida y luego llamar a Main.repintar()
                     */
@@ -54,7 +54,7 @@ public class CartaVacia extends JPanel {
                     Main.j1.moverManoMesa(tempJuego.cartaSeleccionada, fondoVacio.getParent().getParent().getComponentZOrder(fondoVacio.getParent()));
                     Main.repintar();
                     tempJuego.cartaSeleccionada=-1;
-                    tempJuego.requestFocusInWindow();
+                    tempJuego.getRootPane().requestFocusInWindow();
                 }else{
                 fondoVacio.requestFocusInWindow();
                 }

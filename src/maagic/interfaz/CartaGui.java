@@ -94,6 +94,8 @@ public class CartaGui extends JPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 fondo.requestFocusInWindow();
+                Juego tempJuego=(Juego)fondo.getParent().getParent().getParent().getParent();
+                tempJuego.cartaSeleccionada=fondo.getParent().getParent().getComponentZOrder(fondo.getParent());
             }
         });
 
@@ -112,17 +114,32 @@ public class CartaGui extends JPanel {
         fondo.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                if(e.getKeyCode()==KeyEvent.VK_RIGHT||e.getKeyCode()==KeyEvent.VK_D){
-                    System.out.println("pulsas d o flecha derecha");
-                    System.out.println(fondo.getParent().getParent().getComponentZOrder(fondo.getParent()));
-                    System.out.println(fondo.getParent());
-                    System.out.println(fondo.getParent().getParent());
-                    System.out.println(fondo.getParent().getParent().getParent());
-                    System.out.println(fondo.getParent().getParent().getParent().getParent());
-                    Juego tempJuego=(Juego)fondo.getParent().getParent().getParent().getParent();
-                    tempJuego.cartaSeleccionada=fondo.getParent().getParent().getComponentZOrder(fondo.getParent());
-                }else if(e.getKeyCode()==KeyEvent.VK_LEFT||e.getKeyCode()==KeyEvent.VK_A){
-                    System.out.println("Pulsas a o flecha izq");
+                switch (e.getKeyCode()) {
+                    case KeyEvent.VK_RIGHT:
+                    case KeyEvent.VK_D:
+                        System.out.println("pulsas d o flecha derecha");
+                        /*
+                        System.out.println(fondo.getParent().getParent().getComponentZOrder(fondo.getParent()));
+                        System.out.println(fondo.getParent());
+                        System.out.println(fondo.getParent().getParent());
+                        System.out.println(fondo.getParent().getParent().getParent());
+                        System.out.println(fondo.getParent().getParent().getParent().getParent());
+                        */
+                        Juego tempJuego=(Juego)fondo.getParent().getParent().getParent().getParent();
+                        tempJuego.cartaSeleccionada=fondo.getParent().getParent().getComponentZOrder(fondo.getParent());
+                        break;
+                    case KeyEvent.VK_LEFT:
+                    case KeyEvent.VK_A:
+                        System.out.println("Pulsas a o flecha izq");
+                        break;
+                    case KeyEvent.VK_UP:
+                    case KeyEvent.VK_W:
+                        break;
+                    case KeyEvent.VK_DOWN:
+                    case KeyEvent.VK_S:
+                        break;
+                    default:
+                        break;
                 }
             }
         

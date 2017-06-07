@@ -202,12 +202,11 @@ public class Juego extends JPanel {
                 panelMesaJ2.add(cV, i);
             }
         }
-        /*
         panelManoJ1.repaint();
         panelManoJ1.revalidate();
         panelManoJ2.repaint();
         panelManoJ2.revalidate();
-        */
+        
     }
 
 }
