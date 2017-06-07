@@ -255,5 +255,57 @@ public class MetodosBaseDatos {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+        
+        
     }
+    
+    public void borrarjugadores(String id){
+    String sql="DELETE FROM jugadores WHERE idjugadores  =?";
+    try (Connection conn = this.conectar();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+    pstmt.setString(1, id);
+    
+     pstmt.executeUpdate();
+    }
+    catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public void seleccionarjugadores(String nombre){
+    String sql="SELECT  nombre   FROM   jugadores";
+    try (Connection conn = this.conectar();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+    pstmt.setString(1, nombre);
+    
+     pstmt.executeUpdate();
+    }
+    catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    
+    }
+    
+    public void insertarjugadores(){
+   String sql="INSERT INTO jugadores(id,nombre,vida,ataque,coste) VALUES(?,?,?,?,?)";
+//    try (Connection conn = this.conectar();
+//                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+//
+//            le pasamos los parametros que insertamos 
+//           pstmt.setInt(1, carta.getId());
+//            pstmt.setString(2, carta.getNombre());
+//            pstmt.setInt(3, carta.getVida());
+//            pstmt.setInt(4, carta.getAtaque());
+//            pstmt.setInt(5, carta.getCoste());
+//            y insertamos
+//            pstmt.executeUpdate();
+//        } catch (SQLException e) {
+//            System.out.println(e.getMessage());
+//        }
+//    
+    }
+    
+    
+    
+    
+    
 }
