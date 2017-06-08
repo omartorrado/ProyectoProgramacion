@@ -7,10 +7,12 @@ package maagic.interfaz;
 
 import GUI.DimensionPantalla;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import javax.swing.BoxLayout;
-import javax.swing.JButton;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.OverlayLayout;
@@ -27,6 +29,17 @@ public class Juego extends JPanel {
     public JPanel panelManoJ2 = new JPanel();
     public JPanel panelMesaJ1 = new JPanel();
     public JPanel panelMesaJ2 = new JPanel();
+
+    public JPanel panelStatsJ1 = new JPanel();
+    public JPanel panelStatsJ2 = new JPanel();
+    public JLabel iconoVida = new JLabel();
+    public JLabel iconoMana = new JLabel();
+    public JLabel iconoVida2 = new JLabel();
+    public JLabel iconoMana2 = new JLabel();
+    public JLabel vidaJ1 = new JLabel();
+    public JLabel vidaJ2 = new JLabel();
+    public JLabel manaJ1 = new JLabel();
+    public JLabel manaJ2 = new JLabel();
 
     public JLabel fondo = new JLabel();
 
@@ -63,11 +76,28 @@ public class Juego extends JPanel {
         panelManoJ2.setBackground(Color.yellow);
         panelMesaJ2.setBackground(Color.GREEN);
 
+        iconoVida.setSize(40, 40);
+        iconoMana.setSize(40, 40);
+        DimensionPantalla.resizeImagen("/maagic/img/corazon.png", iconoVida);
+        DimensionPantalla.resizeImagen("/maagic/img/mana.png", iconoMana);
+        iconoVida2.setSize(40, 40);
+        iconoMana2.setSize(40, 40);
+        DimensionPantalla.resizeImagen("/maagic/img/corazon.png", iconoVida2);
+        DimensionPantalla.resizeImagen("/maagic/img/mana.png", iconoMana2);
+
+        panelStatsJ1.setOpaque(false);
+        panelStatsJ2.setOpaque(false);
+        
+        Font fuente = new Font("Courier New", Font.BOLD, 24);
+        vidaJ1.setFont(fuente);
+        manaJ1.setFont(fuente);
+        vidaJ2.setFont(fuente);
+        manaJ2.setFont(fuente);
         //Defino las constraints iniciales
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
-        //c.fill=GridBagConstraints.HORIZONTAL;
+        c.fill = GridBagConstraints.BOTH;
         c.weightx = 1;
         c.weighty = 0;
 
@@ -121,11 +151,18 @@ public class Juego extends JPanel {
         panelMesaJ1.setOpaque(false);
         panelMesaJ2.setOpaque(false);
 
-        JButton b2 = new JButton("es esta jodida mierda");
-        panelGridBag.add(b2, c);
-        JButton b6 = new JButton("es esta jodida mierda");
+        panelStatsJ1.add(iconoVida);
+        panelStatsJ1.add(vidaJ1);
+        panelStatsJ1.add(iconoMana);
+        panelStatsJ1.add(manaJ1);
+        panelStatsJ2.add(iconoVida2);
+        panelStatsJ2.add(vidaJ2);
+        panelStatsJ2.add(iconoMana2);
+        panelStatsJ2.add(manaJ2);
+
+        panelGridBag.add(panelStatsJ1, c);
         c.gridx = 3;
-        panelGridBag.add(b6, c);
+        panelGridBag.add(panelStatsJ2, c);
 
         //Añadimos los componentes,
         c.gridx = 0;
@@ -203,6 +240,12 @@ public class Juego extends JPanel {
                 panelMesaJ2.add(cV, i);
             }
         }
+
+        vidaJ1.setText("" + j.getVida());
+        vidaJ2.setText("" + k.getVida());
+        manaJ1.setText("" + j.getMana());
+        manaJ2.setText("" + k.getMana());
+
         activarFocus();
         panelManoJ1.repaint();
         panelManoJ1.revalidate();
@@ -212,6 +255,10 @@ public class Juego extends JPanel {
         panelMesaJ1.revalidate();
         panelMesaJ2.repaint();
         panelMesaJ2.revalidate();
+        panelStatsJ1.repaint();
+        panelStatsJ1.revalidate();
+        panelStatsJ2.repaint();
+        panelStatsJ2.revalidate();
     }
 
     public void activarFocus() {
@@ -222,8 +269,7 @@ public class Juego extends JPanel {
                 panelMesaJ1.getComponent(i).setFocusable(false);
                 panelMesaJ2.getComponent(i).setFocusable(false);
             }
-        }
-        else{
+        } else {
             for (int i = 0; i < 3; i++) {
                 panelManoJ2.getComponent(i).setFocusable(true);
                 panelManoJ1.getComponent(i).setFocusable(false);
