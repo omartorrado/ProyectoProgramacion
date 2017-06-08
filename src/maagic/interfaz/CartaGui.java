@@ -42,7 +42,7 @@ public class CartaGui extends JPanel {
 
         //this.setBorder(BorderFactory.createLineBorder(Color.yellow));
         this.setLayout(new OverlayLayout(this));
-        fondo.setFocusable(true);
+        fondo.setFocusable(false);
         this.setSize(160, 200);
         fondo.setSize(160, 200);
 
@@ -90,16 +90,19 @@ public class CartaGui extends JPanel {
         panelGrid.setOpaque(false);
         this.setOpaque(false);
 
-        fondo.addMouseListener(new MouseAdapter() {
+        this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                fondo.requestFocusInWindow();
-                Juego tempJuego=(Juego)fondo.getParent().getParent().getParent().getParent();
-                tempJuego.cartaSeleccionada=fondo.getParent().getParent().getComponentZOrder(fondo.getParent());
+                Juego tempJuego = (Juego) fondo.getParent().getParent().getParent().getParent();
+                fondo.getParent().requestFocusInWindow();
+                if(fondo.getParent().isFocusable()){
+                tempJuego.cartaSeleccionada = fondo.getParent().getParent().getComponentZOrder(fondo.getParent());
+                }
+                System.out.println("carta seleccionada:"+tempJuego.cartaSeleccionada);
             }
         });
 
-        fondo.addFocusListener(new FocusListener() {
+        this.addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
                 fondo.setBorder(BorderFactory.createLineBorder(Color.blue, 3));
@@ -110,23 +113,24 @@ public class CartaGui extends JPanel {
                 fondo.setBorder(null);
             }
         });
-        
-        fondo.addKeyListener(new KeyAdapter() {
+
+        /*
+        this.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 switch (e.getKeyCode()) {
                     case KeyEvent.VK_RIGHT:
                     case KeyEvent.VK_D:
                         System.out.println("pulsas d o flecha derecha");
-                        /*
+                        
                         System.out.println(fondo.getParent().getParent().getComponentZOrder(fondo.getParent()));
                         System.out.println(fondo.getParent());
                         System.out.println(fondo.getParent().getParent());
                         System.out.println(fondo.getParent().getParent().getParent());
                         System.out.println(fondo.getParent().getParent().getParent().getParent());
-                        */
-                        Juego tempJuego=(Juego)fondo.getParent().getParent().getParent().getParent();
-                        tempJuego.cartaSeleccionada=fondo.getParent().getParent().getComponentZOrder(fondo.getParent());
+                         
+                        Juego tempJuego = (Juego) fondo.getParent().getParent().getParent().getParent();
+                        tempJuego.cartaSeleccionada = fondo.getParent().getParent().getComponentZOrder(fondo.getParent());
                         break;
                     case KeyEvent.VK_LEFT:
                     case KeyEvent.VK_A:
@@ -142,8 +146,9 @@ public class CartaGui extends JPanel {
                         break;
                 }
             }
-        
+
         });
+         */
     }
 
 }

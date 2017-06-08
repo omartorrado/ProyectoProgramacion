@@ -29,9 +29,9 @@ public class Juego extends JPanel {
     public JPanel panelMesaJ2 = new JPanel();
 
     public JLabel fondo = new JLabel();
-    
-    public int cartaSeleccionada=-1;
-    public boolean turnoJ1=true;
+
+    public int cartaSeleccionada = -1;
+    public boolean turnoJ1 = true;
 
     public Juego() {
         initJuego();
@@ -148,6 +148,7 @@ public class Juego extends JPanel {
         this.add(panelGridBag);
 
         this.add(fondo);
+        activarFocus();
 
     }
 
@@ -160,53 +161,73 @@ public class Juego extends JPanel {
                 cartaTemp.vida.setText("" + j.getMano(i).getVida());
                 panelManoJ1.remove(i);
                 panelManoJ1.add(cartaTemp, i);
-            }else{
-                CartaVacia cV=new CartaVacia();
+            } else {
+                CartaVacia cV = new CartaVacia();
                 panelManoJ1.remove(i);
                 panelManoJ1.add(cV, i);
             }
-            if(k.hayCarta(i)){
+            if (k.hayCarta(i)) {
                 CartaGui cartaTemp = new CartaGui();
                 cartaTemp.ataque.setText("" + k.getMano(i).getAtaque());
                 cartaTemp.coste.setText("" + k.getMano(i).getCoste());
                 cartaTemp.vida.setText("" + k.getMano(i).getVida());
                 panelManoJ2.remove(i);
                 panelManoJ2.add(cartaTemp, i);
-            }else{
-                CartaVacia cV=new CartaVacia();
+            } else {
+                CartaVacia cV = new CartaVacia();
                 panelManoJ2.remove(i);
                 panelManoJ2.add(cV, i);
             }
-            if(j.hayCartaEnMesa(i)){
+            if (j.hayCartaEnMesa(i)) {
                 CartaGui cartaTemp = new CartaGui();
                 cartaTemp.ataque.setText("" + j.getMesa(i).getAtaque());
                 cartaTemp.coste.setText("" + j.getMesa(i).getCoste());
                 cartaTemp.vida.setText("" + j.getMesa(i).getVida());
                 panelMesaJ1.remove(i);
                 panelMesaJ1.add(cartaTemp, i);
-            }else{
-                CartaVacia cV=new CartaVacia();
+            } else {
+                CartaVacia cV = new CartaVacia();
                 panelMesaJ1.remove(i);
                 panelMesaJ1.add(cV, i);
             }
-            if(k.hayCartaEnMesa(i)){
+            if (k.hayCartaEnMesa(i)) {
                 CartaGui cartaTemp = new CartaGui();
                 cartaTemp.ataque.setText("" + k.getMesa(i).getAtaque());
                 cartaTemp.coste.setText("" + k.getMesa(i).getCoste());
                 cartaTemp.vida.setText("" + k.getMesa(i).getVida());
                 panelMesaJ2.remove(i);
                 panelMesaJ2.add(cartaTemp, i);
-            }else{
-                CartaVacia cV=new CartaVacia();
+            } else {
+                CartaVacia cV = new CartaVacia();
                 panelMesaJ2.remove(i);
                 panelMesaJ2.add(cV, i);
             }
         }
+        activarFocus();
         panelManoJ1.repaint();
         panelManoJ1.revalidate();
         panelManoJ2.repaint();
         panelManoJ2.revalidate();
-        
+
+    }
+
+    public void activarFocus() {
+        if (turnoJ1) {
+            for (int i = 0; i < 3; i++) {
+                panelManoJ1.getComponent(i).setFocusable(true);
+                panelManoJ2.getComponent(i).setFocusable(false);
+                panelMesaJ1.getComponent(i).setFocusable(false);
+                panelMesaJ2.getComponent(i).setFocusable(false);
+            }
+        }
+        else{
+            for (int i = 0; i < 3; i++) {
+                panelManoJ2.getComponent(i).setFocusable(true);
+                panelManoJ1.getComponent(i).setFocusable(false);
+                panelMesaJ1.getComponent(i).setFocusable(false);
+                panelMesaJ2.getComponent(i).setFocusable(false);
+            }
+        }
     }
 
 }

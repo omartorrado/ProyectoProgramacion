@@ -34,7 +34,6 @@ public class Main {
         j1.barajar();
         j2.barajar();
         j1.cogerMano();
-        j2.cogerMano();
         MainInterfaz.juego.updateCartas(j1,j2);
     }
     

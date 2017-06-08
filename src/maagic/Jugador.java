@@ -33,7 +33,7 @@ public class Jugador {
     private ArrayList<Carta> descarte = new ArrayList();
     public Carta[] mesa = new Carta[3];
     public int vida = 20;
-    public int mana = 3;
+    public int mana = 13;
     
 
 //    Constructor 
@@ -162,7 +162,7 @@ public class Jugador {
         } else {
             mana += cartaMana;
         }
-        mano[pos] = null;
+        moverManoDescarte(pos);
         //Test
         System.out.println("Mana que da la carta: " + cartaMana + " Mana actual: " + mana);
         //End Test
