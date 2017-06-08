@@ -113,7 +113,7 @@ public class InterfadSeleccionfinal extends javax.swing.JPanel {
 
     private void seleccionarj1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionarj1ActionPerformed
        if(seleccionarjugadorj1.getSelectedItem()==MetodosBaseDatos.nombres.get(0) ){
-       System.out.println("Se ha seleccionado el jugador1");
+       System.out.println("Se ha seleccionado el jugador1 esta correcto");
        
        }
        else if (seleccionarjugadorj1.getSelectedItem()==MetodosBaseDatos.nombres.get(1)){
