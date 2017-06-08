@@ -28,8 +28,10 @@ public class Main {
     
     public static void initGame(){
         //Instancio los jugadores. Hay que modificarlo para que cojan la baraja de la BD
-        j1=new Jugador("barajas/Cartas.txt");
-        j2=new Jugador("barajas/Cartas.txt");
+        //j1=new Jugador("barajas/Cartas.txt");
+        //j2=new Jugador("barajas/Cartas.txt");
+        j1=new Jugador();
+        j2=new Jugador();
         //Se barajan ambos mazos
         j1.barajar();
         j2.barajar();

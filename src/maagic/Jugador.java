@@ -7,11 +7,18 @@ package maagic;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import maagic.interfaz.MetodosBaseDatos;
 
 /**
  *
@@ -61,8 +68,31 @@ public class Jugador {
 
     }
     
-    public Jugador(ArrayList baraja){
-        
+    public Jugador(){
+        try {
+            
+            String jugador="SELECT * FROM cartas";
+            Connection conn = MetodosBaseDatos.conectar();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(jugador);
+            while(rs.next()){
+                    int cId=rs.getInt("id");
+                    String cnombre=rs.getString("nombre");
+                    int cvida =rs.getInt("vida");
+                    int cataque = rs.getInt("ataque");
+                    int ccoste = rs.getInt("coste");
+                    
+                    System.out.println(cId + "," +cnombre+"," +cvida + "," + cataque + "," + ccoste);
+                    Carta c = new Carta(cId,cnombre,cvida, cataque, ccoste);
+                    this.baraja.add(c);
+
+                }
+                
+           
+
+    }   catch (SQLException ex) {
+            Logger.getLogger(Jugador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     //Getters

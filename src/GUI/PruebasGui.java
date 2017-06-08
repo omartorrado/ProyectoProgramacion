@@ -75,6 +75,7 @@ Jugador("1");
                     int cvida =rs.getInt("vida");
                     int cataque = rs.getInt("ataque");
                     int ccoste = rs.getInt("coste");
+                    rs.getArray(cnombre);
                     System.out.println(cId + "," +cnombre+"," +cvida + "," + cataque + "," + ccoste);
 //                    Carta c = new Carta(cId,cnombre,cvida, cataque, ccoste);
 //                    this.baraja.add(c);
