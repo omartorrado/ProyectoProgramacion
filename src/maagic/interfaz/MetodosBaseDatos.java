@@ -5,6 +5,7 @@
  */
 package maagic.interfaz;
 
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
@@ -28,9 +29,9 @@ public class MetodosBaseDatos {
 
     public static Connection conectar() {
         // Conectamos con la base de datos ya creada 
-        String url = "jdbc:sqlite:CartasBase.db";
-        Connection conn
-                = null;
+        String url = "jdbc:sqlite:maagic.db";
+        Connection conn = null;
+                
         try {
             conn = DriverManager.getConnection(url);
         } catch (SQLException e) {
@@ -42,7 +43,7 @@ public class MetodosBaseDatos {
     public void IniciarBase() throws ClassNotFoundException {
         try {
             //Cojemos la tabla con la url
-            String url = "jdbc:sqlite:CartasBase.db";
+            String url = "jdbc:sqlite:maagic.db";
             //le pasamos el Class.forName
             Class.forName("org.sqlite.JDBC");
             this.conexion = DriverManager.getConnection(url);
@@ -128,25 +129,25 @@ public class MetodosBaseDatos {
         } catch (SQLException e) {
             return false;
         }
-       //Esta es parte antigua que funciona
-        //Seleccionamos lo que queremos 
-        //String sql = "SELECT id, nombre, vida, ataque, coste FROM Cartas";
-
-        //try (Connection conn = this.conectar();
-                //Statement stmt = conn.createStatement();
-                //ResultSet rs = stmt.executeQuery(sql)) {
-
-            // Imprimimos los resultados por pantalla con un while 
-            //while (rs.next()) {
-                //System.out.println(rs.getString("id") + "\t"
-                        //+ rs.getString("nombre") + "\t"
-                        //+ rs.getInt("vida") + "\t"
-                        //+ rs.getInt("ataque") + "\t"
-                        //+ rs.getInt("coste"));
-           // }
-        //} catch (SQLException e) {
-            //System.out.println(e.getMessage());
-        //}
+//       Esta es parte antigua que funciona
+//        Seleccionamos lo que queremos 
+//        String sql = "SELECT id, nombre, vida, ataque, coste FROM Cartas";
+//
+//        try (Connection conn = this.conectar();
+//                Statement stmt = conn.createStatement();
+//                ResultSet rs = stmt.executeQuery(sql)) {
+//
+//             Imprimimos los resultados por pantalla con un while 
+//            while (rs.next()) {
+//                System.out.println(rs.getString("id") + "\t"
+//                        + rs.getString("nombre") + "\t"
+//                        + rs.getInt("vida") + "\t"
+//                        + rs.getInt("ataque") + "\t"
+//                        + rs.getInt("coste"));
+//            }
+//        } catch (SQLException e) {
+//            System.out.println(e.getMessage());
+//        }
     }
 
     public boolean insertar(String tabla, String... values) {
@@ -271,29 +272,47 @@ public class MetodosBaseDatos {
             System.out.println(e.getMessage());
         }
     }
-    public void seleccionarjugadores(String nombre){
-    String sql="SELECT  nombre   FROM   jugadores";
-    try (Connection conn = MetodosBaseDatos.conectar();
-                PreparedStatement pstmt = conn.prepareStatement(sql)) {
-    pstmt.setString(1, nombre);
-    
-     pstmt.executeUpdate();
+    public void seleccionarjugadores(){
+       try {
+           String sql="SELECT  idJugador,nombre   FROM   jugadores";
+           Connection conn = MetodosBaseDatos.conectar();
+           Statement stmt = conn.createStatement();
+           ResultSet rs = stmt.executeQuery(sql);
+           while(rs.next()){
+               System.out.println(rs.getInt("idJugador")+"\t"+rs.getString("nombre"));
+           
+           
+           }
+       } catch (SQLException ex) {
+           Logger.getLogger(MetodosBaseDatos.class.getName()).log(Level.SEVERE, null, ex);
+       }
     }
-    catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-    
+    public void seleccionarjugador(String jugador){
+       try {
+           String sql="SELECT  idJugador,nombre   FROM   jugadores";
+           Connection conn = MetodosBaseDatos.conectar();
+           Statement stmt = conn.createStatement();
+           ResultSet rs = stmt.executeQuery(sql);
+           rs.getString("nombre");
+           
+           } catch (SQLException ex) {
+           Logger.getLogger(MetodosBaseDatos.class.getName()).log(Level.SEVERE, null, ex);
+       }
+       
     }
     
-    public void insertarjugadores(int id,String nombre,int idbarajas){
-   String sql="INSERT INTO jugadores(id,    nombre, idbarajas) VALUES(?,?,?)";
+    
+   
+    
+    
+    public void insertarjugadores(int id,String nombre){
+   String sql="INSERT INTO jugadores(idJugador,    nombre) VALUES(?,?)";
     try (Connection conn = MetodosBaseDatos.conectar();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
 //            le pasamos los parametros que insertamos 
            pstmt.setInt(1, id);
             pstmt.setString(2, nombre);
-            pstmt.setInt(3, idbarajas);
 //            y insertamos
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -303,7 +322,7 @@ public class MetodosBaseDatos {
     }
     
     public void insertarcartas(int id,  String nombre,  int vida,   int ataque, int coste){
-    String sql="INSERT  INTO    cartas(id,  nombre, vida,   ataque, coste)  VALUES(?,?,?,?,?)";
+    String sql="INSERT  INTO    Cartas(id,  nombre, vida,   ataque, coste)  VALUES(?,?,?,?,?)";
      try (Connection conn = MetodosBaseDatos.conectar();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
@@ -318,6 +337,50 @@ public class MetodosBaseDatos {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    
+    
+    
+    
+    
+    }
+    
+    public void Seleccionarcartas() {
+        //Seleccionamos lo que queremos 
+        String sql = "SELECT id, nombre, vida, ataque, coste FROM Cartas";
+
+        try (Connection conn = this.conectar();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            // Imprimimos los resultados por pantalla con un while 
+            while (rs.next()) {
+                System.out.println(rs.getString("id") + "\t"
+                        + rs.getString("nombre") + "\t"
+                        + rs.getInt("vida") + "\t"
+                        + rs.getInt("ataque") + "\t"
+                        + rs.getInt("coste"));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+}
+    public void insertarbarajas(int idJugador,int idBaraja,Array cartas){
+    String sql="INSERT INTO barajas(idJugador,  cartas, idBaraja)   VALUES(?,?,?)";
+      try (Connection conn = MetodosBaseDatos.conectar();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+//            le pasamos los parametros que insertamos 
+            pstmt.setInt(1, idJugador);
+            pstmt.setArray(2,cartas );
+            pstmt.setInt(3,idBaraja );
+//            y insertamos
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    
+    
+    
     
     
     

@@ -15,6 +15,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Locale;
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
 import javax.swing.ComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -51,6 +53,8 @@ public class InterfadSeleccion extends JFrame {
     public JTextField id;
     public JLabel jugador1label;
     public JLabel jugador2label;
+    public JPanel   lado1;    
+    public JPanel   lado2;
 
     public InterfadSeleccion() {
         initComponents();
@@ -60,12 +64,23 @@ public class InterfadSeleccion extends JFrame {
     public final void initComponents() {
         this.setVisible(true);
         jugador1 = new JPanel();
+        lado1 =new JPanel();
+        lado2=new   JPanel();
         this.add(jugador1);
+        jugador1.add(lado1);
+        jugador1.add(lado2);
         jugador1.setSize(500, 500);
         jugador1.setVisible(true);
+        lado1.setVisible(true);
+        lado2.setVisible(true);
+        lado1.setBackground(Color.yellow);
+        lado2.setBackground(Color.BLACK);
         this.setSize(500, 500);
         this.setLocationRelativeTo(null);
-
+        lado1.setLayout(new BoxLayout(lado1, BoxLayout.Y_AXIS));
+        lado2.setLayout(new BoxLayout(lado2, BoxLayout.Y_AXIS));
+        lado1.setBorder(BorderFactory.createLineBorder(Color.RED));
+        
 //         this.setLayout(new OverlayLayout(this));
 //        
 //        JLabel fondo = new JLabel();
@@ -91,18 +106,20 @@ public class InterfadSeleccion extends JFrame {
         jugador1label = new JLabel();
         jugador2label = new JLabel();
         //
-        jugador1.add(botonSelectj1);
-        jugador1.add(botonCancelarj1);
-        jugador1.add(cajaJugadoresj1);
-        jugador1.add(botonBorrarJugador);
-        jugador1.add(botonCrearj);
-        jugador1.add(cajaJugadoresj2);
-        jugador1.add(botonSelectj2);
-        jugador1.add(botonCancelar2);
-        jugador1.add(botonJugar);
-        jugador1.add(volverMenu);
-        jugador1.add(jugador1label);
-        jugador1.add(jugador2label);
+//        lado1.add(botonSelectj1);
+//        lado2.add(botonCancelarj1);
+        lado1.add(cajaJugadoresj1);
+//        jugador1.add(botonBorrarJugador);
+//        jugador1.add(botonCrearj);
+        lado2.add(cajaJugadoresj2);
+//        jugador1.add(botonSelectj2);
+//        jugador1.add(botonCancelar2);
+//        lado1.add(botonJugar);
+//        lado2.add(volverMenu);
+//        jugador1.add(jugador1label);
+//        jugador1.add(jugador2label);
+          //lado1.add(botonJugar);
+//        lado2.add(volverMenu);
         //
         crearJugador.add(nombre);
         crearJugador.add(baraja);
@@ -183,7 +200,7 @@ public class InterfadSeleccion extends JFrame {
 
     private void botonSelectj1ActionPerformed(ActionEvent evt) {
         MetodosBaseDatos metodos = new MetodosBaseDatos();
-        metodos.seleccionarjugadores((String) cajaJugadoresj1.getSelectedItem());
+//        metodos.seleccionarjugadores((String) cajaJugadoresj1.getSelectedItem());
         jugador1label.setText((String) cajaJugadoresj1.getSelectedItem());
         JOptionPane.showInputDialog("Se ha introducido el nombre correctamente");
     }
@@ -202,7 +219,7 @@ public class InterfadSeleccion extends JFrame {
 
     private void botonSelectj2ActionPerformed(ActionEvent evt) {
         MetodosBaseDatos metodos = new MetodosBaseDatos();
-        metodos.seleccionarjugadores((String) cajaJugadoresj2.getSelectedItem());
+//        metodos.seleccionarjugadores((String) cajaJugadoresj2.getSelectedItem());
         jugador2label.setText((String) cajaJugadoresj2.getSelectedItem());
         JOptionPane.showInputDialog("Se ha seleccionado");
     }
@@ -237,7 +254,7 @@ public class InterfadSeleccion extends JFrame {
 
     private void crearJugadorPanelCrearActionPerformed(ActionEvent evt) {
         MetodosBaseDatos metodos = new MetodosBaseDatos();
-        metodos.insertarjugadores(Integer.parseInt(id.getText()), nombre.getText(), Integer.parseInt(baraja.getText()));
+//        metodos.insertarjugadores(Integer.parseInt(id.getText()), nombre.getText(), Integer.parseInt(baraja.getText()));
     }
 
     private void cancelarCreacionActionPerformed(ActionEvent evt) {
