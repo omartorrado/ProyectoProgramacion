@@ -13,6 +13,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,8 +27,9 @@ import java.util.logging.Logger;
 //directamente, o podriamos cojerlos de aqui realizando algunos retoques 
 //Todos los metodos tienen explicacion
 public class MetodosBaseDatos {
-   Connection conexion;
-
+  public Connection conexion;
+   public static ArrayList<String> nombres= new ArrayList<String>();
+  public static ArrayList<String> barajas= new ArrayList<String>();
     public static Connection conectar() {
         // Conectamos con la base de datos ya creada 
         String url = "jdbc:sqlite:maagic.db";
@@ -273,20 +276,28 @@ public class MetodosBaseDatos {
         }
     }
     public void seleccionarjugadores(){
+         String sql="SELECT  idJugador,nombre   FROM   jugadores";
        try {
-           String sql="SELECT  idJugador,nombre   FROM   jugadores";
            Connection conn = MetodosBaseDatos.conectar();
            Statement stmt = conn.createStatement();
            ResultSet rs = stmt.executeQuery(sql);
+       
+           
+         
            while(rs.next()){
-               System.out.println(rs.getInt("idJugador")+"\t"+rs.getString("nombre"));
-           
-           
+               nombres.add(rs.getString("nombre"));
+               rs.getInt("idJugador");
            }
+          
+         
+           
        } catch (SQLException ex) {
            Logger.getLogger(MetodosBaseDatos.class.getName()).log(Level.SEVERE, null, ex);
        }
-    }
+       }
+       
+      
+    
     public void seleccionarjugador(String jugador){
        try {
            String sql="SELECT  idJugador,nombre   FROM   jugadores";
@@ -378,15 +389,41 @@ public class MetodosBaseDatos {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-    
-    
-    
-    
+    }
+    public void seleccionarbarajas(){
+      String sql="SELECT  idBaraja,cartas,idJugador   FROM   jugadores";
+       try {
+           Connection conn = MetodosBaseDatos.conectar();
+           Statement stmt = conn.createStatement();
+           ResultSet rs = stmt.executeQuery(sql);
+       
+           
+         
+           while(rs.next()){
+               barajas.add(rs.getString("idBaraja"));
+               rs.getArray("cartas");
+               rs.getInt("idJugador");
+           }
+          
+         
+           
+       } catch (SQLException ex) {
+           Logger.getLogger(MetodosBaseDatos.class.getName()).log(Level.SEVERE, null, ex);
+       }
     
     
     
     
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

@@ -102,9 +102,12 @@ public class Menu extends JPanel {
     }
 
     private void modificarBarajaActionPerformed(ActionEvent evt) {
-        EditarBarajas Barajas = new EditarBarajas();
-        this.repaint();
-        this.add(Barajas);
+        InterfadSeleccionfinal interfad=new InterfadSeleccionfinal();
+         MainInterfaz.marco.getContentPane().removeAll();
+        MainInterfaz.marco.add(MainInterfaz.Seleccion);
+        //Hay que poner el repaint() revalidate() para que redibuje todo tras quitar/poner panels
+        MainInterfaz.marco.repaint();
+        MainInterfaz.marco.revalidate();
     }
 
     private void SalirActionPerformed(ActionEvent evt) {

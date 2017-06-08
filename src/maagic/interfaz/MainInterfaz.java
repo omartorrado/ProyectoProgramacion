@@ -20,6 +20,7 @@ public class MainInterfaz {
     public static JFrame marco=new JFrame();
     public static Menu menu;
     public static Juego juego;
+    public static InterfadSeleccionfinal Seleccion;
     public boolean resizeControl=false;
     
     public MainInterfaz(){

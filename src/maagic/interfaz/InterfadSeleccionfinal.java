@@ -5,6 +5,9 @@
  */
 package maagic.interfaz;
 
+import javafx.scene.control.ComboBox;
+import javax.swing.DefaultComboBoxModel;
+
 /**
  *
  * @author Delio
@@ -17,7 +20,26 @@ public class InterfadSeleccionfinal extends javax.swing.JPanel {
     public InterfadSeleccionfinal() {
         initComponents();
         MetodosBaseDatos metodos=new MetodosBaseDatos();
-//        seleccionarjugadorj1.setSelectedItem(metodos.);
+        metodos.seleccionarjugadores();
+//        System.out.println(metodos.seleccionarjugadores());
+        DefaultComboBoxModel modelo1 = new DefaultComboBoxModel();
+        seleccionarjugadorj1.setModel(modelo1);
+        modelo1.addElement(MetodosBaseDatos.nombres.get(0));
+        modelo1.addElement(MetodosBaseDatos.nombres.get(1));
+        DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
+        seleccionarjugadorj2.setModel(modelo2);
+        modelo2.addElement(MetodosBaseDatos.nombres.get(0));
+        modelo2.addElement(MetodosBaseDatos.nombres.get(1));
+        DefaultComboBoxModel modelo3 = new DefaultComboBoxModel();
+        seleccionarbarajaj1.setModel(modelo3);
+        modelo3.addElement(MetodosBaseDatos.barajas.get(0));
+        modelo3.addElement(MetodosBaseDatos.barajas.get(1));
+        DefaultComboBoxModel modelo4 = new DefaultComboBoxModel();
+        seleccionarbarajaj2.setModel(modelo4);
+        modelo4.addElement(MetodosBaseDatos.barajas.get(0));
+        modelo4.addElement(MetodosBaseDatos.barajas.get(0));
+//        modelo2.addElement(metodos.seleccionarjugadores());
+        this.setVisible(true);
     }
 
     /**
@@ -32,19 +54,20 @@ public class InterfadSeleccionfinal extends javax.swing.JPanel {
         seleccionarjugadorj1 = new javax.swing.JComboBox<>();
         seleccionarjugadorj2 = new javax.swing.JComboBox<>();
         seleccionarj1 = new javax.swing.JButton();
-        cancelarj1 = new javax.swing.JButton();
-        crearJugador = new javax.swing.JButton();
         seleccionarj2 = new javax.swing.JButton();
-        cancelarj2 = new javax.swing.JButton();
         jugar = new javax.swing.JButton();
         salir = new javax.swing.JButton();
-        borrar = new javax.swing.JButton();
         seleccionarbarajaj2 = new javax.swing.JComboBox<>();
         seleccionarbarajaj1 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         seleccionarjugadorj1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(seleccionarjugadorj1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 130, 39));
 
         seleccionarjugadorj2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(seleccionarjugadorj2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 117, 41));
 
         seleccionarj1.setText("Seleccionar");
         seleccionarj1.addActionListener(new java.awt.event.ActionListener() {
@@ -52,20 +75,7 @@ public class InterfadSeleccionfinal extends javax.swing.JPanel {
                 seleccionarj1ActionPerformed(evt);
             }
         });
-
-        cancelarj1.setText("Cancelar");
-        cancelarj1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelarj1ActionPerformed(evt);
-            }
-        });
-
-        crearJugador.setText("Crear Jugador");
-        crearJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                crearJugadorActionPerformed(evt);
-            }
-        });
+        add(seleccionarj1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, -1, -1));
 
         seleccionarj2.setText("Seleccionar");
         seleccionarj2.addActionListener(new java.awt.event.ActionListener() {
@@ -73,13 +83,7 @@ public class InterfadSeleccionfinal extends javax.swing.JPanel {
                 seleccionarj2ActionPerformed(evt);
             }
         });
-
-        cancelarj2.setText("Cancelar");
-        cancelarj2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelarj2ActionPerformed(evt);
-            }
-        });
+        add(seleccionarj2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
 
         jugar.setText("Jugar");
         jugar.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +91,7 @@ public class InterfadSeleccionfinal extends javax.swing.JPanel {
                 jugarActionPerformed(evt);
             }
         });
+        add(jugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, -1, -1));
 
         salir.setText("Salir");
         salir.addActionListener(new java.awt.event.ActionListener() {
@@ -94,108 +99,48 @@ public class InterfadSeleccionfinal extends javax.swing.JPanel {
                 salirActionPerformed(evt);
             }
         });
-
-        borrar.setText("Borrar");
-        borrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                borrarActionPerformed(evt);
-            }
-        });
+        add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, -1, -1));
 
         seleccionarbarajaj2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(seleccionarbarajaj2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 121, 41));
 
         seleccionarbarajaj1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(seleccionarbarajaj1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 121, 39));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(jugar)
-                        .addGap(123, 123, 123)
-                        .addComponent(salir))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(206, 206, 206)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(crearJugador)
-                            .addComponent(borrar))))
-                .addContainerGap(144, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(seleccionarjugadorj1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(seleccionarj1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(seleccionarbarajaj1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cancelarj1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(seleccionarjugadorj2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(seleccionarbarajaj2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(29, 29, 29))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addComponent(seleccionarj2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cancelarj2)
-                .addGap(75, 75, 75))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(crearJugador)
-                .addGap(52, 52, 52)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(seleccionarjugadorj1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(seleccionarbarajaj1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(seleccionarj1)
-                    .addComponent(cancelarj1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(seleccionarjugadorj2, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                    .addComponent(seleccionarbarajaj2))
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(seleccionarj2)
-                    .addComponent(cancelarj2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jugar)
-                    .addComponent(salir))
-                .addGap(9, 9, 9)
-                .addComponent(borrar))
-        );
+        jLabel1.setText("jLabel1");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 510));
     }// </editor-fold>//GEN-END:initComponents
 
     private void seleccionarj1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionarj1ActionPerformed
-        // TODO add your handling code here:
+       if(seleccionarjugadorj1.getSelectedItem()==MetodosBaseDatos.nombres.get(0) ){
+       System.out.println("Se ha seleccionado el jugador1");
+       
+       }
+       else if (seleccionarjugadorj1.getSelectedItem()==MetodosBaseDatos.nombres.get(1)){
+           System.out.println("Se ha seleccionado el jugador2");
+           
+       }
+       else if( seleccionarjugadorj1.getSelectedItem()==seleccionarjugadorj2.getSelectedItem()){
+       
+       System.out.println("Escoja otro");
+       
+       }
+           
     }//GEN-LAST:event_seleccionarj1ActionPerformed
 
-    private void crearJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_crearJugadorActionPerformed
-
-    private void cancelarj1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarj1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cancelarj1ActionPerformed
-
     private void seleccionarj2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionarj2ActionPerformed
-        // TODO add your handling code here:
+        if(seleccionarjugadorj2.getSelectedItem()==MetodosBaseDatos.nombres.get(0)){
+       System.out.println("Se ha seleccionado el jugador1");
+       
+       }
+       else if (seleccionarjugadorj2.getSelectedItem()==MetodosBaseDatos.nombres.get(1)){
+           System.out.println("Se ha seleccionado el jugador2");
+           
+       }
+       else if ( seleccionarjugadorj2.getSelectedItem()==seleccionarjugadorj1.getSelectedItem()){
+           System.out.println("Escoja otro");
+       }
     }//GEN-LAST:event_seleccionarj2ActionPerformed
-
-    private void cancelarj2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarj2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cancelarj2ActionPerformed
 
     private void jugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugarActionPerformed
         // TODO add your handling code here:
@@ -205,16 +150,9 @@ public class InterfadSeleccionfinal extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_salirActionPerformed
 
-    private void borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_borrarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton borrar;
-    private javax.swing.JButton cancelarj1;
-    private javax.swing.JButton cancelarj2;
-    private javax.swing.JButton crearJugador;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jugar;
     private javax.swing.JButton salir;
     private javax.swing.JComboBox<String> seleccionarbarajaj1;
