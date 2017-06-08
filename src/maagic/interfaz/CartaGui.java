@@ -20,9 +20,13 @@ import java.awt.event.MouseEvent;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.YES_NO_OPTION;
+import static javax.swing.JOptionPane.YES_OPTION;
 import javax.swing.JPanel;
 import javax.swing.OverlayLayout;
 import static javax.swing.SwingConstants.CENTER;
+import maagic.Main;
 
 /**
  *
@@ -95,10 +99,29 @@ public class CartaGui extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 Juego tempJuego = (Juego) fondo.getParent().getParent().getParent().getParent();
                 fondo.getParent().requestFocusInWindow();
-                if(fondo.getParent().isFocusable()){
-                tempJuego.cartaSeleccionada = fondo.getParent().getParent().getComponentZOrder(fondo.getParent());
+                if (fondo.getParent().isFocusable()) {
+                    tempJuego.cartaSeleccionada = fondo.getParent().getParent().getComponentZOrder(fondo.getParent());
                 }
-                System.out.println("carta seleccionada:"+tempJuego.cartaSeleccionada);
+                System.out.println("carta seleccionada:" + tempJuego.cartaSeleccionada);
+                if (tempJuego.cartaSeleccionada != -1) {
+                    if (e.getSource() == tempJuego.panelManoJ1.getComponent(tempJuego.cartaSeleccionada)) {
+                        int opcion = JOptionPane.showConfirmDialog(tempJuego, "¿Quieres cambiar esta carta por " + (Main.j1.getMano(tempJuego.cartaSeleccionada).getCoste() / 2) + " de maná?", "", YES_NO_OPTION);
+                        if (opcion == YES_OPTION) {
+                            System.out.println("El jugador 1 gana mana, tiene " + Main.j1.getMana());
+                            Main.j1.ganarMana(tempJuego.cartaSeleccionada);
+                            System.out.println("El jugador 1 gana mana, tiene " + Main.j1.getMana());
+                            Main.repintar();
+                        }
+                    } else if (e.getSource() == tempJuego.panelManoJ2.getComponent(tempJuego.cartaSeleccionada)) {
+                        int opcion = JOptionPane.showConfirmDialog(tempJuego, "¿Quieres cambiar esta carta por " + (Main.j2.getMano(tempJuego.cartaSeleccionada).getCoste() / 2) + " de maná?", "", YES_NO_OPTION);
+                        if (opcion == YES_OPTION) {
+                            System.out.println("El jugador 2 gana mana, tiene " + Main.j2.getMana());
+                            Main.j2.ganarMana(tempJuego.cartaSeleccionada);
+                            System.out.println("El jugador 2 gana mana, tiene " + Main.j2.getMana());
+                            Main.repintar();
+                        }
+                    }
+                }
             }
         });
 

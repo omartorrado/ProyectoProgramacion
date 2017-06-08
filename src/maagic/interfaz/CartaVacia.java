@@ -46,8 +46,8 @@ public class CartaVacia extends JPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 Juego tempJuego = (Juego) fondoVacio.getParent().getParent().getParent().getParent();
-                System.out.println("Carta vacia click");
-                if (tempJuego.cartaSeleccionada != -1 && tempJuego.turnoJ1 && tempJuego.panelManoJ1.isFocusable()) {
+                //System.out.println("Carta vacia click");
+                if (tempJuego.cartaSeleccionada != -1 && tempJuego.turnoJ1 && tempJuego.panelManoJ1.isFocusable() && e.getSource() instanceof CartaVacia) {
                     if (Main.j1.getMana() >= Main.j1.getMano(tempJuego.cartaSeleccionada).getCoste()) {
                         System.out.println("Es el turno del Jugador 1");
                         System.out.println(tempJuego.cartaSeleccionada + ", " + fondoVacio.getParent().getParent().getComponentZOrder(fondoVacio.getParent()));
@@ -56,7 +56,7 @@ public class CartaVacia extends JPanel {
                         tempJuego.cartaSeleccionada = -1;
                         
                     } else {
-                        int opcion=JOptionPane.showConfirmDialog(tempJuego, "No tienes suficiente maná.\n ¿Quieres cambiar esta carta por " + (Main.j1.getMano(tempJuego.cartaSeleccionada).getCoste() / 2) + " de maná?", "", YES_NO_OPTION);
+                        int opcion=JOptionPane.showConfirmDialog(tempJuego, "No puedes jugar esa carta.\n ¿Quieres cambiar esta carta por " + (Main.j1.getMano(tempJuego.cartaSeleccionada).getCoste() / 2) + " de maná?", "", YES_NO_OPTION);
                         if(opcion==YES_OPTION){
                             System.out.println("El jugador 1 gana mana, tiene "+Main.j1.getMana());
                             Main.j1.ganarMana(tempJuego.cartaSeleccionada);
@@ -64,7 +64,7 @@ public class CartaVacia extends JPanel {
                             Main.repintar();
                         }
                     }
-                } else if (tempJuego.cartaSeleccionada != -1 && tempJuego.turnoJ1 == false&& tempJuego.panelManoJ2.isFocusable()) {
+                } else if (tempJuego.cartaSeleccionada != -1 && tempJuego.turnoJ1 == false&& tempJuego.panelManoJ2.isFocusable()&& e.getSource() instanceof CartaVacia) {
                     if (Main.j2.getMana() >= Main.j2.getMano(tempJuego.cartaSeleccionada).getCoste()) {
                         System.out.println("Es el turno del jugador 2");
                         System.out.println(tempJuego.cartaSeleccionada + ", " + fondoVacio.getParent().getParent().getComponentZOrder(fondoVacio.getParent()));
@@ -73,7 +73,7 @@ public class CartaVacia extends JPanel {
                         tempJuego.cartaSeleccionada = -1;
                         
                     } else {
-                        int opcion=JOptionPane.showConfirmDialog(tempJuego, "No tienes suficiente maná.\n ¿Quieres cambiar esta carta por " + (Main.j1.getMano(tempJuego.cartaSeleccionada).getCoste() / 2) + " de maná?", "", YES_NO_OPTION);
+                        int opcion=JOptionPane.showConfirmDialog(tempJuego, "No puedes jugar esa carta.\n ¿Quieres cambiar esta carta por " + (Main.j2.getMano(tempJuego.cartaSeleccionada).getCoste() / 2) + " de maná?", "", YES_NO_OPTION);
                         if(opcion==YES_OPTION){
                             System.out.println("El jugador 2 gana mana, tiene "+Main.j2.getMana());
                             Main.j2.ganarMana(tempJuego.cartaSeleccionada);
@@ -83,17 +83,32 @@ public class CartaVacia extends JPanel {
                     }
                 }
                 if (Main.j1.hayCarta(0)== false && Main.j1.hayCarta(1)== false && Main.j1.hayCarta(2)== false &&tempJuego.turnoJ1) {
-                    System.out.println(Main.j1.hayCarta(0));
-                    System.out.println(Main.j1.hayCarta(1));
-                    System.out.println(Main.j1.hayCarta(2));
-                    System.out.println("Entro el if de que no kedan cartas");
+
+                    System.out.println("jugador 1 sin cartas");
                     tempJuego.turnoJ1 = false;
                     tempJuego.activarFocus();
+                    Main.j1.realizarAtaque(Main.j2);
+                    
+                    if(Main.j2.getVida()<1){
+                        JOptionPane.showMessageDialog(tempJuego, "Jugador 2 pierde");
+                        MainInterfaz.marco.removeAll();
+                        MainInterfaz.marco.add(new Menu());
+                    }
+                    
                     Main.j2.cogerMano();
                     Main.repintar();
-                }else if(Main.j1.hayCarta(0)== false && Main.j1.hayCarta(1)== false && Main.j1.hayCarta(2)== false && tempJuego.turnoJ1==false){
+                }else if(Main.j2.hayCarta(0)== false && Main.j2.hayCarta(1)== false && Main.j2.hayCarta(2)== false && tempJuego.turnoJ1==false){
+                    System.out.println("Jugador 2 sin cartas");
                     tempJuego.turnoJ1 = true;
                     tempJuego.activarFocus();
+                    Main.j2.realizarAtaque(Main.j1);
+                    
+                    if(Main.j1.getVida()<1){
+                        JOptionPane.showMessageDialog(tempJuego, "Jugador 1 pierde");
+                        MainInterfaz.marco.removeAll();
+                        MainInterfaz.marco.add(new Menu());
+                    }
+                    
                     Main.j1.cogerMano();
                     Main.repintar();
                 } 

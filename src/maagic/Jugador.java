@@ -33,7 +33,7 @@ public class Jugador {
     private ArrayList<Carta> descarte = new ArrayList();
     public Carta[] mesa = new Carta[3];
     public int vida = 20;
-    public int mana = 13;
+    public int mana = 3;
     
 
 //    Constructor 
@@ -140,6 +140,7 @@ public class Jugador {
 
     public void moverManoMesa(int carta, int mesa) {
         if (this.mesa[mesa] == null) {
+            costeMana(carta);
             this.mesa[mesa] = this.mano[carta];
             this.mano[carta] = null;
         }
@@ -173,7 +174,7 @@ public class Jugador {
     }
 
     public void cartaMuere(int i) {
-        mesa[i] = null;
+        moverMesaDescarte(i);
     }
 
     //El jugador j es el oponente
@@ -201,6 +202,7 @@ public class Jugador {
                 System.out.println("El oponente recibe "+mesa[i].getAtaque());
             }
         }
+        System.out.println("Vida del jugador actual: "+this.vida+ "Vida del oponente: "+j.getVida());
     }
 
     //TEST METHODS
