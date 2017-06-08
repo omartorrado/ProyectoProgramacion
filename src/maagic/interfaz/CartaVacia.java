@@ -60,6 +60,7 @@ public class CartaVacia extends JPanel {
                         if(opcion==YES_OPTION){
                             System.out.println("El jugador 1 gana mana, tiene "+Main.j1.getMana());
                             Main.j1.ganarMana(tempJuego.cartaSeleccionada);
+                            tempJuego.cartaSeleccionada = -1;
                             System.out.println("El jugador 1 gana mana, tiene "+Main.j1.getMana());
                             Main.repintar();
                         }
@@ -77,6 +78,7 @@ public class CartaVacia extends JPanel {
                         if(opcion==YES_OPTION){
                             System.out.println("El jugador 2 gana mana, tiene "+Main.j2.getMana());
                             Main.j2.ganarMana(tempJuego.cartaSeleccionada);
+                            tempJuego.cartaSeleccionada = -1;
                             System.out.println("El jugador 2 gana mana, tiene "+Main.j2.getMana());
                             Main.repintar();
                         }
@@ -93,6 +95,8 @@ public class CartaVacia extends JPanel {
                         JOptionPane.showMessageDialog(tempJuego, "Jugador 2 pierde");
                         MainInterfaz.marco.removeAll();
                         MainInterfaz.marco.add(new Menu());
+                        MainInterfaz.marco.repaint();
+        MainInterfaz.marco.revalidate();
                     }
                     
                     Main.j2.cogerMano();
@@ -107,6 +111,8 @@ public class CartaVacia extends JPanel {
                         JOptionPane.showMessageDialog(tempJuego, "Jugador 1 pierde");
                         MainInterfaz.marco.removeAll();
                         MainInterfaz.marco.add(new Menu());
+                        MainInterfaz.marco.repaint();
+        MainInterfaz.marco.revalidate();
                     }
                     
                     Main.j1.cogerMano();

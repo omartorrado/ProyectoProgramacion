@@ -13,8 +13,6 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.BorderFactory;
@@ -26,6 +24,7 @@ import static javax.swing.JOptionPane.YES_OPTION;
 import javax.swing.JPanel;
 import javax.swing.OverlayLayout;
 import static javax.swing.SwingConstants.CENTER;
+import maagic.Carta;
 import maagic.Main;
 
 /**
@@ -105,20 +104,30 @@ public class CartaGui extends JPanel {
                 System.out.println("carta seleccionada:" + tempJuego.cartaSeleccionada);
                 if (tempJuego.cartaSeleccionada != -1) {
                     if (e.getSource() == tempJuego.panelManoJ1.getComponent(tempJuego.cartaSeleccionada)) {
-                        int opcion = JOptionPane.showConfirmDialog(tempJuego, "¿Quieres cambiar esta carta por " + (Main.j1.getMano(tempJuego.cartaSeleccionada).getCoste() / 2) + " de maná?", "", YES_NO_OPTION);
-                        if (opcion == YES_OPTION) {
-                            System.out.println("El jugador 1 gana mana, tiene " + Main.j1.getMana());
-                            Main.j1.ganarMana(tempJuego.cartaSeleccionada);
-                            System.out.println("El jugador 1 gana mana, tiene " + Main.j1.getMana());
-                            Main.repintar();
+                        Carta tempCarta = Main.j1.getMano(tempJuego.cartaSeleccionada);
+                        if (tempCarta.getCoste() > Main.j1.getMana()||(tempJuego.panelMesaJ1.getComponent(0) instanceof CartaGui 
+                                && tempJuego.panelMesaJ1.getComponent(1) instanceof CartaGui &&tempJuego.panelMesaJ1.getComponent(2) instanceof CartaGui)) {
+                            int opcion = JOptionPane.showConfirmDialog(tempJuego, "¿Quieres cambiar esta carta por " + (Main.j1.getMano(tempJuego.cartaSeleccionada).getCoste() / 2) + " de maná?", "", YES_NO_OPTION);
+                            if (opcion == YES_OPTION) {
+                                System.out.println("El jugador 1 gana mana, tiene " + Main.j1.getMana());
+                                Main.j1.ganarMana(tempJuego.cartaSeleccionada);
+                                tempJuego.cartaSeleccionada = -1;
+                                System.out.println("El jugador 1 gana mana, tiene " + Main.j1.getMana());
+                                Main.repintar();
+                            }
                         }
                     } else if (e.getSource() == tempJuego.panelManoJ2.getComponent(tempJuego.cartaSeleccionada)) {
+                        Carta tempCarta = Main.j2.getMano(tempJuego.cartaSeleccionada);
+                        if (tempCarta.getCoste() > Main.j2.getMana()||(tempJuego.panelMesaJ2.getComponent(0) instanceof CartaGui 
+                                && tempJuego.panelMesaJ2.getComponent(1) instanceof CartaGui &&tempJuego.panelMesaJ2.getComponent(2) instanceof CartaGui)) {
                         int opcion = JOptionPane.showConfirmDialog(tempJuego, "¿Quieres cambiar esta carta por " + (Main.j2.getMano(tempJuego.cartaSeleccionada).getCoste() / 2) + " de maná?", "", YES_NO_OPTION);
                         if (opcion == YES_OPTION) {
                             System.out.println("El jugador 2 gana mana, tiene " + Main.j2.getMana());
                             Main.j2.ganarMana(tempJuego.cartaSeleccionada);
+                            tempJuego.cartaSeleccionada = -1;
                             System.out.println("El jugador 2 gana mana, tiene " + Main.j2.getMana());
                             Main.repintar();
+                        }
                         }
                     }
                 }

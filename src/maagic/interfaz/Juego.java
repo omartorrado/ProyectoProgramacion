@@ -208,7 +208,10 @@ public class Juego extends JPanel {
         panelManoJ1.revalidate();
         panelManoJ2.repaint();
         panelManoJ2.revalidate();
-
+        panelMesaJ1.repaint();
+        panelMesaJ1.revalidate();
+        panelMesaJ2.repaint();
+        panelMesaJ2.revalidate();
     }
 
     public void activarFocus() {

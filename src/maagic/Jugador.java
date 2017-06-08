@@ -193,7 +193,7 @@ public class Jugador {
                     System.out.println("Carta muere");
                 }
                 if (j.mesa[i].getVida() < 1) {
-                    cartaMuere(i);
+                    j.cartaMuere(i);
                     System.out.println("Carta oponente muere");
                 }
             } else if (mesa[i] != null && j.mesa[i] == null) {
