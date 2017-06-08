@@ -31,13 +31,13 @@ public class InterfadSeleccionfinal extends javax.swing.JPanel {
         modelo2.addElement(MetodosBaseDatos.nombres.get(0));
         modelo2.addElement(MetodosBaseDatos.nombres.get(1));
         DefaultComboBoxModel modelo3 = new DefaultComboBoxModel();
-        seleccionarbarajaj1.setModel(modelo3);
-        modelo3.addElement(MetodosBaseDatos.barajas.get(0));
-        modelo3.addElement(MetodosBaseDatos.barajas.get(1));
-        DefaultComboBoxModel modelo4 = new DefaultComboBoxModel();
-        seleccionarbarajaj2.setModel(modelo4);
-        modelo4.addElement(MetodosBaseDatos.barajas.get(0));
-        modelo4.addElement(MetodosBaseDatos.barajas.get(0));
+//        seleccionarbarajaj1.setModel(modelo3);
+//        modelo3.addElement(MetodosBaseDatos.barajas.get(0));
+//        modelo3.addElement(MetodosBaseDatos.barajas.get(1));
+//        DefaultComboBoxModel modelo4 = new DefaultComboBoxModel();
+//        seleccionarbarajaj2.setModel(modelo4);
+//        modelo4.addElement(MetodosBaseDatos.barajas.get(0));
+//        modelo4.addElement(MetodosBaseDatos.barajas.get(1));
 //        modelo2.addElement(metodos.seleccionarjugadores());
         this.setVisible(true);
     }
@@ -120,11 +120,7 @@ public class InterfadSeleccionfinal extends javax.swing.JPanel {
            System.out.println("Se ha seleccionado el jugador2");
            
        }
-       else if( seleccionarjugadorj1.getSelectedItem()==seleccionarjugadorj2.getSelectedItem()){
        
-       System.out.println("Escoja otro");
-       
-       }
            
     }//GEN-LAST:event_seleccionarj1ActionPerformed
 
@@ -137,9 +133,7 @@ public class InterfadSeleccionfinal extends javax.swing.JPanel {
            System.out.println("Se ha seleccionado el jugador2");
            
        }
-       else if ( seleccionarjugadorj2.getSelectedItem()==seleccionarjugadorj1.getSelectedItem()){
-           System.out.println("Escoja otro");
-       }
+       
     }//GEN-LAST:event_seleccionarj2ActionPerformed
 
     private void jugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugarActionPerformed
