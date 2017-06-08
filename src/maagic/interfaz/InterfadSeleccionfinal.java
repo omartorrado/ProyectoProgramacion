@@ -31,10 +31,12 @@ public class InterfadSeleccionfinal extends javax.swing.JPanel {
         modelo2.addElement(MetodosBaseDatos.nombres.get(0));
         modelo2.addElement(MetodosBaseDatos.nombres.get(1));
         DefaultComboBoxModel modelo3 = new DefaultComboBoxModel();
-//        seleccionarbarajaj1.setModel(modelo3);
-//        modelo3.addElement(MetodosBaseDatos.barajas.get(0));
-//        modelo3.addElement(MetodosBaseDatos.barajas.get(1));
-//        DefaultComboBoxModel modelo4 = new DefaultComboBoxModel();
+        seleccionarbarajaj1.setModel(modelo3);
+        System.out.println(seleccionarjugadorj2.getSelectedItem().toString());
+        metodos.seleccionarbarajas(metodos.getIdJugador(seleccionarjugadorj2.getSelectedItem().toString()));
+        modelo3.addElement(MetodosBaseDatos.barajas.get(0));
+        modelo3.addElement(MetodosBaseDatos.barajas.get(1));
+        DefaultComboBoxModel modelo4 = new DefaultComboBoxModel();
 //        seleccionarbarajaj2.setModel(modelo4);
 //        modelo4.addElement(MetodosBaseDatos.barajas.get(0));
 //        modelo4.addElement(MetodosBaseDatos.barajas.get(1));

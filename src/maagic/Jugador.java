@@ -60,6 +60,10 @@ public class Jugador {
         }
 
     }
+    
+    public Jugador(ArrayList baraja){
+        
+    }
 
     //Getters
     public int getVida() {

@@ -5,6 +5,8 @@
  */
 package maagic.interfaz;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Delio
@@ -16,7 +18,10 @@ public class Pruevas extends javax.swing.JFrame {
      */
     public Pruevas() {
         initComponents();
-       
+        JFrame frame2=new JFrame();
+        InterfadSeleccionfinal sf=new InterfadSeleccionfinal();
+       frame2.add(sf);
+       frame2.setVisible(true);
         
     }
 

@@ -312,6 +312,26 @@ public class MetodosBaseDatos {
        
     }
     
+    //Metodo para obtener la id del jugador elegido en la combobox
+    public int getIdJugador(String nombre){
+        int id=-77;
+        try {
+           Connection conn = MetodosBaseDatos.conectar();
+           Statement stmt = conn.createStatement();
+           ResultSet rs = stmt.executeQuery("select idJugador from jugadores where nombre='"+nombre+"'");
+        
+         
+           while(rs.next()){
+               id=rs.getInt("idJugador");
+           }
+          return id;
+         
+           
+       } catch (SQLException ex) {
+           Logger.getLogger(MetodosBaseDatos.class.getName()).log(Level.SEVERE, null, ex);
+           return -1;
+       }
+    }
     
    
     
@@ -390,8 +410,8 @@ public class MetodosBaseDatos {
             System.out.println(e.getMessage());
         }
     }
-    public void seleccionarbarajas(){
-      String sql="SELECT  idBaraja,cartas,idJugador   FROM   jugadores";
+    public void seleccionarbarajas(int idJugador){
+      String sql="SELECT  idBaraja  FROM   barajas where idJugador='"+idJugador+"';";
        try {
            Connection conn = MetodosBaseDatos.conectar();
            Statement stmt = conn.createStatement();
@@ -401,9 +421,8 @@ public class MetodosBaseDatos {
          
            while(rs.next()){
                barajas.add(rs.getString("idBaraja"));
-               rs.getArray("cartas");
-               rs.getInt("idJugador");
-           }
+               System.out.println("baraja añadida");
+               }
           
          
            
